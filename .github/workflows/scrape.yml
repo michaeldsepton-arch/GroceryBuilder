@@ -1,8 +1,9 @@
 name: Refresh store prices
 
 on:
-  schedule:
-    - cron: '17 11 * * *'   # daily ~5am Mountain
+  # schedule disabled until at least one store adapter works reliably:
+  # schedule:
+  #   - cron: '17 11 * * *'   # daily ~5am Mountain
   workflow_dispatch:
     inputs:
       stores:

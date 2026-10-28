@@ -51,6 +51,11 @@ def products_from(html):
 
 
 def scrape():
+    if not STORE_ID:
+        # Walmart ignores the postal-code cookie and serves a default store (1061),
+        # so unpinned results would not be Red Deer prices. Skip until pinned.
+        print('[walmart] skipped: Red Deer store id not pinned yet')
+        return [], []
     out = {}
     for term in SEARCH_TERMS[:60]:
         try:
