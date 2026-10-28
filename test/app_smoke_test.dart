@@ -65,6 +65,10 @@ void main() {
     expect(await state.repo.search('pork'), isEmpty);
     expect(await state.repo.search('merlot'), isEmpty);
     expect((await state.repo.search('vinegar')).length, 1); // wine vinegar is fine
+    expect((await state.repo.search('yogurts')).length, 1); // plural finds singular
+    expect(singular('berries'), 'berry');
+    expect(singular('tomatoes'), 'tomato');
+    expect(singular('rice'), 'rice');
     expect((await state.repo.search('chicken')).where((i) => i.storeId == 'superstore'), isEmpty); // not halal-certified
     state.repo.halalMeatOnly = false;
     expect((await state.repo.search('chicken')).where((i) => i.storeId == 'superstore').length, 1);

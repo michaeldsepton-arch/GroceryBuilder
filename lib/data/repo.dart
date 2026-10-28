@@ -7,6 +7,16 @@ import '../models/units.dart';
 import 'db.dart';
 import 'halal.dart';
 
+/// Light singularising for search ("tomatoes" -> "tomato", "berries" -> "berry").
+String singular(String w) {
+  if (w.length < 4) return w;
+  if (w.endsWith('ies')) return '${w.substring(0, w.length - 3)}y';
+  if (w.endsWith('oes')) return w.substring(0, w.length - 2);
+  if (w.endsWith('ss')) return w;
+  if (w.endsWith('s')) return w.substring(0, w.length - 1);
+  return w;
+}
+
 enum SortMode { unitPrice, price, name, discount }
 
 class Repo {
@@ -42,8 +52,12 @@ class Repo {
     final where = <String>[];
     final args = <Object?>[];
     for (final tok in query.toLowerCase().split(RegExp(r'\s+')).where((t) => t.isNotEmpty)) {
-      where.add("(LOWER(i.name) LIKE ? OR LOWER(i.brand) LIKE ? OR LOWER(i.category) LIKE ?)");
-      args.addAll(['%$tok%', '%$tok%', '%$tok%']);
+      // "tomatoes" also finds "tomato", "berries" finds "berry"
+      final forms = {tok, singular(tok)};
+      where.add('(${forms.map((_) => "LOWER(i.name) LIKE ? OR LOWER(i.brand) LIKE ? OR LOWER(i.category) LIKE ?").join(' OR ')})');
+      for (final f in forms) {
+        args.addAll(['%$f%', '%$f%', '%$f%']);
+      }
     }
     if (storeIds.isNotEmpty) {
       where.add('i.store_id IN (${List.filled(storeIds.length, '?').join(',')})');

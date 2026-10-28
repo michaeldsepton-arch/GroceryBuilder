@@ -93,6 +93,105 @@ MEALDB_AREA = {
 }
 
 
+CUISINE_BY_COUNTRY = {}
+for _cuisine, _names in {
+    "Indian": ["india"], "Pakistani": ["pakistan"], "South Asian": ["bangladesh", "sri lanka", "nepal", "afghanistan"],
+    "Arab": ["lebanon", "syria", "jordan", "saudi arabia", "iraq", "uae", "united arab emirates", "palestine", "yemen", "kuwait", "oman", "qatar", "bahrain", "arab"],
+    "Persian": ["iran"], "Turkish": ["turkey", "turkiye", "türkiye"], "Egyptian": ["egypt"], "Moroccan": ["morocco"],
+    "North African": ["algeria", "tunisia", "libya", "algerian", "tunisian"],
+    "African": ["ethiopia", "nigeria", "ghana", "kenya", "south africa", "senegal", "tanzania", "uganda", "somalia", "sudan", "eritrea"],
+    "Mediterranean": ["greece", "spain", "portugal", "malta", "cyprus", "albania", "croatia"],
+    "Italian": ["italy"], "French": ["france"], "Chinese": ["china"], "Japanese": ["japan"],
+    "Asian": ["thailand", "vietnam", "malaysia", "indonesia", "philippines", "singapore", "cambodia", "laos", "korea", "south korea", "myanmar", "taiwan"],
+    "Mexican": ["mexico"],
+    "Latin American": ["colombia", "venezuela", "argentina", "brazil", "peru", "chile", "cuba", "ecuador", "bolivia", "uruguay", "paraguay", "dominican republic", "puerto rico", "guatemala", "costa rica", "panama", "el salvador", "honduras", "nicaragua"],
+    "Caribbean": ["jamaica", "antigua", "antigua and barbuda", "barbados", "trinidad", "trinidad and tobago", "haiti", "bahamas", "guyana", "caribbean"],
+    "Western": ["united states", "usa", "american", "canada", "canadian", "australia", "australian", "united kingdom", "uk", "england", "british", "scotland", "ireland", "irish", "new zealand", "norway", "netherlands", "sweden", "denmark", "finland", "germany", "austria", "switzerland", "belgium", "poland", "polish", "russia", "ukraine", "hungary", "czech republic", "romania", "bulgaria", "serbia", "lithuania", "latvia", "estonia", "iceland"],
+}.items():
+    for _n in _names:
+        CUISINE_BY_COUNTRY[_n] = _cuisine
+
+
+for _dem, _cuisine in {
+    "jamaican": "Caribbean", "trinidadian": "Caribbean", "haitian": "Caribbean", "cuban": "Latin American",
+    "thai": "Asian", "vietnamese": "Asian", "malaysian": "Asian", "filipino": "Asian", "indonesian": "Asian", "korean": "Asian",
+    "japanese": "Japanese", "chinese": "Chinese", "mexican": "Mexican", "italian": "Italian", "french": "French",
+    "greek": "Mediterranean", "spanish": "Mediterranean", "portuguese": "Mediterranean", "croatian": "Mediterranean",
+    "lebanese": "Arab", "syrian": "Arab", "jordanian": "Arab", "iraqi": "Arab", "saudi arabian": "Arab", "palestinian": "Arab",
+    "egyptian": "Egyptian", "moroccan": "Moroccan", "indian": "Indian", "pakistani": "Pakistani", "turkish": "Turkish",
+    "iranian": "Persian", "persian": "Persian", "kenyan": "African", "ethiopian": "African", "nigerian": "African",
+    "irish": "Western", "british": "Western", "american": "Western", "canadian": "Western", "australian": "Western",
+    "dutch": "Western", "polish": "Western", "russian": "Western", "ukrainian": "Western", "norwegian": "Western",
+}.items():
+    CUISINE_BY_COUNTRY.setdefault(_dem, _cuisine)
+
+
+def normalize_cuisine(area):
+    a = (area or "").strip()
+    if not a:
+        return "International"
+    return CUISINE_BY_COUNTRY.get(a.lower(), a if a[:1].isupper() and a.lower() not in CUISINE_BY_COUNTRY else "International")
+
+
+MEAL_HINTS = [
+    ("drink", r"smoothie|lassi|juice|lemonade|\btea\b|coffee|shake\b|\bdrink|punch|mocktail|cooler|cordial"),
+    ("bread", r"\bbread\b|\bnaan\b|focaccia|\brolls?\b|\bbuns?\b|\bpita\b|flatbread|\broti\b|chapati|paratha|baguette|brioche|sourdough|\bloaf\b|bagel|scone|biscuits?\b|cornbread|tortilla"),
+    ("dessert", r"cake|cookie|pudding|\bpie\b|tart\b|brownie|ice cream|halwa|kheer|cheesecake|crumble|mousse|custard|fudge|pancake|waffle|donut|doughnut|muffin|cupcake|sorbet|tiramisu|trifle|pavlova|baklava|truffle|candy|sweets?\b"),
+    ("lunch", r"soup|salad|sandwich|\bwrap\b|burger|tacos?\b|sub\b|panini|quesadilla|\bbowl\b|chowder|gazpacho"),
+    ("breakfast", r"breakfast|omelette|omelet|porridge|granola|oats|shakshuka|scrambled|french toast|hash browns|eggs benedict|brunch"),
+]
+
+SEARCH_ALIASES = {
+    "plain flour": "flour", "self-raising flour": "flour", "self raising flour": "flour", "all-purpose flour": "flour",
+    "strong white flour": "bread flour", "wholewheat flour": "whole wheat flour", "wholemeal flour": "whole wheat flour",
+    "caster sugar": "sugar", "granulated sugar": "sugar", "white sugar": "sugar", "muscovado sugar": "brown sugar",
+    "demerara sugar": "brown sugar", "light brown soft sugar": "brown sugar", "dark brown soft sugar": "brown sugar",
+    "double cream": "heavy cream", "whipping cream": "heavy cream", "single cream": "cream", "creme fraiche": "sour cream",
+    "extra virgin olive oil": "olive oil", "rapeseed oil": "canola oil", "sunflower oil": "vegetable oil",
+    "groundnut oil": "peanut oil", "tomato puree": "tomato paste", "tomato purée": "tomato paste", "passata": "tomato sauce",
+    "chopped tomatoes": "diced tomatoes", "tinned tomatoes": "canned tomatoes", "plum tomatoes": "tomatoes",
+    "sea salt": "salt", "salt flakes": "salt", "flaky sea salt": "salt", "freshly ground black pepper": "black pepper",
+    "coriander": "cilantro", "coriander leaves": "cilantro", "fresh coriander": "cilantro",
+    "spring onions": "green onions", "spring onion": "green onions", "scallions": "green onions", "aubergine": "eggplant",
+    "courgette": "zucchini", "courgettes": "zucchini", "rocket": "arugula", "swede": "rutabaga", "pak choi": "bok choy",
+    "mange tout": "snow peas", "prawns": "shrimp", "king prawns": "shrimp", "tiger prawns": "shrimp",
+    "minced beef": "ground beef", "beef mince": "ground beef", "mince": "ground beef", "lamb mince": "ground lamb",
+    "minced lamb": "ground lamb", "chicken mince": "ground chicken", "turkey mince": "ground turkey",
+    "yoghurt": "yogurt", "plain yoghurt": "plain yogurt", "natural yoghurt": "plain yogurt", "natural yogurt": "plain yogurt",
+    "greek yoghurt": "greek yogurt", "cornflour": "cornstarch", "bicarbonate of soda": "baking soda",
+    "stock cube": "bouillon cubes", "chicken stock cube": "bouillon cubes", "beef stock cube": "bouillon cubes",
+    "vegetable stock cube": "bouillon cubes", "chicken stock": "chicken broth", "beef stock": "beef broth",
+    "vegetable stock": "vegetable broth", "digestive biscuits": "graham crackers", "icing sugar": "icing sugar",
+    "garlic clove": "garlic", "garlic cloves": "garlic", "ginger root": "ginger", "root ginger": "ginger",
+    "red chilli": "red chili", "green chilli": "green chili", "chilli powder": "chili powder", "chilli flakes": "chili flakes",
+    "chilli": "chili", "chillies": "chili", "dessicated coconut": "coconut", "desiccated coconut": "coconut",
+    "double concentrate tomato paste": "tomato paste", "basmati": "basmati rice", "long grain rice": "rice",
+    "lemon juice": "lemon juice", "lime juice": "lime juice", "mixed spice": "allspice", "sultanas": "raisins",
+    "golden caster sugar": "sugar", "treacle": "molasses", "black treacle": "molasses", "golden syrup": "corn syrup",
+    "pitta bread": "pita bread", "wholemeal bread": "whole wheat bread", "streaky bacon": "turkey bacon",
+}
+PREP_WORDS = re.compile(r"\b(fresh|freshly|chopped|finely|roughly|sliced|diced|ripe|large|small|medium|extra|good quality|to taste|to serve|for frying|for garnish|optional)\b", re.I)
+
+
+def search_term(name):
+    n = re.sub(r"\(.*?\)", " ", (name or "").lower())
+    n = n.split(",")[0]
+    if n.strip() in SEARCH_ALIASES:
+        return SEARCH_ALIASES[n.strip()]
+    n = re.sub(r"\s+", " ", PREP_WORDS.sub(" ", n)).strip()
+    return SEARCH_ALIASES.get(n, n or (name or "").strip().lower())
+
+
+def infer_meal(title, category):
+    if category in ("Dessert", "Breakfast"):
+        return MEALDB_MEAL[category]
+    t = (title or "").lower()
+    for meal, pat in MEAL_HINTS:
+        if re.search(pat, t):
+            return meal
+    return MEALDB_MEAL.get(category, "dinner")
+
+
 def fetch_mealdb():
     seen, out = set(), []
     for ch in "abcdefghijklmnopqrstuvwxyz":
@@ -110,13 +209,13 @@ def fetch_mealdb():
             for i in range(1, 21):
                 name = (m.get(f"strIngredient{i}") or "").strip()
                 if name:
-                    ings.append({"qty": (m.get(f"strMeasure{i}") or "").strip(), "name": name, "search": name})
+                    ings.append({"qty": (m.get(f"strMeasure{i}") or "").strip(), "name": name, "search": search_term(name)})
             steps = [s.strip() for s in re.split(r"\r?\n+", m.get("strInstructions") or "") if len(s.strip()) > 3]
             steps = [re.sub(r"^(step\s*)?\d+[.)]?\s*", "", s, flags=re.I) for s in steps]
-            area = MEALDB_AREA.get(m.get("strArea"), m.get("strArea") or "")
+            area = normalize_cuisine(MEALDB_AREA.get(m.get("strArea"), m.get("strArea") or ""))
             out.append({
                 "id": "mealdb:" + m["idMeal"], "title": m["strMeal"], "source": "catalog",
-                "cuisine": area, "meal": MEALDB_MEAL.get(m.get("strCategory"), "dinner"),
+                "cuisine": area, "meal": infer_meal(m["strMeal"], m.get("strCategory")),
                 "image": (m.get("strMealThumb") or "") + "/medium", "ingredients": ings, "steps": steps,
                 "tags": [t for t in (m.get("strTags") or "").split(",") if t],
             })
@@ -127,8 +226,10 @@ def finish(recipes, prefix):
     res, dropped = [], 0
     for r in recipes:
         r.setdefault("id", f"{prefix}:{slug(r['title'])}")
-        blob = " ".join([r["title"]] + [f"{i['name']} {i['search']}" for i in r["ingredients"]] + r["steps"])
-        if is_haram(blob):
+        # Checked field by field: an exception word ("turkey") in one ingredient
+        # must never excuse "bacon" in another.
+        fields = [r["title"]] + [f"{i['name']} {i['search']}" for i in r["ingredients"]] + r["steps"]
+        if any(is_haram(f) for f in fields):
             dropped += 1
             print("  dropped (haram filter):", r["title"])
             continue

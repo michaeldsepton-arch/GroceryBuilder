@@ -68,7 +68,7 @@ jobs:
       - name: Build APK
         run: |
           N=${{ github.run_number }}
-          flutter build apk --release --build-name=1.0.$N --build-number=$N
+          flutter build apk --release --target-platform android-arm64 --build-name=1.0.$N --build-number=$N
           cp build/app/outputs/flutter-apk/app-release.apk budget-basket.apk
 
       - name: Publish release
