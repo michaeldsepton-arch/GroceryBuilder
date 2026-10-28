@@ -209,7 +209,17 @@ class Repo {
     final stores = (data['stores'] as List?) ?? const [];
     final items = (data['items'] as List?) ?? const [];
     final stamp = data['generated'] as String?;
+    final prevStamp = await setting('catalog_generated');
+    final newPrices = <String, List<double?>>{}; // id -> [price, was]
     await db.transaction((t) async {
+      // Remember what we were watching so price changes can be recorded.
+      final watched = {
+        for (final r in await t.rawQuery(
+            'SELECT i.id, i.price FROM items i WHERE i.custom = 0 AND ('
+            'i.id IN (SELECT item_id FROM item_meta WHERE favourite = 1 OR times_bought > 0) '
+            'OR i.id IN (SELECT item_id FROM cart))'))
+          r['id'] as String: (r['price'] as num).toDouble()
+      };
       final b = t.batch();
       for (final s in stores.cast<Map<String, dynamic>>()) {
         b.rawInsert(
@@ -229,6 +239,9 @@ class Repo {
         final price = (m['price'] as num?)?.toDouble();
         if (price == null || m['id'] == null || m['name'] == null) continue;
         if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
+        if (watched.containsKey(m['id'])) {
+          newPrices[m['id'] as String] = [price, (m['was'] as num?)?.toDouble()];
+        }
         batch.insert(
             'items',
             {
@@ -255,9 +268,71 @@ class Repo {
         }
       }
       await batch.commit(noResult: true);
+      await _recordHistory(t, watched, newPrices, prevStamp, stamp ?? DateTime.now().toIso8601String());
     });
     await putSetting('catalog_generated', stamp ?? '');
     return items.length;
+  }
+
+  Future<void> _recordHistory(DatabaseExecutor t, Map<String, double> oldPrices,
+      Map<String, List<double?>> newPrices, String? prevStamp, String stamp) async {
+    for (final e in newPrices.entries) {
+      final old = oldPrices[e.key]!;
+      final has = Sqflite.firstIntValue(await t.rawQuery(
+              'SELECT COUNT(*) FROM price_history WHERE item_id = ?', [e.key])) ??
+          0;
+      // Baseline: the price we saw before this refresh.
+      if (has == 0) {
+        await t.insert('price_history',
+            {'item_id': e.key, 'price': old, 'seen': (prevStamp == null || prevStamp.isEmpty) ? '1970-01-01T00:00:00Z' : prevStamp},
+            conflictAlgorithm: ConflictAlgorithm.ignore);
+      }
+      final last = await t.rawQuery(
+          'SELECT price FROM price_history WHERE item_id = ? ORDER BY seen DESC LIMIT 1', [e.key]);
+      final lastPrice = last.isEmpty ? old : (last.first['price'] as num).toDouble();
+      if ((e.value[0]! - lastPrice).abs() > 0.004) {
+        await t.insert('price_history',
+            {'item_id': e.key, 'price': e.value[0], 'was_price': e.value[1], 'seen': stamp},
+            conflictAlgorithm: ConflictAlgorithm.ignore);
+      }
+    }
+  }
+
+  Future<List<PricePoint>> priceHistory(String itemId) async {
+    final rows = await db.query('price_history',
+        where: 'item_id = ?', whereArgs: [itemId], orderBy: 'seen');
+    return rows
+        .map((r) => PricePoint((r['price'] as num).toDouble(), (r['was_price'] as num?)?.toDouble(),
+            DateTime.tryParse(r['seen'] as String) ?? DateTime(1970)))
+        .toList();
+  }
+
+  /// Price drops (last 14 days) and current sales on items we watch.
+  Future<List<PriceAlert>> alerts({DateTime? now}) async {
+    now ??= DateTime.now();
+    final rows = await db.rawQuery(
+        '$_itemSelect WHERE i.custom = 0 AND (m.favourite = 1 OR m.times_bought > 0)');
+    final items = rows.map(Item.fromMap).where(allowed).toList();
+    final out = <PriceAlert>[];
+    for (final it in items) {
+      final hist = await priceHistory(it.id);
+      PriceAlert? drop;
+      if (hist.length >= 2) {
+        final last = hist.last, prev = hist[hist.length - 2];
+        if (last.price < prev.price - 0.004 &&
+            now.difference(last.seen).inDays <= 14) {
+          drop = PriceAlert(it, prev.price, last.price, last.seen, AlertKind.drop);
+        }
+      }
+      if (drop != null) {
+        out.add(drop);
+      } else if (it.onSale) {
+        out.add(PriceAlert(it, it.wasPrice!, it.price,
+            DateTime.tryParse(it.updated ?? '') ?? now, AlertKind.sale));
+      }
+    }
+    out.sort((a, b) => b.pct.compareTo(a.pct));
+    return out;
   }
 
   // ---- backup ----
@@ -269,6 +344,7 @@ class Repo {
         'trips': await db.query('trips'),
         'settings': await db.query('settings'),
         'budgets': await db.query('budgets'),
+        'price_history': await db.query('price_history'),
       };
 
   Future<void> importData(Map<String, dynamic> d) async {
@@ -286,6 +362,7 @@ class Repo {
       await load('trips', 'trips');
       await load('settings', 'settings');
       await load('budgets', 'budgets');
+      await load('price_history', 'price_history');
     });
   }
 

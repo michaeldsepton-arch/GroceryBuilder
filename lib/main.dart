@@ -65,7 +65,13 @@ class _ShellState extends State<Shell> {
                 child: const Icon(Icons.shopping_cart_outlined)),
             label: 'Cart',
           ),
-          const NavigationDestination(icon: Icon(Icons.favorite_border), label: 'My stuff'),
+          NavigationDestination(
+            icon: Badge(
+                isLabelVisible: s.unseenAlerts > 0,
+                label: Text('${s.unseenAlerts}'),
+                child: const Icon(Icons.favorite_border)),
+            label: 'My stuff',
+          ),
           NavigationDestination(
             icon: Badge(
                 isLabelVisible: s.update != null,

@@ -21,7 +21,7 @@ class AppDb {
 
   static Future<AppDb> open({String? path}) async {
     path ??= p.join(await getDatabasesPath(), 'budget_basket.db');
-    final db = await openDatabase(path, version: 2, onCreate: _create, onUpgrade: _upgrade);
+    final db = await openDatabase(path, version: 3, onCreate: _create, onUpgrade: _upgrade);
     final app = AppDb._(db);
     await app._seedStores();
     return app;
@@ -34,12 +34,20 @@ class AppDb {
       recipe_id TEXT PRIMARY KEY, favourite INTEGER DEFAULT 0, cooked INTEGER DEFAULT 0)''');
   }
 
+  static Future<void> _historyTable(Database db) async {
+    await db.execute('''CREATE TABLE IF NOT EXISTS price_history(
+      item_id TEXT NOT NULL, price REAL NOT NULL, was_price REAL, seen TEXT NOT NULL,
+      PRIMARY KEY(item_id, seen))''');
+  }
+
   static Future<void> _upgrade(Database db, int from, int to) async {
     if (from < 2) await _recipeTables(db);
+    if (from < 3) await _historyTable(db);
   }
 
   static Future<void> _create(Database db, int v) async {
     await _recipeTables(db);
+    await _historyTable(db);
     await db.execute('''CREATE TABLE stores(
       id TEXT PRIMARY KEY, name TEXT NOT NULL, color INTEGER NOT NULL,
       location TEXT, has_online INTEGER DEFAULT 1, sort_order INTEGER DEFAULT 0)''');

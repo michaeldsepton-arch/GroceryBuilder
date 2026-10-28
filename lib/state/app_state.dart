@@ -40,6 +40,8 @@ class AppState extends ChangeNotifier {
   UpdateInfo? update;
   late String photoDir;
   int revision = 0;
+  List<PriceAlert> alerts = [];
+  int unseenAlerts = 0;
 
   @override
   void notifyListeners() {
@@ -115,6 +117,15 @@ class AppState extends ChangeNotifier {
     spentEarlierThisWeek = trips.fold(0, (a, t) => a + t.total);
     catalogStamp = await repo.setting('catalog_generated');
     catalogCount = await repo.catalogCount();
+    alerts = await repo.alerts();
+    final seen = DateTime.tryParse(await repo.setting('alerts_seen') ?? '') ?? DateTime(1970);
+    unseenAlerts = alerts.where((a) => a.when.isAfter(seen)).length;
+    notifyListeners();
+  }
+
+  Future<void> markAlertsSeen() async {
+    await repo.putSetting('alerts_seen', DateTime.now().toUtc().toIso8601String());
+    unseenAlerts = 0;
     notifyListeners();
   }
 

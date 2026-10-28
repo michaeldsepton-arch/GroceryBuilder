@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../data/matching.dart';
+import '../data/recipe_repo.dart';
+
 import '../models/models.dart';
 import '../models/recipe.dart';
 import '../models/units.dart';
@@ -14,12 +17,20 @@ class _Line {
   _Line(this.ing) : term = ing.search;
   final Ingredient ing;
   String term;
-  Item? suggested;
+  Suggestion? suggested;
   Item? chosen;
   String? subLabel;
   bool have = false;
   bool loading = true;
-  Item? get item => chosen ?? suggested;
+  Need? need;
+  Item? get item => chosen ?? suggested?.item;
+
+  /// How much to buy and what it costs for [item] given the recipe's need.
+  Cover? get buy {
+    final i = item;
+    if (i == null) return null;
+    return chosen != null ? cover(i, need) : suggested!.cover;
+  }
 }
 
 class RecipeDetailScreen extends StatefulWidget {
@@ -34,24 +45,38 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   late final List<_Line> lines = [for (final i in widget.recipe.ingredients) _Line(i)];
   static const _pantry = {'salt', 'water', 'ice', 'black pepper', 'pepper', 'ice cubes'};
 
+  static final _water = RegExp(r'^(warm |cold |hot |boiling |ice |iced |tap )?(water|ice cubes?)$');
+
   @override
   void initState() {
     super.initState();
     for (final l in lines) {
-      l.have = _pantry.contains(l.ing.name.toLowerCase().trim());
+      final n = l.ing.name.toLowerCase().trim();
+      l.have = _pantry.contains(n) || _water.hasMatch(n);
       _suggest(l);
     }
   }
 
+  double get _factor => servings / widget.recipe.servings;
+
   Future<void> _suggest(_Line l) async {
     final rr = context.read<AppState>().recipes;
     setState(() => l.loading = true);
-    final it = await rr.suggest(l.term);
+    // A substitute has its own amount, so only the original ingredient is sized.
+    l.need = l.subLabel == null ? parseNeed(l.ing.qty, _factor) : null;
+    final it = await rr.suggest(l.term, need: l.need);
     if (!mounted) return;
     setState(() {
       l.suggested = it;
       l.loading = false;
     });
+  }
+
+  void _resize(int delta) {
+    setState(() => servings = (servings + delta).clamp(1, 99));
+    for (final l in lines) {
+      if (!l.have) _suggest(l);
+    }
   }
 
   Future<void> _browse(_Line l) async {
@@ -116,12 +141,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   }
 
   List<_Line> get _toBuy => lines.where((l) => !l.have && l.item != null).toList();
-  double get _estimate => _toBuy.fold(0, (a, l) => a + l.item!.price);
+  double get _estimate => _toBuy.fold(0, (a, l) => a + l.buy!.cost);
 
   Future<void> _addAll() async {
     final s = context.read<AppState>();
     for (final l in _toBuy) {
-      if (s.qtyOf(l.item!.id) == 0) await s.add(l.item!);
+      if (s.qtyOf(l.item!.id) == 0) await s.setQty(l.item!, l.buy!.qty);
     }
     if (!mounted) return;
     ScaffoldMessenger.of(context)
@@ -133,7 +158,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     final s = context.watch<AppState>();
     final r = widget.recipe;
     final fav = s.recipes.favourites.contains(r.id);
-    final factor = servings / r.servings;
+    final factor = _factor;
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -179,7 +204,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           ),
           IconButton.filledTonal(
               visualDensity: VisualDensity.compact,
-              onPressed: servings > 1 ? () => setState(() => servings--) : null,
+              onPressed: servings > 1 ? () => _resize(-1) : null,
               icon: const Icon(Icons.remove)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -187,7 +212,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           ),
           IconButton.filledTonal(
               visualDensity: VisualDensity.compact,
-              onPressed: () => setState(() => servings++),
+              onPressed: () => _resize(1),
               icon: const Icon(Icons.add)),
         ]),
         const SizedBox(height: 6),
@@ -294,9 +319,11 @@ class _IngredientCard extends StatelessWidget {
                             style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
                         Text('${store!.name} · ${it.unitPrice.primary}',
                             style: const TextStyle(color: BB.muted, fontSize: 12)),
+                        Text(_buyText(it, line.buy!),
+                            style: const TextStyle(color: BB.green700, fontSize: 12, fontWeight: FontWeight.w700)),
                       ]),
                     ),
-                    Text(money(it.price), style: serif(17)),
+                    Text(money(line.buy!.cost), style: serif(17)),
                   ]),
                 ),
               )
@@ -321,4 +348,11 @@ class _IngredientCard extends StatelessWidget {
       ),
     );
   }
+}
+
+String _buyText(Item i, Cover c) {
+  if (i.variable) return 'Buy ${sizeBoth(c.qty, Unit.g)}';
+  final n = c.qty.round();
+  final size = i.sizeText.isEmpty ? '' : ' · ${i.sizeText}';
+  return n == 1 ? 'Buy 1$size' : 'Buy $n × ${i.sizeText.isEmpty ? 'pack' : i.sizeText}';
 }

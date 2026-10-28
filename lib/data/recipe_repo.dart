@@ -6,6 +6,7 @@ import 'package:sqflite/sqflite.dart';
 import '../models/models.dart';
 import '../models/recipe.dart';
 import 'halal.dart';
+import 'matching.dart';
 import 'repo.dart';
 
 class SubOption {
@@ -22,6 +23,7 @@ class RecipeRepo {
   Set<String> favourites = {};
   int hidden = 0; // recipes dropped by the halal filter
   final List<MapEntry<List<String>, List<SubOption>>> _subs = [];
+  Map<String, List<String>> aliases = {};
 
   Future<void> load() async {
     final recipes = <Recipe>[];
@@ -49,6 +51,12 @@ class RecipeRepo {
     favourites = {
       for (final r in await db.query('recipe_meta', where: 'favourite = 1')) r['recipe_id'] as String
     };
+    if (aliases.isEmpty) {
+      try {
+        final a = jsonDecode(await rootBundle.loadString('assets/recipes/aliases.json')) as Map<String, dynamic>;
+        aliases = {for (final e in a.entries) e.key.toLowerCase(): (e.value as List).cast<String>()};
+      } catch (_) {}
+    }
     if (_subs.isEmpty) {
       final subs = jsonDecode(await rootBundle.loadString('assets/recipes/substitutions.json')) as List;
       for (final m in subs.cast<Map<String, dynamic>>()) {
@@ -109,23 +117,33 @@ class RecipeRepo {
       r'chicken|beef|lamb|goat|mutton|veal|mince|qeema|keema|steak|drumstick|wings|thigh|brisket|oxtail',
       caseSensitive: false);
 
-  /// Cheapest sensible product for an ingredient search; meat prefers the
-  /// halal market. Returns null when nothing in the catalog matches.
-  Future<Item?> suggest(String term) async {
-    final r = await repo.search(term, limit: 80);
-    if (r.isEmpty) return null;
-    var pool = r;
+  /// Best product for an ingredient: relevance first, then the option that covers
+  /// the needed amount for the least money. Meat prefers the halal market.
+  /// Null when nothing in the catalog matches.
+  Future<Suggestion?> suggest(String term, {Need? need}) async {
+    final byId = <String, Item>{};
+    final terms = [term, ...?aliases[term.toLowerCase()]];
+    for (final t in terms) {
+      for (final i in await repo.search(t, limit: 80)) {
+        byId[i.id] = i;
+      }
+      // Try alternatives only when the main term found little.
+      if (byId.length >= 6) break;
+    }
+    var pool = byId.values.toList();
+    if (pool.isEmpty) return null;
     if (_meatTerm.hasMatch(term)) {
-      final h = r.where((i) => i.storeId == 'halal').toList();
+      final h = pool.where((i) => i.storeId == 'halal').toList();
       if (h.isNotEmpty) pool = h;
     }
-    // Compare like with like: use the unit kind with the most matches.
-    final byKind = <int, List<Item>>{};
-    for (final i in pool) {
-      byKind.putIfAbsent(i.unitPrice.kind.index, () => []).add(i);
-    }
-    final group = byKind.values.reduce((a, b) => a.length >= b.length ? a : b);
-    group.sort((a, b) => a.unitPrice.compareValue.compareTo(b.unitPrice.compareValue));
-    return group.first;
+    final best = pickBest(pool, terms, need);
+    if (best == null) return null;
+    return Suggestion(best.item, best.cover);
   }
+}
+
+class Suggestion {
+  Suggestion(this.item, this.cover);
+  final Item item;
+  final Cover cover;
 }

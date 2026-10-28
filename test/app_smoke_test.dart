@@ -15,7 +15,8 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 Future<AppState> _boot() async {
   sqfliteFfiInit();
   databaseFactory = databaseFactoryFfi;
-  final db = await AppDb.open(path: inMemoryDatabasePath);
+  // A real file per call: sqflite shares one in-memory database across opens.
+  final db = await AppDb.open(path: '${Directory.systemTemp.createTempSync('bb_db').path}/t.db');
   final state = AppState(Repo(db));
   final tmp = Directory.systemTemp.createTempSync('bb_photos').path;
   await state.init(photoDirOverride: tmp, background: false);
@@ -85,13 +86,40 @@ void main() {
     expect(seeded.single.variable, isTrue);
   });
 
+  test('price drops on favourites are recorded and surfaced as alerts', () async {
+    final state = await _boot(); // own database: applyCatalog replaces every store item
+    Future<void> catalog(String stamp, double yogurt, double? was) => state.repo.applyCatalog({
+          'generated': stamp,
+          'stores': [],
+          'items': [
+            {'id': 'superstore:5', 'store': 'superstore', 'name': 'Plain Yogurt 750g', 'price': yogurt, 'was': was, 'size': 750, 'unit': 'g'},
+          ],
+        });
+    final it = (await state.repo.item('superstore:5'))!;
+    await state.setFavourite(it, true);
+    await catalog('2026-10-29T00:00:00Z', 3.99, null); // unchanged: baseline only
+    expect(await state.repo.alerts(now: DateTime.utc(2026, 10, 29)), isEmpty);
+    await catalog('2026-10-30T00:00:00Z', 3.49, 3.99); // dropped and on sale
+    final a = await state.repo.alerts(now: DateTime.utc(2026, 10, 30, 12));
+    expect(a.length, 1);
+    expect(a.single.kind.name, 'drop');
+    expect(a.single.oldPrice, 3.99);
+    expect(a.single.newPrice, 3.49);
+    expect(a.single.pct, 13);
+    final h = await state.repo.priceHistory('superstore:5');
+    expect(h.map((p) => p.price), [3.99, 3.49]);
+    // drops older than 14 days stop alerting, but a standing sale still shows
+    final later = await state.repo.alerts(now: DateTime.utc(2026, 12, 1));
+    expect(later.single.kind.name, 'sale');
+  });
+
   test('recipes load, none contain haram text, suggestions come from the catalog', () async {
     expect(state.recipes.all.length, greaterThan(80));
     final r = state.recipes.all.firstWhere((r) => r.title == 'Chicken Biryani');
     expect(r.ingredients, isNotEmpty);
     final rice = await state.recipes.suggest('basmati rice');
     expect(rice, isNotNull);
-    expect(rice!.id, 'superstore:1'); // 4 kg bag: \$0.30/100g beats 2 kg: \$0.37/100g
+    expect(rice!.item.id, 'walmart:2'); // amount unknown: the 2 kg bag (only ~25% dearer per 100 g) beats a 4 kg bulk bag
     final subs = state.recipes.substitutesFor(r.ingredients.firstWhere((i) => i.name.contains('yogurt')));
     expect(subs, isNotEmpty);
   });

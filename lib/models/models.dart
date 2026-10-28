@@ -200,3 +200,25 @@ class Trip {
   final int itemCount;
   double get total => subtotal + tax;
 }
+
+enum AlertKind { drop, sale }
+
+/// A favourite/often-bought item whose price fell, or that is on sale now.
+class PriceAlert {
+  PriceAlert(this.item, this.oldPrice, this.newPrice, this.when, this.kind);
+  final Item item;
+  final double oldPrice;
+  final double newPrice;
+  final DateTime when;
+  final AlertKind kind;
+
+  double get saved => oldPrice - newPrice;
+  int get pct => oldPrice <= 0 ? 0 : ((saved / oldPrice) * 100).round();
+}
+
+class PricePoint {
+  PricePoint(this.price, this.wasPrice, this.seen);
+  final double price;
+  final double? wasPrice;
+  final DateTime seen;
+}

@@ -96,6 +96,7 @@ class _FrequentScreenState extends State<FrequentScreen> {
             ],
           ),
         ),
+        if (s.alerts.isNotEmpty) _AlertsCard(s),
         Expanded(
           child: shown.isEmpty
               ? Center(
@@ -190,4 +191,65 @@ class _Loc extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 color: empty ? BB.muted : BB.green900)),
       );
+}
+
+class _AlertsCard extends StatefulWidget {
+  const _AlertsCard(this.s);
+  final AppState s;
+  @override
+  State<_AlertsCard> createState() => _AlertsCardState();
+}
+
+class _AlertsCardState extends State<_AlertsCard> {
+  bool open = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.s;
+    final a = s.alerts;
+    final fresh = s.unseenAlerts;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xFFFBE9E4),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: BB.tomato.withValues(alpha: 0.25)),
+        ),
+        child: Column(children: [
+          ListTile(
+            dense: true,
+            leading: const Icon(Icons.local_offer, color: BB.tomato),
+            title: Text(
+                fresh > 0
+                    ? '$fresh new deal${fresh == 1 ? '' : 's'} on your items'
+                    : '${a.length} deal${a.length == 1 ? '' : 's'} on your items',
+                style: const TextStyle(fontWeight: FontWeight.w800)),
+            subtitle: const Text('Price drops and sales on favourites and things you buy often'),
+            trailing: Icon(open ? Icons.expand_less : Icons.expand_more),
+            onTap: () {
+              setState(() => open = !open);
+              if (!open) return;
+              s.markAlertsSeen();
+            },
+          ),
+          if (open)
+            for (final x in a.take(12))
+              ListTile(
+                dense: true,
+                leading: ItemImage(x.item, size: 40, radius: 8),
+                title: Text(x.item.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+                subtitle: Text(
+                    '${s.storeById(x.item.storeId).name} · ${x.kind == AlertKind.drop ? 'price dropped' : 'on sale'}'),
+                trailing: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.end, children: [
+                  Text(money(x.newPrice), style: serif(16, color: BB.tomato)),
+                  Text('was ${money(x.oldPrice)} · -${x.pct}%',
+                      style: const TextStyle(fontSize: 11, color: BB.muted)),
+                ]),
+                onTap: () => showItemSheet(context, x.item),
+              ),
+        ]),
+      ),
+    );
+  }
 }

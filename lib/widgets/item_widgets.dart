@@ -205,6 +205,7 @@ class _ItemSheetState extends State<ItemSheet> {
             const Text('5% GST applies', style: TextStyle(color: BB.goldDark)),
           const SizedBox(height: 14),
           Align(alignment: Alignment.centerLeft, child: CartControl(it)),
+          _History(it.id, it.price),
           const Divider(height: 32),
           Text('Where to find it in the store', style: serif(18)),
           const SizedBox(height: 10),
@@ -238,6 +239,48 @@ class _ItemSheetState extends State<ItemSheet> {
           ),
         ]),
       ),
+    );
+  }
+}
+
+/// Recorded prices for this item (kept for favourites and items you buy).
+class _History extends StatelessWidget {
+  const _History(this.itemId, this.current);
+  final String itemId;
+  final double current;
+
+  @override
+  Widget build(BuildContext context) {
+    final repo = context.read<AppState>().repo;
+    return FutureBuilder<List<PricePoint>>(
+      future: repo.priceHistory(itemId),
+      builder: (_, snap) {
+        final h = snap.data ?? const [];
+        if (h.length < 2) {
+          return const Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Text('Price tracking starts once this is a favourite or you buy it.',
+                style: TextStyle(color: BB.muted, fontSize: 12)),
+          );
+        }
+        final prices = h.map((e) => e.price);
+        final lo = prices.reduce((a, b) => a < b ? a : b);
+        final hi = prices.reduce((a, b) => a > b ? a : b);
+        return Padding(
+          padding: const EdgeInsets.only(top: 12),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Price history', style: serif(16)),
+            const SizedBox(height: 4),
+            Text('Lowest ${money(lo)} · highest ${money(hi)} · ${current <= lo + 0.004 ? 'at its lowest now' : '${money(current - lo)} above the lowest'}',
+                style: const TextStyle(color: BB.muted, fontSize: 12.5)),
+            const SizedBox(height: 6),
+            for (final p in h.reversed.take(5))
+              Text(
+                  '${p.seen.year <= 1970 ? 'earlier' : '${p.seen.year}-${p.seen.month.toString().padLeft(2, '0')}-${p.seen.day.toString().padLeft(2, '0')}'}   ${money(p.price)}',
+                  style: const TextStyle(fontSize: 12.5)),
+          ]),
+        );
+      },
     );
   }
 }
