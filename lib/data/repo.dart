@@ -5,6 +5,7 @@ import 'package:sqflite/sqflite.dart';
 import '../models/models.dart';
 import '../models/units.dart';
 import 'db.dart';
+import 'halal.dart';
 
 enum SortMode { unitPrice, price, name, discount }
 
@@ -12,6 +13,13 @@ class Repo {
   Repo(this.app);
   final AppDb app;
   Database get db => app.db;
+
+  /// Hide supermarket meat that is not halal-slaughtered (halal market stays).
+  bool halalMeatOnly = true;
+
+  bool allowed(Item i) =>
+      !Halal.isHaram('${i.name} ${i.brand} ${i.category}') &&
+      !(halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId));
 
   static const _itemSelect = '''SELECT i.*, m.favourite, m.aisle, m.spot, m.note,
       m.times_bought FROM items i LEFT JOIN item_meta m ON m.item_id = i.id''';
@@ -44,8 +52,8 @@ class Repo {
     if (customOnly) where.add('i.custom = 1');
     if (onSaleOnly) where.add('i.was_price IS NOT NULL AND i.was_price > i.price');
     final rows = await db.rawQuery(
-        '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'} LIMIT $limit', args);
-    return rows.map(Item.fromMap).toList();
+        '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'} LIMIT ${limit * 3}', args);
+    return rows.map(Item.fromMap).where(allowed).take(limit).toList();
   }
 
   Future<Item?> item(String id) async {
@@ -56,7 +64,7 @@ class Repo {
   Future<List<Item>> favourites() async {
     final rows = await db.rawQuery(
         '$_itemSelect WHERE m.favourite = 1 ORDER BY m.times_bought DESC, i.name');
-    return rows.map(Item.fromMap).toList();
+    return rows.map(Item.fromMap).where(allowed).toList();
   }
 
   Future<List<Item>> oftenBought() async {
@@ -206,6 +214,7 @@ class Repo {
       for (final m in items.cast<Map<String, dynamic>>()) {
         final price = (m['price'] as num?)?.toDouble();
         if (price == null || m['id'] == null || m['name'] == null) continue;
+        if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
         batch.insert(
             'items',
             {

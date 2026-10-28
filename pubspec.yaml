@@ -43,6 +43,8 @@ flutter:
     - assets/brand/
     - assets/seed/
     - assets/seed/images/
+    - assets/recipes/
+    - assets/recipes/images/
   fonts:
     - family: Fraunces
       fonts:

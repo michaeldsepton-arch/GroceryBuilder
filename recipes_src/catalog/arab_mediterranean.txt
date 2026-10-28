@@ -1,0 +1,361 @@
+== Chicken Kabsa
+cuisine: Arab | meal: dinner | minutes: 75 | servings: 6 | img: kabsa
+- 2 cups | Basmati rice | basmati rice
+- 1 kg | Chicken pieces | chicken thighs
+- 2 | Onions, chopped | onions
+- 3 | Tomatoes, chopped | tomatoes
+- 2 tbsp | Tomato paste | tomato paste
+- 2 tbsp | Kabsa spice mix | kabsa spice
+- 4 | Dried limes (loomi) | dried lime
+- 1/4 cup | Oil or ghee | ghee
+- 1/4 cup | Raisins and toasted almonds | almonds
+- | Salt | salt
+> Brown the chicken in ghee, remove, then fry the onions until golden.
+> Add tomatoes, tomato paste, spices, dried limes and chicken with 4 cups of water. Simmer 30 minutes.
+> Add the rinsed rice to the stock, cover and cook on low for 20 minutes. Top with raisins and almonds.
+
+== Chicken Mandi
+cuisine: Arab | meal: dinner | minutes: 80 | servings: 6 | img: chicken mandi
+- 3 cups | Basmati rice | basmati rice
+- 1 | Whole chicken, cut up | whole chicken
+- 3 tbsp | Mandi spice mix | mandi spice
+- 1/3 cup | Oil | vegetable oil
+- 2 | Dried limes | dried lime
+- 1 | Onion, sliced | onions
+- | Salt | salt
+> Rub the chicken with oil, spices and salt and roast at 200°C for about 45 minutes until cooked.
+> Cook the rice with onion, dried limes and a little spice in stock until fluffy.
+> Serve the chicken over the rice.
+
+== Lamb Mansaf
+cuisine: Arab | meal: dinner | minutes: 150 | servings: 6 | img: mansaf
+- 1 kg | Lamb shoulder, cubed | lamb
+- 2 cups | Jameed or plain yogurt | plain yogurt
+- 2 cups | Rice | rice
+- 1 | Onion | onions
+- 1/4 cup | Pine nuts and almonds, toasted | pine nuts
+- 2 tbsp | Ghee | ghee
+- 1 | Flatbread | pita bread
+- | Salt | salt
+> Simmer the lamb with onion until very tender, about 1.5 hours.
+> Warm the yogurt gently with a little lamb broth, stirring constantly in one direction so it does not split.
+> Cook the rice. Layer bread, rice and lamb on a platter, pour over the yogurt sauce and top with nuts.
+
+== Chicken Shawarma
+cuisine: Arab | meal: dinner | minutes: 45 | servings: 4 | img: chicken shawarma
+- 800 g | Chicken thighs, boneless | boneless chicken thighs
+- 1/3 cup | Plain yogurt | plain yogurt
+- 2 tbsp | Shawarma spice | shawarma spice
+- 3 tbsp | Lemon juice | lemon juice
+- 3 cloves | Garlic, minced | garlic
+- 2 tbsp | Olive oil | olive oil
+- 4 | Pita breads | pita bread
+- | Garlic sauce, pickles, tomato and cucumber | pickles
+> Marinate the chicken in yogurt, spice, lemon, garlic and oil for at least 2 hours.
+> Roast or pan-fry until charred and cooked through, then slice thinly.
+> Wrap in warm pita with garlic sauce, pickles and vegetables.
+
+== Hummus
+cuisine: Arab | meal: snack | minutes: 15 | servings: 6 | img: hummus
+- 2 cans | Chickpeas, drained | chickpeas
+- 1/3 cup | Tahini | tahini
+- 3 | Lemons, juiced | lemon juice
+- 2 cloves | Garlic | garlic
+- 1/4 cup | Cold water or ice water | water
+- 3 tbsp | Olive oil | olive oil
+- 1/2 tsp | Cumin | cumin
+- | Salt | salt
+> Blend tahini and lemon juice for a minute until pale. Add garlic, chickpeas, cumin, salt and ice water and blend until very smooth.
+> Serve drizzled with olive oil and paprika.
+
+== Falafel
+cuisine: Arab | meal: lunch | minutes: 40 | servings: 4 | img: falafel
+- 2 cups | Dried chickpeas, soaked overnight | dried chickpeas
+- 1 | Onion, chopped | onions
+- 4 cloves | Garlic | garlic
+- 1 cup | Fresh parsley and coriander | parsley
+- 2 tsp | Cumin | cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1 tsp | Baking powder | baking powder
+- | Oil, for frying | vegetable oil
+- | Salt | salt
+> Blend everything except the baking powder to a coarse paste. Rest 30 minutes, then stir in the baking powder.
+> Shape into balls and fry in hot oil until deep golden and crisp.
+> Serve in pita with tahini sauce, tomatoes and pickles.
+
+== Tabbouleh
+cuisine: Arab | meal: lunch | minutes: 20 | servings: 4 | img: tabbouleh
+- 3 bunches | Flat-leaf parsley, finely chopped | parsley
+- 1/4 cup | Fine bulgur | bulgur
+- 4 | Tomatoes, diced | tomatoes
+- 1/4 cup | Fresh mint | mint
+- 3 | Green onions | green onions
+- 1/4 cup | Lemon juice | lemon juice
+- 1/4 cup | Olive oil | olive oil
+- | Salt | salt
+> Soak the bulgur in lemon juice for 15 minutes. Mix with parsley, tomatoes, mint and green onions.
+> Dress with olive oil and salt.
+
+== Fattoush
+cuisine: Arab | meal: lunch | minutes: 20 | servings: 4 | img: fattoush salad
+- 2 | Pita breads, toasted | pita bread
+- 1 | Romaine lettuce | romaine lettuce
+- 3 | Tomatoes | tomatoes
+- 2 | Cucumbers | cucumber
+- 1 bunch | Radishes | radishes
+- 2 tbsp | Sumac | sumac
+- 1/4 cup | Olive oil | olive oil
+- 3 tbsp | Lemon juice | lemon juice
+- | Mint | mint
+- | Salt | salt
+> Chop the vegetables and herbs, break in the crisp pita.
+> Whisk olive oil, lemon, sumac and salt, dress just before serving.
+
+== Mutabbal (Baba Ghanoush)
+cuisine: Arab | meal: snack | minutes: 40 | servings: 6 | img: baba ganoush
+- 2 | Eggplants | eggplant
+- 1/4 cup | Tahini | tahini
+- 2 | Lemons, juiced | lemon juice
+- 2 cloves | Garlic | garlic
+- 2 tbsp | Olive oil | olive oil
+- | Salt | salt
+> Char the eggplants over a flame or in a very hot oven until collapsed. Scoop out the flesh.
+> Mash with tahini, lemon, garlic and salt. Serve drizzled with olive oil.
+
+== Shakshuka
+cuisine: Mediterranean | meal: breakfast | minutes: 30 | servings: 3 | img: shakshuka
+- 6 | Eggs | eggs
+- 1 | Onion, sliced | onions
+- 1 | Red bell pepper, sliced | red pepper
+- 3 cloves | Garlic | garlic
+- 1 can | Crushed tomatoes | crushed tomatoes
+- 1 tsp | Cumin | cumin
+- 1 tsp | Paprika | paprika
+- 3 tbsp | Olive oil | olive oil
+- | Salt, parsley | parsley
+> Soften onion and pepper in olive oil, add garlic and spices, then the tomatoes. Simmer 10 minutes.
+> Make wells in the sauce and crack in the eggs. Cover and cook until the whites are set.
+> Scatter with parsley and serve with bread.
+
+== Lentil Soup
+cuisine: Arab | meal: lunch | minutes: 40 | servings: 6 | img: lentil soup
+- 1 1/2 cups | Red lentils | red lentils
+- 1 | Onion, chopped | onions
+- 2 | Carrots, diced | carrots
+- 3 cloves | Garlic | garlic
+- 1 tsp | Cumin | cumin
+- 1 | Lemon | lemon
+- 2 tbsp | Olive oil | olive oil
+- 6 cups | Water or chicken broth | chicken broth
+- | Salt | salt
+> Sauté onion, carrots and garlic in oil with cumin. Add lentils and broth and simmer until soft, 25 minutes.
+> Blend until smooth and finish with lemon juice.
+
+== Chicken Musakhan
+cuisine: Arab | meal: dinner | minutes: 70 | servings: 4 | img: musakhan
+- 1 kg | Chicken pieces | chicken thighs
+- 4 | Onions, sliced | onions
+- 1/3 cup | Olive oil | olive oil
+- 2 tbsp | Sumac | sumac
+- 1 tsp | Allspice | allspice
+- 4 | Taboon or flatbreads | flatbread
+- 1/4 cup | Toasted pine nuts | pine nuts
+- | Salt | salt
+> Roast the chicken with salt and allspice until cooked.
+> Cook the onions slowly in olive oil with sumac until deeply soft and sweet.
+> Pile the onions and chicken over the bread, scatter with pine nuts and bake 10 minutes.
+
+== Stuffed Grape Leaves
+cuisine: Mediterranean | meal: snack | minutes: 90 | servings: 8 | img: dolma grape leaves
+- 1 jar | Grape leaves | grape leaves
+- 1 cup | Short-grain rice | rice
+- 2 | Onions, finely chopped | onions
+- 2 | Tomatoes, diced | tomatoes
+- 1/2 cup | Parsley and mint | parsley
+- 1/3 cup | Olive oil | olive oil
+- 1 | Lemon | lemon
+- | Salt | salt
+> Mix rice, onions, tomatoes, herbs, oil and salt. Roll a spoonful in each leaf.
+> Pack tightly in a pot, add water, oil and lemon juice, weigh down with a plate and simmer 45 minutes.
+
+== Greek Salad
+cuisine: Mediterranean | meal: lunch | minutes: 10 | servings: 4 | img: greek salad
+- 4 | Tomatoes, wedged | tomatoes
+- 1 | Cucumber, chunked | cucumber
+- 1 | Red onion, sliced | red onion
+- 1/2 cup | Kalamata olives | olives
+- 200 g | Feta cheese | feta cheese
+- 1/4 cup | Olive oil | olive oil
+- 1 tsp | Dried oregano | oregano
+> Toss the vegetables and olives. Top with feta, oil and oregano.
+
+== Lemon Herb Roast Chicken
+cuisine: Mediterranean | meal: dinner | minutes: 80 | servings: 4 | img: roast chicken lemon herb
+- 1 | Whole chicken | whole chicken
+- 2 | Lemons | lemons
+- 6 cloves | Garlic | garlic
+- 1/4 cup | Olive oil | olive oil
+- 1 tbsp | Dried oregano or thyme | oregano
+- 1 kg | Baby potatoes | baby potatoes
+- | Salt and pepper | salt
+> Rub the chicken with oil, salt, herbs and lemon zest; stuff with lemon halves and garlic.
+> Roast at 200°C with the potatoes around it for about 70 minutes until the juices run clear.
+
+== Chicken Souvlaki
+cuisine: Mediterranean | meal: dinner | minutes: 35 | servings: 4 | img: chicken souvlaki
+- 800 g | Chicken breast, cubed | chicken breast
+- 1/4 cup | Olive oil | olive oil
+- 3 | Lemons, juiced | lemon juice
+- 4 cloves | Garlic | garlic
+- 2 tsp | Dried oregano | oregano
+- 4 | Pitas | pita bread
+- | Tzatziki | tzatziki
+> Marinate the chicken in oil, lemon, garlic and oregano for 1 hour.
+> Thread onto skewers and grill 10 minutes, turning. Serve in pita with tzatziki.
+
+== Tzatziki
+cuisine: Mediterranean | meal: snack | minutes: 10 | servings: 6 | img: tzatziki
+- 2 cups | Greek yogurt | greek yogurt
+- 1 | Cucumber, grated and squeezed | cucumber
+- 2 cloves | Garlic | garlic
+- 1 tbsp | Olive oil | olive oil
+- 1 tbsp | Dill or mint | dill
+- | Salt | salt
+> Mix everything and chill 30 minutes.
+
+== Turkish Menemen
+cuisine: Turkish | meal: breakfast | minutes: 20 | servings: 2 | img: menemen
+- 4 | Eggs | eggs
+- 3 | Tomatoes, diced | tomatoes
+- 2 | Green peppers, sliced | green pepper
+- 1 | Onion, chopped | onions
+- 2 tbsp | Butter or olive oil | butter
+- 1 tsp | Chili flakes | chili flakes
+- | Salt | salt
+> Cook onion and peppers in butter until soft, add tomatoes and cook until jammy.
+> Pour in the beaten eggs and stir gently until just set. Serve with bread.
+
+== Adana Kebab
+cuisine: Turkish | meal: dinner | minutes: 40 | servings: 4 | img: adana kebab
+- 600 g | Ground lamb or beef | ground lamb
+- 1 | Red pepper, finely minced | red pepper
+- 1 | Onion, grated | onions
+- 2 tsp | Chili flakes | chili flakes
+- 1 tsp | Cumin | cumin
+- 1 tsp | Paprika | paprika
+- | Flatbread and sumac onions, to serve | flatbread
+- | Salt | salt
+> Knead everything for 5 minutes until sticky, rest 30 minutes.
+> Mould along flat skewers and grill, turning, until cooked and charred.
+
+== Red Lentil Kofte
+cuisine: Turkish | meal: snack | minutes: 45 | servings: 6 | img: mercimek koftesi
+- 1 cup | Red lentils | red lentils
+- 3/4 cup | Fine bulgur | bulgur
+- 1 | Onion, finely chopped | onions
+- 2 tbsp | Tomato paste | tomato paste
+- 3 tbsp | Olive oil | olive oil
+- 3 | Green onions | green onions
+- 1 tsp | Cumin | cumin
+- | Parsley, lettuce leaves, lemon | parsley
+> Cook the lentils in water until soft, stir in the bulgur, cover and rest 15 minutes.
+> Fry the onion in oil with tomato paste, mix into the lentils with the green onions, cumin, parsley and salt.
+> Shape into small ovals and serve in lettuce leaves with lemon.
+
+== Persian Chelo Kabab
+cuisine: Persian | meal: dinner | minutes: 60 | servings: 4 | img: chelo kabab koobideh
+- 600 g | Ground beef or lamb | ground beef
+- 1 | Onion, grated and squeezed | onions
+- 1 tsp | Turmeric | turmeric
+- 2 cups | Basmati rice | basmati rice
+- 2 tbsp | Butter | butter
+- 1 | Tomato per person, grilled | tomatoes
+- 1 tsp | Sumac | sumac
+- | Salt | salt
+> Knead the meat with onion, turmeric and salt until sticky; rest 1 hour.
+> Press onto flat skewers and grill until browned.
+> Boil the rice until nearly done, drain and steam with butter. Serve with grilled tomatoes and sumac.
+
+== Persian Tahdig Rice
+cuisine: Persian | meal: dinner | minutes: 60 | servings: 6 | img: tahdig
+- 3 cups | Basmati rice | basmati rice
+- 3 tbsp | Plain yogurt | plain yogurt
+- 1/4 cup | Oil or butter | vegetable oil
+- 1/2 tsp | Saffron, bloomed in hot water | saffron
+- | Salt | salt
+> Par-boil the rice in salted water for 6 minutes and drain.
+> Mix a cup of rice with yogurt, saffron and oil and spread over the bottom of a non-stick pot.
+> Pile on the remaining rice, poke steam holes, wrap the lid in a towel and cook on low 40 minutes until a golden crust forms.
+
+== Moroccan Chicken Tagine
+cuisine: Moroccan | meal: dinner | minutes: 70 | servings: 5 | img: chicken tagine
+- 1 kg | Chicken pieces | chicken thighs
+- 2 | Onions, sliced | onions
+- 1/3 cup | Green olives | green olives
+- 1 | Preserved lemon or fresh lemon | lemon
+- 2 tsp | Ras el hanout | ras el hanout
+- 1 tsp | Turmeric | turmeric
+- 1 tsp | Ginger powder | ground ginger
+- 3 cloves | Garlic | garlic
+- 2 tbsp | Olive oil | olive oil
+- | Cilantro | cilantro
+> Brown the chicken in oil, add onions, garlic and spices and cook until fragrant.
+> Add 1 cup of water, cover and simmer for 40 minutes. Add olives and lemon for the last 10 minutes.
+> Serve with couscous or bread.
+
+== Harira Soup
+cuisine: Moroccan | meal: dinner | minutes: 60 | servings: 6 | img: harira soup
+- 250 g | Lamb or beef, small cubes | lamb
+- 1/2 cup | Brown or green lentils | lentils
+- 1 can | Chickpeas | chickpeas
+- 1 can | Crushed tomatoes | crushed tomatoes
+- 1 | Onion, chopped | onions
+- 2 stalks | Celery | celery
+- 1/2 cup | Broken vermicelli | vermicelli
+- 1 tsp | Turmeric | turmeric
+- 1 tsp | Cinnamon | cinnamon
+- | Parsley and cilantro | parsley
+- | Lemon, to serve | lemon
+> Simmer the meat, onion, celery, spices, tomatoes and lentils in 8 cups water for 40 minutes.
+> Add chickpeas and vermicelli and cook 10 minutes. Finish with herbs and lemon.
+
+== Couscous with Vegetables
+cuisine: Moroccan | meal: dinner | minutes: 50 | servings: 6 | img: couscous vegetables
+- 2 cups | Couscous | couscous
+- 2 | Carrots | carrots
+- 2 | Zucchini | zucchini
+- 1 can | Chickpeas | chickpeas
+- 1 | Onion | onions
+- 1 can | Diced tomatoes | diced tomatoes
+- 1 tsp | Turmeric | turmeric
+- 2 tsp | Ras el hanout | ras el hanout
+- 2 tbsp | Olive oil | olive oil
+> Sauté onion in oil with spices, add the chopped vegetables, tomatoes and 3 cups water and simmer 25 minutes, adding chickpeas at the end.
+> Steam the couscous with hot water and a little oil, fluff and serve with the vegetables.
+
+== Egyptian Koshari
+cuisine: Egyptian | meal: dinner | minutes: 60 | servings: 6 | img: koshari
+- 1 cup | Rice | rice
+- 1 cup | Brown lentils | lentils
+- 1 cup | Small macaroni | macaroni
+- 1 can | Chickpeas | chickpeas
+- 1 can | Tomato sauce | tomato sauce
+- 2 | Onions, sliced and fried | onions
+- 2 tbsp | Vinegar | white vinegar
+- 1 tsp | Cumin | cumin
+- 3 cloves | Garlic | garlic
+> Cook the lentils, rice and macaroni separately and combine.
+> Simmer the tomato sauce with garlic, cumin and vinegar.
+> Layer the grains, top with chickpeas, sauce and crisp fried onions.
+
+== Ful Medames
+cuisine: Egyptian | meal: breakfast | minutes: 20 | servings: 3 | img: ful medames
+- 2 cans | Fava beans | fava beans
+- 2 cloves | Garlic | garlic
+- 2 | Lemons, juiced | lemon juice
+- 1/4 cup | Olive oil | olive oil
+- 1 tsp | Cumin | cumin
+- | Tomato, parsley, chili | parsley
+- | Salt | salt
+> Warm the beans with their liquid and mash lightly.
+> Stir in garlic, lemon, cumin and salt. Top with olive oil, chopped tomato and parsley.

@@ -1,0 +1,234 @@
+== Naan
+cuisine: Indian | meal: bread | minutes: 90 | servings: 8 | img: naan bread
+- 3 cups | All-purpose flour | flour
+- 1 tsp | Instant yeast | instant yeast
+- 1 tsp | Sugar | sugar
+- 1/2 cup | Plain yogurt | plain yogurt
+- 1/2 cup | Warm milk | milk
+- 2 tbsp | Oil or ghee | ghee
+- 1 tsp | Salt | salt
+> Mix everything into a soft dough, knead 8 minutes and rise 1 hour.
+> Divide, roll into ovals and cook on a very hot dry pan or cast iron until puffed and charred. Brush with ghee.
+
+== Roti (Chapati)
+cuisine: Pakistani | meal: bread | minutes: 30 | servings: 8 | img: chapati roti
+- 2 cups | Whole wheat flour (atta) | whole wheat flour
+- 3/4 cup | Warm water | water
+- 1/2 tsp | Salt | salt
+> Knead the flour, water and salt into a soft dough and rest 20 minutes.
+> Roll thin rounds and cook on a hot tawa until it puffs, flipping once.
+
+== Pita Bread
+cuisine: Arab | meal: bread | minutes: 90 | servings: 8 | img: pita bread
+- 3 cups | All-purpose flour | flour
+- 1 tsp | Instant yeast | instant yeast
+- 1 tsp | Sugar | sugar
+- 1 1/4 cups | Warm water | water
+- 2 tbsp | Olive oil | olive oil
+- 1 tsp | Salt | salt
+> Knead into a smooth dough and rise 1 hour.
+> Roll into rounds and bake at 250°C on a preheated tray for 4 to 5 minutes until puffed.
+
+== Simple Sandwich Bread
+cuisine: Western | meal: bread | minutes: 150 | servings: 12 | img: homemade sandwich bread
+- 4 cups | Bread flour | bread flour
+- 2 1/4 tsp | Instant yeast | instant yeast
+- 2 tbsp | Sugar | sugar
+- 1 1/2 cups | Warm milk | milk
+- 3 tbsp | Butter | butter
+- 1 1/2 tsp | Salt | salt
+> Knead all together until smooth, rise 1 hour, shape into a loaf in a greased pan.
+> Rise 45 minutes more and bake at 180°C for 35 minutes.
+
+== Banana Bread
+cuisine: Western | meal: bread | minutes: 70 | servings: 10 | img: banana bread
+- 3 | Ripe bananas | bananas
+- 1/2 cup | Sugar | sugar
+- 1/3 cup | Melted butter | butter
+- 1 | Egg | eggs
+- 1 1/2 cups | Flour | flour
+- 1 tsp | Baking soda | baking soda
+- 1 tsp | Cinnamon | cinnamon
+> Mash the bananas and mix with sugar, butter and egg. Fold in the dry ingredients.
+> Bake in a loaf pan at 175°C for 55 to 60 minutes.
+
+== Garlic Naan Butter Flatbread
+cuisine: Western | meal: bread | minutes: 30 | servings: 6 | img: garlic flatbread
+- 2 cups | Flour | flour
+- 1 cup | Plain yogurt | plain yogurt
+- 1 tsp | Baking powder | baking powder
+- 3 cloves | Garlic, minced | garlic
+- 3 tbsp | Melted butter | butter
+- | Salt | salt
+> Mix flour, yogurt, baking powder and salt into a dough, rest 15 minutes.
+> Roll thick rounds, cook in a hot pan until golden and brush with garlic butter.
+
+== Cinnamon Rolls
+cuisine: Western | meal: dessert | minutes: 120 | servings: 12 | img: cinnamon rolls
+- 3 1/2 cups | Flour | flour
+- 2 1/4 tsp | Instant yeast | instant yeast
+- 1 cup | Warm milk | milk
+- 1/3 cup | Sugar | sugar
+- 1/3 cup | Butter, softened | butter
+- 1 | Egg | eggs
+- 1/2 cup | Brown sugar, for filling | brown sugar
+- 2 tbsp | Cinnamon | cinnamon
+- 4 oz | Cream cheese, for icing | cream cheese
+> Make a soft dough from the flour, yeast, milk, sugar, butter and egg, knead and rise 1 hour.
+> Roll into a rectangle, spread with butter, brown sugar and cinnamon, roll up and cut into 12.
+> Rise 30 minutes, bake at 180°C for 25 minutes, and top with cream cheese icing.
+
+== Chocolate Chip Cookies
+cuisine: Western | meal: dessert | minutes: 30 | servings: 24 | img: chocolate chip cookies
+- 2 1/4 cups | Flour | flour
+- 1 tsp | Baking soda | baking soda
+- 1 cup | Butter, softened | butter
+- 3/4 cup | Brown sugar | brown sugar
+- 3/4 cup | Sugar | sugar
+- 2 | Eggs | eggs
+- 2 cups | Chocolate chips | chocolate chips
+- 1 tsp | Vanilla | vanilla
+> Cream the butter and sugars, beat in the eggs and vanilla, then stir in the flour mixture and chocolate chips.
+> Scoop onto trays and bake at 180°C for 10 to 12 minutes.
+
+== Brownies
+cuisine: Western | meal: dessert | minutes: 40 | servings: 16 | img: brownies
+- 1/2 cup | Butter, melted | butter
+- 1 cup | Sugar | sugar
+- 2 | Eggs | eggs
+- 1/3 cup | Cocoa powder | cocoa powder
+- 1/2 cup | Flour | flour
+- 1/2 cup | Chocolate chips | chocolate chips
+- 1 tsp | Vanilla | vanilla
+> Whisk butter, sugar, eggs and vanilla. Stir in cocoa and flour, then chocolate chips.
+> Bake in a lined 8-inch pan at 175°C for 25 minutes.
+
+== Baklava
+cuisine: Turkish | meal: dessert | minutes: 90 | servings: 24 | img: baklava
+- 1 package | Phyllo dough | phyllo dough
+- 3 cups | Walnuts or pistachios, chopped | walnuts
+- 1 cup | Butter, melted | butter
+- 1 cup | Sugar | sugar
+- 1 cup | Water | water
+- 1/2 cup | Honey | honey
+- 1 | Lemon, juiced | lemon juice
+> Layer the phyllo in a pan, brushing each sheet with butter, scattering nuts between layers. Cut into diamonds.
+> Bake at 175°C for 45 minutes. Boil the sugar, water, honey and lemon for 10 minutes and pour over the hot baklava.
+
+== Kunafa
+cuisine: Arab | meal: dessert | minutes: 60 | servings: 12 | img: kunafa
+- 400 g | Kataifi or shredded phyllo | kataifi
+- 3/4 cup | Melted butter | butter
+- 3 cups | Mozzarella or akkawi cheese | mozzarella
+- 1 1/2 cups | Sugar | sugar
+- 3/4 cup | Water | water
+- 1 tbsp | Rose water | rose water
+- | Chopped pistachios | pistachios
+> Mix the shredded pastry with butter. Press half into a pan, add the cheese, top with the rest.
+> Bake at 200°C for 35 minutes until golden. Boil the sugar, water and rose water for 8 minutes and pour over. Top with pistachios.
+
+== Basbousa
+cuisine: Arab | meal: dessert | minutes: 50 | servings: 16 | img: basbousa
+- 2 cups | Semolina | semolina
+- 1 cup | Sugar | sugar
+- 1 cup | Plain yogurt | plain yogurt
+- 1/2 cup | Butter, melted | butter
+- 1 tsp | Baking powder | baking powder
+- 1/2 cup | Desiccated coconut | coconut
+- 1 1/2 cups | Sugar, for syrup | sugar
+- 1 cup | Water, for syrup | water
+> Mix the dry ingredients with yogurt and butter. Spread in a pan, cut into diamonds and bake at 180°C for 30 minutes.
+> Boil the syrup ingredients for 8 minutes and pour over the hot cake.
+
+== Rice Pudding
+cuisine: Mediterranean | meal: dessert | minutes: 45 | servings: 6 | img: rice pudding
+- 1 cup | Short-grain rice | rice
+- 4 cups | Milk | milk
+- 1/2 cup | Sugar | sugar
+- 1 tsp | Vanilla | vanilla
+- 1/2 tsp | Cinnamon | cinnamon
+> Simmer the rice in the milk, stirring often, until thick and creamy, 35 minutes. Stir in the sugar and vanilla and sprinkle with cinnamon.
+
+== Umm Ali
+cuisine: Egyptian | meal: dessert | minutes: 40 | servings: 6 | img: umm ali
+- 4 | Puff pastry sheets or croissants | puff pastry
+- 4 cups | Milk | milk
+- 1/2 cup | Sugar | sugar
+- 1 cup | Mixed nuts and raisins | mixed nuts
+- 1 cup | Cream | cream
+> Bake the pastry until crisp, break into a dish and scatter with nuts and raisins.
+> Heat the milk and sugar, pour over, top with cream and bake at 200°C until bubbling and golden.
+
+== Dates and Walnut Energy Balls
+cuisine: Arab | meal: snack | minutes: 15 | servings: 12 | img: date energy balls
+- 1 1/2 cups | Medjool dates, pitted | dates
+- 1 cup | Walnuts | walnuts
+- 1/2 cup | Rolled oats | rolled oats
+- 2 tbsp | Cocoa powder | cocoa powder
+- | Desiccated coconut, to roll | coconut
+> Blend everything until it sticks together, roll into balls and coat in coconut.
+
+== Fruit Chaat
+cuisine: Pakistani | meal: snack | minutes: 15 | servings: 4 | img: fruit chaat
+- 4 cups | Mixed fruit (apple, banana, grapes, pomegranate) | apples
+- 1 tsp | Chaat masala | chaat masala
+- 2 tbsp | Lemon juice | lemon juice
+- 1 tbsp | Sugar | sugar
+> Chop the fruit, toss with lemon, sugar and chaat masala, and chill.
+
+== Chicken Pakora
+cuisine: Pakistani | meal: snack | minutes: 30 | servings: 5 | img: pakora
+- 2 cups | Chickpea flour | chickpea flour
+- 2 | Onions, sliced | onions
+- 1 cup | Spinach, chopped | spinach
+- 1 tsp | Cumin | cumin
+- 1/2 tsp | Red chili powder | chili powder
+- 1 tsp | Baking soda | baking soda
+- | Oil, for frying | vegetable oil
+- | Salt | salt
+> Mix the flour, spices and salt with water to a thick batter. Fold in the onions and spinach.
+> Drop spoonfuls into hot oil and fry until golden and crisp.
+
+== Vegetable Pakora
+cuisine: Indian | meal: snack | minutes: 30 | servings: 5 | img: vegetable pakora
+- 2 cups | Chickpea flour | chickpea flour
+- 2 | Potatoes, thinly sliced | potatoes
+- 1 | Cauliflower, small florets | cauliflower
+- 1 tsp | Cumin | cumin
+- 1/2 tsp | Turmeric | turmeric
+- | Oil, for frying | vegetable oil
+- | Salt | salt
+> Whisk the flour, spices and salt with water to a thick batter, dip the vegetables and fry until crisp.
+
+== Fresh Mint Lemonade
+cuisine: Arab | meal: drink | minutes: 10 | servings: 4 | img: mint lemonade
+- 1 cup | Lemon juice | lemon juice
+- 1/2 cup | Sugar | sugar
+- 1/2 cup | Fresh mint | mint
+- 4 cups | Cold water | water
+> Blend the lemon juice, sugar, mint and a cup of water, strain, add the rest of the water and serve over ice.
+
+== Karak Chai
+cuisine: Arab | meal: drink | minutes: 15 | servings: 3 | img: karak chai
+- 2 cups | Water | water
+- 1 cup | Evaporated milk | evaporated milk
+- 3 tbsp | Black tea | black tea
+- 3 | Cardamom pods | cardamom
+- 2 tbsp | Sugar | sugar
+> Boil the water, tea and cardamom for 4 minutes, add the milk and sugar and simmer until strong and creamy.
+
+== Rooh Afza Milk
+cuisine: Pakistani | meal: drink | minutes: 5 | servings: 2 | img: rooh afza milk
+- 2 cups | Cold milk | milk
+- 4 tbsp | Rooh Afza syrup | rooh afza
+- | Ice | ice
+> Stir the syrup into the cold milk and serve over ice.
+
+== Strawberry Smoothie
+cuisine: Western | meal: drink | minutes: 5 | servings: 2 | img: strawberry smoothie
+- 2 cups | Strawberries | strawberries
+- 1 | Banana | bananas
+- 1 cup | Plain yogurt | plain yogurt
+- 1/2 cup | Milk | milk
+- 1 tbsp | Honey | honey
+> Blend until smooth.

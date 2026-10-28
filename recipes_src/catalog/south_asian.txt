@@ -1,0 +1,395 @@
+== Chicken Karahi
+cuisine: Pakistani | meal: dinner | minutes: 45 | servings: 4 | img: chicken karahi
+- 1 kg | Chicken, bone-in pieces | chicken thighs
+- 4 | Tomatoes, chopped | tomatoes
+- 1/2 cup | Cooking oil or ghee | vegetable oil
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 4 | Green chilies | green chili
+- 1 tsp | Cumin seeds | cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1 tsp | Red chili powder | chili powder
+- 1/2 tsp | Garam masala | garam masala
+- | Salt | salt
+- | Fresh coriander and ginger, to garnish | cilantro
+> Heat the oil in a wok, add the cumin seeds and ginger-garlic paste and fry for a minute.
+> Add the chicken and sear on high heat until it changes colour, about 8 minutes.
+> Add the tomatoes, green chilies, salt, coriander and chili powder. Cover and cook on medium until the oil separates and the chicken is tender, 25 minutes.
+> Finish with garam masala, ginger and fresh coriander.
+
+== Chicken Biryani
+cuisine: Pakistani | meal: dinner | minutes: 90 | servings: 6 | img: chicken biryani
+- 3 cups | Basmati rice | basmati rice
+- 1 kg | Chicken pieces | chicken thighs
+- 2 cups | Plain yogurt | plain yogurt
+- 3 | Onions, thinly sliced | onions
+- 3 | Tomatoes, chopped | tomatoes
+- 2 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tbsp | Biryani masala | biryani masala
+- 1 tsp | Turmeric | turmeric
+- 1/2 cup | Cooking oil | vegetable oil
+- 1/4 cup | Mint leaves | mint
+- 4 | Green chilies | green chili
+- | Whole spices (cardamom, cloves, cinnamon, bay leaf) | whole spices
+- | Salt | salt
+> Soak the rice 30 minutes. Fry the onions in oil until deep golden; set half aside for layering.
+> Add ginger-garlic paste, tomatoes, spices, yogurt and chicken to the pot. Cook until the chicken is tender and the masala is thick.
+> Boil the rice in salted water with whole spices until 70% cooked, then drain.
+> Layer rice over the chicken, top with fried onions, mint and chilies. Cover tightly and steam on low for 20 minutes.
+
+== Chicken Qorma
+cuisine: Pakistani | meal: dinner | minutes: 60 | servings: 5 | img: chicken korma
+- 1 kg | Chicken pieces | chicken thighs
+- 1 cup | Plain yogurt | plain yogurt
+- 2 | Onions, sliced | onions
+- 1/2 cup | Ghee or oil | ghee
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 1 tbsp | Qorma masala | korma masala
+- 1/4 cup | Almonds, ground | almonds
+- 1 tsp | Garam masala | garam masala
+- | Salt | salt
+> Fry the onions in ghee until golden, then add ginger-garlic paste and chicken and brown for 8 minutes.
+> Stir in the yogurt, qorma masala and salt. Cover and simmer until the chicken is tender, about 35 minutes.
+> Stir in the ground almonds and garam masala and cook until the gravy is thick and glossy.
+
+== Beef Nihari
+cuisine: Pakistani | meal: dinner | minutes: 180 | servings: 6 | img: nihari beef stew
+- 1 kg | Beef shank or stew meat | beef shank
+- 1/2 cup | Cooking oil or ghee | ghee
+- 2 | Onions, sliced | onions
+- 3 tbsp | Nihari masala | nihari masala
+- 3 tbsp | Whole wheat flour | whole wheat flour
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- | Fresh ginger strips, green chilies and lemon, to serve | ginger
+- | Salt | salt
+> Brown the sliced onions in ghee, add the meat and ginger-garlic paste and fry for 10 minutes.
+> Add nihari masala, salt and 6 cups of water. Cover and simmer on low for 2.5 hours until the meat is falling apart.
+> Mix the flour with a little cold water, stir it into the pot and cook 10 minutes more until thick.
+> Serve hot with ginger, green chilies, lemon and naan.
+
+== Beef Qeema
+cuisine: Pakistani | meal: dinner | minutes: 40 | servings: 4 | img: keema curry
+- 500 g | Ground beef (regular qeema) | ground beef
+- 2 | Onions, chopped | onions
+- 3 | Tomatoes, chopped | tomatoes
+- 1/3 cup | Cooking oil | vegetable oil
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 1 tsp | Cumin | cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1/2 tsp | Turmeric | turmeric
+- 1 tsp | Red chili powder | chili powder
+- 1 cup | Green peas | frozen peas
+- | Salt | salt
+- | Fresh coriander | cilantro
+> Fry the onions in oil until golden. Add the ginger-garlic paste and the qeema and cook until the water dries up.
+> Add the tomatoes, spices and salt and cook until the oil separates.
+> Add the peas and a splash of water, cover and simmer 10 minutes. Garnish with fresh coriander.
+
+== Aloo Gosht
+cuisine: Pakistani | meal: dinner | minutes: 90 | servings: 5 | img: aloo gosht
+- 750 g | Lamb or beef pieces | lamb
+- 4 | Potatoes, quartered | potatoes
+- 2 | Onions, sliced | onions
+- 3 | Tomatoes, chopped | tomatoes
+- 1/3 cup | Oil | vegetable oil
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tsp | Coriander powder | ground coriander
+- 1 tsp | Turmeric | turmeric
+- 1 tsp | Red chili powder | chili powder
+- 1 tsp | Garam masala | garam masala
+- | Salt | salt
+> Fry the onions in oil until golden, add ginger-garlic paste and the meat and brown well.
+> Add tomatoes, spices and salt with 1 cup water. Cover and cook on low until the meat is nearly tender, about 45 minutes.
+> Add the potatoes and 1 more cup of water, cook until soft. Finish with garam masala.
+
+== Haleem
+cuisine: Pakistani | meal: dinner | minutes: 240 | servings: 8 | img: haleem
+- 500 g | Beef or chicken | beef stew
+- 1 cup | Mixed lentils and barley | lentils
+- 1/2 cup | Cracked wheat | cracked wheat
+- 3 | Onions, sliced | onions
+- 1/2 cup | Ghee or oil | ghee
+- 2 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tbsp | Haleem masala | haleem masala
+- 1 tsp | Turmeric | turmeric
+- | Lemon, ginger, mint and fried onions, to serve | lemon
+- | Salt | salt
+> Soak the lentils, barley and cracked wheat for 4 hours.
+> Cook the meat with ginger-garlic paste, spices, salt and plenty of water until very tender, then shred.
+> Add the soaked grains and cook until soft and creamy, mashing and stirring often, 1.5 to 2 hours.
+> Fry the onions in ghee until crisp. Serve topped with fried onions, lemon, ginger and mint.
+
+== Chana Masala
+cuisine: Indian | meal: dinner | minutes: 35 | servings: 4 | img: chana masala
+- 2 cans | Chickpeas, drained | chickpeas
+- 2 | Onions, chopped | onions
+- 3 | Tomatoes, pureed | tomatoes
+- 3 tbsp | Oil | vegetable oil
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tsp | Chana masala powder | chana masala
+- 1 tsp | Cumin seeds | cumin
+- 1/2 tsp | Turmeric | turmeric
+- 1 | Lemon, juiced | lemon
+- | Salt | salt
+- | Fresh coriander | cilantro
+> Fry the cumin seeds and onions in oil until golden. Add ginger-garlic paste and cook a minute.
+> Add the tomato puree, turmeric, chana masala and salt, cooking until the oil separates.
+> Add the chickpeas and 1/2 cup water, simmer 15 minutes, mashing a few chickpeas to thicken.
+> Finish with lemon juice and fresh coriander.
+
+== Butter Chicken
+cuisine: Indian | meal: dinner | minutes: 50 | servings: 4 | img: butter chicken
+- 700 g | Chicken thighs, boneless | boneless chicken thighs
+- 1 cup | Plain yogurt | plain yogurt
+- 3 tbsp | Butter | butter
+- 1 | Onion, chopped | onions
+- 1 can | Crushed tomatoes | crushed tomatoes
+- 1 cup | Heavy cream | heavy cream
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tsp | Garam masala | garam masala
+- 1 tsp | Kashmiri chili powder | chili powder
+- 1 tsp | Dried fenugreek leaves | fenugreek
+- | Salt | salt
+> Marinate the chicken in yogurt, half the ginger-garlic paste, chili and salt for at least 30 minutes, then pan-fry or broil until browned.
+> Melt the butter, cook the onion until soft, add remaining paste, tomatoes and garam masala and simmer 15 minutes. Blend smooth if you like.
+> Add the chicken and cream and simmer 10 minutes. Crush in the fenugreek leaves and serve.
+
+== Palak Paneer
+cuisine: Indian | meal: dinner | minutes: 35 | servings: 4 | img: palak paneer
+- 450 g | Spinach | spinach
+- 250 g | Paneer, cubed | paneer
+- 1 | Onion, chopped | onions
+- 2 | Tomatoes, chopped | tomatoes
+- 2 tbsp | Ghee or oil | ghee
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 1 tsp | Cumin | cumin
+- 1 tsp | Garam masala | garam masala
+- 1/4 cup | Cream | cream
+- | Salt | salt
+> Blanch the spinach for 2 minutes, drain and blend to a puree.
+> Fry the cumin and onion in ghee, add ginger-garlic paste and tomatoes and cook down.
+> Add the spinach puree, garam masala and salt and simmer 5 minutes. Stir in the paneer and cream and warm through.
+
+== Dal Tadka
+cuisine: Indian | meal: dinner | minutes: 40 | servings: 4 | img: dal tadka
+- 1 cup | Yellow lentils (toor or masoor) | lentils
+- 1 | Tomato, chopped | tomatoes
+- 1/2 tsp | Turmeric | turmeric
+- 2 tbsp | Ghee | ghee
+- 1 tsp | Cumin seeds | cumin
+- 4 cloves | Garlic, sliced | garlic
+- 2 | Dried red chilies | dried chili
+- 1 | Onion, chopped | onions
+- | Salt | salt
+- | Fresh coriander and lemon | cilantro
+> Boil the lentils with turmeric, tomato, salt and 3 cups water until completely soft, about 25 minutes.
+> Heat the ghee, fry the cumin, garlic, chilies and onion until golden.
+> Pour the tadka over the dal, stir and finish with coriander and lemon.
+
+== Vegetable Biryani
+cuisine: Indian | meal: dinner | minutes: 60 | servings: 5 | img: vegetable biryani
+- 2 cups | Basmati rice | basmati rice
+- 4 cups | Mixed vegetables (carrot, peas, cauliflower, potato) | frozen mixed vegetables
+- 1 cup | Plain yogurt | plain yogurt
+- 2 | Onions, sliced | onions
+- 2 tbsp | Biryani masala | biryani masala
+- 1/4 cup | Ghee or oil | ghee
+- 1/4 cup | Mint | mint
+- | Salt | salt
+> Fry the onions in ghee until golden. Add the vegetables, yogurt, masala and salt and cook 10 minutes.
+> Par-boil the rice in salted water, drain, and layer over the vegetables with mint and fried onions.
+> Cover tightly and steam on low for 20 minutes.
+
+== Aloo Gobi
+cuisine: Indian | meal: dinner | minutes: 35 | servings: 4 | img: aloo gobi
+- 1 | Cauliflower, florets | cauliflower
+- 3 | Potatoes, cubed | potatoes
+- 3 tbsp | Oil | vegetable oil
+- 1 tsp | Cumin seeds | cumin
+- 1 | Onion, chopped | onions
+- 2 | Tomatoes, chopped | tomatoes
+- 1 tsp | Turmeric | turmeric
+- 1 tsp | Coriander powder | ground coriander
+- 1/2 tsp | Garam masala | garam masala
+- | Salt | salt
+> Fry cumin and onion in oil, add tomatoes and spices and cook until soft.
+> Add potatoes and cauliflower with a splash of water, cover and cook on low until tender, 20 minutes.
+> Uncover and cook off the liquid, finishing with garam masala.
+
+== Tandoori-Style Chicken
+cuisine: Indian | meal: dinner | minutes: 50 | servings: 4 | img: tandoori chicken
+- 1 kg | Chicken drumsticks and thighs | chicken drumsticks
+- 1 cup | Plain yogurt | plain yogurt
+- 2 tbsp | Tandoori masala | tandoori masala
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tbsp | Lemon juice | lemon juice
+- 2 tbsp | Oil | vegetable oil
+- | Salt | salt
+> Score the chicken, then marinate in everything else for at least 2 hours or overnight.
+> Roast at 220°C (425°F) for 35 to 40 minutes, turning once, until charred at the edges and cooked through.
+> Serve with lemon, onion rings and mint chutney.
+
+== Samosa
+cuisine: Indian | meal: snack | minutes: 60 | servings: 12 | img: samosa
+- 2 cups | All-purpose flour | flour
+- 4 tbsp | Oil, for dough | vegetable oil
+- 4 | Potatoes, boiled and mashed | potatoes
+- 1/2 cup | Green peas | frozen peas
+- 1 tsp | Cumin seeds | cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1 tsp | Garam masala | garam masala
+- 1/2 tsp | Red chili powder | chili powder
+- | Oil, for frying | vegetable oil
+- | Salt | salt
+> Knead flour, 4 tbsp oil, salt and water into a firm dough. Rest 30 minutes.
+> Cook cumin, peas and spices briefly in a little oil, then mix with the mashed potatoes.
+> Roll the dough into ovals, cut in half, shape into cones, fill, and seal the edges with water.
+> Fry on medium-low heat until golden and crisp.
+
+== Chicken Tikka Masala
+cuisine: Indian | meal: dinner | minutes: 55 | servings: 4 | img: chicken tikka masala
+- 700 g | Boneless chicken, cubed | boneless chicken thighs
+- 3/4 cup | Plain yogurt | plain yogurt
+- 2 tbsp | Tikka masala spice blend | tikka masala
+- 1 | Onion, chopped | onions
+- 1 can | Tomato sauce | tomato sauce
+- 3/4 cup | Cream | cream
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tbsp | Oil or butter | butter
+- | Salt | salt
+> Marinate the chicken in yogurt, half the spice blend and salt for 1 hour, then broil or pan-fry until charred.
+> Soften the onion in butter, add ginger-garlic paste, remaining spices and tomato sauce, simmer 15 minutes.
+> Stir in the cream and chicken and simmer 10 minutes.
+
+== Masoor Dal Soup
+cuisine: Indian | meal: lunch | minutes: 30 | servings: 4 | img: red lentil soup
+- 1 cup | Red lentils | red lentils
+- 1 | Onion, chopped | onions
+- 3 cloves | Garlic | garlic
+- 1 tsp | Cumin | cumin
+- 1/2 tsp | Turmeric | turmeric
+- 1 | Lemon | lemon
+- 1 tbsp | Oil | vegetable oil
+- | Salt | salt
+> Soften the onion and garlic in oil with cumin and turmeric.
+> Add lentils and 4 cups water, simmer 20 minutes until soft, blend if you like, season and add lemon juice.
+
+== Paratha
+cuisine: Pakistani | meal: breakfast | minutes: 40 | servings: 6 | img: paratha
+- 3 cups | Whole wheat flour (atta) | whole wheat flour
+- 1 tsp | Salt | salt
+- 1 1/4 cups | Warm water | water
+- 1/3 cup | Ghee or oil | ghee
+> Mix flour, salt and water into a soft dough, knead 5 minutes and rest 20 minutes.
+> Roll each ball thin, brush with ghee, fold into a triangle or spiral, then roll out again.
+> Cook on a hot griddle, brushing with ghee, until golden and flaky on both sides.
+
+== Aloo Paratha
+cuisine: Pakistani | meal: breakfast | minutes: 50 | servings: 6 | img: aloo paratha
+- 3 cups | Whole wheat flour | whole wheat flour
+- 4 | Potatoes, boiled and mashed | potatoes
+- 1 tsp | Cumin seeds | cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1/2 tsp | Red chili powder | chili powder
+- 4 | Green chilies, chopped | green chili
+- 1/3 cup | Ghee, for cooking | ghee
+- | Salt | salt
+> Knead flour, salt and water into a soft dough; rest 20 minutes.
+> Mix potatoes with spices, chilies and salt.
+> Stuff each dough ball with potato filling, seal and roll out gently.
+> Cook on a hot griddle with ghee until golden and speckled.
+
+== Chicken Pulao
+cuisine: Pakistani | meal: dinner | minutes: 60 | servings: 5 | img: chicken pulao
+- 2 cups | Basmati rice | basmati rice
+- 700 g | Chicken pieces | chicken thighs
+- 2 | Onions, sliced | onions
+- 1/3 cup | Oil | vegetable oil
+- 1 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tsp | Cumin seeds | cumin
+- | Whole spices (cardamom, cloves, cinnamon, bay leaf) | whole spices
+- | Salt | salt
+> Fry the onions in oil until deep brown, add the chicken, ginger-garlic paste, cumin and whole spices and cook for 10 minutes.
+> Add 4 cups of water and salt, boil until the chicken is tender, then strain out some of the stock if too much.
+> Add the soaked rice, cook until the water is absorbed, then cover and steam on low for 15 minutes.
+
+== Seekh Kebab
+cuisine: Pakistani | meal: dinner | minutes: 40 | servings: 5 | img: seekh kebab
+- 700 g | Ground beef | ground beef
+- 1 | Onion, grated | onions
+- 2 tbsp | Ginger-garlic paste | ginger garlic paste
+- 2 tbsp | Seekh kebab masala | kebab masala
+- 4 | Green chilies, minced | green chili
+- 1/4 cup | Fresh coriander | cilantro
+- 1/4 cup | Fresh mint | mint
+- 2 tbsp | Oil | vegetable oil
+- | Salt | salt
+> Mix everything very well until sticky. Rest 30 minutes.
+> Shape onto skewers or into logs.
+> Grill or broil, turning, until browned and cooked through, about 12 minutes. Serve with naan and raita.
+
+== Raita
+cuisine: Indian | meal: snack | minutes: 10 | servings: 4 | img: cucumber raita
+- 2 cups | Plain yogurt | plain yogurt
+- 1 | Cucumber, grated | cucumber
+- 1/2 tsp | Roasted cumin powder | cumin
+- 1 | Green chili, minced | green chili
+- | Mint | mint
+- | Salt | salt
+> Whisk the yogurt until smooth and stir in the cucumber, cumin, chili, mint and salt. Chill and serve.
+
+== Mango Lassi
+cuisine: Indian | meal: drink | minutes: 5 | servings: 2 | img: mango lassi
+- 1 cup | Mango pulp or chunks | mango
+- 1 cup | Plain yogurt | plain yogurt
+- 1/2 cup | Milk | milk
+- 2 tbsp | Sugar or honey | sugar
+- 1/4 tsp | Cardamom | cardamom
+> Blend everything until smooth and serve cold.
+
+== Kheer
+cuisine: Pakistani | meal: dessert | minutes: 60 | servings: 6 | img: kheer rice pudding
+- 1/2 cup | Basmati rice | basmati rice
+- 6 cups | Whole milk | milk
+- 3/4 cup | Sugar | sugar
+- 4 | Cardamom pods | cardamom
+- 1/4 cup | Almonds and pistachios, sliced | pistachios
+- 1/4 cup | Raisins | raisins
+> Rinse the rice and simmer in the milk with cardamom, stirring often, until very soft and creamy, about 45 minutes.
+> Stir in the sugar, nuts and raisins and cook 5 minutes more. Serve warm or chilled.
+
+== Gulab Jamun
+cuisine: Indian | meal: dessert | minutes: 60 | servings: 12 | img: gulab jamun
+- 1 cup | Milk powder | milk powder
+- 1/4 cup | All-purpose flour | flour
+- 1/2 tsp | Baking powder | baking powder
+- 3 tbsp | Ghee | ghee
+- 1/4 cup | Milk, as needed | milk
+- 2 cups | Sugar, for syrup | sugar
+- 2 cups | Water, for syrup | water
+- 3 | Cardamom pods | cardamom
+- | Oil or ghee, for frying | ghee
+> Boil sugar, water and cardamom for 5 minutes to make a light syrup.
+> Mix milk powder, flour, baking powder and ghee, adding milk to make a soft dough. Shape into smooth small balls.
+> Fry on low heat until deep golden brown, then soak in warm syrup for at least 1 hour.
+
+== Zarda
+cuisine: Pakistani | meal: dessert | minutes: 50 | servings: 6 | img: zarda sweet rice
+- 2 cups | Basmati rice | basmati rice
+- 1 cup | Sugar | sugar
+- 1/2 cup | Ghee | ghee
+- 1/4 tsp | Yellow food colour or saffron | saffron
+- 4 | Cardamom pods | cardamom
+- 1/4 cup | Almonds, pistachios, raisins | pistachios
+> Boil the rice with the colour and cardamom until 80% done and drain.
+> Heat ghee, add sugar, nuts and a splash of water to make a thick syrup.
+> Layer the rice with the syrup, cover tightly and steam on low for 15 minutes.
+
+== Chai
+cuisine: Pakistani | meal: drink | minutes: 10 | servings: 3 | img: masala chai
+- 2 cups | Water | water
+- 1 cup | Milk | milk
+- 2 tbsp | Loose black tea | black tea
+- 2 | Cardamom pods, crushed | cardamom
+- 1 tbsp | Sugar, or to taste | sugar
+> Boil the water with cardamom and tea for 3 minutes.
+> Add the milk and sugar and simmer until rich in colour. Strain and serve.

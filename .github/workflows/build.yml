@@ -3,7 +3,7 @@ name: Build & release APK
 on:
   push:
     branches: [main, 'claude/**']
-    paths-ignore: ['scraper/**', 'data/**', '.github/workflows/scrape.yml', '**.md']
+    paths-ignore: ['scraper/**', 'data/**', 'tools/local_scraper/**', '.github/workflows/scrape.yml', '**.md']
   workflow_dispatch:
 
 permissions:
@@ -41,6 +41,10 @@ jobs:
       - name: Fetch seed item photos (Wikimedia Commons)
         continue-on-error: true
         run: python3 tools/fetch_seed_images.py
+
+      - name: Build recipe catalogue (adds TheMealDB, halal-filtered)
+        continue-on-error: true
+        run: python3 tools/build_recipes.py --mealdb
 
       - run: flutter pub get
       - run: flutter analyze --no-fatal-infos

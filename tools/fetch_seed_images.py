@@ -43,9 +43,33 @@ def find(term):
     return None
 
 
+def recipe_images(credits):
+    sys.path.insert(0, str(ROOT / "tools"))
+    import build_recipes
+    out_dir = ROOT / "assets" / "recipes" / "images"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for f in sorted((ROOT / "recipes_src" / "catalog").glob("*.txt")):
+        for r in build_recipes.parse_dsl(f, "catalog"):
+            out = out_dir / f"{build_recipes.slug(r['title'])}.jpg"
+            if out.exists() or not r.get("img"):
+                continue
+            try:
+                hit = find(r["img"])
+                if not hit:
+                    print("no image for recipe", r["title"])
+                    continue
+                url, title, lic, artist, page = hit
+                out.write_bytes(get(url))
+                credits.append(f"- Recipe {r['title']}: {title} by {artist} ({lic}) {page}")
+                print("ok recipe", r["title"])
+            except Exception as e:
+                print("failed recipe", r["title"], e, file=sys.stderr)
+
+
 def main():
     seed = json.loads((SEED / "halal.json").read_text())
     credits = ["# Seed image credits (Wikimedia Commons)\n"]
+    recipe_images(credits)
     for it in seed["items"]:
         out = SEED / "images" / f"{it['id']}.jpg"
         if out.exists():

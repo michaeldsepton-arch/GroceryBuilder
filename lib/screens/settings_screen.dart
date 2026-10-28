@@ -91,6 +91,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
         const SizedBox(height: 8),
+        Card(
+          margin: const EdgeInsets.only(bottom: 8),
+          child: SwitchListTile(
+            secondary: const Icon(Icons.verified_outlined, color: BB.green700),
+            title: const Text('Halal meat only', style: TextStyle(fontWeight: FontWeight.w700)),
+            subtitle: const Text(
+                'Hides supermarket meat that is not halal-certified. Pork, alcohol and gelatin are always hidden.'),
+            value: s.halalMeatOnly,
+            onChanged: s.setHalalMeatOnly,
+          ),
+        ),
         _Tile(
           icon: Icons.savings_outlined,
           title: 'Weekly budget',

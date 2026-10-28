@@ -6,6 +6,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import '../data/halal.dart';
+import '../data/recipe_repo.dart';
 import '../data/repo.dart';
 import '../data/services.dart';
 import '../models/models.dart';
@@ -22,8 +24,10 @@ String weekKey(DateTime d) {
 }
 
 class AppState extends ChangeNotifier {
-  AppState(this.repo);
+  AppState(this.repo) : recipes = RecipeRepo(repo);
   final Repo repo;
+  final RecipeRepo recipes;
+  bool halalMeatOnly = true;
 
   List<Store> stores = [];
   List<CartLine> cart = [];
@@ -64,7 +68,11 @@ class AppState extends ChangeNotifier {
     final docs = await getApplicationDocumentsDirectory();
     photoDir = p.join(docs.path, 'photos');
     await Directory(photoDir).create(recursive: true);
+    Halal.configure(await rootBundle.loadString('assets/recipes/haram_terms.json'));
+    halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
+    repo.halalMeatOnly = halalMeatOnly;
     await _seedHalal();
+    await recipes.load();
     await reload();
     // Background refresh; failures are silent, the UI shows the last data.
     syncCatalog(silent: true);
@@ -105,6 +113,13 @@ class AppState extends ChangeNotifier {
     spentEarlierThisWeek = trips.fold(0, (a, t) => a + t.total);
     catalogStamp = await repo.setting('catalog_generated');
     catalogCount = await repo.catalogCount();
+    notifyListeners();
+  }
+
+  Future<void> setHalalMeatOnly(bool v) async {
+    halalMeatOnly = v;
+    repo.halalMeatOnly = v;
+    await repo.putSetting('halal_meat_only', v ? '1' : '0');
     notifyListeners();
   }
 

@@ -1,0 +1,231 @@
+== Fluffy Pancakes
+cuisine: Western | meal: breakfast | minutes: 25 | servings: 4 | img: pancakes
+- 1 1/2 cups | All-purpose flour | flour
+- 2 tbsp | Sugar | sugar
+- 1 tbsp | Baking powder | baking powder
+- 1 1/4 cups | Milk | milk
+- 1 | Egg | eggs
+- 3 tbsp | Melted butter | butter
+- | Maple syrup, to serve | maple syrup
+> Whisk the dry ingredients, then stir in milk, egg and butter until just combined.
+> Cook 1/4 cup scoops on a buttered griddle until bubbles form, flip and cook until golden.
+
+== French Toast
+cuisine: Western | meal: breakfast | minutes: 15 | servings: 3 | img: french toast
+- 6 slices | Thick bread | bread
+- 3 | Eggs | eggs
+- 3/4 cup | Milk | milk
+- 1 tsp | Cinnamon | cinnamon
+- 1 tsp | Vanilla | vanilla
+- 2 tbsp | Butter | butter
+> Whisk eggs, milk, cinnamon and vanilla. Soak the bread slices briefly.
+> Fry in butter until golden on both sides. Serve with syrup or fruit.
+
+== Masala Omelette
+cuisine: Indian | meal: breakfast | minutes: 10 | servings: 1 | img: masala omelette
+- 3 | Eggs | eggs
+- 1/4 | Onion, finely chopped | onions
+- 1 | Green chili, chopped | green chili
+- 1 | Small tomato, chopped | tomatoes
+- 1 tbsp | Cilantro | cilantro
+- 1/4 tsp | Turmeric | turmeric
+- 1 tbsp | Oil | vegetable oil
+- | Salt | salt
+> Beat the eggs with everything except the oil. Pour into a hot oiled pan, cook until set, fold and serve with toast or paratha.
+
+== Overnight Oats
+cuisine: Western | meal: breakfast | minutes: 5 | servings: 1 | img: overnight oats
+- 1/2 cup | Rolled oats | rolled oats
+- 1/2 cup | Milk | milk
+- 1/4 cup | Plain yogurt | plain yogurt
+- 1 tbsp | Honey | honey
+- 1/4 cup | Berries | strawberries
+> Stir the oats, milk, yogurt and honey together in a jar. Refrigerate overnight and top with berries.
+
+== Breakfast Burrito
+cuisine: Western | meal: breakfast | minutes: 20 | servings: 4 | img: breakfast burrito
+- 6 | Eggs | eggs
+- 4 | Large flour tortillas | tortillas
+- 1 can | Black beans | black beans
+- 1 cup | Shredded cheese | shredded cheese
+- 1 | Bell pepper, diced | red pepper
+- 1 cup | Salsa | salsa
+> Scramble the eggs with the diced pepper. Warm the beans.
+> Fill each tortilla with eggs, beans, cheese and salsa, roll and toast seam-side down.
+
+== Chicken Alfredo
+cuisine: Western | meal: dinner | minutes: 30 | servings: 4 | img: chicken alfredo
+- 400 g | Fettuccine | fettuccine
+- 500 g | Chicken breast, sliced | chicken breast
+- 1 1/2 cups | Heavy cream | heavy cream
+- 1 cup | Grated Parmesan | parmesan
+- 3 cloves | Garlic | garlic
+- 2 tbsp | Butter | butter
+- | Salt and pepper | salt
+> Cook the pasta. Pan-sear the chicken in butter until golden and cooked through; set aside.
+> Simmer the garlic and cream for 5 minutes, stir in the Parmesan until smooth, then toss with pasta and chicken.
+
+== Beef Lasagna
+cuisine: Western | meal: dinner | minutes: 90 | servings: 8 | img: lasagna
+- 12 | Lasagna noodles | lasagna noodles
+- 500 g | Ground beef | ground beef
+- 1 jar | Pasta sauce | pasta sauce
+- 2 cups | Ricotta cheese | ricotta
+- 3 cups | Shredded mozzarella | mozzarella
+- 1 | Onion, chopped | onions
+- 3 cloves | Garlic | garlic
+- 1 | Egg | eggs
+> Brown the beef with onion and garlic, add the sauce and simmer 15 minutes. Mix the ricotta with the egg.
+> Layer noodles, meat sauce, ricotta and mozzarella three times, ending with cheese.
+> Bake covered at 190°C for 40 minutes, uncover and bake 15 minutes more.
+
+== Beef Tacos
+cuisine: Mexican | meal: dinner | minutes: 25 | servings: 4 | img: beef tacos
+- 500 g | Ground beef | ground beef
+- 1 | Onion, diced | onions
+- 2 tbsp | Taco seasoning | taco seasoning
+- 8 | Taco shells or tortillas | taco shells
+- | Lettuce, tomato, cheese, sour cream | shredded cheese
+> Brown the beef and onion, stir in the taco seasoning with a splash of water and simmer 5 minutes.
+> Fill the shells and top as you like.
+
+== Chicken Fajitas
+cuisine: Mexican | meal: dinner | minutes: 30 | servings: 4 | img: chicken fajitas
+- 600 g | Chicken breast, sliced | chicken breast
+- 2 | Bell peppers, sliced | red pepper
+- 1 | Onion, sliced | onions
+- 2 tbsp | Fajita seasoning | fajita seasoning
+- 2 tbsp | Oil | vegetable oil
+- 8 | Tortillas | tortillas
+> Toss the chicken with seasoning and sear in hot oil. Add peppers and onion and cook until charred.
+> Serve in warm tortillas with sour cream and salsa.
+
+== Chicken Noodle Soup
+cuisine: Western | meal: lunch | minutes: 45 | servings: 6 | img: chicken noodle soup
+- 500 g | Chicken breast or thighs | chicken breast
+- 2 | Carrots, sliced | carrots
+- 2 stalks | Celery, sliced | celery
+- 1 | Onion, chopped | onions
+- 8 cups | Chicken broth | chicken broth
+- 2 cups | Egg noodles | egg noodles
+- | Parsley, salt and pepper | parsley
+> Simmer the chicken, vegetables and broth for 25 minutes. Shred the chicken.
+> Cook the noodles in the soup until tender and return the chicken. Season and add parsley.
+
+== Beef and Broccoli Stir-Fry
+cuisine: Chinese | meal: dinner | minutes: 25 | servings: 4 | img: beef and broccoli
+- 500 g | Beef sirloin, thinly sliced | beef sirloin
+- 4 cups | Broccoli florets | broccoli
+- 1/4 cup | Soy sauce | soy sauce
+- 2 tbsp | Cornstarch | cornstarch
+- 1 tbsp | Brown sugar | brown sugar
+- 3 cloves | Garlic | garlic
+- 1 tbsp | Ginger | ginger
+- 2 tbsp | Oil | vegetable oil
+> Toss the beef with cornstarch. Mix the soy sauce, sugar, garlic, ginger and 1/2 cup water.
+> Sear the beef in hot oil, add broccoli and sauce and cook until thickened and glossy. Serve over rice.
+
+== Beef Burgers
+cuisine: Western | meal: dinner | minutes: 25 | servings: 4 | img: hamburger
+- 600 g | Ground beef | ground beef
+- 4 | Burger buns | hamburger buns
+- 1 | Egg | eggs
+- 1/4 cup | Breadcrumbs | breadcrumbs
+- | Lettuce, tomato, onion, cheese, pickles | lettuce
+- | Salt and pepper | salt
+> Mix the beef with egg, breadcrumbs, salt and pepper and shape into 4 patties.
+> Grill or pan-fry 5 minutes per side. Assemble on toasted buns.
+
+== Spaghetti Bolognese
+cuisine: Western | meal: dinner | minutes: 50 | servings: 5 | img: spaghetti bolognese
+- 400 g | Spaghetti | spaghetti
+- 500 g | Ground beef | ground beef
+- 1 | Onion | onions
+- 1 | Carrot, grated | carrots
+- 3 cloves | Garlic | garlic
+- 1 can | Crushed tomatoes | crushed tomatoes
+- 2 tbsp | Tomato paste | tomato paste
+- 1 tsp | Dried oregano | oregano
+> Brown the beef with the onion, carrot and garlic. Add the tomatoes, tomato paste and oregano and simmer 30 minutes.
+> Serve over the cooked spaghetti.
+
+== Creamy Mushroom Chicken
+cuisine: Western | meal: dinner | minutes: 30 | servings: 4 | img: creamy mushroom chicken
+- 4 | Chicken breasts | chicken breast
+- 250 g | Mushrooms, sliced | mushrooms
+- 3/4 cup | Cream | cream
+- 3 cloves | Garlic | garlic
+- 1/2 cup | Chicken broth | chicken broth
+- 2 tbsp | Butter | butter
+> Sear the chicken in butter and set aside. Cook the mushrooms and garlic in the same pan.
+> Add broth and cream, reduce slightly, return the chicken and simmer until cooked through.
+
+== Baked Salmon with Lemon
+cuisine: Western | meal: dinner | minutes: 25 | servings: 4 | img: baked salmon lemon
+- 4 | Salmon fillets | salmon
+- 2 | Lemons | lemons
+- 3 cloves | Garlic | garlic
+- 2 tbsp | Olive oil | olive oil
+- | Dill, salt and pepper | dill
+> Place the fillets on a tray, brush with oil, garlic, lemon slices, dill and seasoning.
+> Bake at 200°C for 12 to 15 minutes until it flakes easily.
+
+== Vegetable Stir-Fry Noodles
+cuisine: Chinese | meal: lunch | minutes: 20 | servings: 3 | img: vegetable chow mein
+- 250 g | Noodles | noodles
+- 3 cups | Mixed vegetables | frozen stir fry vegetables
+- 3 tbsp | Soy sauce | soy sauce
+- 1 tsp | Sesame oil | sesame oil
+- 3 cloves | Garlic | garlic
+- 2 tbsp | Oil | vegetable oil
+> Cook the noodles. Stir-fry the garlic and vegetables in hot oil.
+> Add the noodles, soy sauce and sesame oil and toss until hot.
+
+== Egg Fried Rice
+cuisine: Chinese | meal: lunch | minutes: 15 | servings: 3 | img: egg fried rice
+- 3 cups | Cooked rice, cold | rice
+- 3 | Eggs | eggs
+- 1/2 cup | Peas and diced carrots | frozen peas and carrots
+- 3 | Green onions | green onions
+- 2 tbsp | Soy sauce | soy sauce
+- 2 tbsp | Oil | vegetable oil
+> Scramble the eggs in hot oil and push aside. Add the vegetables and rice and fry on high heat.
+> Season with soy sauce and finish with green onions.
+
+== Tomato Basil Soup
+cuisine: Western | meal: lunch | minutes: 35 | servings: 4 | img: tomato soup
+- 2 cans | Whole tomatoes | canned tomatoes
+- 1 | Onion | onions
+- 3 cloves | Garlic | garlic
+- 2 cups | Vegetable broth | vegetable broth
+- 1/2 cup | Cream | cream
+- 1/4 cup | Fresh basil | basil
+- 2 tbsp | Butter | butter
+> Soften onion and garlic in butter, add tomatoes and broth and simmer 20 minutes.
+> Blend smooth, stir in cream and basil.
+
+== Grilled Cheese Sandwich
+cuisine: Western | meal: lunch | minutes: 10 | servings: 2 | img: grilled cheese sandwich
+- 4 slices | Bread | bread
+- 4 slices | Cheddar cheese | cheddar cheese
+- 2 tbsp | Butter | butter
+> Butter the bread, fill with cheese and toast in a pan until golden and melted.
+
+== Chicken Caesar Wrap
+cuisine: Western | meal: lunch | minutes: 15 | servings: 2 | img: chicken caesar wrap
+- 2 | Cooked chicken breasts, sliced | chicken breast
+- 2 | Large tortillas | tortillas
+- 2 cups | Romaine lettuce | romaine lettuce
+- 1/4 cup | Parmesan | parmesan
+- 1/4 cup | Caesar dressing | caesar dressing
+> Toss the chicken, lettuce, cheese and dressing, wrap in the tortillas and serve.
+
+== Macaroni and Cheese
+cuisine: Western | meal: dinner | minutes: 30 | servings: 5 | img: macaroni and cheese
+- 2 cups | Elbow macaroni | macaroni
+- 3 cups | Shredded cheddar | cheddar cheese
+- 2 cups | Milk | milk
+- 3 tbsp | Butter | butter
+- 3 tbsp | Flour | flour
+> Cook the macaroni. Make a roux with butter and flour, whisk in milk and cook until thick.
+> Melt in the cheese and fold through the pasta.
