@@ -138,7 +138,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           subtitle: 'Custom items, photos, aisles, budget & trips',
           onTap: () async {
             final f = await Backup.export(s.repo, s.photoDir);
-            await Share.shareXFiles([XFile(f.path)], text: 'Budget Basket backup');
+            await SharePlus.instance.share(ShareParams(files: [XFile(f.path)], text: 'Budget Basket backup'));
           },
         ),
         _Tile(
@@ -146,8 +146,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title: 'Restore from backup',
           subtitle: 'Pick a backup .zip',
           onTap: () async {
-            final r = await FilePicker.platform.pickFiles(type: FileType.any);
-            final path = r?.files.single.path;
+            final r = await FilePicker.pickFiles(type: FileType.any);
+            final path = r.isEmpty ? null : r.first.path;
             if (path == null) return;
             try {
               await Backup.restore(s.repo, s.photoDir, File(path));
