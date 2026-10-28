@@ -1,0 +1,12 @@
+{
+  "store": "halal",
+  "note": "Prices read from the in-store board photo (all per lb). Edit in the app when they change.",
+  "items": [
+    {"id": "chicken-leg-skinless", "name": "Chicken Leg (skinless)", "price": 3.99, "search": "raw chicken leg quarter skinless", "verify": true},
+    {"id": "chicken-drumstick",    "name": "Chicken Drumsticks",     "price": 3.89, "search": "raw chicken drumsticks"},
+    {"id": "chicken-wings",        "name": "Chicken Wings",          "price": 5.99, "search": "raw chicken wings"},
+    {"id": "chicken-thigh",        "name": "Chicken Thighs",         "price": 5.99, "search": "raw chicken thighs"},
+    {"id": "chicken-breast",       "name": "Chicken Breast",         "price": 6.99, "search": "raw chicken breast"},
+    {"id": "beef-qeema-regular",   "name": "Beef Regular Qeema (ground beef)", "price": 7.99, "search": "raw ground beef mince"}
+  ]
+}

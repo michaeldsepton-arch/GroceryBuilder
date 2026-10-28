@@ -1,0 +1,196 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../data/repo.dart';
+import '../models/models.dart';
+import '../models/units.dart';
+import '../state/app_state.dart';
+import '../theme.dart';
+import '../widgets/common.dart';
+import '../widgets/item_widgets.dart';
+
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  final ctrl = TextEditingController();
+  Timer? _debounce;
+  final Set<String> storeFilter = {};
+  SortMode sort = SortMode.unitPrice;
+  List<Item> results = [];
+  bool loading = false;
+  int _seq = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _run());
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    ctrl.dispose();
+    super.dispose();
+  }
+
+  void _onChanged(String _) {
+    _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 250), _run);
+  }
+
+  Future<void> _run() async {
+    final repo = context.read<AppState>().repo;
+    final seq = ++_seq;
+    setState(() => loading = true);
+    final r = await repo.search(ctrl.text, storeIds: storeFilter);
+    if (!mounted || seq != _seq) return;
+    r.sort((a, b) => compareItems(a, b, sort));
+    setState(() {
+      results = r;
+      loading = false;
+    });
+  }
+
+  /// Ids of the cheapest item per unit kind (needs 2+ comparable results).
+  Set<String> _best() {
+    final byKind = <UnitKind, List<Item>>{};
+    for (final i in results) {
+      byKind.putIfAbsent(i.unitPrice.kind, () => []).add(i);
+    }
+    final ids = <String>{};
+    for (final list in byKind.values) {
+      if (list.length < 2) continue;
+      list.sort((a, b) => a.unitPrice.compareValue.compareTo(b.unitPrice.compareValue));
+      ids.add(list.first.id);
+    }
+    return ids;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = context.watch<AppState>();
+    final best = ctrl.text.trim().isEmpty ? <String>{} : _best();
+    return SafeArea(
+      child: Column(children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+          child: Row(children: [
+            Image.asset('assets/brand/basket.png', height: 40),
+            const SizedBox(width: 10),
+            Text('Budget Basket', style: serif(26)),
+          ]),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+          child: BudgetBar(compact: true),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: TextField(
+            controller: ctrl,
+            onChanged: _onChanged,
+            textInputAction: TextInputAction.search,
+            decoration: InputDecoration(
+              hintText: 'Search milk, chicken thighs, tissue…',
+              prefixIcon: const Icon(Icons.search),
+              suffixIcon: ctrl.text.isEmpty
+                  ? null
+                  : IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () {
+                        ctrl.clear();
+                        _run();
+                      }),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 52,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            children: [
+              for (final st in s.stores)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: FilterChip(
+                    label: Text(st.name.length > 18 ? st.name.split(' ').first : st.name),
+                    selected: storeFilter.contains(st.id),
+                    onSelected: (v) {
+                      setState(() => v ? storeFilter.add(st.id) : storeFilter.remove(st.id));
+                      _run();
+                    },
+                  ),
+                ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+          child: Row(children: [
+            Text(loading ? 'Searching…' : '${results.length} results',
+                style: const TextStyle(color: BB.muted)),
+            const Spacer(),
+            const Text('Sort: ', style: TextStyle(color: BB.muted)),
+            DropdownButton<SortMode>(
+              value: sort,
+              underline: const SizedBox(),
+              items: const [
+                DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
+                DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
+                DropdownMenuItem(value: SortMode.name, child: Text('Name')),
+              ],
+              onChanged: (v) {
+                setState(() => sort = v!);
+                _run();
+              },
+            ),
+          ]),
+        ),
+        Expanded(
+          child: results.isEmpty && !loading
+              ? _Empty(s)
+              : ListView.separated(
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+                  itemCount: results.length,
+                  separatorBuilder: (_, _) => const SizedBox(height: 10),
+                  itemBuilder: (_, i) =>
+                      ItemCard(results[i], best: best.contains(results[i].id)),
+                ),
+        ),
+      ]),
+    );
+  }
+}
+
+class _Empty extends StatelessWidget {
+  const _Empty(this.s);
+  final AppState s;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.search_off, size: 48, color: BB.green500),
+          const SizedBox(height: 12),
+          Text(s.catalogCount == 0 ? 'No store prices loaded yet' : 'Nothing found',
+              style: serif(20)),
+          const SizedBox(height: 8),
+          Text(
+              s.catalogCount == 0
+                  ? (s.syncError ?? 'Pull the latest prices in More → Refresh prices, or add your own items in the Add tab.')
+                  : 'Try another word or clear the store filters.',
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: BB.muted)),
+        ]),
+      ),
+    );
+  }
+}

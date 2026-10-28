@@ -1,0 +1,151 @@
+# One search term per line. Broad staples; add more any time.
+milk
+eggs
+butter
+cheese
+yogurt
+cream
+bread
+buns
+tortilla
+bagels
+chicken breast
+chicken thigh
+chicken wings
+chicken drumsticks
+whole chicken
+ground beef
+beef steak
+beef roast
+pork chops
+bacon
+sausage
+ham
+turkey
+fish
+salmon
+shrimp
+tuna
+lamb
+goat
+apples
+bananas
+oranges
+grapes
+berries
+strawberries
+avocado
+lemons
+tomatoes
+potatoes
+onions
+carrots
+lettuce
+spinach
+broccoli
+cucumber
+peppers
+mushrooms
+garlic
+ginger
+cauliflower
+cabbage
+corn
+frozen vegetables
+frozen fruit
+frozen pizza
+frozen fries
+ice cream
+frozen meals
+rice
+basmati rice
+pasta
+noodles
+flour
+sugar
+salt
+cooking oil
+olive oil
+spices
+cumin
+turmeric
+lentils
+chickpeas
+beans
+canned tomatoes
+tomato sauce
+pasta sauce
+soup
+broth
+cereal
+oatmeal
+granola
+peanut butter
+jam
+honey
+syrup
+crackers
+cookies
+chips
+chocolate
+candy
+nuts
+popcorn
+granola bars
+juice
+pop
+water
+coffee
+tea
+sports drink
+ketchup
+mustard
+mayonnaise
+salad dressing
+bbq sauce
+soy sauce
+hot sauce
+vinegar
+baking soda
+baking powder
+yeast
+dates
+naan
+paneer
+ghee
+halal
+diapers
+wipes
+baby food
+formula
+toilet paper
+paper towel
+tissue
+dish soap
+laundry detergent
+fabric softener
+garbage bags
+cleaning spray
+sponges
+foil
+plastic wrap
+sandwich bags
+shampoo
+conditioner
+body wash
+soap
+toothpaste
+toothbrush
+deodorant
+razors
+lotion
+sunscreen
+vitamins
+pain relief
+cold and flu
+bandages
+dog food
+cat food
+cat litter
+batteries
+light bulbs

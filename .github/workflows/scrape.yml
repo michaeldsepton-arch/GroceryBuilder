@@ -1,0 +1,33 @@
+name: Refresh store prices
+
+on:
+  schedule:
+    - cron: '17 11 * * *'   # daily ~5am Mountain
+  workflow_dispatch:
+    inputs:
+      stores:
+        description: 'Space separated store keys (blank = all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scrape stores
+        run: python scraper/scrape.py ${{ github.event.inputs.stores }}
+      - name: Publish catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view catalog >/dev/null 2>&1 || gh release create catalog --prerelease \
+            --title "Price catalog (auto-updated)" --notes "Daily scraped Red Deer prices. Not an app release."
+          gh release upload catalog data/catalog.json.gz --clobber
+          gh release upload catalog data/report.json --clobber
