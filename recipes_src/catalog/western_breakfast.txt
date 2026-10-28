@@ -16,7 +16,7 @@ cuisine: Western | meal: breakfast | minutes: 15 | servings: 3 | img: french toa
 - 3 | Eggs | eggs
 - 3/4 cup | Milk | milk
 - 1 tsp | Cinnamon | cinnamon
-- 1 tsp | Vanilla | vanilla
+- 1 tsp | Vanilla bean paste | vanilla bean paste
 - 2 tbsp | Butter | butter
 > Whisk eggs, milk, cinnamon and vanilla. Soak the bread slices briefly.
 > Fry in butter until golden on both sides. Serve with syrup or fruit.

@@ -51,8 +51,17 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
 
   Future<void> _save() async {
     final s = context.read<AppState>();
-    final ings = ingredients.text.split('\n').where((l) => l.trim().isNotEmpty).map(_parse).toList();
-    final stepList = steps.text.split('\n').where((l) => l.trim().isNotEmpty).map((l) => l.trim()).toList();
+    // Vanilla extract (alcohol-based) becomes vanilla bean paste, 1:1.
+    final ings = ingredients.text
+        .split('\n')
+        .where((l) => l.trim().isNotEmpty)
+        .map((l) => _parse(Halal.halalize(l)))
+        .toList();
+    final stepList = steps.text
+        .split('\n')
+        .where((l) => l.trim().isNotEmpty)
+        .map((l) => Halal.halalize(l.trim()))
+        .toList();
     if (title.text.trim().isEmpty || ings.isEmpty) {
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text('Add a title and at least one ingredient')));

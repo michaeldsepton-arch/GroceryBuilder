@@ -1,170 +1,1039 @@
 [
-  {"match": ["buttermilk"], "options": [
-    {"label": "Milk + lemon juice", "note": "1 cup milk + 1 tbsp lemon juice or vinegar, rest 5 min", "search": "lemon juice"},
-    {"label": "Plain yogurt, thinned", "note": "3/4 cup yogurt + 1/4 cup milk", "search": "plain yogurt"}]},
-  {"match": ["heavy cream", "whipping cream", "double cream", "cream"], "options": [
-    {"label": "Evaporated milk", "note": "Same amount; richer if reduced", "search": "evaporated milk"},
-    {"label": "Coconut cream", "note": "Same amount, adds mild coconut flavour", "search": "coconut cream"},
-    {"label": "Milk + butter", "note": "3/4 cup milk + 1/4 cup melted butter", "search": "butter"}]},
-  {"match": ["sour cream"], "options": [
-    {"label": "Plain Greek yogurt", "note": "1:1", "search": "plain greek yogurt"}]},
-  {"match": ["yogurt", "yoghurt", "curd", "dahi"], "options": [
-    {"label": "Sour cream", "note": "1:1", "search": "sour cream"},
-    {"label": "Labneh or Greek yogurt", "note": "1:1, thicker", "search": "greek yogurt"}]},
-  {"match": ["milk"], "options": [
-    {"label": "Evaporated milk + water", "note": "1/2 cup evaporated milk + 1/2 cup water per cup", "search": "evaporated milk"},
-    {"label": "Oat or almond milk", "note": "1:1", "search": "oat milk"}]},
-  {"match": ["butter"], "options": [
-    {"label": "Ghee", "note": "1:1, nutty flavour", "search": "ghee"},
-    {"label": "Margarine", "note": "1:1", "search": "margarine"},
-    {"label": "Vegetable oil", "note": "3/4 the amount in baking", "search": "vegetable oil"}]},
-  {"match": ["ghee"], "options": [
-    {"label": "Butter", "note": "1:1", "search": "butter"},
-    {"label": "Vegetable oil", "note": "Use a little less", "search": "vegetable oil"}]},
-  {"match": ["egg", "eggs"], "options": [
-    {"label": "Flax egg", "note": "1 tbsp ground flax + 3 tbsp water per egg, rest 5 min", "search": "ground flax"},
-    {"label": "Unsweetened applesauce", "note": "1/4 cup per egg (baking)", "search": "applesauce"},
-    {"label": "Mashed banana", "note": "1/4 cup per egg (sweet baking)", "search": "bananas"}]},
-  {"match": ["paneer"], "options": [
-    {"label": "Halloumi", "note": "Salty; skip added salt", "search": "halloumi"},
-    {"label": "Firm tofu", "note": "Press well first", "search": "firm tofu"}]},
-  {"match": ["cream cheese"], "options": [
-    {"label": "Labneh", "note": "1:1", "search": "labneh"},
-    {"label": "Mascarpone", "note": "1:1", "search": "mascarpone"}]},
-  {"match": ["cheddar", "mozzarella", "parmesan", "cheese"], "options": [
-    {"label": "Another melting cheese", "note": "Use whatever melts well", "search": "shredded cheese"},
-    {"label": "Nutritional yeast", "note": "For savory flavour (vegan)", "search": "nutritional yeast"}]},
-  {"match": ["chicken breast", "chicken breasts"], "options": [
-    {"label": "Chicken thighs", "note": "More tender; cook slightly longer", "search": "chicken thighs"},
-    {"label": "Turkey breast", "note": "1:1", "search": "turkey breast"}]},
-  {"match": ["chicken thigh", "chicken thighs"], "options": [
-    {"label": "Chicken breast", "note": "Cook a little less", "search": "chicken breast"},
-    {"label": "Chicken drumsticks", "note": "Bone-in, longer cook", "search": "chicken drumsticks"}]},
-  {"match": ["chicken"], "options": [
-    {"label": "Turkey", "note": "1:1", "search": "turkey"},
-    {"label": "Chickpeas", "note": "Vegetarian option for curries and stews", "search": "chickpeas"}]},
-  {"match": ["ground beef", "beef mince", "qeema", "keema", "minced beef"], "options": [
-    {"label": "Ground chicken or turkey", "note": "1:1, add a bit of oil", "search": "ground chicken"},
-    {"label": "Ground lamb", "note": "1:1, richer", "search": "ground lamb"},
-    {"label": "Lentils", "note": "Cooked brown/green lentils for a vegetarian version", "search": "lentils"}]},
-  {"match": ["beef"], "options": [
-    {"label": "Lamb", "note": "1:1", "search": "lamb"},
-    {"label": "Mushrooms", "note": "Hearty vegetarian swap", "search": "mushrooms"}]},
-  {"match": ["lamb", "mutton", "goat"], "options": [
-    {"label": "Beef stew meat", "note": "1:1, similar cook time", "search": "beef stew"},
-    {"label": "Chicken thighs", "note": "Shorter cook time", "search": "chicken thighs"}]},
-  {"match": ["fish", "salmon", "cod", "tilapia"], "options": [
-    {"label": "Any firm white fish", "note": "Tilapia, cod, basa all work", "search": "tilapia"},
-    {"label": "Chicken breast", "note": "For non-seafood", "search": "chicken breast"}]},
-  {"match": ["shrimp", "prawns"], "options": [
-    {"label": "Chicken strips", "note": "Cook through fully", "search": "chicken breast"},
-    {"label": "Firm tofu", "note": "Cubed and pan-fried", "search": "firm tofu"}]},
-  {"match": ["chicken stock", "chicken broth", "beef stock", "beef broth", "stock", "broth"], "options": [
-    {"label": "Vegetable broth", "note": "1:1", "search": "vegetable broth"},
-    {"label": "Stock cube + water", "note": "1 cube per cup of water", "search": "bouillon cubes"}]},
-  {"match": ["white wine", "red wine", "cooking wine", "wine"], "options": [
-    {"label": "Stock + splash of vinegar", "note": "1/2 cup stock + 1 tsp vinegar replaces 1/2 cup wine", "search": "chicken broth"},
-    {"label": "White grape juice", "note": "For white wine, plus lemon juice", "search": "white grape juice"},
-    {"label": "Pomegranate or grape juice", "note": "For red wine, with a dash of vinegar", "search": "pomegranate juice"}]},
-  {"match": ["vanilla extract", "vanilla"], "options": [
-    {"label": "Alcohol-free vanilla", "note": "1:1, check the label for alcohol-free", "search": "alcohol free vanilla"},
-    {"label": "Vanilla bean or paste", "note": "1 tsp paste per tsp extract", "search": "vanilla bean"},
-    {"label": "Cardamom", "note": "A pinch, for a warm flavour", "search": "cardamom"}]},
-  {"match": ["garam masala"], "options": [
-    {"label": "Curry powder + cinnamon", "note": "1 tsp curry powder + pinch cinnamon", "search": "curry powder"}]},
-  {"match": ["cumin"], "options": [
-    {"label": "Ground coriander", "note": "Milder, 1:1", "search": "ground coriander"},
-    {"label": "Caraway seeds", "note": "Use half", "search": "caraway"}]},
-  {"match": ["coriander", "cilantro"], "options": [
-    {"label": "Parsley", "note": "Fresh, 1:1", "search": "parsley"}]},
-  {"match": ["fresh ginger", "ginger"], "options": [
-    {"label": "Ground ginger", "note": "1/4 tsp per 1 tbsp fresh", "search": "ground ginger"}]},
-  {"match": ["fresh garlic", "garlic"], "options": [
-    {"label": "Garlic powder", "note": "1/8 tsp per clove", "search": "garlic powder"},
-    {"label": "Minced garlic jar", "note": "1/2 tsp per clove", "search": "minced garlic"}]},
-  {"match": ["onion", "onions"], "options": [
-    {"label": "Shallots", "note": "1:1, milder", "search": "shallots"},
-    {"label": "Green onions", "note": "For raw or quick cooking", "search": "green onions"},
-    {"label": "Onion powder", "note": "1 tbsp per medium onion", "search": "onion powder"}]},
-  {"match": ["lemon juice", "lemon"], "options": [
-    {"label": "Lime juice", "note": "1:1", "search": "limes"},
-    {"label": "White vinegar", "note": "Half the amount", "search": "white vinegar"}]},
-  {"match": ["lime"], "options": [{"label": "Lemon", "note": "1:1", "search": "lemons"}]},
-  {"match": ["tamarind"], "options": [
-    {"label": "Lemon juice + brown sugar", "note": "Equal parts to taste", "search": "lemon juice"}]},
-  {"match": ["tomato paste"], "options": [
-    {"label": "Tomato sauce, reduced", "note": "3 tbsp sauce per tbsp paste", "search": "tomato sauce"}]},
-  {"match": ["canned tomatoes", "crushed tomatoes", "diced tomatoes", "tomato"], "options": [
-    {"label": "Fresh tomatoes, chopped", "note": "About 1.5x the weight", "search": "tomatoes"},
-    {"label": "Tomato sauce", "note": "1:1 for smoother result", "search": "tomato sauce"}]},
-  {"match": ["basmati rice", "basmati"], "options": [
-    {"label": "Jasmine rice", "note": "1:1", "search": "jasmine rice"},
-    {"label": "Long-grain rice", "note": "1:1", "search": "long grain rice"}]},
-  {"match": ["rice"], "options": [
-    {"label": "Couscous", "note": "Faster, 1:1", "search": "couscous"},
-    {"label": "Quinoa", "note": "1:1", "search": "quinoa"}]},
-  {"match": ["pasta", "spaghetti", "penne"], "options": [
-    {"label": "Another pasta shape", "note": "Any works", "search": "pasta"},
-    {"label": "Rice noodles", "note": "Quick soak", "search": "rice noodles"}]},
-  {"match": ["all-purpose flour", "plain flour", "flour"], "options": [
-    {"label": "Whole wheat flour", "note": "Use 3/4 the amount, add a splash of liquid", "search": "whole wheat flour"},
-    {"label": "Bread flour", "note": "1:1", "search": "bread flour"}]},
-  {"match": ["chickpea flour", "besan", "gram flour"], "options": [
-    {"label": "Ground chickpeas / lentil flour", "note": "1:1", "search": "chickpea flour"}]},
-  {"match": ["baking powder"], "options": [
-    {"label": "Baking soda + lemon juice", "note": "1/4 tsp soda + 1/2 tsp lemon per tsp powder", "search": "baking soda"}]},
-  {"match": ["breadcrumbs"], "options": [
-    {"label": "Crushed cornflakes or crackers", "note": "1:1", "search": "crackers"},
-    {"label": "Rolled oats", "note": "Pulse lightly", "search": "rolled oats"}]},
-  {"match": ["sugar", "white sugar", "granulated sugar"], "options": [
-    {"label": "Brown sugar", "note": "1:1", "search": "brown sugar"},
-    {"label": "Honey", "note": "3/4 the amount, reduce other liquid", "search": "honey"}]},
-  {"match": ["brown sugar"], "options": [
-    {"label": "White sugar + molasses", "note": "1 cup sugar + 1 tbsp molasses", "search": "molasses"}]},
-  {"match": ["honey"], "options": [
-    {"label": "Maple syrup", "note": "1:1", "search": "maple syrup"},
-    {"label": "Date syrup", "note": "1:1", "search": "date syrup"}]},
-  {"match": ["maple syrup"], "options": [{"label": "Honey", "note": "1:1", "search": "honey"}]},
-  {"match": ["cornstarch", "corn starch"], "options": [
-    {"label": "All-purpose flour", "note": "Double the amount", "search": "flour"},
-    {"label": "Potato starch", "note": "1:1", "search": "potato starch"}]},
-  {"match": ["coconut milk"], "options": [
-    {"label": "Evaporated milk", "note": "Less coconut flavour", "search": "evaporated milk"},
-    {"label": "Cream + water", "note": "Thin cream 1:1 with water", "search": "cream"}]},
-  {"match": ["soy sauce"], "options": [
-    {"label": "Worcestershire-free tamari", "note": "1:1", "search": "tamari"},
-    {"label": "Salt + a splash of water", "note": "To taste", "search": "salt"}]},
-  {"match": ["worcestershire"], "options": [
-    {"label": "Soy sauce + vinegar", "note": "1 tbsp soy + 1/2 tsp vinegar", "search": "soy sauce"}]},
-  {"match": ["tahini"], "options": [
-    {"label": "Peanut or almond butter", "note": "1:1", "search": "peanut butter"},
-    {"label": "Sesame seeds + oil", "note": "Blend to a paste", "search": "sesame seeds"}]},
-  {"match": ["pine nuts"], "options": [
-    {"label": "Slivered almonds", "note": "1:1", "search": "slivered almonds"},
-    {"label": "Cashews", "note": "1:1", "search": "cashews"}]},
-  {"match": ["almonds", "walnuts", "pecans", "cashews", "nuts"], "options": [
-    {"label": "Sunflower or pumpkin seeds", "note": "Nut-free swap", "search": "sunflower seeds"},
-    {"label": "Another nut", "note": "1:1", "search": "mixed nuts"}]},
-  {"match": ["saffron"], "options": [
-    {"label": "Turmeric + cardamom", "note": "Pinch of each for colour and warmth", "search": "turmeric"}]},
-  {"match": ["rose water"], "options": [
-    {"label": "Orange blossom water", "note": "1:1", "search": "orange blossom water"},
-    {"label": "Vanilla (alcohol-free)", "note": "Half the amount", "search": "alcohol free vanilla"}]},
-  {"match": ["fresh yeast", "active dry yeast", "yeast"], "options": [
-    {"label": "Instant yeast", "note": "Use 3/4 the amount", "search": "instant yeast"}]},
-  {"match": ["olive oil"], "options": [
-    {"label": "Vegetable or canola oil", "note": "1:1", "search": "canola oil"},
-    {"label": "Melted ghee or butter", "note": "1:1", "search": "ghee"}]},
-  {"match": ["vegetable oil", "canola oil", "oil"], "options": [
-    {"label": "Olive oil", "note": "1:1", "search": "olive oil"},
-    {"label": "Melted butter", "note": "1:1 in baking", "search": "butter"}]},
-  {"match": ["potato", "potatoes"], "options": [
-    {"label": "Sweet potatoes", "note": "1:1", "search": "sweet potatoes"},
-    {"label": "Cauliflower", "note": "Lower carb", "search": "cauliflower"}]},
-  {"match": ["spinach"], "options": [
-    {"label": "Kale", "note": "1:1, cook a bit longer", "search": "kale"},
-    {"label": "Frozen spinach", "note": "Thaw and squeeze dry", "search": "frozen spinach"}]},
-  {"match": ["chili", "chilli", "red pepper flakes", "cayenne"], "options": [
-    {"label": "Paprika + pinch of black pepper", "note": "Milder heat", "search": "paprika"},
-    {"label": "Hot sauce", "note": "A few drops to taste", "search": "hot sauce"}]}
+ {
+  "match": [
+   "buttermilk"
+  ],
+  "options": [
+   {
+    "label": "Milk + lemon juice",
+    "note": "1 cup milk + 1 tbsp lemon juice or vinegar, rest 5 min",
+    "search": "lemon juice"
+   },
+   {
+    "label": "Plain yogurt, thinned",
+    "note": "3/4 cup yogurt + 1/4 cup milk",
+    "search": "plain yogurt"
+   }
+  ]
+ },
+ {
+  "match": [
+   "heavy cream",
+   "whipping cream",
+   "double cream",
+   "cream"
+  ],
+  "options": [
+   {
+    "label": "Evaporated milk",
+    "note": "Same amount; richer if reduced",
+    "search": "evaporated milk"
+   },
+   {
+    "label": "Coconut cream",
+    "note": "Same amount, adds mild coconut flavour",
+    "search": "coconut cream"
+   },
+   {
+    "label": "Milk + butter",
+    "note": "3/4 cup milk + 1/4 cup melted butter",
+    "search": "butter"
+   }
+  ]
+ },
+ {
+  "match": [
+   "sour cream"
+  ],
+  "options": [
+   {
+    "label": "Plain Greek yogurt",
+    "note": "1:1",
+    "search": "plain greek yogurt"
+   }
+  ]
+ },
+ {
+  "match": [
+   "yogurt",
+   "yoghurt",
+   "curd",
+   "dahi"
+  ],
+  "options": [
+   {
+    "label": "Sour cream",
+    "note": "1:1",
+    "search": "sour cream"
+   },
+   {
+    "label": "Labneh or Greek yogurt",
+    "note": "1:1, thicker",
+    "search": "greek yogurt"
+   }
+  ]
+ },
+ {
+  "match": [
+   "milk"
+  ],
+  "options": [
+   {
+    "label": "Evaporated milk + water",
+    "note": "1/2 cup evaporated milk + 1/2 cup water per cup",
+    "search": "evaporated milk"
+   },
+   {
+    "label": "Oat or almond milk",
+    "note": "1:1",
+    "search": "oat milk"
+   }
+  ]
+ },
+ {
+  "match": [
+   "butter"
+  ],
+  "options": [
+   {
+    "label": "Ghee",
+    "note": "1:1, nutty flavour",
+    "search": "ghee"
+   },
+   {
+    "label": "Margarine",
+    "note": "1:1",
+    "search": "margarine"
+   },
+   {
+    "label": "Vegetable oil",
+    "note": "3/4 the amount in baking",
+    "search": "vegetable oil"
+   }
+  ]
+ },
+ {
+  "match": [
+   "ghee"
+  ],
+  "options": [
+   {
+    "label": "Butter",
+    "note": "1:1",
+    "search": "butter"
+   },
+   {
+    "label": "Vegetable oil",
+    "note": "Use a little less",
+    "search": "vegetable oil"
+   }
+  ]
+ },
+ {
+  "match": [
+   "egg",
+   "eggs"
+  ],
+  "options": [
+   {
+    "label": "Flax egg",
+    "note": "1 tbsp ground flax + 3 tbsp water per egg, rest 5 min",
+    "search": "ground flax"
+   },
+   {
+    "label": "Unsweetened applesauce",
+    "note": "1/4 cup per egg (baking)",
+    "search": "applesauce"
+   },
+   {
+    "label": "Mashed banana",
+    "note": "1/4 cup per egg (sweet baking)",
+    "search": "bananas"
+   }
+  ]
+ },
+ {
+  "match": [
+   "paneer"
+  ],
+  "options": [
+   {
+    "label": "Halloumi",
+    "note": "Salty; skip added salt",
+    "search": "halloumi"
+   },
+   {
+    "label": "Firm tofu",
+    "note": "Press well first",
+    "search": "firm tofu"
+   }
+  ]
+ },
+ {
+  "match": [
+   "cream cheese"
+  ],
+  "options": [
+   {
+    "label": "Labneh",
+    "note": "1:1",
+    "search": "labneh"
+   },
+   {
+    "label": "Mascarpone",
+    "note": "1:1",
+    "search": "mascarpone"
+   }
+  ]
+ },
+ {
+  "match": [
+   "cheddar",
+   "mozzarella",
+   "parmesan",
+   "cheese"
+  ],
+  "options": [
+   {
+    "label": "Another melting cheese",
+    "note": "Use whatever melts well",
+    "search": "shredded cheese"
+   },
+   {
+    "label": "Nutritional yeast",
+    "note": "For savory flavour (vegan)",
+    "search": "nutritional yeast"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chicken breast",
+   "chicken breasts"
+  ],
+  "options": [
+   {
+    "label": "Chicken thighs",
+    "note": "More tender; cook slightly longer",
+    "search": "chicken thighs"
+   },
+   {
+    "label": "Turkey breast",
+    "note": "1:1",
+    "search": "turkey breast"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chicken thigh",
+   "chicken thighs"
+  ],
+  "options": [
+   {
+    "label": "Chicken breast",
+    "note": "Cook a little less",
+    "search": "chicken breast"
+   },
+   {
+    "label": "Chicken drumsticks",
+    "note": "Bone-in, longer cook",
+    "search": "chicken drumsticks"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chicken"
+  ],
+  "options": [
+   {
+    "label": "Turkey",
+    "note": "1:1",
+    "search": "turkey"
+   },
+   {
+    "label": "Chickpeas",
+    "note": "Vegetarian option for curries and stews",
+    "search": "chickpeas"
+   }
+  ]
+ },
+ {
+  "match": [
+   "ground beef",
+   "beef mince",
+   "qeema",
+   "keema",
+   "minced beef"
+  ],
+  "options": [
+   {
+    "label": "Ground chicken or turkey",
+    "note": "1:1, add a bit of oil",
+    "search": "ground chicken"
+   },
+   {
+    "label": "Ground lamb",
+    "note": "1:1, richer",
+    "search": "ground lamb"
+   },
+   {
+    "label": "Lentils",
+    "note": "Cooked brown/green lentils for a vegetarian version",
+    "search": "lentils"
+   }
+  ]
+ },
+ {
+  "match": [
+   "beef"
+  ],
+  "options": [
+   {
+    "label": "Lamb",
+    "note": "1:1",
+    "search": "lamb"
+   },
+   {
+    "label": "Mushrooms",
+    "note": "Hearty vegetarian swap",
+    "search": "mushrooms"
+   }
+  ]
+ },
+ {
+  "match": [
+   "lamb",
+   "mutton",
+   "goat"
+  ],
+  "options": [
+   {
+    "label": "Beef stew meat",
+    "note": "1:1, similar cook time",
+    "search": "beef stew"
+   },
+   {
+    "label": "Chicken thighs",
+    "note": "Shorter cook time",
+    "search": "chicken thighs"
+   }
+  ]
+ },
+ {
+  "match": [
+   "fish",
+   "salmon",
+   "cod",
+   "tilapia"
+  ],
+  "options": [
+   {
+    "label": "Any firm white fish",
+    "note": "Tilapia, cod, basa all work",
+    "search": "tilapia"
+   },
+   {
+    "label": "Chicken breast",
+    "note": "For non-seafood",
+    "search": "chicken breast"
+   }
+  ]
+ },
+ {
+  "match": [
+   "shrimp",
+   "prawns"
+  ],
+  "options": [
+   {
+    "label": "Chicken strips",
+    "note": "Cook through fully",
+    "search": "chicken breast"
+   },
+   {
+    "label": "Firm tofu",
+    "note": "Cubed and pan-fried",
+    "search": "firm tofu"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chicken stock",
+   "chicken broth",
+   "beef stock",
+   "beef broth",
+   "stock",
+   "broth"
+  ],
+  "options": [
+   {
+    "label": "Vegetable broth",
+    "note": "1:1",
+    "search": "vegetable broth"
+   },
+   {
+    "label": "Stock cube + water",
+    "note": "1 cube per cup of water",
+    "search": "bouillon cubes"
+   }
+  ]
+ },
+ {
+  "match": [
+   "white wine",
+   "red wine",
+   "cooking wine",
+   "wine"
+  ],
+  "options": [
+   {
+    "label": "Stock + splash of vinegar",
+    "note": "1/2 cup stock + 1 tsp vinegar replaces 1/2 cup wine",
+    "search": "chicken broth"
+   },
+   {
+    "label": "White grape juice",
+    "note": "For white wine, plus lemon juice",
+    "search": "white grape juice"
+   },
+   {
+    "label": "Pomegranate or grape juice",
+    "note": "For red wine, with a dash of vinegar",
+    "search": "pomegranate juice"
+   }
+  ]
+ },
+ {
+  "match": [
+   "vanilla bean paste",
+   "vanilla paste",
+   "vanilla extract",
+   "vanilla essence",
+   "vanilla"
+  ],
+  "options": [
+   {
+    "label": "Vanilla bean paste",
+    "note": "1:1 for extract; the paste we use",
+    "search": "vanilla bean paste"
+   },
+   {
+    "label": "Vanilla bean pod",
+    "note": "1 pod, seeds scraped, per 1 tbsp paste",
+    "search": "vanilla bean"
+   },
+   {
+    "label": "Ground cardamom",
+    "note": "A pinch, a warm flavour in milk-based sweets",
+    "search": "cardamom"
+   },
+   {
+    "label": "Cinnamon",
+    "note": "1/4 tsp per tsp of vanilla in baking",
+    "search": "cinnamon"
+   }
+  ]
+ },
+ {
+  "match": [
+   "garam masala"
+  ],
+  "options": [
+   {
+    "label": "Curry powder + cinnamon",
+    "note": "1 tsp curry powder + pinch cinnamon",
+    "search": "curry powder"
+   }
+  ]
+ },
+ {
+  "match": [
+   "cumin"
+  ],
+  "options": [
+   {
+    "label": "Ground coriander",
+    "note": "Milder, 1:1",
+    "search": "ground coriander"
+   },
+   {
+    "label": "Caraway seeds",
+    "note": "Use half",
+    "search": "caraway"
+   }
+  ]
+ },
+ {
+  "match": [
+   "coriander",
+   "cilantro"
+  ],
+  "options": [
+   {
+    "label": "Parsley",
+    "note": "Fresh, 1:1",
+    "search": "parsley"
+   }
+  ]
+ },
+ {
+  "match": [
+   "fresh ginger",
+   "ginger"
+  ],
+  "options": [
+   {
+    "label": "Ground ginger",
+    "note": "1/4 tsp per 1 tbsp fresh",
+    "search": "ground ginger"
+   }
+  ]
+ },
+ {
+  "match": [
+   "fresh garlic",
+   "garlic"
+  ],
+  "options": [
+   {
+    "label": "Garlic powder",
+    "note": "1/8 tsp per clove",
+    "search": "garlic powder"
+   },
+   {
+    "label": "Minced garlic jar",
+    "note": "1/2 tsp per clove",
+    "search": "minced garlic"
+   }
+  ]
+ },
+ {
+  "match": [
+   "onion",
+   "onions"
+  ],
+  "options": [
+   {
+    "label": "Shallots",
+    "note": "1:1, milder",
+    "search": "shallots"
+   },
+   {
+    "label": "Green onions",
+    "note": "For raw or quick cooking",
+    "search": "green onions"
+   },
+   {
+    "label": "Onion powder",
+    "note": "1 tbsp per medium onion",
+    "search": "onion powder"
+   }
+  ]
+ },
+ {
+  "match": [
+   "lemon juice",
+   "lemon"
+  ],
+  "options": [
+   {
+    "label": "Lime juice",
+    "note": "1:1",
+    "search": "limes"
+   },
+   {
+    "label": "White vinegar",
+    "note": "Half the amount",
+    "search": "white vinegar"
+   }
+  ]
+ },
+ {
+  "match": [
+   "lime"
+  ],
+  "options": [
+   {
+    "label": "Lemon",
+    "note": "1:1",
+    "search": "lemons"
+   }
+  ]
+ },
+ {
+  "match": [
+   "tamarind"
+  ],
+  "options": [
+   {
+    "label": "Lemon juice + brown sugar",
+    "note": "Equal parts to taste",
+    "search": "lemon juice"
+   }
+  ]
+ },
+ {
+  "match": [
+   "tomato paste"
+  ],
+  "options": [
+   {
+    "label": "Tomato sauce, reduced",
+    "note": "3 tbsp sauce per tbsp paste",
+    "search": "tomato sauce"
+   }
+  ]
+ },
+ {
+  "match": [
+   "canned tomatoes",
+   "crushed tomatoes",
+   "diced tomatoes",
+   "tomato"
+  ],
+  "options": [
+   {
+    "label": "Fresh tomatoes, chopped",
+    "note": "About 1.5x the weight",
+    "search": "tomatoes"
+   },
+   {
+    "label": "Tomato sauce",
+    "note": "1:1 for smoother result",
+    "search": "tomato sauce"
+   }
+  ]
+ },
+ {
+  "match": [
+   "basmati rice",
+   "basmati"
+  ],
+  "options": [
+   {
+    "label": "Jasmine rice",
+    "note": "1:1",
+    "search": "jasmine rice"
+   },
+   {
+    "label": "Long-grain rice",
+    "note": "1:1",
+    "search": "long grain rice"
+   }
+  ]
+ },
+ {
+  "match": [
+   "rice"
+  ],
+  "options": [
+   {
+    "label": "Couscous",
+    "note": "Faster, 1:1",
+    "search": "couscous"
+   },
+   {
+    "label": "Quinoa",
+    "note": "1:1",
+    "search": "quinoa"
+   }
+  ]
+ },
+ {
+  "match": [
+   "pasta",
+   "spaghetti",
+   "penne"
+  ],
+  "options": [
+   {
+    "label": "Another pasta shape",
+    "note": "Any works",
+    "search": "pasta"
+   },
+   {
+    "label": "Rice noodles",
+    "note": "Quick soak",
+    "search": "rice noodles"
+   }
+  ]
+ },
+ {
+  "match": [
+   "all-purpose flour",
+   "plain flour",
+   "flour"
+  ],
+  "options": [
+   {
+    "label": "Whole wheat flour",
+    "note": "Use 3/4 the amount, add a splash of liquid",
+    "search": "whole wheat flour"
+   },
+   {
+    "label": "Bread flour",
+    "note": "1:1",
+    "search": "bread flour"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chickpea flour",
+   "besan",
+   "gram flour"
+  ],
+  "options": [
+   {
+    "label": "Ground chickpeas / lentil flour",
+    "note": "1:1",
+    "search": "chickpea flour"
+   }
+  ]
+ },
+ {
+  "match": [
+   "baking powder"
+  ],
+  "options": [
+   {
+    "label": "Baking soda + lemon juice",
+    "note": "1/4 tsp soda + 1/2 tsp lemon per tsp powder",
+    "search": "baking soda"
+   }
+  ]
+ },
+ {
+  "match": [
+   "breadcrumbs"
+  ],
+  "options": [
+   {
+    "label": "Crushed cornflakes or crackers",
+    "note": "1:1",
+    "search": "crackers"
+   },
+   {
+    "label": "Rolled oats",
+    "note": "Pulse lightly",
+    "search": "rolled oats"
+   }
+  ]
+ },
+ {
+  "match": [
+   "sugar",
+   "white sugar",
+   "granulated sugar"
+  ],
+  "options": [
+   {
+    "label": "Brown sugar",
+    "note": "1:1",
+    "search": "brown sugar"
+   },
+   {
+    "label": "Honey",
+    "note": "3/4 the amount, reduce other liquid",
+    "search": "honey"
+   }
+  ]
+ },
+ {
+  "match": [
+   "brown sugar"
+  ],
+  "options": [
+   {
+    "label": "White sugar + molasses",
+    "note": "1 cup sugar + 1 tbsp molasses",
+    "search": "molasses"
+   }
+  ]
+ },
+ {
+  "match": [
+   "honey"
+  ],
+  "options": [
+   {
+    "label": "Maple syrup",
+    "note": "1:1",
+    "search": "maple syrup"
+   },
+   {
+    "label": "Date syrup",
+    "note": "1:1",
+    "search": "date syrup"
+   }
+  ]
+ },
+ {
+  "match": [
+   "maple syrup"
+  ],
+  "options": [
+   {
+    "label": "Honey",
+    "note": "1:1",
+    "search": "honey"
+   }
+  ]
+ },
+ {
+  "match": [
+   "cornstarch",
+   "corn starch"
+  ],
+  "options": [
+   {
+    "label": "All-purpose flour",
+    "note": "Double the amount",
+    "search": "flour"
+   },
+   {
+    "label": "Potato starch",
+    "note": "1:1",
+    "search": "potato starch"
+   }
+  ]
+ },
+ {
+  "match": [
+   "coconut milk"
+  ],
+  "options": [
+   {
+    "label": "Evaporated milk",
+    "note": "Less coconut flavour",
+    "search": "evaporated milk"
+   },
+   {
+    "label": "Cream + water",
+    "note": "Thin cream 1:1 with water",
+    "search": "cream"
+   }
+  ]
+ },
+ {
+  "match": [
+   "soy sauce"
+  ],
+  "options": [
+   {
+    "label": "Worcestershire-free tamari",
+    "note": "1:1",
+    "search": "tamari"
+   },
+   {
+    "label": "Salt + a splash of water",
+    "note": "To taste",
+    "search": "salt"
+   }
+  ]
+ },
+ {
+  "match": [
+   "worcestershire"
+  ],
+  "options": [
+   {
+    "label": "Soy sauce + vinegar",
+    "note": "1 tbsp soy + 1/2 tsp vinegar",
+    "search": "soy sauce"
+   }
+  ]
+ },
+ {
+  "match": [
+   "tahini"
+  ],
+  "options": [
+   {
+    "label": "Peanut or almond butter",
+    "note": "1:1",
+    "search": "peanut butter"
+   },
+   {
+    "label": "Sesame seeds + oil",
+    "note": "Blend to a paste",
+    "search": "sesame seeds"
+   }
+  ]
+ },
+ {
+  "match": [
+   "pine nuts"
+  ],
+  "options": [
+   {
+    "label": "Slivered almonds",
+    "note": "1:1",
+    "search": "slivered almonds"
+   },
+   {
+    "label": "Cashews",
+    "note": "1:1",
+    "search": "cashews"
+   }
+  ]
+ },
+ {
+  "match": [
+   "almonds",
+   "walnuts",
+   "pecans",
+   "cashews",
+   "nuts"
+  ],
+  "options": [
+   {
+    "label": "Sunflower or pumpkin seeds",
+    "note": "Nut-free swap",
+    "search": "sunflower seeds"
+   },
+   {
+    "label": "Another nut",
+    "note": "1:1",
+    "search": "mixed nuts"
+   }
+  ]
+ },
+ {
+  "match": [
+   "saffron"
+  ],
+  "options": [
+   {
+    "label": "Turmeric + cardamom",
+    "note": "Pinch of each for colour and warmth",
+    "search": "turmeric"
+   }
+  ]
+ },
+ {
+  "match": [
+   "rose water"
+  ],
+  "options": [
+   {
+    "label": "Orange blossom water",
+    "note": "1:1",
+    "search": "orange blossom water"
+   },
+   {
+    "label": "Vanilla bean paste",
+    "note": "Half the amount",
+    "search": "vanilla bean paste"
+   }
+  ]
+ },
+ {
+  "match": [
+   "fresh yeast",
+   "active dry yeast",
+   "yeast"
+  ],
+  "options": [
+   {
+    "label": "Instant yeast",
+    "note": "Use 3/4 the amount",
+    "search": "instant yeast"
+   }
+  ]
+ },
+ {
+  "match": [
+   "olive oil"
+  ],
+  "options": [
+   {
+    "label": "Vegetable or canola oil",
+    "note": "1:1",
+    "search": "canola oil"
+   },
+   {
+    "label": "Melted ghee or butter",
+    "note": "1:1",
+    "search": "ghee"
+   }
+  ]
+ },
+ {
+  "match": [
+   "vegetable oil",
+   "canola oil",
+   "oil"
+  ],
+  "options": [
+   {
+    "label": "Olive oil",
+    "note": "1:1",
+    "search": "olive oil"
+   },
+   {
+    "label": "Melted butter",
+    "note": "1:1 in baking",
+    "search": "butter"
+   }
+  ]
+ },
+ {
+  "match": [
+   "potato",
+   "potatoes"
+  ],
+  "options": [
+   {
+    "label": "Sweet potatoes",
+    "note": "1:1",
+    "search": "sweet potatoes"
+   },
+   {
+    "label": "Cauliflower",
+    "note": "Lower carb",
+    "search": "cauliflower"
+   }
+  ]
+ },
+ {
+  "match": [
+   "spinach"
+  ],
+  "options": [
+   {
+    "label": "Kale",
+    "note": "1:1, cook a bit longer",
+    "search": "kale"
+   },
+   {
+    "label": "Frozen spinach",
+    "note": "Thaw and squeeze dry",
+    "search": "frozen spinach"
+   }
+  ]
+ },
+ {
+  "match": [
+   "chili",
+   "chilli",
+   "red pepper flakes",
+   "cayenne"
+  ],
+  "options": [
+   {
+    "label": "Paprika + pinch of black pepper",
+    "note": "Milder heat",
+    "search": "paprika"
+   },
+   {
+    "label": "Hot sauce",
+    "note": "A few drops to taste",
+    "search": "hot sauce"
+   }
+  ]
+ }
 ]

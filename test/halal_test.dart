@@ -16,6 +16,15 @@ void main() {
     }
   });
 
+  test('vanilla extract is hidden, vanilla bean paste is not, and recipes convert it', () {
+    expect(Halal.isHaram('Pure Vanilla Extract 120 mL'), isTrue);
+    expect(Halal.isHaram('Imitation vanilla essence'), isTrue);
+    expect(Halal.isHaram('Nielsen-Massey Vanilla Bean Paste 118 mL'), isFalse);
+    expect(Halal.halalize('1 tsp pure vanilla extract'), '1 tsp vanilla bean paste');
+    expect(Halal.halalize('Vanilla Extract'), 'Vanilla bean paste');
+    expect(Halal.halalize('stir in the vanilla essence and mix'), 'stir in the vanilla bean paste and mix');
+  });
+
   test('allows lookalikes and halal alternatives', () {
     for (final t in [
       'Root Beer 2L', 'Ginger beer', 'Red wine vinegar', 'Rice vinegar', 'Turkey bacon', 'Beef sausage',

@@ -1,63 +1,263 @@
 {
-  "cilantro": ["coriander", "fresh coriander"],
-  "coriander": ["cilantro"],
-  "eggplant": ["aubergine"],
-  "zucchini": ["courgette"],
-  "green onions": ["scallions", "spring onions", "green onion"],
-  "heavy cream": ["whipping cream", "35% cream", "whipped cream"],
-  "cream": ["table cream", "10% cream", "half and half"],
-  "ground beef": ["lean ground beef", "medium ground beef", "extra lean ground beef", "regular ground beef", "beef mince"],
-  "ground chicken": ["lean ground chicken", "chicken mince"],
-  "ground lamb": ["lamb mince", "minced lamb"],
-  "chicken thighs": ["chicken thigh", "boneless chicken thighs", "chicken legs"],
-  "boneless chicken thighs": ["chicken thighs", "chicken thigh"],
-  "chicken breast": ["chicken breasts", "boneless chicken breast", "chicken breast fillets"],
-  "chicken drumsticks": ["chicken drumstick", "drumsticks"],
-  "whole chicken": ["fresh whole chicken", "chicken whole"],
-  "baking soda": ["bicarbonate of soda", "sodium bicarbonate"],
-  "cornstarch": ["corn starch"],
-  "icing sugar": ["powdered sugar", "confectioners sugar", "icing"],
-  "bouillon cubes": ["stock cubes", "bouillon", "stock cube"],
-  "chili powder": ["chilli powder", "red chili powder", "cayenne"],
-  "chili flakes": ["red pepper flakes", "chilli flakes", "crushed red pepper"],
-  "green chili": ["green chilies", "jalapeno", "serrano", "green chilli"],
-  "tomato paste": ["tomato puree", "double concentrated tomato paste"],
-  "diced tomatoes": ["canned diced tomatoes", "chopped tomatoes", "canned tomatoes"],
-  "crushed tomatoes": ["canned crushed tomatoes", "canned tomatoes"],
-  "canned tomatoes": ["whole tomatoes", "diced tomatoes", "crushed tomatoes"],
-  "chickpeas": ["garbanzo beans", "canned chickpeas"],
-  "dried chickpeas": ["chickpeas", "garbanzo"],
-  "red lentils": ["split red lentils", "masoor dal", "lentils"],
-  "lentils": ["green lentils", "brown lentils", "red lentils"],
-  "basmati rice": ["basmati", "long grain rice"],
-  "plain yogurt": ["plain yoghurt", "natural yogurt", "yogurt"],
-  "greek yogurt": ["greek yoghurt", "plain greek yogurt"],
-  "whole wheat flour": ["atta", "whole wheat atta", "wholemeal flour"],
-  "ghee": ["clarified butter", "butter ghee"],
-  "pita bread": ["pita", "pitta"],
-  "tortillas": ["flour tortillas", "tortilla wraps", "wraps"],
-  "olive oil": ["extra virgin olive oil", "pure olive oil"],
-  "vegetable oil": ["canola oil", "cooking oil"],
-  "canola oil": ["vegetable oil", "rapeseed oil"],
-  "ginger garlic paste": ["ginger and garlic paste", "garlic ginger paste", "minced ginger"],
-  "garam masala": ["garam masala powder"],
-  "ras el hanout": ["moroccan spice", "moroccan seasoning"],
-  "sumac": ["ground sumac"],
-  "tahini": ["sesame paste", "sesame tahini"],
-  "paneer": ["indian cheese", "cottage cheese"],
-  "milk powder": ["powdered milk", "skim milk powder"],
-  "rose water": ["rosewater"],
-  "pistachios": ["shelled pistachios", "pistachio"],
-  "mixed nuts": ["nuts"],
-  "romaine lettuce": ["romaine", "romaine hearts"],
-  "red pepper": ["red bell pepper", "bell pepper"],
-  "green pepper": ["green bell pepper", "bell pepper"],
-  "frozen peas": ["peas", "green peas"],
-  "frozen mixed vegetables": ["mixed vegetables"],
-  "black tea": ["tea bags", "orange pekoe tea", "tea"],
-  "evaporated milk": ["canned milk", "carnation"],
-  "beef shank": ["beef shank bone in", "beef stew", "stewing beef"],
-  "beef stew": ["stewing beef", "beef cubes", "stew beef"],
-  "alcohol free vanilla": ["imitation vanilla", "vanilla flavour", "vanilla"],
-  "vanilla extract": ["vanilla", "pure vanilla"]
+ "cilantro": [
+  "coriander",
+  "fresh coriander"
+ ],
+ "coriander": [
+  "cilantro"
+ ],
+ "eggplant": [
+  "aubergine"
+ ],
+ "zucchini": [
+  "courgette"
+ ],
+ "green onions": [
+  "scallions",
+  "spring onions",
+  "green onion"
+ ],
+ "heavy cream": [
+  "whipping cream",
+  "35% cream",
+  "whipped cream"
+ ],
+ "cream": [
+  "table cream",
+  "10% cream",
+  "half and half"
+ ],
+ "ground beef": [
+  "lean ground beef",
+  "medium ground beef",
+  "extra lean ground beef",
+  "regular ground beef",
+  "beef mince"
+ ],
+ "ground chicken": [
+  "lean ground chicken",
+  "chicken mince"
+ ],
+ "ground lamb": [
+  "lamb mince",
+  "minced lamb"
+ ],
+ "chicken thighs": [
+  "chicken thigh",
+  "boneless chicken thighs",
+  "chicken legs"
+ ],
+ "boneless chicken thighs": [
+  "chicken thighs",
+  "chicken thigh"
+ ],
+ "chicken breast": [
+  "chicken breasts",
+  "boneless chicken breast",
+  "chicken breast fillets"
+ ],
+ "chicken drumsticks": [
+  "chicken drumstick",
+  "drumsticks"
+ ],
+ "whole chicken": [
+  "fresh whole chicken",
+  "chicken whole"
+ ],
+ "baking soda": [
+  "bicarbonate of soda",
+  "sodium bicarbonate"
+ ],
+ "cornstarch": [
+  "corn starch"
+ ],
+ "icing sugar": [
+  "powdered sugar",
+  "confectioners sugar",
+  "icing"
+ ],
+ "bouillon cubes": [
+  "stock cubes",
+  "bouillon",
+  "stock cube"
+ ],
+ "chili powder": [
+  "chilli powder",
+  "red chili powder",
+  "cayenne"
+ ],
+ "chili flakes": [
+  "red pepper flakes",
+  "chilli flakes",
+  "crushed red pepper"
+ ],
+ "green chili": [
+  "green chilies",
+  "jalapeno",
+  "serrano",
+  "green chilli"
+ ],
+ "tomato paste": [
+  "tomato puree",
+  "double concentrated tomato paste"
+ ],
+ "diced tomatoes": [
+  "canned diced tomatoes",
+  "chopped tomatoes",
+  "canned tomatoes"
+ ],
+ "crushed tomatoes": [
+  "canned crushed tomatoes",
+  "canned tomatoes"
+ ],
+ "canned tomatoes": [
+  "whole tomatoes",
+  "diced tomatoes",
+  "crushed tomatoes"
+ ],
+ "chickpeas": [
+  "garbanzo beans",
+  "canned chickpeas"
+ ],
+ "dried chickpeas": [
+  "chickpeas",
+  "garbanzo"
+ ],
+ "red lentils": [
+  "split red lentils",
+  "masoor dal",
+  "lentils"
+ ],
+ "lentils": [
+  "green lentils",
+  "brown lentils",
+  "red lentils"
+ ],
+ "basmati rice": [
+  "basmati",
+  "long grain rice"
+ ],
+ "plain yogurt": [
+  "plain yoghurt",
+  "natural yogurt",
+  "yogurt"
+ ],
+ "greek yogurt": [
+  "greek yoghurt",
+  "plain greek yogurt"
+ ],
+ "whole wheat flour": [
+  "atta",
+  "whole wheat atta",
+  "wholemeal flour"
+ ],
+ "ghee": [
+  "clarified butter",
+  "butter ghee"
+ ],
+ "pita bread": [
+  "pita",
+  "pitta"
+ ],
+ "tortillas": [
+  "flour tortillas",
+  "tortilla wraps",
+  "wraps"
+ ],
+ "olive oil": [
+  "extra virgin olive oil",
+  "pure olive oil"
+ ],
+ "vegetable oil": [
+  "canola oil",
+  "cooking oil"
+ ],
+ "canola oil": [
+  "vegetable oil",
+  "rapeseed oil"
+ ],
+ "ginger garlic paste": [
+  "ginger and garlic paste",
+  "garlic ginger paste",
+  "minced ginger"
+ ],
+ "garam masala": [
+  "garam masala powder"
+ ],
+ "ras el hanout": [
+  "moroccan spice",
+  "moroccan seasoning"
+ ],
+ "sumac": [
+  "ground sumac"
+ ],
+ "tahini": [
+  "sesame paste",
+  "sesame tahini"
+ ],
+ "paneer": [
+  "indian cheese",
+  "cottage cheese"
+ ],
+ "milk powder": [
+  "powdered milk",
+  "skim milk powder"
+ ],
+ "rose water": [
+  "rosewater"
+ ],
+ "pistachios": [
+  "shelled pistachios",
+  "pistachio"
+ ],
+ "mixed nuts": [
+  "nuts"
+ ],
+ "romaine lettuce": [
+  "romaine",
+  "romaine hearts"
+ ],
+ "red pepper": [
+  "red bell pepper",
+  "bell pepper"
+ ],
+ "green pepper": [
+  "green bell pepper",
+  "bell pepper"
+ ],
+ "frozen peas": [
+  "peas",
+  "green peas"
+ ],
+ "frozen mixed vegetables": [
+  "mixed vegetables"
+ ],
+ "black tea": [
+  "tea bags",
+  "orange pekoe tea",
+  "tea"
+ ],
+ "evaporated milk": [
+  "canned milk",
+  "carnation"
+ ],
+ "beef shank": [
+  "beef shank bone in",
+  "beef stew",
+  "stewing beef"
+ ],
+ "beef stew": [
+  "stewing beef",
+  "beef cubes",
+  "stew beef"
+ ],
+ "vanilla bean paste": [
+  "vanilla paste",
+  "vanilla bean",
+  "vanilla bean extract paste"
+ ],
+ "vanilla": [
+  "vanilla bean paste",
+  "vanilla paste"
+ ]
 }

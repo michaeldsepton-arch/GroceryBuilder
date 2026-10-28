@@ -29,6 +29,12 @@ class Halal {
 
   static bool get ready => _ready;
 
+  static final _vanilla = RegExp(r'\b(?:pure |natural |real |imitation )?vanilla (?:extract|essence)\b', caseSensitive: false);
+
+  /// Vanilla extract is alcohol-based; we use vanilla bean paste (1:1) instead.
+  static String halalize(String text) => text.replaceAllMapped(
+      _vanilla, (m) => m.group(0)![0] == m.group(0)![0].toUpperCase() ? 'Vanilla bean paste' : 'vanilla bean paste');
+
   static String _stripAllowed(String text) {
     var s = text.toLowerCase();
     for (final a in _allow) {

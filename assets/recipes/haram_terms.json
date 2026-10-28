@@ -110,7 +110,10 @@
     "shiraz",
     "malbec",
     "moscato",
-    "sauvignon"
+    "sauvignon",
+    "vanilla extract",
+    "pure vanilla extract",
+    "vanilla essence"
   ],
   "conditional": {
     "bacon": [

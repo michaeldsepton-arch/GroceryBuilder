@@ -222,9 +222,31 @@ def fetch_mealdb():
     return out
 
 
+VANILLA_RE = re.compile(r"\b(?:pure |natural |real |imitation )?vanilla (?:extract|essence)\b", re.I)
+
+
+def halalize(r):
+    """Vanilla extract is alcohol-based: use vanilla bean paste (1:1) instead."""
+    def fix(t):
+        return VANILLA_RE.sub(lambda m: "Vanilla bean paste" if m.group(0)[0].isupper() else "vanilla bean paste", t or "")
+    r["title"] = fix(r["title"])
+    r["steps"] = [fix(x) for x in r["steps"]]
+    if r.get("notes"):
+        r["notes"] = fix(r["notes"])
+    for i in r["ingredients"]:
+        i["name"] = fix(i["name"])
+        i["search"] = fix(i["search"])
+        if i["name"].strip().lower() == "vanilla":
+            i["name"], i["search"] = "Vanilla bean paste", "vanilla bean paste"
+        if i["search"].strip().lower() in ("vanilla", "vanilla extract"):
+            i["search"] = "vanilla bean paste"
+    return r
+
+
 def finish(recipes, prefix):
     res, dropped = [], 0
     for r in recipes:
+        r = halalize(r)
         r.setdefault("id", f"{prefix}:{slug(r['title'])}")
         # Checked field by field: an exception word ("turkey") in one ingredient
         # must never excuse "bacon" in another.
