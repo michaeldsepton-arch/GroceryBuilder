@@ -22,8 +22,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Scrape stores
-        run: python scraper/scrape.py ${{ github.event.inputs.stores }}
+        run: |
+          if [ "${{ github.event.inputs.stores }}" = "probe" ]; then
+            cd scraper && python probe.py; exit 0
+          fi
+          python scraper/scrape.py ${{ github.event.inputs.stores }}
       - name: Publish catalog
+        if: ${{ github.event.inputs.stores != 'probe' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

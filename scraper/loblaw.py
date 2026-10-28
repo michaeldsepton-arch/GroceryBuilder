@@ -8,6 +8,7 @@ import json
 import sys
 import time
 import traceback
+import urllib.error
 import urllib.request
 
 from common import SEARCH_TERMS, guess_taxable, item, parse_size
@@ -32,8 +33,11 @@ def call(path, banner, body=None):
     }
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(f"{API}{path}", data=data, headers=headers)
-    with urllib.request.urlopen(req, timeout=40) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=40) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode()[:300]}") from None
 
 
 def find_store(banner_key, city="Red Deer"):
@@ -96,6 +100,7 @@ def scrape(banner_key):
         print(f"[{banner_key}] no Red Deer store found", file=sys.stderr)
         return [], []
     loc = locs[0]
+    loc["id"] = loc.get("storeId") or loc.get("id")
     loc["id"] = loc.get("storeId") or loc.get("id") or loc.get("locationId")
     print(f"[{banner_key}] using store id {loc['id']}")
     stores.append({"id": banner_key, "name": BANNERS[banner_key]["name"], "color": BANNERS[banner_key]["color"],
@@ -107,8 +112,9 @@ def scrape(banner_key):
             print(f"[{banner_key}] '{term}' failed: {type(e).__name__} {e}", file=sys.stderr)
             if term == SEARCH_TERMS[0]:
                 traceback.print_exc()
-            if "403" in str(e) or "401" in str(e):
-                break  # blocked: don't hammer
+            if any(c in str(e) for c in ("HTTP 400", "HTTP 401", "HTTP 403", "HTTP 429")):
+                print(f"[{banner_key}] giving up: {e}", file=sys.stderr)
+                break  # blocked or bad request shape: don't hammer
             continue
         if term == SEARCH_TERMS[0]:
             print(f"[{banner_key}] raw product sample: {json.dumps((res.get('results') or [{}])[0])[:1500]}")
