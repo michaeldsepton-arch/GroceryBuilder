@@ -13,6 +13,7 @@ final List<Store> seedStores = [
   Store(id: 'shoppers', name: 'Shoppers Drug Mart', color: 0xFFC8102E, location: 'Clearview', hasOnline: true, sortOrder: 5),
   Store(id: 'dollarama', name: 'Dollarama', color: 0xFF0B8A3E, location: 'Clearview & beside Superstore', hasOnline: false, sortOrder: 6),
   Store(id: 'halal', name: 'Red Deer Halal Meat & Asian Food', color: 0xFF7A1F2B, location: 'Red Deer', hasOnline: false, sortOrder: 7),
+  Store(id: 'coop', name: 'Co-op (Clearview)', color: 0xFF0B5CAB, location: 'Clearview, Red Deer', hasOnline: false, sortOrder: 8),
 ];
 
 class AppDb {
