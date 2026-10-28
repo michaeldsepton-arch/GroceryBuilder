@@ -7,6 +7,7 @@ import datetime
 import json
 import sys
 import time
+import traceback
 import urllib.request
 
 from common import SEARCH_TERMS, guess_taxable, item, parse_size
@@ -40,6 +41,8 @@ def find_store(banner_key, city="Red Deer"):
     locs = call(f"/v1/pickup-locations?bannerIds={banner}", banner)
     hits = [l for l in locs if (l.get("address", {}).get("town", "") or "").lower() == city.lower()
             and (l.get("address", {}).get("region", "") or "").upper() in ("AB", "ALBERTA")]
+    if hits:
+        print(f"[{banner_key}] raw location sample: {json.dumps(hits[0])[:800]}")
     print(f"[{banner_key}] pickup locations in {city}: {[(h.get('id'), h.get('name'), h.get('address', {}).get('line1')) for h in hits]}")
     return hits
 
@@ -93,16 +96,22 @@ def scrape(banner_key):
         print(f"[{banner_key}] no Red Deer store found", file=sys.stderr)
         return [], []
     loc = locs[0]
+    loc["id"] = loc.get("storeId") or loc.get("id") or loc.get("locationId")
+    print(f"[{banner_key}] using store id {loc['id']}")
     stores.append({"id": banner_key, "name": BANNERS[banner_key]["name"], "color": BANNERS[banner_key]["color"],
                    "location": f"{loc.get('address', {}).get('line1', '')}, Red Deer", "online": True})
     for term in SEARCH_TERMS:
         try:
             res = search(banner_key, loc["id"], term)
         except Exception as e:
-            print(f"[{banner_key}] '{term}' failed: {e}", file=sys.stderr)
+            print(f"[{banner_key}] '{term}' failed: {type(e).__name__} {e}", file=sys.stderr)
+            if term == SEARCH_TERMS[0]:
+                traceback.print_exc()
             if "403" in str(e) or "401" in str(e):
                 break  # blocked: don't hammer
             continue
+        if term == SEARCH_TERMS[0]:
+            print(f"[{banner_key}] raw product sample: {json.dumps((res.get('results') or [{}])[0])[:1500]}")
         for p in res.get("results", []):
             try:
                 it = to_item(banner_key, p)

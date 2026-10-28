@@ -60,6 +60,9 @@ def scrape():
             if "403" in str(e) or "412" in str(e) or "429" in str(e):
                 break
             continue
+        if term == SEARCH_TERMS[0]:
+            ids = sorted(set(re.findall(r'"(?:storeId|nearestStoreId|defaultNearestStoreId)"\s*:\s*"?(\d+)', html)))
+            print(f"[walmart] store ids mentioned in page: {ids}; sample: {json.dumps((products_from(html) or [{}])[0])[:1500]}")
         for p in products_from(html):
             pi = p.get("priceInfo") or {}
             price = (pi.get("currentPrice") or {}).get("price") or p.get("price")
