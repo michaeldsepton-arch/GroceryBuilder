@@ -17,7 +17,7 @@ from common import SEARCH_TERMS, guess_taxable, item, parse_size
 UA = "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
 # Fill in once the closest Red Deer store id is confirmed (see data/report.json
 # and the probe output in the workflow log).
-STORE_ID = ""
+STORE_ID = ""  # Walmart 6375 50 Ave, Red Deer: collected by tools/local_scraper instead
 POSTAL = "T4N 0A1"
 
 
