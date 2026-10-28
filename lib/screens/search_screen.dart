@@ -21,6 +21,8 @@ class _SearchScreenState extends State<SearchScreen> {
   final ctrl = TextEditingController();
   Timer? _debounce;
   final Set<String> storeFilter = {};
+  bool onSaleOnly = false;
+  int saleCount = 0;
   SortMode sort = SortMode.unitPrice;
   List<Item> results = [];
   bool loading = false;
@@ -48,11 +50,13 @@ class _SearchScreenState extends State<SearchScreen> {
     final repo = context.read<AppState>().repo;
     final seq = ++_seq;
     setState(() => loading = true);
-    final r = await repo.search(ctrl.text, storeIds: storeFilter);
+    final r = await repo.search(ctrl.text, storeIds: storeFilter, onSaleOnly: onSaleOnly);
+    final sc = await repo.onSaleCount();
     if (!mounted || seq != _seq) return;
     r.sort((a, b) => compareItems(a, b, sort));
     setState(() {
       results = r;
+      saleCount = sc;
       loading = false;
     });
   }
@@ -116,6 +120,22 @@ class _SearchScreenState extends State<SearchScreen> {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: FilterChip(
+                  avatar: const Icon(Icons.local_offer, size: 16, color: BB.tomato),
+                  label: Text(saleCount > 0 ? 'On sale ($saleCount)' : 'On sale'),
+                  selected: onSaleOnly,
+                  selectedColor: const Color(0xFFF6D5CD),
+                  onSelected: (v) {
+                    setState(() {
+                      onSaleOnly = v;
+                      if (v) sort = SortMode.discount;
+                    });
+                    _run();
+                  },
+                ),
+              ),
               for (final st in s.stores)
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
@@ -144,6 +164,7 @@ class _SearchScreenState extends State<SearchScreen> {
               items: const [
                 DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
                 DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
+                DropdownMenuItem(value: SortMode.discount, child: Text('Biggest discount')),
                 DropdownMenuItem(value: SortMode.name, child: Text('Name')),
               ],
               onChanged: (v) {

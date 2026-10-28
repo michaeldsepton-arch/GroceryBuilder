@@ -96,6 +96,9 @@ class Item {
 
   bool get onSale => wasPrice != null && wasPrice! > price;
 
+  /// Whole-number percent off the regular price (0 when not on sale).
+  int get discountPct => onSale ? ((1 - price / wasPrice!) * 100).round() : 0;
+
   /// Cost of [qty] in the cart. For variable items qty is in grams.
   double lineCost(double qty) =>
       variable ? unitPrice.perBase * qty : price * qty;

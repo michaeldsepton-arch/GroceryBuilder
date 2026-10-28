@@ -27,6 +27,22 @@ class ItemCard extends StatelessWidget {
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Stack(children: [
               ItemImage(item, size: 88),
+              if (item.onSale)
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    decoration: const BoxDecoration(
+                        color: BB.tomato,
+                        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
+                    child: Text('SAVE ${item.discountPct}%',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800)),
+                  ),
+                ),
               if (item.favourite)
                 const Positioned(
                     top: 4, left: 4,
@@ -58,7 +74,7 @@ class ItemCard extends StatelessWidget {
                     ),
                 ]),
                 if (item.onSale)
-                  Text('Was ${money(item.wasPrice!)}',
+                  Text('Was ${money(item.wasPrice!)} · save ${money(item.wasPrice! - item.price)}',
                       style: const TextStyle(
                           color: BB.tomato,
                           fontSize: 12,

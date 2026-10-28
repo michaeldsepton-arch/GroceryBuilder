@@ -6,7 +6,7 @@ import '../models/models.dart';
 import '../models/units.dart';
 import 'db.dart';
 
-enum SortMode { unitPrice, price, name }
+enum SortMode { unitPrice, price, name, discount }
 
 class Repo {
   Repo(this.app);
@@ -27,7 +27,10 @@ class Repo {
 
   // ---- items ----
   Future<List<Item>> search(String query,
-      {Set<String> storeIds = const {}, bool customOnly = false, int limit = 300}) async {
+      {Set<String> storeIds = const {},
+      bool customOnly = false,
+      bool onSaleOnly = false,
+      int limit = 300}) async {
     final where = <String>[];
     final args = <Object?>[];
     for (final tok in query.toLowerCase().split(RegExp(r'\s+')).where((t) => t.isNotEmpty)) {
@@ -39,6 +42,7 @@ class Repo {
       args.addAll(storeIds);
     }
     if (customOnly) where.add('i.custom = 1');
+    if (onSaleOnly) where.add('i.was_price IS NOT NULL AND i.was_price > i.price');
     final rows = await db.rawQuery(
         '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'} LIMIT $limit', args);
     return rows.map(Item.fromMap).toList();
@@ -69,6 +73,10 @@ class Repo {
     await db.delete('items', where: 'id = ? AND custom = 1', whereArgs: [id]);
     await db.delete('cart', where: 'item_id = ?', whereArgs: [id]);
   }
+
+  Future<int> onSaleCount() async => Sqflite.firstIntValue(await db.rawQuery(
+          'SELECT COUNT(*) FROM items WHERE was_price IS NOT NULL AND was_price > price')) ??
+      0;
 
   Future<int> catalogCount() async => Sqflite.firstIntValue(
           await db.rawQuery('SELECT COUNT(*) FROM items WHERE custom = 0')) ??
@@ -268,6 +276,8 @@ int compareItems(Item a, Item b, SortMode mode) {
       return a.price.compareTo(b.price);
     case SortMode.name:
       return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    case SortMode.discount:
+      return b.discountPct.compareTo(a.discountPct);
     case SortMode.unitPrice:
       final ka = a.unitPrice.kind.index, kb = b.unitPrice.kind.index;
       if (ka != kb) return ka.compareTo(kb);

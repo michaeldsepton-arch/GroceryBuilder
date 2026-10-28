@@ -17,7 +17,7 @@ base = {
     "pcId": False, "pickupType": "STORE", "offerType": "ALL", "term": "milk",
     "userData": {"domainUserId": "00000000-0000-0000-0000-000000000000", "sessionId": "00000000-0000-0000-0000-000000000000"},
 }
-WEB = {"User-Agent": loblaw.UA, "Accept-Language": "en-CA", "Accept": "text/html,application/json"}
+WEB = {"User-Agent": loblaw.UA, "Accept": "text/html,application/json"}
 
 
 def http(label, url, body=None, method=None, headers=None, show=600):
@@ -43,23 +43,30 @@ def lob(label, path, body=None, method=None, extra=None):
     return http(label, loblaw.API + path, body, method, h)
 
 
-lob("A v2 current", "/v2/products/search", base)
-b = copy.deepcopy(base); b.pop("userData")
-lob("B no userData", "/v2/products/search", b)
-lob("C v1", "/v1/products/search", base)
-b = copy.deepcopy(base); b.pop("pickupType"); b.pop("offerType")
-lob("D minimal", "/v2/products/search", b)
-lob("E extra headers", "/v2/products/search", base,
-    extra={"x-application-type": "Web", "x-loblaw-tenant-id": "ONLINE_GROCERIES", "Business-User-Agent": "PCXWEB"})
-lob("F GET search", "/v1/products/search?term=milk&banner=superstore&storeId=1579&lang=en", method="GET")
 
-# Walmart: find Red Deer / Blackfalds stores
-for u in ["https://www.walmart.ca/en/stores-near-me/red-deer-supercentre",
-          "https://www.walmart.ca/en/stores-near-me",
-          "https://www.walmart.ca/en/stores-near-me/alberta"]:
-    t = http("walmart " + u, u, show=200)
+PCX = {"x-application-type": "Web", "x-loblaw-tenant-id": "ONLINE_GROCERIES", "Business-User-Agent": "PCXWEB"}
+lob("G pcx headers, no accept-language", "/v2/products/search", base, extra=PCX)
+b = copy.deepcopy(base); b["lang"] = "en"
+lob("H pcx + Accept-Language en", "/v2/products/search", b, extra=dict(PCX, **{"Accept-Language": "en"}))
+b = copy.deepcopy(base); b["cartId"] = "0"; b.pop("userData")
+lob("I pcx, no userData, cartId 0", "/v2/products/search", b, extra=PCX)
+
+# Walmart: which store does the site think we are near Blackfalds / Red Deer?
+for postal in ["T4M 0A1", "T4N 0A1"]:
+    ck = "walmart.nearestPostalCode=" + postal.replace(" ", "%20")
+    t = http("walmart search near " + postal, "https://www.walmart.ca/en/search?q=milk", headers={"Accept-Language": "en-CA", "Cookie": ck}, show=0)
     if t:
-        print("   red deer mentions:", sorted(set(re.findall(r'[^"<>]{0,80}Red Deer[^"<>]{0,80}', t)))[:12])
-        print("   store ids:", sorted(set(re.findall(r'/stores-near-me/[a-z0-9-]+/(\d+)', t)))[:20])
-for u in ["https://www.shoppersdrugmart.ca/", "https://www.freshco.com/"]:
-    http("reach " + u, u, show=150)
+        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', t, re.S)
+        print("   has NEXT_DATA:", bool(m))
+        blob = m.group(1) if m else t
+        for key in ["Red Deer", "Blackfalds"]:
+            print("   ", key, [blob[max(0, i.start()-120):i.end()+120] for i in re.finditer(key, blob)][:3])
+        print("   store-ish keys:", sorted(set(re.findall(r'"([A-Za-z]*[sS]tore[A-Za-z]*)"\s*:\s*("?[^,}\]]{1,40})', blob)))[:25])
+for u in ["https://www.walmart.ca/api/bsp/stores?lat=52.27&lng=-113.81",
+          "https://www.walmart.ca/en/stores-near-me/api/search?postalCode=T4M0A1"]:
+    http("walmart store api " + u, u, headers={"Accept-Language": "en-CA"}, show=400)
+
+t = http("freshco home", "https://www.freshco.com/", show=0)
+if t:
+    print("   api-ish urls:", sorted(set(re.findall(r'https://[a-z0-9.-]*(?:sobeys|freshco|voila|empire)[a-z0-9./_-]*api[a-z0-9./_?=&-]*', t)))[:15])
+    print("   red deer:", [t[max(0, i.start()-100):i.end()+100] for i in re.finditer("Red Deer", t)][:2])
