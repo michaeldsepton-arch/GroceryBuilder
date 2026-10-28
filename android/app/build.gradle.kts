@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
@@ -33,7 +35,7 @@ android {
     // Release signing comes from key.properties (written by CI from GitHub
     // Secrets). The same key must be used for every release so Android
     // installs updates in place instead of demanding an uninstall.
-    val keyProps = java.util.Properties()
+    val keyProps = Properties()
     val keyFile = rootProject.file("key.properties")
     if (keyFile.exists()) keyProps.load(keyFile.inputStream())
 
