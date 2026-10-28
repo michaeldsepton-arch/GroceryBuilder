@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:budget_basket/data/db.dart';
 import 'package:budget_basket/data/repo.dart';
 import 'package:budget_basket/main.dart';
+import 'package:budget_basket/widgets/common.dart';
 import 'package:budget_basket/state/app_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -46,6 +47,11 @@ void main() {
 
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
+    ImagePolicy.network = false;
+    // Network images (CI adds web photos to recipes) use the image cache, which asks for a temp dir.
+    final tmp = Directory.systemTemp.createTempSync('bb_cache').path;
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
+        const MethodChannel('plugins.flutter.io/path_provider'), (call) async => tmp);
     PackageInfo.setMockInitialValues(
         appName: 'Budget Basket', packageName: 'ca.budgetbasket.app', version: '1.0.0', buildNumber: '1',
         buildSignature: '');

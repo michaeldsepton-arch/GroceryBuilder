@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../models/recipe.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
+import 'common.dart' show ImagePolicy;
 
 class RecipeImage extends StatelessWidget {
   const RecipeImage(this.recipe, {super.key, this.height = 140, this.radius = 18});
@@ -32,7 +33,7 @@ class RecipeImage extends StatelessWidget {
     } else if (img != null && img.startsWith('asset:')) {
       child = Image.asset(img.substring(6), height: height, width: double.infinity, fit: BoxFit.cover,
           errorBuilder: (_, _, _) => fallback);
-    } else if (img != null && img.isNotEmpty) {
+    } else if (ImagePolicy.network && img != null && img.isNotEmpty) {
       child = CachedNetworkImage(
           imageUrl: img, height: height, width: double.infinity, fit: BoxFit.cover,
           placeholder: (_, _) => fallback, errorWidget: (_, _, _) => fallback);

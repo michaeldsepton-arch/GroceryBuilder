@@ -9,6 +9,11 @@ import '../models/units.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 
+/// Tests switch web images off so the image cache never starts timers.
+class ImagePolicy {
+  static bool network = true;
+}
+
 class ItemImage extends StatelessWidget {
   const ItemImage(this.item, {super.key, this.size = 76, this.radius = 16});
   final Item item;
@@ -32,7 +37,7 @@ class ItemImage extends StatelessWidget {
       final f = File('${context.read<AppState>().photoDir}/${item.photoPath}');
       child = Image.file(f, width: size, height: size, fit: BoxFit.cover,
           errorBuilder: (_, _, _) => fallback);
-    } else if (item.imageUrl != null && item.imageUrl!.isNotEmpty) {
+    } else if (ImagePolicy.network && item.imageUrl != null && item.imageUrl!.isNotEmpty) {
       child = CachedNetworkImage(
         imageUrl: item.imageUrl!,
         width: size,
