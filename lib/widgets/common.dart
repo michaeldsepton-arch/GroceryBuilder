@@ -88,12 +88,12 @@ class BudgetBar extends StatelessWidget {
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(children: [
-            _Stat('This week', money(s.weekBudget), small: true),
-            const Spacer(),
-            _Stat('In cart', money(s.cartTotal), small: true, center: true),
-            const Spacer(),
-            _Stat(over ? 'Over by' : 'Left to spend', money(s.remaining.abs()),
-                big: true, alignEnd: true),
+            Expanded(flex: 3, child: _Stat('This week', money(s.weekBudget), small: true)),
+            Expanded(flex: 3, child: _Stat('In cart', money(s.cartTotal), small: true, center: true)),
+            Expanded(
+                flex: 4,
+                child: _Stat(over ? 'Over by' : 'Left to spend', money(s.remaining.abs()),
+                    big: true, alignEnd: true)),
           ]),
           const SizedBox(height: 10),
           ClipRRect(
@@ -125,15 +125,21 @@ class _Stat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: alignEnd
-          ? CrossAxisAlignment.end
-          : center ? CrossAxisAlignment.center : CrossAxisAlignment.start,
-      children: [
-        Text(label, style: const TextStyle(color: Colors.white70, fontSize: 12)),
-        Text(value,
-            style: serif(big ? 28 : 18, color: big ? BB.gold : Colors.white)),
-      ],
+    final align = alignEnd
+        ? Alignment.centerRight
+        : center ? Alignment.center : Alignment.centerLeft;
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      alignment: align,
+      child: Column(
+        crossAxisAlignment: alignEnd
+            ? CrossAxisAlignment.end
+            : center ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+        children: [
+          Text(label, style: const TextStyle(color: Colors.white70, fontSize: 12)),
+          Text(value, style: serif(big ? 28 : 18, color: big ? BB.gold : Colors.white)),
+        ],
+      ),
     );
   }
 }

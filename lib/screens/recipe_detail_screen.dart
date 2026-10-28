@@ -170,16 +170,25 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             style: const TextStyle(color: BB.muted)),
         const SizedBox(height: 14),
         Row(children: [
-          Text('Ingredients', style: serif(22)),
-          const Spacer(),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text('Ingredients', style: serif(22)),
+            ),
+          ),
           IconButton.filledTonal(
+              visualDensity: VisualDensity.compact,
               onPressed: servings > 1 ? () => setState(() => servings--) : null,
               icon: const Icon(Icons.remove)),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Text('$servings servings', style: const TextStyle(fontWeight: FontWeight.w700)),
           ),
-          IconButton.filledTonal(onPressed: () => setState(() => servings++), icon: const Icon(Icons.add)),
+          IconButton.filledTonal(
+              visualDensity: VisualDensity.compact,
+              onPressed: () => setState(() => servings++),
+              icon: const Icon(Icons.add)),
         ]),
         const SizedBox(height: 6),
         for (final l in lines) _IngredientCard(

@@ -19,8 +19,8 @@ class AppDb {
   AppDb._(this.db);
   final Database db;
 
-  static Future<AppDb> open() async {
-    final path = p.join(await getDatabasesPath(), 'budget_basket.db');
+  static Future<AppDb> open({String? path}) async {
+    path ??= p.join(await getDatabasesPath(), 'budget_basket.db');
     final db = await openDatabase(path, version: 2, onCreate: _create, onUpgrade: _upgrade);
     final app = AppDb._(db);
     await app._seedStores();

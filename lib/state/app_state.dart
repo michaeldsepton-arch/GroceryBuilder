@@ -64,9 +64,9 @@ class AppState extends ChangeNotifier {
     return 0;
   }
 
-  Future<void> init() async {
-    final docs = await getApplicationDocumentsDirectory();
-    photoDir = p.join(docs.path, 'photos');
+  /// [photoDirOverride] and [background] let tests run without plugins/network.
+  Future<void> init({String? photoDirOverride, bool background = true}) async {
+    photoDir = photoDirOverride ?? p.join((await getApplicationDocumentsDirectory()).path, 'photos');
     await Directory(photoDir).create(recursive: true);
     Halal.configure(await rootBundle.loadString('assets/recipes/haram_terms.json'));
     halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
@@ -75,8 +75,10 @@ class AppState extends ChangeNotifier {
     await recipes.load();
     await reload();
     // Background refresh; failures are silent, the UI shows the last data.
-    syncCatalog(silent: true);
-    checkForUpdate(silent: true);
+    if (background) {
+      syncCatalog(silent: true);
+      checkForUpdate(silent: true);
+    }
   }
 
   /// One-time: add the halal market meats read from the in-store price board.

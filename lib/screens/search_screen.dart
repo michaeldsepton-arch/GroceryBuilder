@@ -87,7 +87,13 @@ class _SearchScreenState extends State<SearchScreen> {
           child: Row(children: [
             Image.asset('assets/brand/basket.png', height: 40),
             const SizedBox(width: 10),
-            Text('Budget Basket', style: serif(26)),
+            Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text('Budget Basket', style: serif(26)),
+              ),
+            ),
           ]),
         ),
         Padding(
@@ -154,11 +160,14 @@ class _SearchScreenState extends State<SearchScreen> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
           child: Row(children: [
-            Text(loading ? 'Searching…' : '${results.length} results',
-                style: const TextStyle(color: BB.muted)),
-            const Spacer(),
-            const Text('Sort: ', style: TextStyle(color: BB.muted)),
-            DropdownButton<SortMode>(
+            Expanded(
+              child: Text(loading ? 'Searching…' : '${results.length} results',
+                  overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
+            ),
+            SizedBox(
+              width: 170,
+              child: DropdownButton<SortMode>(
+              isExpanded: true,
               value: sort,
               underline: const SizedBox(),
               items: const [
@@ -171,6 +180,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 setState(() => sort = v!);
                 _run();
               },
+            ),
             ),
           ]),
         ),

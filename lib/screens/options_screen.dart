@@ -83,9 +83,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
           child: Row(children: [
-            Text(loading ? 'Searching…' : '${results.length} options', style: const TextStyle(color: BB.muted)),
-            const Spacer(),
-            DropdownButton<SortMode>(
+            Expanded(
+              child: Text(loading ? 'Searching…' : '${results.length} options',
+                  overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
+            ),
+            SizedBox(
+              width: 170,
+              child: DropdownButton<SortMode>(
+              isExpanded: true,
               value: sort,
               underline: const SizedBox(),
               items: const [
@@ -97,6 +102,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 setState(() => sort = v!);
                 _run();
               },
+            ),
             ),
           ]),
         ),
