@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  body{font:14px system-ui;margin:0;padding:14px;width:340px;background:#f7f2e6;color:#1b2a23}
+  h1{font:700 18px Georgia,serif;margin:0 0 2px;color:#173f30}
+  .sub{color:#6b7a72;font-size:12px;margin-bottom:10px}
+  .card{background:#fffcf5;border:1px solid #1f5a4322;border-radius:14px;padding:10px 12px;margin-bottom:8px}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .name{font-weight:700} .n{font-weight:800;color:#1f5a43}
+  .ok{color:#1f5a43;font-size:12px} .warn{color:#c8553d;font-size:12px}
+  button{background:#1f5a43;color:#fff;border:0;border-radius:12px;padding:9px 12px;font:600 13px system-ui;cursor:pointer;width:100%;margin-top:6px}
+  button.alt{background:#fffcf5;color:#1f5a43;border:1px solid #1f5a4355}
+  .tiny{font-size:11px;color:#6b7a72;margin-top:8px}
+</style></head><body>
+<h1>Budget Basket Clipper</h1>
+<div class="sub">Saves what you browse on the store sites. Nothing is sent anywhere.</div>
+<div id="stores"></div>
+<button id="export">Export prices for the app</button>
+<button id="diag" class="alt">Copy diagnostics (for support)</button>
+<div class="tiny" id="msg"></div>
+<script src="popup.js"></script></body></html>
