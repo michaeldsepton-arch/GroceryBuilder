@@ -78,7 +78,8 @@ void main() {
     expect(singular('rice'), 'rice');
     expect((await state.repo.search('chicken')).where((i) => i.storeId == 'superstore'), isEmpty); // not halal-certified
     state.repo.halalMeatOnly = false;
-    expect((await state.repo.search('chicken')).where((i) => i.storeId == 'superstore').length, 1);
+    // supermarket meat is never imported: the family buys meat at the halal market
+    expect((await state.repo.search('chicken')).where((i) => i.storeId == 'superstore'), isEmpty);
     state.repo.halalMeatOnly = true;
     // the halal market's own chicken thighs (seeded, priced per lb) stay visible
     final seeded = await state.repo.search('chicken thighs');

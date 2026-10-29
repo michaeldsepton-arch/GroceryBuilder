@@ -35,6 +35,17 @@ void main() {
     }
   });
 
+  test('meat products are recognised, soups, coffee and seafood are not', () {
+    expect(Halal.isMeatProduct('Halal Chicken Wings Split', ''), isTrue);
+    expect(Halal.isMeatProduct('Medium Ground Beef', ''), isTrue);
+    expect(Halal.isMeatProduct('Beef Burgers', ''), isTrue);
+    expect(Halal.isMeatProduct('Chicken Noodle Soup', ''), isFalse);
+    expect(Halal.isMeatProduct('French Roast Fine Grind Coffee', ''), isFalse);
+    expect(Halal.isMeatProduct('Atlantic Salmon Fillet', 'Seafood'), isFalse);
+    expect(Halal.isMeatProduct('Marble Goat Cheddar Cheese', ''), isFalse);
+    expect(Halal.isMeatProduct('Shan Beef Biryani Masala Mix', ''), isFalse);
+  });
+
   test('halal-only meat hides supermarket meat but not the halal market or soup', () {
     expect(Halal.isNonHalalMeatProduct('Chicken Breasts Boneless', 'Meat', 'superstore'), isTrue);
     expect(Halal.isNonHalalMeatProduct('Chicken Breast', 'Meat', 'halal'), isFalse);

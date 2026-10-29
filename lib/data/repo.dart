@@ -41,6 +41,7 @@ class Repo {
 
   bool _computeAllowed(Item i) =>
       (i.custom || Scope.inScope(i.name, i.brand, i.category)) &&
+      (i.custom || i.storeId == 'halal' || !Halal.isMeatProduct(i.name, i.category)) &&
       !Halal.isHaram('${i.name} ${i.brand} ${i.category}') &&
       !(_halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId));
 
@@ -257,6 +258,8 @@ class Repo {
         if (price == null || m['id'] == null || m['name'] == null) continue;
         if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
         if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
+        // Meat comes from the halal market (its items are added by hand, not by this catalog).
+        if (m['store'] != 'halal' && Halal.isMeatProduct('${m['name']}', '${m['cat'] ?? ''}')) continue;
         if (watched.containsKey(m['id'])) {
           newPrices[m['id'] as String] = [price, (m['was'] as num?)?.toDouble()];
         }
