@@ -52,7 +52,7 @@
       delete samples[store];
       batch.samples.forEach(function (x) {
         const key = x.k + ':' + store, s = samples[key] || [];
-        if (s.length < 3) s.push({ parsed: x.parsed, raw: x.raw });
+        if (s.length < (x.k === 'weight' ? 8 : 3)) s.push({ parsed: x.parsed, raw: x.raw });
         samples[key] = s;
       });
       const d = diag[store] || { apiItems: 0, domItems: 0, jsonUrls: [] };
@@ -73,12 +73,24 @@
       .slice(0, 4).join(' ').replace(/[-_]+/g, ' ').slice(0, 80);
   }
 
+  // the price/size related fields of a product, so a diagnostics sample stays small
+  function pickRaw(o) {
+    if (!o || typeof o !== 'object') return o;
+    const out = {};
+    Object.keys(o).forEach(function (k) { if (/pric|size|unit|weight|each|code|name|title|packag|sold|text|usItemId/i.test(k)) out[k] = o[k]; });
+    return out;
+  }
+
   function addItem(it, raw, kind) {
     if (!it) return;
     if (!it.cat) it.cat = pathCat();
     pending.items.push(it);
     if (kind === 'dom') pending.dom++; else pending.api++;
-    if (raw) pending.samples.push({ k: kind === 'dom' ? 'dom' : 'api', parsed: it, raw: JSON.stringify(raw).slice(0, 1800) });
+    if (raw) {
+      // items sold by weight or "in singles" are where per-kg / per-each mistakes show up: keep more of those
+      const weighty = /_(KG|LB)$/i.test(String(it.id)) || /sold in/i.test(it.name || '');
+      pending.samples.push({ k: kind === 'dom' ? 'dom' : (weighty ? 'weight' : 'api'), parsed: it, raw: JSON.stringify(pickRaw(raw)).slice(0, 1500) });
+    }
     queue();
   }
 

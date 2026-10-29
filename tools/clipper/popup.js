@@ -60,7 +60,7 @@ async function gzip(text) {
 $('export').onclick = async () => {
   const st = await chrome.storage.local.get(['items', 'storeInfo']);
   const cutoff = Date.now() - STALE_DAYS * 864e5;
-  const fresh = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff);
+  const fresh = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff).map(globalThis.BBParse.repairOld);
   const items = globalThis.BBParse.dedupe(fresh).map((i) => { const c = Object.assign({}, i); delete c.seen; delete c.src; return c; });
   if (!items.length) { $('msg').textContent = 'Nothing saved yet. Browse some searches first.'; return; }
   const stores = Object.keys(STORES).filter((k) => items.some((i) => i.store === k)).map((k) => STORES[k]);

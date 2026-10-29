@@ -157,12 +157,25 @@
   function walmartItem(p) {
     const pi = p.priceInfo || {};
     const cur = pi.currentPrice && pi.currentPrice.price;
-    const price = typeof cur === 'number' ? cur : (typeof p.price === 'number' ? p.price : num(pi.linePrice));
+    // Prefer the price text the shopper sees ("$3.97"): some data feeds give the number in cents.
+    const shown = num(pi.currentPrice && pi.currentPrice.priceString);
+    const lineShown = num(pi.linePrice);
+    let price, fromText = true;
+    if (shown !== null) price = shown;
+    else if (lineShown !== null) price = lineShown;
+    else { fromText = false; price = typeof cur === 'number' ? cur : (typeof p.price === 'number' ? p.price : null); }
     if (typeof price !== 'number') return null;
+    // a whole number of 100 or more with no price text is cents ($3.97 arrives as 397)
+    const cents = !fromText && Number.isInteger(price) && price >= 100;
+    if (cents) price = price / 100;
     if (p.isOutOfStock === true || /OUT_OF_STOCK/.test(p.availabilityStatus || '')) return null;
-    const wasRaw = pi.wasPrice && typeof pi.wasPrice === 'object' ? pi.wasPrice.price : num(pi.wasPrice);
+    let wasRaw = pi.wasPrice && typeof pi.wasPrice === 'object'
+      ? (num(pi.wasPrice.priceString) !== null ? num(pi.wasPrice.priceString) : pi.wasPrice.price) : num(pi.wasPrice);
+    if (cents && typeof wasRaw === 'number' && Number.isInteger(wasRaw) && wasRaw >= 100) wasRaw = wasRaw / 100;
     const sz = parseSize(p.name || '');
     let size = sz[0], unit = sz[1], variable = false;
+    // "Tomato, Roma, Sold in singles, 0.10 - 0.14 KG": the price is for ONE piece, the kg is only its size
+    if (/\bsold in (singles|bunches|pieces)\b/i.test(p.name || '')) { size = 1; unit = 'each'; }
     const up = pi.unitPrice && typeof pi.unitPrice === 'object' ? pi.unitPrice.priceString : pi.unitPrice;
     const um = /\/\s*(lb|kg|100\s*g)\b/i.exec(up || '');
     if (!size && um && p.salesUnitType && p.salesUnitType !== 'EACH') {
@@ -174,7 +187,7 @@
     const path = walmartPath(p);
     return mk('walmart', p.usItemId, p.name, price, {
       brand: p.brand, img: img, was: (typeof wasRaw === 'number' && wasRaw > price) ? wasRaw : null,
-      size: size || 1, unit: unit || 'each', variable: variable, taxable: guessTaxable(p.name, path.join(' ')),
+      size: size || 1, unit: unit || 'each', variable: variable, taxable: guessTaxable(p.name, path.join(' ')), pv: 2,
       cat: path[0] || '', url: p.canonicalUrl ? 'https://www.walmart.ca' + String(p.canonicalUrl).split('?')[0] : null,
     });
   }
@@ -200,7 +213,22 @@
     return Object.keys(best).map(function (k) { return best[k]; });
   }
 
-  root.BBParse = { dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
+  // Walmart items saved before parser v2 may hold the price in cents (397 for $3.97) or treat a
+  // single tomato "0.10 - 0.14 KG" as sold by the kilo. Fixed here; v2 items carry pv: 2.
+  function repairOld(item) {
+    if (item.store !== 'walmart' || item.pv || item.src === 'dom') return item;
+    const out = Object.assign({}, item);
+    const numericId = /^\d+$/.test(String(item.id).split(':')[1] || '');
+    if (Number.isInteger(out.price) && (out.price >= 100 || numericId)) {
+      out.price = out.price / 100;
+      if (out.was && Number.isInteger(out.was) && out.was >= 100) out.was = out.was / 100;
+    }
+    if (/\bsold in (singles|bunches|pieces)\b/i.test(out.name || '')) { out.size = 1; out.unit = 'each'; }
+    out.pv = 2;
+    return out;
+  }
+
+  root.BBParse = { repairOld: repairOld, dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
     parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
   if (typeof module !== 'undefined') module.exports = root.BBParse;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

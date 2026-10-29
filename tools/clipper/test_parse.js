@@ -107,4 +107,21 @@ const dd = P.dedupe([
 assert.strictEqual(dd.length, 4);
 assert.strictEqual(dd.filter(function (i) { return i.store === 'superstore' && i.name.trim().toLowerCase() === 'corned beef'; })[0].id, 'superstore:2_EA');
 
+// Walmart prices that arrive in cents, and single pieces listed with their weight
+const wc1 = P.walmartItem({ usItemId: '6000191272055', name: 'Great Value Large 12 Eggs', price: 422, priceInfo: { linePrice: '$4.22', wasPrice: '$4.99' } });
+assert.strictEqual(wc1.price, 4.22); assert.strictEqual(wc1.was, 4.99);
+const wc2 = P.walmartItem({ usItemId: '10052944', name: 'Redpath Dark Brown Sugar 1 kg', price: 277, priceInfo: {} });
+assert.strictEqual(wc2.price, 2.77);
+const wc3 = P.walmartItem({ usItemId: '6000191272', name: 'Tomato, Roma, Sold in singles, 0.10 - 0.14 KG', price: 0.51, priceInfo: {} });
+assert.strictEqual(wc3.price, 0.51); assert.strictEqual(wc3.unit, 'each'); assert.strictEqual(wc3.size, 1); assert.ok(!wc3.variable);
+const wc4 = P.walmartItem({ usItemId: 'X1', name: 'Rice 4 kg', price: 12, priceInfo: { currentPrice: { price: 12, priceString: '$12.00' } } });
+assert.strictEqual(wc4.price, 12);
+const old1 = P.repairOld({ id: 'walmart:6000191272055', store: 'walmart', name: 'Tomato, Roma, Sold in singles, 0.10 - 0.14 KG', price: 51, size: 0.14, unit: 'kg' });
+assert.strictEqual(old1.price, 0.51); assert.strictEqual(old1.unit, 'each'); assert.strictEqual(old1.size, 1);
+assert.strictEqual(P.repairOld({ id: 'walmart:10052944', store: 'walmart', name: 'Eggs', price: 422 }).price, 4.22);
+assert.strictEqual(P.repairOld({ id: 'walmart:4AJB6KXCDI', store: 'walmart', name: 'Ramen Sauce', price: 15 }).price, 15);
+assert.strictEqual(P.repairOld({ id: 'walmart:10052944', store: 'walmart', name: 'Eggs', price: 4.22, pv: 2 }).price, 4.22);
+assert.strictEqual(P.repairOld({ id: 'walmart:1', store: 'walmart', name: 'X', price: 5, src: 'dom' }).price, 5);
+assert.strictEqual(P.repairOld({ id: 'superstore:1_EA', store: 'superstore', name: 'X', price: 500 }).price, 500);
+
 console.log('all parse tests passed');
