@@ -258,7 +258,7 @@ class Repo {
         if (price == null || m['id'] == null || m['name'] == null) continue;
         if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
         if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
-        // Meat comes from the halal market (its items are added by hand, not by this catalog).
+        // Meat comes from the halal market, or is labelled halal; other supermarket meat is skipped.
         if (m['store'] != 'halal' && Halal.isMeatProduct('${m['name']}', '${m['cat'] ?? ''}')) continue;
         if (watched.containsKey(m['id'])) {
           newPrices[m['id'] as String] = [price, (m['was'] as num?)?.toDouble()];

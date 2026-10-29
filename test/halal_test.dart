@@ -36,7 +36,8 @@ void main() {
   });
 
   test('meat products are recognised, soups, coffee and seafood are not', () {
-    expect(Halal.isMeatProduct('Halal Chicken Wings Split', ''), isTrue);
+    expect(Halal.isMeatProduct('Halal Chicken Wings Split', ''), isFalse); // labelled halal stays
+    expect(Halal.isMeatProduct('Chicken Wings Split', ''), isTrue);
     expect(Halal.isMeatProduct('Medium Ground Beef', ''), isTrue);
     expect(Halal.isMeatProduct('Beef Burgers', ''), isTrue);
     expect(Halal.isMeatProduct('Chicken Noodle Soup', ''), isFalse);

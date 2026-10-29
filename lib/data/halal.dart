@@ -58,13 +58,13 @@ class Halal {
     return false;
   }
 
-  /// Any meat product (halal-labelled or not). The family buys meat at the halal
-  /// market, so supermarket meat is left out of the catalog entirely. Soups, broths,
-  /// seasonings, sauces and seafood are not meat products.
+  /// Supermarket meat that is not labelled halal. The family buys meat at the halal
+  /// market, so unlabelled supermarket meat is left out of the catalog; meat marked
+  /// halal stays. Soups, broths, seasonings, sauces and seafood are not meat products.
   static bool isMeatProduct(String name, String category) {
     if (!_ready) return false;
     final s = '$name $category'.toLowerCase();
-    if (s.contains('seafood') || s.contains('fish')) return false;
+    if (s.contains('halal') || s.contains('seafood') || s.contains('fish')) return false;
     if (_meatNot.any(s.contains)) return false;
     return _meat.any((r) => r.hasMatch(s));
   }
