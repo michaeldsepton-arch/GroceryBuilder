@@ -17,6 +17,21 @@ class Store {
   final bool hasOnline;
   final int sortOrder;
 
+  /// Short name for filter chips ("Real Canadian Superstore" -> "Superstore").
+  String get chipLabel {
+    const short = {
+      'superstore': 'Superstore',
+      'walmart': 'Walmart',
+      'freshco': 'FreshCo',
+      'wholesaleclub': 'Wholesale Club',
+      'shoppers': 'Shoppers',
+      'dollarama': 'Dollarama',
+      'halal': 'Halal Market',
+      'coop': 'Co-op',
+    };
+    return short[id] ?? (name.length > 18 ? name.split(' ').first : name);
+  }
+
   Map<String, Object?> toMap() => {
         'id': id,
         'name': name,

@@ -21,6 +21,9 @@ class RecipeRepo {
 
   List<Recipe> all = [];
   Set<String> favourites = {};
+
+  /// Built-in recipes the user has changed (can be restored to the original).
+  Set<String> edited = {};
   int hidden = 0; // recipes dropped by the halal filter
   final List<MapEntry<List<String>, List<SubOption>>> _subs = [];
   Map<String, List<String>> aliases = {};
@@ -38,9 +41,17 @@ class RecipeRepo {
 
     await loadAsset('assets/recipes/book.json', RecipeSource.book);
     await loadAsset('assets/recipes/catalog.json', RecipeSource.catalog);
+    edited = {};
     for (final r in await db.query('user_recipes')) {
-      recipes.add(Recipe.fromJson(
-          jsonDecode(r['json'] as String) as Map<String, dynamic>, RecipeSource.mine));
+      final m = jsonDecode(r['json'] as String) as Map<String, dynamic>;
+      // Same id as a built-in recipe: this is the user's edit of it, keep it in its section.
+      final at = recipes.indexWhere((x) => x.id == m['id']);
+      if (at >= 0) {
+        recipes[at] = Recipe.fromJson(m, recipes[at].source);
+        edited.add(m['id'] as String);
+      } else {
+        recipes.add(Recipe.fromJson(m, RecipeSource.mine));
+      }
     }
     hidden = 0;
     all = recipes.where((r) {

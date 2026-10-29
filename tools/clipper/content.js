@@ -66,8 +66,16 @@
   }
   function queue() { if (!timer) timer = setTimeout(flush, 800); }
 
+  // The department the page is showing, from its address:
+  // /en/food/dairy-eggs/c/28003 -> "food dairy eggs". Used when the data has no category.
+  function pathCat() {
+    return location.pathname.split('/').filter(function (s) { return s && s !== 'en' && s !== 'c' && !/^[\d_]+$/.test(s); })
+      .slice(0, 4).join(' ').replace(/[-_]+/g, ' ').slice(0, 80);
+  }
+
   function addItem(it, raw, kind) {
     if (!it) return;
+    if (!it.cat) it.cat = pathCat();
     pending.items.push(it);
     if (kind === 'dom') pending.dom++; else pending.api++;
     if (raw) pending.samples.push({ k: kind === 'dom' ? 'dom' : 'api', parsed: it, raw: JSON.stringify(raw).slice(0, 1800) });

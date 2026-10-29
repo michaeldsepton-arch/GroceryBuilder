@@ -9,13 +9,15 @@ import 'package:path_provider/path_provider.dart';
 import '../data/halal.dart';
 import '../data/recipe_repo.dart';
 import '../data/repo.dart';
+import '../data/scope.dart';
 import '../data/services.dart';
 import '../models/models.dart';
 import '../models/units.dart';
 
 DateTime weekStartOf(DateTime d) {
   final day = DateTime(d.year, d.month, d.day);
-  return day.subtract(Duration(days: day.weekday - 1)); // Monday
+  // The budget week starts on Friday (DateTime.friday == 5) and rolls over at midnight.
+  return day.subtract(Duration(days: (day.weekday - DateTime.friday + 7) % 7));
 }
 
 String weekKey(DateTime d) {
@@ -71,6 +73,7 @@ class AppState extends ChangeNotifier {
     photoDir = photoDirOverride ?? p.join((await getApplicationDocumentsDirectory()).path, 'photos');
     await Directory(photoDir).create(recursive: true);
     Halal.configure(await rootBundle.loadString('assets/recipes/haram_terms.json'));
+    Scope.configure(await rootBundle.loadString('assets/seed/scope_terms.json'));
     halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
     repo.halalMeatOnly = halalMeatOnly;
     await _seedHalal();
@@ -189,8 +192,12 @@ class AppState extends ChangeNotifier {
       final data = await CatalogService.download();
       if (data == null) {
         syncError = 'No catalog published yet';
-      } else if (data['generated'] != catalogStamp || catalogCount == 0) {
+      } else if (data['generated'] != catalogStamp ||
+          catalogCount == 0 ||
+          await repo.setting('scope_version') != '${Scope.version}') {
+        // also re-imports when the "what belongs in the app" rules changed
         await repo.applyCatalog(data);
+        await repo.putSetting('scope_version', '${Scope.version}');
       }
     } catch (e) {
       syncError = 'Could not refresh prices ($e)';

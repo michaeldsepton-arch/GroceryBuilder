@@ -69,7 +69,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: FilterChip(
-                    label: Text(st.name.split(' ').first),
+                    label: Text(st.chipLabel),
                     selected: stores.contains(st.id),
                     onSelected: (v) {
                       setState(() => v ? stores.add(st.id) : stores.remove(st.id));

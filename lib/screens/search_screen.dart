@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../data/repo.dart';
+import '../data/scope.dart';
 import '../models/models.dart';
 import '../models/units.dart';
 import '../state/app_state.dart';
@@ -22,6 +23,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Timer? _debounce;
   final Set<String> storeFilter = {};
   bool onSaleOnly = false;
+  String? categoryFilter;
   int saleCount = 0;
   SortMode sort = SortMode.unitPrice;
   List<Item> results = [];
@@ -50,7 +52,8 @@ class _SearchScreenState extends State<SearchScreen> {
     final repo = context.read<AppState>().repo;
     final seq = ++_seq;
     setState(() => loading = true);
-    final r = await repo.search(ctrl.text, storeIds: storeFilter, onSaleOnly: onSaleOnly);
+    final r = await repo.search(ctrl.text,
+        storeIds: storeFilter, onSaleOnly: onSaleOnly, category: categoryFilter);
     final sc = await repo.onSaleCount();
     if (!mounted || seq != _seq) return;
     r.sort((a, b) => compareItems(a, b, sort));
@@ -146,7 +149,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: FilterChip(
-                    label: Text(st.name.length > 18 ? st.name.split(' ').first : st.name),
+                    label: Text(st.chipLabel),
                     selected: storeFilter.contains(st.id),
                     onSelected: (v) {
                       setState(() => v ? storeFilter.add(st.id) : storeFilter.remove(st.id));
@@ -159,29 +162,47 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-          child: Row(children: [
-            Expanded(
-              child: Text(loading ? 'Searching…' : '${results.length} results',
-                  overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
-            ),
-            SizedBox(
-              width: 170,
-              child: DropdownButton<SortMode>(
-              isExpanded: true,
-              value: sort,
-              underline: const SizedBox(),
-              items: const [
-                DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
-                DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
-                DropdownMenuItem(value: SortMode.discount, child: Text('Biggest discount')),
-                DropdownMenuItem(value: SortMode.name, child: Text('Name')),
-              ],
-              onChanged: (v) {
-                setState(() => sort = v!);
-                _run();
-              },
-            ),
-            ),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(loading ? 'Searching…' : '${results.length} results',
+                overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
+            Row(children: [
+              Expanded(
+                child: DropdownButton<String?>(
+                  isExpanded: true,
+                  value: categoryFilter,
+                  underline: const SizedBox(),
+                  hint: const Text('All categories'),
+                  items: [
+                    const DropdownMenuItem<String?>(value: null, child: Text('All categories')),
+                    for (final c in Scope.categoryNames)
+                      DropdownMenuItem<String?>(value: c, child: Text(c)),
+                  ],
+                  onChanged: (v) {
+                    setState(() => categoryFilter = v);
+                    _run();
+                  },
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: DropdownButton<SortMode>(
+                  isExpanded: true,
+                  value: sort,
+                  underline: const SizedBox(),
+                  items: const [
+                    DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
+                    DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
+                    DropdownMenuItem(value: SortMode.discount, child: Text('Biggest discount')),
+                    DropdownMenuItem(value: SortMode.category, child: Text('By category')),
+                    DropdownMenuItem(value: SortMode.name, child: Text('Name')),
+                  ],
+                  onChanged: (v) {
+                    setState(() => sort = v!);
+                    _run();
+                  },
+                ),
+              ),
+            ]),
           ]),
         ),
         Expanded(

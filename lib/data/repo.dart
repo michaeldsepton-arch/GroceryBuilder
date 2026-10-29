@@ -6,6 +6,7 @@ import '../models/models.dart';
 import '../models/units.dart';
 import 'db.dart';
 import 'halal.dart';
+import 'scope.dart';
 
 /// Light singularising for search ("tomatoes" -> "tomato", "berries" -> "berry").
 String singular(String w) {
@@ -17,7 +18,7 @@ String singular(String w) {
   return w;
 }
 
-enum SortMode { unitPrice, price, name, discount }
+enum SortMode { unitPrice, price, name, discount, category }
 
 class Repo {
   Repo(this.app);
@@ -25,11 +26,23 @@ class Repo {
   Database get db => app.db;
 
   /// Hide supermarket meat that is not halal-slaughtered (halal market stays).
-  bool halalMeatOnly = true;
+  bool _halalMeatOnly = true;
+  bool get halalMeatOnly => _halalMeatOnly;
+  set halalMeatOnly(bool v) {
+    if (v != _halalMeatOnly) _allowedMemo.clear();
+    _halalMeatOnly = v;
+  }
+
+  // The filters are many regexes; a search can cover thousands of items, so remember answers.
+  final Map<String, bool> _allowedMemo = {};
 
   bool allowed(Item i) =>
+      _allowedMemo['${i.id}|${i.name}|${i.category}'] ??= _computeAllowed(i);
+
+  bool _computeAllowed(Item i) =>
+      (i.custom || Scope.inScope(i.name, i.brand, i.category)) &&
       !Halal.isHaram('${i.name} ${i.brand} ${i.category}') &&
-      !(halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId));
+      !(_halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId));
 
   static const _itemSelect = '''SELECT i.*, m.favourite, m.aisle, m.spot, m.note,
       m.times_bought FROM items i LEFT JOIN item_meta m ON m.item_id = i.id''';
@@ -48,7 +61,8 @@ class Repo {
       {Set<String> storeIds = const {},
       bool customOnly = false,
       bool onSaleOnly = false,
-      int limit = 300}) async {
+      String? category,
+      int limit = 100000}) async {
     final where = <String>[];
     final args = <Object?>[];
     for (final tok in query.toLowerCase().split(RegExp(r'\s+')).where((t) => t.isNotEmpty)) {
@@ -66,8 +80,12 @@ class Repo {
     if (customOnly) where.add('i.custom = 1');
     if (onSaleOnly) where.add('i.was_price IS NOT NULL AND i.was_price > i.price');
     final rows = await db.rawQuery(
-        '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'} LIMIT ${limit * 3}', args);
-    return rows.map(Item.fromMap).where(allowed).take(limit).toList();
+        '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'}', args);
+    var found = rows.map(Item.fromMap).where(allowed);
+    if (category != null) {
+      found = found.where((i) => Scope.categoryOf(i.name, i.category) == category);
+    }
+    return found.take(limit).toList();
   }
 
   Future<Item?> item(String id) async {
@@ -96,9 +114,8 @@ class Repo {
     await db.delete('cart', where: 'item_id = ?', whereArgs: [id]);
   }
 
-  Future<int> onSaleCount() async => Sqflite.firstIntValue(await db.rawQuery(
-          'SELECT COUNT(*) FROM items WHERE was_price IS NOT NULL AND was_price > price')) ??
-      0;
+  /// Items on sale that the app actually shows (same filters as the list).
+  Future<int> onSaleCount() async => (await search('', onSaleOnly: true)).length;
 
   Future<int> catalogCount() async => Sqflite.firstIntValue(
           await db.rawQuery('SELECT COUNT(*) FROM items WHERE custom = 0')) ??
@@ -239,6 +256,7 @@ class Repo {
         final price = (m['price'] as num?)?.toDouble();
         if (price == null || m['id'] == null || m['name'] == null) continue;
         if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
+        if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
         if (watched.containsKey(m['id'])) {
           newPrices[m['id'] as String] = [price, (m['was'] as num?)?.toDouble()];
         }
@@ -378,6 +396,9 @@ int compareItems(Item a, Item b, SortMode mode) {
       return a.name.toLowerCase().compareTo(b.name.toLowerCase());
     case SortMode.discount:
       return b.discountPct.compareTo(a.discountPct);
+    case SortMode.category:
+      final c = Scope.categoryOf(a.name, a.category).compareTo(Scope.categoryOf(b.name, b.category));
+      return c != 0 ? c : a.name.toLowerCase().compareTo(b.name.toLowerCase());
     case SortMode.unitPrice:
       final ka = a.unitPrice.kind.index, kb = b.unitPrice.kind.index;
       if (ka != kb) return ka.compareTo(kb);

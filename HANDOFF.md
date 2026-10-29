@@ -121,3 +121,10 @@ flutter pub get && flutter analyze && flutter test         # checks
 python3 tools/build_recipes.py                              # rebuild recipe JSON (add --mealdb only in CI)
 node tools/clipper/test_parse.js                            # extension parser tests
 ```
+
+## Update, second session (2026-10-29)
+- **Recipe book done**: 139 index entries transcribed into `recipes_src/book/*.txt` (149 recipes after splits), flagged words noted in each `note:` line. `halal gelatine` is an allowed exact phrase in `haram_terms.json` (plain gelatine is still blocked). Photos for the book come from `tools/fetch_book_images.py` (Wikimedia Commons, credits in `assets/recipes/ATTRIBUTION_BOOK.md`); run it by hand when recipes are added.
+- **Recipe editing**: any recipe can be edited (ingredients, method, photo). Edits of built-in recipes are stored in `user_recipes` under the same id and replace the original; "Restore original" deletes the override.
+- **Clipper works** (Edge): reads store data feeds and on-screen cards while the user scrolls; FreshCo, Shoppers and Dollarama are read from on-screen cards only (untested, need diagnostics). Export de-duplicates. Walmart store ids seen: 3075 (probably 6375 50 Ave) and 2000.
+- **Catalog**: Superstore and Walmart prices were uploaded to the `catalog` release (about 12.5k items). `lib/data/scope.dart` + `assets/seed/scope_terms.json` drop things rarely bought on a grocery trip (appliances, mops, electronics, furniture, toys, tools...) at import and give every item a shopping category for browsing/sorting. Bump `Scope.version` when the rules change so phones re-import.
+- Search no longer caps at 300; store chips use short names (`Store.chipLabel`).

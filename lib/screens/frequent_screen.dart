@@ -89,7 +89,7 @@ class _FrequentScreenState extends State<FrequentScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: ChoiceChip(
-                      label: Text(st.name.split(' ').first),
+                      label: Text(st.chipLabel),
                       selected: storeFilter == st.id,
                       onSelected: (_) => setState(() => storeFilter = st.id)),
                 ),

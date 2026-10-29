@@ -9,11 +9,14 @@ import '../data/halal.dart';
 import '../models/recipe.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
+import '../widgets/common.dart' show ImagePolicy;
 
-/// Quick way to add a recipe by typing. (Photos of recipe books are
-/// transcribed by Claude and arrive with app updates.)
+/// Add a recipe by typing, or edit one that is already there (ours, from the
+/// book, or from Discover). Edits to a built-in recipe are saved on the phone and
+/// can be undone with "Restore original" on the recipe page.
 class AddRecipeScreen extends StatefulWidget {
-  const AddRecipeScreen({super.key});
+  const AddRecipeScreen({super.key, this.existing});
+  final Recipe? existing;
   @override
   State<AddRecipeScreen> createState() => _AddRecipeScreenState();
 }
@@ -28,11 +31,38 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
   String meal = 'dinner';
   String? photoFile;
 
+  /// Ingredient lines as shown, so an unchanged line keeps its store search term.
+  final Map<String, Ingredient> _original = {};
+
+  static const _meals = ['breakfast', 'lunch', 'dinner', 'dessert', 'bread', 'snack', 'drink', 'side'];
+
+  static String _line(Ingredient i) => [i.qty, i.name].where((s) => s.trim().isNotEmpty).join(' ');
+
+  @override
+  void initState() {
+    super.initState();
+    final r = widget.existing;
+    if (r == null) return;
+    title.text = r.title;
+    cuisine.text = r.cuisine;
+    minutes.text = r.minutes?.toString() ?? '';
+    servings.text = '${r.servings}';
+    meal = _meals.contains(r.meal) ? r.meal : 'dinner';
+    photoFile = r.photoPath;
+    for (final i in r.ingredients) {
+      _original[_line(i)] = i;
+    }
+    ingredients.text = r.ingredients.map(_line).join('\n');
+    steps.text = r.steps.join('\n');
+  }
+
   static final _qtyRe = RegExp(
       r'^\s*([\d½¼¾⅓⅔][\d\s/.½¼¾⅓⅔-]*\s*(?:cups?|tbsp|tsp|tablespoons?|teaspoons?|g|kg|ml|l|lb|lbs|oz|cloves?|pinch|cans?|pieces?|slices?|bunch|sprigs?)?\b\.?)\s+(.+)$',
       caseSensitive: false);
 
   Ingredient _parse(String line) {
+    final kept = _original[line.trim()];
+    if (kept != null) return kept;
     final m = _qtyRe.firstMatch(line);
     final qty = m?.group(1)?.trim() ?? '';
     var name = (m?.group(2) ?? line).trim();
@@ -51,6 +81,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
 
   Future<void> _save() async {
     final s = context.read<AppState>();
+    final old = widget.existing;
     // Vanilla extract (alcohol-based) becomes vanilla bean paste, 1:1.
     final ings = ingredients.text
         .split('\n')
@@ -68,14 +99,17 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
       return;
     }
     final r = Recipe(
-      id: 'mine:${DateTime.now().millisecondsSinceEpoch}',
+      id: old?.id ?? 'mine:${DateTime.now().millisecondsSinceEpoch}',
       title: title.text.trim(),
-      source: RecipeSource.mine,
+      source: old?.source ?? RecipeSource.mine,
       cuisine: cuisine.text.trim(),
       meal: meal,
       minutes: int.tryParse(minutes.text),
       servings: int.tryParse(servings.text) ?? 4,
+      image: old?.image,
       photoPath: photoFile,
+      notes: old?.notes ?? '',
+      tags: old?.tags ?? const [],
       ingredients: ings,
       steps: stepList,
     );
@@ -85,15 +119,25 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
       return;
     }
     await s.recipes.saveUserRecipe(r);
-    if (mounted) Navigator.pop(context);
+    s.touch();
+    if (mounted) Navigator.pop(context, r.id);
+  }
+
+  ImageProvider? _provider(AppState s) {
+    if (photoFile != null) return FileImage(File(p.join(s.photoDir, photoFile!)));
+    final img = widget.existing?.image;
+    if (img == null || img.isEmpty) return null;
+    if (img.startsWith('asset:')) return AssetImage(img.substring(6));
+    return ImagePolicy.network ? NetworkImage(img) : null;
   }
 
   @override
   Widget build(BuildContext context) {
     final s = context.watch<AppState>();
-    final photo = photoFile == null ? null : File(p.join(s.photoDir, photoFile!));
+    final editing = widget.existing != null;
+    final provider = _provider(s);
     return Scaffold(
-      appBar: AppBar(title: const Text('Add a recipe')),
+      appBar: AppBar(title: Text(editing ? 'Edit recipe' : 'Add a recipe')),
       body: ListView(padding: const EdgeInsets.all(16), children: [
         GestureDetector(
           onTap: _photo,
@@ -102,13 +146,30 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
             decoration: BoxDecoration(
               color: BB.green100,
               borderRadius: BorderRadius.circular(20),
-              image: photo != null ? DecorationImage(image: FileImage(photo), fit: BoxFit.cover) : null,
+              image: provider != null ? DecorationImage(image: provider, fit: BoxFit.cover) : null,
             ),
-            child: photo == null
+            child: provider == null
                 ? const Center(child: Icon(Icons.add_a_photo_outlined, size: 36, color: BB.green700))
-                : null,
+                : Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Chip(
+                          avatar: const Icon(Icons.photo_library_outlined, size: 16),
+                          label: const Text('Change photo')),
+                    ),
+                  ),
           ),
         ),
+        if (editing && photoFile != null && (widget.existing!.image ?? '').isNotEmpty)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: () => setState(() => photoFile = null),
+              icon: const Icon(Icons.undo, size: 18),
+              label: const Text('Use the original photo'),
+            ),
+          ),
         const SizedBox(height: 12),
         TextField(controller: title, textCapitalization: TextCapitalization.words,
             decoration: const InputDecoration(labelText: 'Recipe name')),
@@ -126,6 +187,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
                 DropdownMenuItem(value: 'bread', child: Text('Bread')),
                 DropdownMenuItem(value: 'snack', child: Text('Snack / sweet')),
                 DropdownMenuItem(value: 'drink', child: Text('Drink')),
+                DropdownMenuItem(value: 'side', child: Text('Side')),
               ],
               onChanged: (v) => setState(() => meal = v!),
             ),
@@ -147,7 +209,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
         TextField(
           controller: ingredients,
           minLines: 5,
-          maxLines: 14,
+          maxLines: 30,
           decoration: const InputDecoration(
               labelText: 'Ingredients (one per line)', hintText: '2 cups basmati rice\n500 g chicken thighs\n1 tsp cumin'),
         ),
@@ -155,11 +217,11 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
         TextField(
           controller: steps,
           minLines: 5,
-          maxLines: 20,
+          maxLines: 40,
           decoration: const InputDecoration(labelText: 'Method (one step per line)'),
         ),
         const SizedBox(height: 16),
-        FilledButton(onPressed: _save, child: const Text('Save recipe')),
+        FilledButton(onPressed: _save, child: Text(editing ? 'Save changes' : 'Save recipe')),
       ]),
     );
   }

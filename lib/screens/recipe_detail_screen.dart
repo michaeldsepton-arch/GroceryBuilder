@@ -11,6 +11,7 @@ import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/recipe_widgets.dart';
+import 'add_recipe_screen.dart';
 import 'options_screen.dart';
 
 class _Line {
@@ -169,6 +170,37 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               s.touch();
             },
           ),
+          IconButton(
+            icon: const Icon(Icons.edit_outlined),
+            tooltip: 'Edit recipe',
+            onPressed: () async {
+              final id = await Navigator.push<String>(
+                  context, MaterialPageRoute(builder: (_) => AddRecipeScreen(existing: r)));
+              if (id == null || !context.mounted) return;
+              final updated = s.recipes.all.where((x) => x.id == id).toList();
+              if (updated.isNotEmpty) {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => RecipeDetailScreen(updated.first)));
+              }
+            },
+          ),
+          if (r.source != RecipeSource.mine && s.recipes.edited.contains(r.id))
+            IconButton(
+              icon: const Icon(Icons.restore),
+              tooltip: 'Restore original',
+              onPressed: () async {
+                await s.recipes.deleteUserRecipe(r.id);
+                s.touch();
+                if (!context.mounted) return;
+                final original = s.recipes.all.where((x) => x.id == r.id).toList();
+                if (original.isEmpty) {
+                  Navigator.pop(context);
+                } else {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (_) => RecipeDetailScreen(original.first)));
+                }
+              },
+            ),
           if (r.source == RecipeSource.mine)
             IconButton(
               icon: const Icon(Icons.delete_outline),
