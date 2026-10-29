@@ -13,9 +13,8 @@ void main() {
       'Silicone Spatula',
       'Plastic Wrap 100ft',
       'Toaster Strudel Apple Pastries',
-      'Nutrition First Toy & Small Breed Dog Food',
-      "Kid Girls' Printed Legging",
-      'Scented Dryer Balls 4Pk',
+      '3 Piece Cookie Sheet Set',
+      'Light Laundry Scent Booster Beads, No Heavy Perfumes',
     ]) {
       expect(Scope.inScope(n, '', ''), isTrue, reason: n);
     }
@@ -28,6 +27,11 @@ void main() {
       'Pentantan 6QT Air Fryer',
       'Hot Wheels Custom 62 Chevy Pickup',
       'Cool Max Bed Pillow, 2-Pack',
+      'Nutrition First Toy & Small Breed Dog Food',
+      'Proactive Health Healthy Adult with Chicken Dry Cat Food',
+      "Kid Girls' Printed Legging",
+      'Scented Dryer Balls 4Pk',
+      '4-Pack Quarter-Crew Socks',
     ]) {
       expect(Scope.inScope(n, '', ''), isFalse, reason: n);
     }

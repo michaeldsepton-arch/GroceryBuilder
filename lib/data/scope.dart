@@ -6,7 +6,7 @@ import 'dart:convert';
 /// A term with a space (or dash) matches as a phrase, a single word matches a whole word.
 class Scope {
   /// Bump when the rules change so the app re-imports prices with the new rules.
-  static const version = 1;
+  static const version = 2;
 
   static List<String> _block = [];
   static List<String> _keep = [];

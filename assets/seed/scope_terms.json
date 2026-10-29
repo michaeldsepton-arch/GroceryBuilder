@@ -1,6 +1,9 @@
 {
   "_note": "What belongs in Budget Basket: groceries and things bought on a typical grocery trip (food, drinks, cleaning, kitchenware, paper goods, toiletries, baby, pets, basic clothing). 'block' drops rarely bought things (appliances, mops, electronics, furniture, tools, toys, sports, outdoor...). A term with a space matches as a phrase; a single word matches a whole word. 'categories' are used to browse and sort: first match wins, checked on the store's own category text first, then the product name.",
   "block": [
+    "dog food", "cat food", "pet food", "dog treats", "cat treats", "puppy", "kitten", "cat litter", "dryer balls", "wool dryer",
+    "men's", "women's", "ladies'", "kid boys'", "kid girls'", "baby boys'", "baby girls'", "toddler boys'", "toddler girls'", "kid printed", "kid glow",
+    "leggings", "legging", "hoodie", "t-shirt", "bodysuit", "pantyhose", "bikini", "socks", "underwear", "boots", "shoes", "sandals", "slippers", "jacket", "sweater", "jeans", "pajamas", "pyjamas", "toque", "mittens", "long sleeve", "short sleeve", "sweatpants", "shorts", "swimsuit", "bra", "tights", "apparel", "clothing",
     "mop", "mops", "steam mop", "spin mop", "vacuum cleaner", "robot vacuum", "stick vacuum", "handheld vacuum", "vacuum cleaners",
     "blender", "blenders", "toaster oven", "electric kettle", "air fryer", "air fryers", "slow cooker", "crock pot", "crockpot",
     "pressure cooker", "instant pot", "rice cooker", "coffee maker", "coffee machine", "espresso machine", "juicer", "juicers",
@@ -24,7 +27,7 @@
     "wall art", "picture frame", "photo frame", "vase", "candle holder", "storage bench", "shoe rack", "laundry basket", "hamper", "clothes rack", "garment bag"
   ],
   "keep": [
-    "dog food", "cat food", "puppy", "kitten", "detergent", "rinse aid", "dryer sheets", "dryer balls", "cookie sheet", "sheet pan", "baking sheet",
+    "detergent", "rinse aid", "scent booster", "fabric softener", "laundry pods", "laundry soap", "laundry sheets", "air fryer liners", "dryer sheets", "training underwear", "pull-ups", "training pants", "cookie sheet", "sheet pan", "baking sheet",
     "seasoning mix", "marinade mix", "dry sauce", "toaster strudel", "toaster pastries"
   ],
   "block_category": [
@@ -36,9 +39,7 @@
     {"name": "Food storage & wrap", "terms": ["aluminum foil", "foil", "plastic wrap", "saran", "ziploc", "zipper bags", "freezer bags", "sandwich bags", "parchment", "wax paper", "cling wrap", "food storage", "storage container", "containers", "baking cups", "cupcake liners"]},
     {"name": "Kitchenware", "terms": ["spatula", "ladle", "whisk", "tongs", "peeler", "colander", "strainer", "cutting board", "knife", "knives", "cutlery", "utensil", "utensils", "spoon", "spoons", "fork", "forks", "plate", "plates", "bowl", "bowls", "mug", "mugs", "glasses", "tumbler", "pot", "pots", "pan", "pans", "skillet", "wok", "saucepan", "stockpot", "baking sheet", "bakeware", "cake pan", "muffin tin", "casserole", "dinnerware", "tea towel", "dish towel", "oven mitt", "apron", "kitchen", "thermos", "lunch box", "pitcher", "teapot", "grater", "can opener", "measuring", "rolling pin", "cookware"]},
     {"name": "Baby", "terms": ["diaper", "diapers", "baby", "infant", "formula", "toddler", "pull-ups", "training pants", "wipes baby", "bottle nipple"]},
-    {"name": "Pet", "terms": ["dog", "puppy", "cat food", "kitten", "pet", "cat litter", "litter", "treats for dogs"]},
     {"name": "Personal care & health", "terms": ["shampoo", "conditioner", "toothpaste", "toothbrush", "floss", "mouthwash", "deodorant", "antiperspirant", "soap", "body wash", "lotion", "moisturizer", "sunscreen", "razor", "shaving", "tampons", "pads", "feminine", "vitamin", "vitamins", "supplement", "supplements", "multivitamin", "omega-3", "probiotic", "pain relief", "ibuprofen", "acetaminophen", "allergy", "cough",  "lozenges", "melatonin", "magnesium", "biotin", "antiseptic", "fertility", "lubricant", "powder", "tablets", "caplets", "contact lens", "lice", "hygiene", "diaper rash","bandage", "bandages", "first aid", "hair", "skin", "face", "cream", "serum", "cotton", "health", "beauty", "pharmacy"]},
-    {"name": "Clothing", "terms": ["men's", "women's", "kid boys'", "kid girls'", "baby boys'", "baby girls'", "toddler boys'", "toddler girls'", "socks", "underwear", "t-shirt", "leggings", "legging", "hoodie", "pajamas", "pyjamas", "jacket", "gloves kids", "hat", "toque", "mittens", "bodysuit", "apparel",  "pantyhose", "bikini", "bra", "tights","clothing", "boots", "shoes"]},
     {"name": "Beverages", "terms": ["juice", "soda", "pop", "cola", "water", "sparkling", "kombucha", "coffee", "tea", "energy drink", "sports drink", "electrolytes", "lemonade", "smoothie", "drink", "drinks", "beverage", "beverages", "iced tea", "coconut water", "milk alternative", "creamer", "hot chocolate", "cider"]},
     {"name": "Frozen", "terms": ["frozen", "pizza", "waffles", "fries", "tater tots", "ice cream", "gelato", "sorbet", "popsicle", "freezer"]},
     {"name": "Dairy & eggs", "terms": ["milk", "cheese", "yogurt", "yogourt", "ygrt", "gouda", "cheddar", "mozzarella", "parmesan", "feta", "brie", "provolone", "singles", "cauli", "butter", "margarine", "cream cheese", "sour cream", "whipping cream", "eggs", "egg", "cottage cheese", "kefir", "dairy", "paneer", "ghee", "labneh"]},
