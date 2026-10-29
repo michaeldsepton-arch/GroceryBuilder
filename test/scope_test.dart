@@ -14,6 +14,8 @@ void main() {
       'Plastic Wrap 100ft',
       'Toaster Strudel Apple Pastries',
       '3 Piece Cookie Sheet Set',
+      'All Beef Frozen Corn Dogs',
+      'Kettle Style Blue Corn Tortilla Chips',
       'Light Laundry Scent Booster Beads, No Heavy Perfumes',
     ]) {
       expect(Scope.inScope(n, '', ''), isTrue, reason: n);
@@ -32,6 +34,12 @@ void main() {
       "Kid Girls' Printed Legging",
       'Scented Dryer Balls 4Pk',
       '4-Pack Quarter-Crew Socks',
+      'Super Stay Up To 24h Skin Tint Foundation',
+      'Scented Candle Lavender Cashmere',
+      'Gel Air Freshener Lavender',
+      'Cat Dry Food',
+      'Halloween Greeter',
+      'TopLLC Mini Projector Portable',
     ]) {
       expect(Scope.inScope(n, '', ''), isFalse, reason: n);
     }

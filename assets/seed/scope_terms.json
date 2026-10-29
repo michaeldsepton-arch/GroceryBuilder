@@ -1,6 +1,10 @@
 {
   "_note": "What belongs in Budget Basket: groceries and things bought on a typical grocery trip (food, drinks, cleaning, kitchenware, paper goods, toiletries, baby, pets, basic clothing). 'block' drops rarely bought things (appliances, mops, electronics, furniture, tools, toys, sports, outdoor...). A term with a space matches as a phrase; a single word matches a whole word. 'categories' are used to browse and sort: first match wins, checked on the store's own category text first, then the product name.",
   "block": [
+    "cat dry", "cat wet", "adult cats", "adult cat", "for cats", "for dogs", "dog biscuits", "dog biscuit", "dog bones", "dog chew", "small dog", "medium dog", "large dog", "puppies", "dog grooming", "pet clippers", "wild bird", "bird suet", "fish food", "goldfish", "aquarium treatment", "hand soap, aquarium", "pet stain",
+    "greeter", "costume", "pre-lit", "xmas", "airblown", "light fixtures", "ceiling light", "mirror", "mirrors", "projector", "workstation", "purifier", "pickleball", "soccer", "football training", "wall calendar", "pressure washer", "pressure washers", "air filter replacement", "cub cadet", "uno", "tonie", "pencil sharpener", "tub sharpener", "correction tape", "index cards", "ruled paper", "drawing pens", "hair straightener", "head shaver", "eye mask", "massager", "massagers", "punch needle", "fishing hat", "calculator", "calculators", "water dispenser", "cocktail shaker", "flocked tree", "pine tree", "porch tree", "gourds",
+    "concealer", "foundation", "lip gloss", "lip liner", "lip color", "lip stain", "lip balm tint", "bronzer", "highlighter", "setting powder", "pressed powder", "loose powder", "finishing powder", "eyebrow", "brow pencil", "brow gel", "lash", "lashes", "nail", "nails", "manicure", "gel polish", "cuticle", "skin tint", "bb cream", "cc cream", "makeup", "cosmetic", "cosmetics", "colorstay", "fit me", "super stay", "infallible", "primer", "setting spray",
+    "candle", "candles", "air freshener", "air fresheners", "plugins", "plug-ins", "plug in", "diffuser", "room spray", "wax melts", "incense", "potpourri", "scented oil", "glade", "febreze", "odor eliminating", "odour eliminating",
     "dog food", "cat food", "pet food", "dog treats", "cat treats", "puppy", "kitten", "cat litter", "dryer balls", "wool dryer",
     "men's", "women's", "ladies'", "kid boys'", "kid girls'", "baby boys'", "baby girls'", "toddler boys'", "toddler girls'", "kid printed", "kid glow",
     "leggings", "legging", "hoodie", "t-shirt", "bodysuit", "pantyhose", "bikini", "socks", "underwear", "boots", "shoes", "sandals", "slippers", "jacket", "sweater", "jeans", "pajamas", "pyjamas", "toque", "mittens", "long sleeve", "short sleeve", "sweatpants", "shorts", "swimsuit", "bra", "tights", "apparel", "clothing",
@@ -27,7 +31,7 @@
     "wall art", "picture frame", "photo frame", "vase", "candle holder", "storage bench", "shoe rack", "laundry basket", "hamper", "clothes rack", "garment bag"
   ],
   "keep": [
-    "detergent", "rinse aid", "scent booster", "fabric softener", "laundry pods", "laundry soap", "laundry sheets", "air fryer liners", "dryer sheets", "training underwear", "pull-ups", "training pants", "cookie sheet", "sheet pan", "baking sheet",
+    "hot dog", "hot dogs", "corn dog", "corn dogs", "kettle corn", "kettle cooked", "kettle style", "kettle chips", "detergent", "rinse aid", "scent booster", "fabric softener", "laundry pods", "laundry soap", "laundry sheets", "air fryer liners", "dryer sheets", "training underwear", "pull-ups", "training pants", "cookie sheet", "sheet pan", "baking sheet",
     "seasoning mix", "marinade mix", "dry sauce", "toaster strudel", "toaster pastries"
   ],
   "block_category": [
