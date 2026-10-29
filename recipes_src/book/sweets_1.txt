@@ -1,0 +1,401 @@
+== Orange Chocolate Marble Cake
+cuisine: Western | meal: dessert | minutes: 50
+- 250 g | Self raising flour | flour
+- 200 g | Sugar | sugar
+- 1/2 tsp | Baking soda | baking soda
+- 200 g | Butter | butter
+- 4 | Eggs | eggs
+- 3 Tbsp | Milk | milk
+- 2-3 Tbsp | Orange zest | orange
+- 280 g | Dark chocolate, melted | dark chocolate
+> Cream butter and sugar, add eggs.
+> Add the rest of the ingredients, don't over mix the flour.
+> Bake at 180C in a pre-heated oven for 40-50 mins.
+note: page 1; Layer batter then chocolate, swirl lightly.
+
+== Gulab Jamun
+cuisine: Indian | meal: dessert
+- 1 tin | Cream | cream
+- 2.5 tin | Milk powder | milk powder
+- 1 Tbsp | Ghee | ghee
+- 2 level Tbsp | Flour | flour
+- 1 tsp | Baking powder | baking powder
+- 1/2 tsp | Cardamom powder (syrup) | cardamom powder
+- 2 tins | Sugar (syrup) | sugar
+- 2 tins | Water (syrup) | water
+- 4 Tbsp | Rose water (syrup) | rose water
+- pinch | Saffron (syrup) | saffron
+> Syrup: Heat the sugar, water, rose water and saffron till sugar dissolves.
+> Combine all ingredients, make very small balls, no cracks.
+> Deepfry in ghee and immediately soak in syrup.
+note: page 2; the bracket "heat till sugar dissolves" covers sugar, water, rose water and saffron; the cardamom amount (1/2 tsp) is slightly smudged
+
+== Seviyan
+cuisine: Indian | meal: dessert | minutes: 7
+- 1 Tbsp | Ghee | ghee
+- 1 pack | Seviyan | vermicelli
+- 3/4 cup | Milk | milk
+- 1/2 tsp | Cardamom powder | cardamom powder
+- 1/3 cup | Sugar | sugar
+- | Handful of golden raisins | golden raisins
+> Fry seviyan in ghee till golden.
+> Add milk, raisins, cardamom powder and cover and cook on low heat 5-7 mins.
+> Add sugar and cook on low for few more mins.
+note: page 3; "raisins" was written in small above the line after "Add milk," so its exact position in the sentence is a best reading
+
+== Gajar ka Halwa (Carrot Halwa)
+cuisine: Indian | meal: dessert
+- 5-6 | Carrots, grated | carrots
+- 5 Tbsp | Milk powder | milk powder
+- 1 tsp | Ghee | ghee
+- 2 Tbsp | Golden raisins | golden raisins
+- 1/4 cup | Sugar | sugar
+- | Water | water
+- 1/4 tsp | Cardamom powder | cardamom powder
+> Heat ghee and cook raisins, stirring constantly, set aside.
+> In a pan cook carrots till it releases water, add milk powder and toast till golden and slightly dry.
+> Add sugar and cardamom powder, cook for few mins.
+> Add water if needed and cook.
+> Add raisins and turn off heat.
+note: page 4; book title also says "by Swaad Anusar" (attribution, owner confirmed)
+
+== Black Forest Gateau
+cuisine: Western | meal: dessert | minutes: 45
+- 125 g | Butter | butter
+- 1 cup | Sugar | sugar
+- 2 | Eggs | eggs
+- 1.5 tsp | Vanilla | vanilla
+- 1.5 cups | Self raising flour | flour
+- 1/2 cup | Cocoa | cocoa powder
+- 1 tsp | Baking soda | baking soda
+- 1 cup | Butter milk | buttermilk
+- 1 Tbsp | Oil | oil
+> Cream butter and sugar, add eggs.
+> Add the rest of the ingredients, don't over mix the flour.
+> Bake in a preheated oven at 180C for 35-45 mins.
+note: page 5; only the cake is written (no cherries, cream or assembly in the book)
+
+== Orange Cake
+cuisine: Western | meal: dessert | minutes: 55
+- 185 g | Butter | butter
+- 175 g | Sugar | sugar
+- 3 | Large eggs | eggs
+- 2 Tbsp | Orange zest | orange
+- 185 g | Self raising flour | flour
+- 4 Tbsp | Orange juice | orange juice
+- 150 g | Icing sugar (icing) | icing sugar
+- 1.5 Tbsp | Orange juice (icing) | orange juice
+> Preheat oven to 170C.
+> Bake for 45-55 mins.
+note: page 6; no method for making the batter or the icing is written in the book
+
+== Chocolate Cake (Ganache)
+cuisine: Western | meal: dessert | minutes: 40
+- 170 g | Sugar | sugar
+- 200 g | Butter | butter
+- 4 | Eggs | eggs
+- 200 g | Self raising flour (-2 Tbsp + 2 Tbsp cocoa) | flour
+- 1 tsp | Baking powder | baking powder
+- 2 Tbsp | Milk | milk
+- 200 ml | Cream (icing) | cream
+- 200 g | Dark chocolate (icing) | dark chocolate
+> Preheat oven to 190C and bake for 30-40 mins.
+note: page 7; the 2 Tbsp cocoa in the flour line is not a separate ingredient line in the book; no method written for mixing the batter or making the ganache icing
+
+== Orange and Poppy Cake
+cuisine: Western | meal: dessert | minutes: 50
+- 185 g | Butter | butter
+- 160 g | Sugar | sugar
+- 1/4 cup | Apricot jam | apricot jam
+- 1/3 cup | Orange juice | orange juice
+- 3 Tbsp | Orange zest | orange
+- 1/4 cup | Poppy seeds | poppy seeds
+- 1.5 cup | Self raising flour | flour
+- 1/3 cup | Ground almonds | ground almonds
+- 3 | Eggs | eggs
+> Melt jam and orange juice on low heat.
+> Cream butter and sugar, add eggs, zest, poppy seed.
+> Add almond powder and flour.
+> Bake in a preheated oven at 180C for 40-50 mins.
+note: page 8
+
+== Short Bread Tart Crust
+cuisine: Western | meal: dessert | minutes: 15
+- 1 cup (130g) | Flour | flour
+- 1/8 tsp | Salt | salt
+- 1/3 cup | Powdered sugar | icing sugar
+- 1/2 cup (100g) | Cold butter | butter
+> Pulse everything, press in a tart pan and bake in preheated oven at 220C for 13-15 mins.
+> Seal with 30g melted chocolate.
+note: page 9
+
+== Victoria Sponge Cake
+cuisine: Western | meal: dessert | minutes: 20
+- 4 | Eggs | eggs
+- 2/3 cup | Sugar | sugar
+- 1 cup | Self raising flour (-1 Tbsp + 1 Tbsp corn flour) | flour
+- 1 tsp | Vanilla | vanilla
+- 1/4 tsp | Salt | salt
+- | Pineapple can | canned pineapple
+- | Peach can | canned peaches
+- | Kiwi | kiwi
+- | Strawberry | strawberries
+- | Cream chantele | whipping cream
+- | Raspberry jam | raspberry jam
+> Beat eggs and sugar for 6 mins.
+> Add vanilla and salt.
+> Fold in flour to the egg mixture.
+> Bake in preheated oven at 180C for 20+ mins.
+> Cool cake in fridge, cut, soak in pineapple juice/syrup.
+> Spread jam and cream.
+> Layer fruits, and decorate the top.
+note: page 10; "20+ mins" is written as "20 with a plus-minus sign"; "chantele" is the book's spelling (chantilly cream); the four fruits were written on one line separated by commas and are split into separate lines here
+
+== Carrot Cake
+cuisine: Western | meal: dessert | minutes: 40
+- 3/4 cup | Sugar | sugar
+- 1/2 cup | Oil | oil
+- 2 | Eggs | eggs
+- 1 cup | Flour | flour
+- 1 Tbsp | Cinnamon | cinnamon
+- 1/2 tsp | Baking soda | baking soda
+- 3/4 tsp | Baking powder | baking powder
+- 1/2 tsp | Vanilla | vanilla
+- 1/4 tsp | Salt | salt
+- 1.5 cups | Grated carrots | carrots
+- 1/2 cup | Coconut | desiccated coconut
+- 2 Tbsp | Orange zest | orange
+- | Cranberries | dried cranberries
+- | Sultanas | sultanas
+- | Candied pineapple | candied pineapple
+> Preheat oven to 180C.
+> Beat sugar and eggs then add oil till light.
+> Add the rest of the ingredients except flour.
+> Stir in the flour and fruits.
+> Bake for 35-40 mins
+note: page 11
+
+== Pineapple Upside Down Cake
+cuisine: Western | meal: dessert | minutes: 55
+- 1.5 cups (195g) | Flour | flour
+- 1.5 tsp | Baking powder | baking powder
+- 1/4 tsp | Salt | salt
+- 1/2 cup | Butter | butter
+- 1 cup | Sugar | sugar
+- 1 tsp | Vanilla | vanilla
+- 2 | Eggs | eggs
+- 1/2 cup | Milk | milk
+- 1/4 cup (55g) | Butter (caramel; melt and make caramel) | butter
+- 160 g | Brown sugar (caramel; melt and make caramel) | brown sugar
+- 1 | Pineapple | pineapple
+> Cream butter and sugar.
+> Add eggs then the rest of the ingredients.
+> Fold in flour.
+> In a cake pan pour the caramel and layer with pineapple slices.
+> Pour the cake batter and tap out the bubbles.
+> Bake in preheated oven at 180C for 45-55 mins.
+> Cool for 10 mins then flip onto a plate.
+> Serve with vanilla ice cream.
+note: page 12; book title spelled "Pineapple UpSide Down Cake"
+
+== Double Chocolate Pound Cake
+cuisine: Western | meal: dessert | minutes: 30
+- 1 cup | Butter | butter
+- 1 1/4 cup | Flour | flour
+- 1 cup | Sugar | sugar
+- 1 tsp | Vanilla | vanilla
+- 5 | Eggs | eggs
+- 1/2 tsp | Salt | salt
+- 1/4 cup | Cocoa | cocoa powder
+- 180 g | Choco chips | chocolate chips
+- 1 tsp | Baking powder | baking powder
+- 4 Tbsp | Milk | milk
+> Bake in preheated oven at 180C for 30+ mins.
+> Glaze with sugar glaze or chocolate swirls.
+note: page 13; You can halve the recipe; "30+" is written as 30 with a plus-minus sign; no mixing method written
+
+== Caramel Popcorn
+cuisine: Western | meal: snack | minutes: 60
+- 1/2 cup | Popcorn | popcorn kernels
+- 3/4 cup | Brown sugar | brown sugar
+- 1 stick | Butter | butter
+- | Honey | honey
+- 1/2 tsp | Salt | salt
+- | Vanilla | vanilla
+> Pop the popcorn.
+> Make the caramel sauce and pour over the popcorn and stir well.
+> Bake in preheated oven at 120C for 1 hour, stirring every 20 mins.
+note: page 14; You can halve the recipe; oven temperature is 120C (owner confirmed Celsius)
+
+== Luscious Lemon Cake (Alida Ryder - Simply delicious-food.com)
+cuisine: Western | meal: dessert | minutes: 45
+- 200 g | Self raising flour | flour
+- 175 g | Sugar | sugar
+- 150 g | Butter | butter
+- 4 | Eggs | eggs
+- 1 Tbsp | Lemon zest | lemon
+- 1 Tbsp | Lemon juice | lemon juice
+- | Salt | salt
+- 100 g | Sugar (syrup) | sugar
+- 75 ml | Water (syrup) | water
+- 75 ml | Lemon juice (syrup) | lemon juice
+- 1 cup | Icing sugar (glaze) | icing sugar
+- 1-2 Tbsp | Lemon juice (glaze) | lemon juice
+> Syrup: Boil, poke holes in cake and pour hot syrup.
+> Glaze: Whisk and drizzle on cold cake.
+> Bake in preheated oven at 180C for 35-45 mins.
+note: page 15; attribution in book is "(Alida Ryder - Simply delicious-food.com)"; no batter mixing method written
+
+== Cinnamon Rolls
+cuisine: Western | meal: bread | minutes: 20
+- 3 cups | Flour | flour
+- 1 tsp | Yeast | yeast
+- 2 Tbsp | Sugar | sugar
+- | Salt | salt
+- 2 Tbsp | Milk powder | milk powder
+- 1/4 cup (50g) | Butter | butter
+- 1 cup | Warm milk | milk
+- 1 cup | Brown sugar (filling) | brown sugar
+- 3 Tbsp | Cinnamon powder (filling) | cinnamon
+- 1/4 cup | White sugar (filling) | sugar
+- | Softened butter (filling) | butter
+- 4 pieces | Kiri cheese (glaze) | cream cheese
+- 1 Tbsp | Butter (glaze) | butter
+- 1 cup | Icing sugar (glaze) | icing sugar
+- 2 Tbsp | Milk (glaze) | milk
+- | Vanilla (glaze) | vanilla
+> Make a soft dough, roll and spread butter and cinnamon mixture.
+> Use a string to make the rolls.
+> Bake in preheated oven at 180C for 20 mins.
+note: page 16; You can halve the recipe; no method written for the glaze
+
+== No Bake Cheese Cake
+cuisine: Western | meal: dessert
+- 1 Tbsp | Halal gelatine (bloom, then melt in microwave) | halal gelatine
+- 1 Tbsp | Cold water (bloom, then melt in microwave) | water
+- 400 g | Cream cheese | cream cheese
+- 500 ml | Whip cream | whipping cream
+- 3/4 cup | Condensed milk | condensed milk
+- 2 Tbsp | Lemon juice | lemon juice
+- | Vanilla | vanilla
+- 12-15 | Digestive biscuits | digestive biscuits
+- 1/2 stick | Butter, melted | butter
+> Make berry topping, add halal gelatine.
+> Let the cheese cake set then add the topping.
+note: page 17; book says "gelatine" (written here as halal gelatine); berries for the topping are not listed; the method as written is thin (crust and filling steps not written)
+
+== Chocolate Swiss Roll (Roulade)
+cuisine: Western | meal: dessert | minutes: 8
+- 5 | Eggs | eggs
+- 100 g | Sugar | sugar
+- 80 g | Flour | flour
+- 20 g | Cocoa powder | cocoa powder
+- 1 tsp | Baking powder | baking powder
+- | Salt | salt
+> Whip the eggs on high for 5 mins.
+> Fold in dry ingredients.
+> Bake in preheated oven at 190C for 7-8 mins in a sheet pan.
+note: page 18; no filling listed in the book
+
+== Carrot Cake Cup Cake
+cuisine: Western | meal: dessert | minutes: 25
+- 2 cups | Flour | flour
+- | Salt | salt
+- 1 tsp | Baking soda | baking soda
+- 1 tsp | Baking powder | baking powder
+- 1 Tbsp | Cinnamon powder | cinnamon
+- 4 | Eggs | eggs
+- 1 1/3 cup | Sugar | sugar
+- 300 ml | Oil | oil
+- 3 cups | Grated carrots | carrots
+- 1 Tbsp | Orange zest | orange
+- 1 1/2 cups | Ground almonds | ground almonds
+> Beat eggs and sugar till light, add oil.
+> Add zest and carrots.
+> Mix in the dry ingredients.
+> Fill muffin tray and bake at 180C for 20-25 mins.
+note: page 19
+
+== Jemma's Chocolate CupCake
+cuisine: Western | meal: dessert | minutes: 24 | servings: 24
+- 350 g | Flour | flour
+- 60 g | Cocoa (bloom in hot coffee) | cocoa powder
+- 1 tsp | Baking soda | baking soda
+- | Salt | salt
+- 1 cup | Coffee | coffee
+- 1 cup | Buttermilk | buttermilk
+- 100 g | Butter | butter
+- 200 ml | Oil | oil
+- 3 | Eggs | eggs
+- 325 g | Sugar | sugar
+- 300 ml | Whipping cream (chocolate frosting) | whipping cream
+- 3-4 Tbsp | Butter (chocolate frosting) | butter
+- 300 g | Dark chocolate (chocolate frosting) | dark chocolate
+> Bake in preheated oven at 180C for 24+ mins.
+> Makes 24 cupcakes.
+note: page 20; subtitle under the title reads "Use half quantity for lazy cat cake" (the Arabic words for lazy cat cake come right before it; owner confirmed); "24+" is written as 24 with a plus-minus sign; no mixing method or frosting method written
+
+== Crepes
+cuisine: Western | meal: breakfast
+- 3 Tbsp | Butter melted and cooled | butter
+- 1 cup | Flour | flour
+- 1 Tbsp | Sugar | sugar
+- | Salt | salt
+- 1 cup | Milk | milk
+- 1/4 cup | Water | water
+- 2 | Eggs | eggs
+- 1 tsp | Vanilla | vanilla
+> Blend everything till smooth.
+> Cover and store in fridge overnight.
+note: page 21
+
+== Pancakes
+cuisine: Western | meal: breakfast
+- 1 | Egg | eggs
+- 1 cup | Milk | milk
+- 2 Tbsp | Oil | oil
+- 2 Tbsp | Sugar | sugar
+- 1/2 tsp | Salt | salt
+- 1 tsp | Baking powder | baking powder
+- 1/2 tsp | Vanilla | vanilla
+- 1 cup (120-125g) | Flour | flour
+> Combine wet and dry ingredients, don't over mix.
+note: page 21
+
+== Chocolate Lovers Food Cake
+cuisine: Western | meal: dessert | minutes: 35
+- 75 g | Cocoa | cocoa powder
+- 1 cup | Hot coffee | coffee
+- 1/2 cup (120g) | Yogurt or sourcream | yogurt
+- 2 tsp | Vanilla | vanilla
+- 195 g | Flour | flour
+- 1 tsp | Baking soda | baking soda
+- 1/2 tsp | Salt | salt
+- 165 g | Butter | butter
+- 230 g | Sugar | sugar
+- 6 tsp | Oil | oil
+- 2 | Eggs | eggs
+> Mix wet ingredients then dry.
+> Bake in preheated oven at 180C for 30-35mins.
+note: page 22; oil amount "6 tsp" is as written (may have been meant as Tbsp)
+
+== Donuts (Emma's Goodies)
+cuisine: Western | meal: snack
+- 280 g | Flour | flour
+- 40 g | Sugar | sugar
+- 1 | Egg | eggs
+- 120 g | Milk (maybe +2-3 Tbsp) | milk
+- 40 g | Melted butter | butter
+- | Salt | salt
+- 1 tsp | Yeast | yeast
+- 2 cups | Powdered sugar (glaze) | icing sugar
+- 75 g | Butter (glaze) | butter
+- 3-5 Tbsp | Milk/cream (glaze) | milk
+- 1/2 tsp | Vanilla (glaze) | vanilla
+> Dissolve sugar and yeast in warm milk.
+> Add in the rest of the ingredients.
+> Make a soft dough.
+> Let it rise, shape and let it rise again.
+> Fry in hot oil.
+> Optional coat immediately in cinnamon sugar.
+note: page 23; no method written for the glaze

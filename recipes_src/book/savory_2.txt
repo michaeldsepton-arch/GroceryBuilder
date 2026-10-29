@@ -1,0 +1,585 @@
+== Chilli Potatoes
+cuisine: Asian | meal: side
+- 6 | Large potatoes, cut into sticks and boiled for 5 mins | potatoes
+- 6-10 | Whole red chillies, pounded | red chili peppers
+- 3 | Green chillies | green chili peppers
+- 1 | Capsicum | bell pepper
+- 3 | Spring onions | green onions
+- 3 Tbsp | Soy sauce | soy sauce
+- 1 Tbsp | Honey | honey
+- 1 Tbsp | Ketchup | ketchup
+- 1 Tbsp | Vinegar | white vinegar
+- 1 Tbsp | Ginger | ginger
+- 1 Tbsp | Garlic | garlic
+- 10 Tbsp | Flour (batter) | all purpose flour
+- 5 Tbsp | Corn flour (batter) | corn starch
+- 1/2 tsp | Salt (batter) | salt
+- | Corn flour, water slurry (batter) | corn starch
+> Batter: Dip the potato sticks in the batter and deep fry till golden.
+> Heat oil in a wok, fry ginger, garlic, chillies. Add capsicum and spring onions.
+> Add the rest of the ingredients and some water.
+> Add the potatoes, toss well till completely coated in the sauce.
+> Add slurry before the potatoes.
+note: page 28; the last line "Add slurry before the potatoes" is as written in the book (order of slurry/potatoes looks odd). Oil for frying is not in the ingredient list.
+
+== Swedish Meatballs
+cuisine: Western | meal: dinner
+- 1 Tbsp | Butter | butter
+- 1/2 | Onion, diced | onions
+- 1/4 cup | Milk | milk
+- 1 | Egg | eggs
+- 1/3 cup | Bread crumbs | bread crumbs
+- 1 tsp | Black pepper | black pepper
+- 1/4 tsp | All spice | allspice
+- 1 1/2 tsp | Salt | salt
+- 1/2 tsp | Red chilli powder | chili powder
+- 1/2 Kg | Beef mince | ground beef
+- 1/2 Kg | Mutton mince | ground lamb
+- 2 Tbsp | Butter (sauce) | butter
+- 1 tsp | Garlic (sauce) | garlic
+- 3 Tbsp | Flour (sauce) | all purpose flour
+- 3 cups | Beef broth / 1 maggie cube (sauce) | beef broth
+- 1/4 cup | Cream (sauce) | cream
+- 1/4 tsp | Sugar (sauce) | sugar
+- 1/4 tsp | Oyster sauce (sauce) | oyster sauce
+- 1 tsp | Black pepper (sauce) | black pepper
+- 1/2 tsp | Salt (sauce) | salt
+> Melt butter and cook onion till translucent.
+> Transfer onion to large bowl.
+> Add milk, egg, bread crumbs, spices, mince meat.
+> Mix everything and make balls, refrigerate for one hour.
+> Melt butter and fry meatballs in batches.
+> Sauce: Melt butter and add garlic and flour.
+> Slowly add the stock and the rest of the ingredients.
+> Add meat balls and cook on low heat for 10 mins.
+note: page 29; "mince" is written small above the line before "meat" in the method
+
+== Garlic Bread (By Ninik Becker)
+cuisine: Western | meal: bread
+- 2 cups | Flour (dough) | all purpose flour
+- 1 tsp | Yeast (dough) | instant yeast
+- 2 Tbsp | Sugar (dough) | sugar
+- 1/2 tsp | Salt (dough) | salt
+- 42 g | Melted butter (dough) | butter
+- 1/2 cup | Warm milk (dough) | milk
+- 1 | Egg (dough) | eggs
+- 3 Tbsp | Butter, softened (garlic butter) | butter
+- 1 1/2 tsp | Garlic (garlic butter) | garlic
+- | Spring onions (garlic butter) | green onions
+- 1/2 tsp | Salt (garlic butter) | salt
+- | Oregano (garlic butter) | oregano
+- | Mozzarella, cheddar, monterey jack (garlic butter) | shredded cheese
+> Mix all ingredients for dough and make a soft dough.
+> Rest for 1 hour.
+> Roll and place in baking tray, top with garlic butter mixture and cheese.
+> Bake at 190C for 15 mins.
+note: page 30; the dough ingredients have no heading in the book (first list); oven temperature is 190C (owner confirmed Celsius)
+
+== Gosht Salan (Light)
+cuisine: Pakistani | meal: dinner
+- 1 | Onion | onions
+- 1 tsp | Garlic | garlic
+- 1/2 tsp | Sauf (fennel seeds) (grind together coarsely) | fennel seeds
+- 1/2 tsp | Cumin seeds (grind together coarsely) | cumin seeds
+- 1/2 tsp | Turmeric | turmeric
+- 1/2 tsp | Red chilli powder | chili powder
+- 1/2 Tbsp | Coriander powder | ground coriander
+- 1/2 tsp | Salt | salt
+- 1/2 Kg | Bone in meat | bone-in meat
+- 1 Tbsp | Tomato paste | tomato paste
+> Boil meat.
+> Make a masala by frying the onion till golden brown (birista).
+> Add garlic and spices.
+> Cook for 1-2 mins, add the cooked meat with its water.
+> Cook till it boils then add a Tbsp of tomato paste.
+> Serve with lemon and fresh coriander leaves.
+note: page 31; a bracket "Grind together coarsely" sits next to sauf and cumin seeds (covers sauf and cumin seeds only, owner confirmed); lemon and fresh coriander are in the method only
+
+== Chicken Salan
+cuisine: Pakistani | meal: dinner
+- 2-3 | Onions sliced into strips thinly | onions
+- 4 | Tomatoes, pureed | tomatoes
+- 1 tsp | Ginger | ginger
+- 1 tsp | Garlic | garlic
+- 1 | Chicken | whole chicken
+- 1/4 tsp | Turmeric | turmeric
+- 1/2 tsp | Red chilli powder | chili powder
+- 1/2 tsp | Cumin powder | ground cumin
+- 3/4 tsp | Salt | salt
+- 1/4 tsp | Garam masala | garam masala
+- 1 | Potato | potatoes
+- 1/4 | Stick cinnamon | cinnamon sticks
+- 3 | Long (cloves) | whole cloves
+- 5 | Cardamom pods | cardamom pods
+- 3/4 cup | Water | water
+> Fry onions (birista) in oil till golden.
+> Add all the rest of the ingredients.
+> Cook for 10 mins in instant pot.
+note: page 32; page title is "Chicken Salan (Gravy)", index says Chicken Salan, used index title; the cinnamon amount is 1/4 stick (owner confirmed); "long" is written for cloves; "(birista)" is written small above the line
+
+== Zeera Matar Rice
+cuisine: Pakistani | meal: side
+- 1 cup | Rice, soaked | basmati rice
+- 1 tsp | Salt | salt
+- 1 tsp | Cumin seeds | cumin seeds
+- 1/4 tsp | Ghee | ghee
+> Heat ghee, saute zeera 30 secs, add soaked rice and wate[?]
+> [cut off at gutter] cook for 2 mins [?]. Cook on [cut off]
+> and salt. Cook 7+ mins, uncover and cook for 2 mins.
+> Cook on dum for 5 mins.
+note: page 32; the right edge of the method lines is cut off by the page gutter (words after "rice and wate" and after "Cook on" are missing, so the middle of the method is incomplete); no matar (peas) amount is in the ingredient list even though the title says matar; "7+" is written as "7 with a plus-minus sign" (about 7 mins)
+
+== Bolognese
+cuisine: Italian | meal: dinner
+- 1/2 Kg | Mince | ground meat
+- 3 | Onions | onions
+- 1 Tbsp | Garlic | garlic
+- 1 tsp | Salt | salt
+- 1 Tbsp | Black pepper | black pepper
+- 5-6 | Tomatoes, pureed | tomatoes
+- 1/2 tsp | Red chilli powder | chili powder
+- 1/4 tsp | Smoked paprika | smoked paprika
+- 10 | Basil leaves | fresh basil
+- 1 Tbsp | Oregano | oregano
+- 2 | Carrots cut into quarters | carrots
+- 4 Tbsp | Tomato paste | tomato paste
+- | Olive oil | olive oil
+> [Sa]ute onion in olive oil, add garlic.
+> Add rest of the [ingred]ients in instant pot and cook for 20 mins.
+note: page 33; the start of the method lines is cut off at the gutter ("ute onion", "...ients"), reconstructed words shown in brackets; olive oil is in the method only; "5,6" tomatoes written with a comma
+
+== Bechamel Sauce
+cuisine: Italian | meal: side
+- 1 tsp | Butter | butter
+- 1 tsp | Flour | all purpose flour
+- 1/4 | Maggie cube | chicken bouillon cube
+- 3/4 cup | Milk | milk
+- 1 tsp | Black pepper | black pepper
+- | Cheddar, parmesan | cheddar cheese
+> Heat butter, toast flour then add maggie, cook for 2-3 mins.
+> Add milk and cook till thickened, add pepper.
+> Turn off heat and add cheeses.
+note: page 33; the first words of the method lines touch the gutter and are slightly cut off but readable
+
+== Beans Salan
+cuisine: Pakistani | meal: dinner
+- 1 | Onion | onions
+- 2 | Tomatoes, pureed | tomatoes
+- 1 tsp | Ginger | ginger
+- 1 tsp | Garlic | garlic
+- 1 Tbsp | Ghee | ghee
+- 1 1/2 cups | Bean, soaked overnight | dried beans
+- 1/2 tsp | Turmeric | turmeric
+- 1 tsp | Chilli powder | chili powder
+- 1 Tbsp | Coriander powder | ground coriander
+- 1 tsp | Cumin powder | ground cumin
+- 1 tsp | Salt | salt
+- | Fresh coriander leaves | fresh cilantro
+> Add all ingredients to instant pot cook for 30-40 mins.
+> Open lid, mix and add ghee.
+> Mash if you want.
+> Add fresh coriander leaves.
+> Serve with rice and tuna.
+note: page 34; the book says "bean" without saying which kind; the 1 Tbsp ghee appears in the list and again in the method
+
+== Muhammarah
+cuisine: Arab | meal: dinner
+- 4 | Onions, diced | onions
+- 4 Tbsp | Pepper paste (written in Arabic as well) | red pepper paste
+- 1 Tbsp | Tomato paste | tomato paste
+- 1 tsp | Coriander powder | ground coriander
+- 1 tsp | Cumin powder | ground cumin
+- 1/2 tsp | Black pepper | black pepper
+- 1/2 tsp | Black seed (Arabic written) | black seed nigella
+- 1/2 tsp | Salt | salt
+- 1 Tbsp | Pomegranate molasses | pomegranate molasses
+- | Olive oil | olive oil
+- 1 1/2 cup | Water (dough) | water
+- 1 1/2 cup | Milk (dough) | milk
+- 2 tsp | Yeast (dough) | instant yeast
+- 1 tsp | Baking powder (dough) | baking powder
+- 2 tsp | Yogurt (dough) | yogurt
+- 1 Tbsp | Sugar (dough) | sugar
+- 3 cups | Flour (dough) | all purpose flour
+- 1/2 cup | Oil (dough, second mix) | vegetable oil
+- 1 Tbsp | Salt (dough, second mix) | salt
+- 5 cups | Flour (dough, second mix) | all purpose flour
+- 1 Tbsp | Butter (dough, second mix) | butter
+> Fry onions till slightly soft.
+> Add pepper paste, then the rest of the ingredients except black seed and pomegranate molasses.
+> Turn off the heat, add black seed, pomegranate molasses and top with olive oil.
+> Dough: Knead and set aside for 10 mins.
+> Dough: Knead and make a very soft dough. Rest.
+note: page 35; the page title is Arabic only (looks like muhammara in Arabic), used index title Muhammarah; in the ingredients and method the book writes pepper paste, black seed and pomegranate molasses in Arabic script, I replaced them with the English meaning (pepper paste and pomegranate molasses are given in English next to the Arabic; black seed confirmed by owner); olive oil is in the method only; the dough is in two stages, first mix then a second mix of oil/salt/flour/butter (the book does not say how much of which goes where)
+
+== Soy Sauce Chicken
+cuisine: Chinese | meal: dinner
+- 1 | Chicken cut in small pieces | whole chicken
+- 3-4 Tbsp | Soy sauce | soy sauce
+- 2 Tbsp | Oyster sauce | oyster sauce
+- 3 | Onions cut into large chunks | onions
+- 1/2 | Capsicum cut into large chunks | bell pepper
+- 1/2 tsp | Sugar | sugar
+- 7-8 Tbsp | Oil | vegetable oil
+- 1/2 Tbsp | Black pepper | black pepper
+- 2 tsp | Garlic | garlic
+> Marinade the chicken in soy sauce.
+> Heat lots of oil in a wok.
+> Add garlic and fry for a minute then add the chicken.
+> Fry for 8 mins, then add onions and capsicum with black pepper.
+> Cook till chicken is done then add the sugar, stir and turn off the flame.
+note: page 36; oyster sauce is not mentioned in the method
+
+== Chicken Shawarma
+cuisine: Arab | meal: dinner
+- | Chicken drumstick and thigh skin on | chicken drumsticks
+- 2 tsp | Garlic | garlic
+- 1/2 tsp | Turmeric | turmeric
+- 1 tsp | Cumin powder | ground cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1/2 tsp | All spice | allspice
+- 1 tsp | Smoked paprika | smoked paprika
+- 1 tsp | Onion powder (optional) | onion powder
+- 1/2 tsp | Cardamom powder | ground cardamom
+- 1/4 tsp | Clove powder | ground cloves
+- 1/2 tsp | Red chilli powder | chili powder
+- 1/2 tsp | MSG | msg seasoning
+- 1/2 Tbsp | Sugar | sugar
+- 1 Tbsp | Vinegar | white vinegar
+- 1/2 tsp | Cinnamon powder | ground cinnamon
+- 1 1/2 tsp | Salt | salt
+- 1/2 Tbsp | Black pepper (optional) | black pepper
+- | Onions, sliced | onions
+- | Lemon juice | lemon juice
+> Boil the chicken for 20 mins and shred when cooled.
+> To the chicken fat add all the ingredients and cook till the water evaporates.
+> Add the shredded chicken back and sliced onions and fry.
+> Turn off the heat and add lemon juice.
+note: page 37; no chicken quantity written; sliced onions and lemon juice are in the method only
+
+== Malai Tandoori Chicken (Naush Chicken)
+cuisine: Pakistani | meal: dinner
+- | Chicken skin on | chicken
+- 3 Tbsp | Yogurt | yogurt
+- 1/4 cup | Cream | cream
+- 1/2 Tbsp | Garlic | garlic
+- 1/2 Tbsp | Ginger | ginger
+- 1 Tbsp | Kasuri methi | kasuri methi
+- 1/2 Tbsp | Chatpati masala | chaat masala
+- 1 Tbsp | Tandoori masala | tandoori masala
+- 1/2 tsp | Garam masala | garam masala
+- 1 tsp | Red chili powder | chili powder
+- 1 tsp | Salt | salt
+- | Butter (gravy) | butter
+- 1/2 tsp | Ginger (gravy) | ginger
+- 1/2 tsp | Garlic paste (gravy) | garlic
+- 4 | Tomatoes, pureed (gravy) | tomatoes
+- | Salt (gravy) | salt
+- | Cream (gravy) | cream
+> Marinate the chicken overnight, then fry in a little oil till half cooked and take out of pan.
+> For the Gravy: Melt butter, add 1/2 tsp ginger, 1/2 tsp garlic paste and saute.
+> Add 4 pureed tomatoes, salt.
+> Cook the gravy for few mins till tomatoes are soft.
+> Add the chicken and cook completely.
+> Turn off heat and add cream on top.
+> Give coal smoke.
+note: page 38; no chicken quantity written; the Gravy section has no ingredient list, its ingredient lines were taken from the method text (butter, salt and cream have no amount)
+
+== Dal Makhani
+cuisine: Indian | meal: dinner
+- 1 cup | Black dal, soaked and pressure cooked for 25 mins | black lentils
+- 1 handful | Kidney beans, soaked and pressure cooked for 25 mins | kidney beans
+- 1 Tbsp | Butter | butter
+- 1 Tbsp | Coriander powder | ground coriander
+- 1/4 tsp | Garam masala | garam masala
+- 1 tsp | Red chilli powder | chili powder
+- 4 | Tomatoes pureed with 1 green chilli | tomatoes
+- 1/2 tsp | Turmeric | turmeric
+- 1 tsp | Cumin seeds | cumin seeds
+- 1/4 tsp | Cumin powder | ground cumin
+- 1 tsp | Salt | salt
+- 1 Tbsp | Fenugreek leaves (kasuri methi) | kasuri methi
+- 1/4 cup | Cream | cream
+- 2 | Onions, chopped | onions
+- | Ginger | ginger
+- | Garlic | garlic
+- | Oil | vegetable oil
+> Heat oil add cumin seeds, chopped onions and saute.
+> Add ginger, garlic, saute.
+> Add spices and saute for 1 min.
+> Add tomato puree and cook on low heat for 10 mins.
+> Add cooked dal and cook for 10 mins.
+> Add 2 Tbsp of butter, kasuri methi.
+> Turn off heat and add 1/4 cup cream.
+> Give coal smoke.
+note: page 39; page title is "Dal Makhani (vah chef)"; oil, ginger and garlic are in the method only (no amounts); the "1 green chilli" is part of the tomato line
+
+== Chicken Nachos / Tacos (Rockin Robin)
+cuisine: Mexican | meal: dinner
+- | Chicken | chicken breast
+- 1 Tbsp | Oregano | oregano
+- 1/2 tsp | All spice | allspice
+- 1/2 Tbsp | Black pepper | black pepper
+- 2 Tbsp | Olive oil | olive oil
+- 1/2 tsp | Salt | salt
+- 1 1/2 tsp | Garlic | garlic
+- 1 tsp | Smoked paprika | smoked paprika
+- 1/2 tsp | Cumin powder | ground cumin
+- 1 tsp | Red chili powder | chili powder
+- 2 Tbsp | Chipotle sauce | chipotle sauce
+- 1 | Onion diced | onions
+- 1 Tbsp | Tomato paste | tomato paste
+- 1 | Roasted capsicum (broiled then skinned when cooled) | bell pepper
+- 1 Tbsp | Cornflour | corn starch
+- 1 tsp | Paprika | paprika
+> Marinade the chicken in the spices overnight, minus the tomato paste.
+> Cook chicken for 20 mins with little water.
+> After it is done, shred it.
+> Saute onions in the same pan till softened then add tomato paste and shredded chicken and chipotle sauce.
+note: page 40; "Chicken" is written as a sub-heading above the list (no amount), I made it an ingredient line; the right edge of the method is slightly cut off at "softened" and "chipotle" but readable; the cornflour and paprika are in a second column to the right of the list
+
+== Beef Nachos (Laura in the kitchen)
+cuisine: Mexican | meal: dinner
+- | Minced beef | ground beef
+- | Onions | onions
+- | Olive oil | olive oil
+- | Black pepper | black pepper
+- | Red chilli powder | chili powder
+- | All spice | allspice
+- | Smoked paprika | smoked paprika
+- | Salt | salt
+- | Cumin powder | ground cumin
+- | Coriander powder | ground coriander
+- | Oregano | oregano
+- | Cornflour | corn starch
+- | Garlic | garlic
+- | Tomato paste | tomato paste
+- | Water | water
+- | Paprika | paprika
+- | Chipotle sauce | chipotle sauce
+> Saute beef then add onions till soft.
+> Add rest of the ingredients.
+> Add chipotle sauce at the end.
+note: page 40; no amounts written in the book (ingredients are a comma list); chipotle sauce is in the method only; "olive oil" is written "dive oil" (olive oil)
+
+== Sheesh Tawooq (Chef Ahmad All cooking)
+cuisine: Arab | meal: dinner
+- 1 Kg | Chicken | chicken breast
+- 3 Tbsp | Oil | vegetable oil
+- 2 tsp | Garlic | garlic
+- 1 Tbsp | Paprika | paprika
+- 1 tsp | Black pepper | black pepper
+- 1/2 tsp | Turmeric | turmeric
+- 1/2 tsp | Summac | sumac
+- 1/2 tsp | Red chili powder | chili powder
+- 1/2 tsp | Salt | salt
+- 3 Tbsp | Tomato paste | tomato paste
+- 1 Tbsp | Mustard | mustard
+- 1/2 cup | Yogurt | yogurt
+- 1/2 | Lemon juice | lemon
+> Marinade the chicken overnight with all the spices.
+> Barbeque till done.
+note: page 41; the page title is Arabic only (shish tawook), the English attribution is as written; the lemon line reads "1/2 lemon juice"
+
+== Achari Gosht
+cuisine: Pakistani | meal: dinner
+- 1/2 Kg | Meat | beef stew meat
+- 4 Tbsp | Yogurt | yogurt
+- 1/2 tsp | Turmeric | turmeric
+- 1 tsp | Chili powder | chili powder
+- 2-3 | Tomatoes, pureed | tomatoes
+- 3 Tbsp | Oil | vegetable oil
+- 2 tsp | Ginger | ginger
+- 2 tsp | Garlic | garlic
+- 1/2 tsp | Salt | salt
+- 2 | Onions | onions
+- 1 tsp | Black seeds | black seed nigella
+- 1 tsp | Fennel seeds, saunf (make a coarse powder) | fennel seeds
+- 1 tsp | Cumin seeds (make a coarse powder) | cumin seeds
+- 1/2 tsp | Methi seeds (make a coarse powder) | fenugreek seeds
+- 1 tsp | Coriander seeds (make a coarse powder) | coriander seeds
+> Heat oil and fry onions till lightly golden.
+> Add tomato puree cook for 5 mins.
+> Add the marinated beef/meat and roast for 5 mins.
+> Add water and pressure cook for 20-30 mins.
+note: page 42; the book does not say the marinade steps (the yogurt, turmeric and chili are presumably the marinade); the bracket "Make a coarse powder" covers fennel, cumin, methi and coriander seeds (black seeds are not included, owner confirmed); the black seeds line also has an Arabic word written after it
+
+== Mutton Karahi
+cuisine: Pakistani | meal: dinner
+- 1 Kg | Mutton | mutton
+- 4 | Tomatoes, pureed | tomatoes
+- 2 | Onions, sliced | onions
+- 2 tsp | Ginger | ginger
+- 2 tsp | Garlic | garlic
+- 1 cup | Yogurt | yogurt
+- 3 Tbsp | Oil | vegetable oil
+- 1/2 tsp | Red chili | chili powder
+- 1 tsp | Zeera powder | ground cumin
+- 1 tsp | Coriander powder | ground coriander
+- 1 tsp | Black pepper | black pepper
+- | Salt | salt
+- | Fresh coriander | fresh cilantro
+- | Ginger julienned | ginger
+- | Lemon juice | lemon juice
+> Pressure cook the mutton with onion, salt, tomato, ginger and garlic till 90% done.
+> Dry the water a little in the karahi on high flame.
+> Add oil and cook for 5 mins.
+> Add red chili powder and cook till oil seperates.
+> Add yogurt and cook then add cumin powder, coriander powder, black pepper, cook till dry.
+> Top with fresh coriander, ginger juliennes and lemon juice.
+note: page 43; salt, fresh coriander, ginger juliennes and lemon juice are in the method only (no amounts); the word "seperates" is as written
+
+== Arayes
+cuisine: Arab | meal: dinner
+- 1/2 Kg | Mince beef | ground beef
+- 30 g | Fresh parsley | fresh parsley
+- 1 | Onion, diced | onions
+- 1 tsp | Garlic | garlic
+- 1 1/2 Tbsp | Pomegranate molasses | pomegranate molasses
+- 1/2 tsp | Cinnamon powder | ground cinnamon
+- 1/2 Tbsp | Black pepper | black pepper
+- 1 tsp | Red chilli | chili powder
+- 1/2 tsp | Boharat - all spice | allspice
+- 1 tsp | Salt | salt
+- | Khubz | pita bread
+- | Olive oil | olive oil
+> Blend all ingredients.
+> Spread on khubz and cook on med-high for 5-7 mins with olive oil.
+note: page 44; the page title also has the Arabic word for arayes; parsley and pomegranate molasses are written in Arabic script next to the line, I used the English meaning; khubz and olive oil are in the method only
+
+== Sliced Aloo Onion
+cuisine: Pakistani | meal: side
+- 5 | Potatoes sliced on mandoline | potatoes
+- 4 | Onions cut into thick chunks | onions
+- 1/2 Tbsp | Cumin powder | ground cumin
+- 1-2 tsp | Red chili | chili powder
+- 2 tsp | Salt | salt
+- 5-6 Tbsp | Olive oil | olive oil
+> Put all ingredients in pan and cook on med-low till golden brown and caramelised.
+note: page 44
+
+== Moong Dal Samosa
+cuisine: Pakistani | meal: snack
+- 2 cups | Moong dal soaked and boiled (20 min+) not pressure cooked | moong dal
+- 3 | Onions, dices | onions
+- 1 tsp | Salt | salt
+- 2 tsp | Cumin powder | ground cumin
+- 1 Tbsp | Coriander powder | ground coriander
+- 2 tsp | Red chili powder | chili powder
+- 2 tsp | Amchur | amchur dried mango powder
+- 1/4 tsp | Garam masala | garam masala
+- | Fresh corriander leaves (dhana) | fresh cilantro
+> Saute the onions, add spices except amchur and corriander leaves after turning off the flame.
+note: page 45; this is the filling only (no samosa pastry or oil listed); "(20 min+)" is written as 20 min with a plus-minus sign; "dices" is as written
+
+== Garam Masala Powder
+cuisine: Pakistani | meal: side
+- 2-3 Tbsp | Cardamom pods | cardamom pods
+- 1 Tbsp | Long (cloves) | whole cloves
+- 2-3 | Med sticks of cinnamon | cinnamon sticks
+> Grind all the ingredients together.
+note: page 45; the page title is spelled "Garam Mesala Powder" in the book
+
+== Patora
+cuisine: Pakistani | meal: snack
+- 5 Tbsp | Besan | besan chickpea flour
+- 10 | Patora leaves | taro leaves
+- 1 | Coconut grated | coconut
+- 1 cup | Imly pulp | tamarind paste
+- 1 bunch | Corriander | fresh cilantro
+- 2 tsp | Whole cumin | cumin seeds
+- 1/2 tsp | Garam masala | garam masala
+- 3 tsp | Red chili powder | chili powder
+- 1 tsp | Salt | salt
+- 6-7 | Green chillies | green chili peppers
+- 1/2 cup | Jaggery (gud) | jaggery
+- 2 | Onions grated | onions
+- 2 Tbsp | Ginger | ginger
+- 2 Tbsp | Garlic | garlic
+- 3/4 tsp | Turmeric | turmeric
+> Balance the sweet, sour, saltyness of the mixture.
+> It must be of henna consistency.
+> Keep the ribbed part of leaves up towards you.
+> Tie with a cloth and steam for 25-30 mins on a rack in a deep pan with little water (at the bottom).
+> Cool overnight, slice, fry and eat.
+note: page 46; "imly" (imli) is tamarind
+
+== Khichrda
+cuisine: Pakistani | meal: dinner
+- 1/2 cup | Wheat (broken), soaked | broken wheat dalia
+- 1/2 cup | Mixed daals, soaked (dals, rice, barley, beans, oats) | mixed lentils
+- 1/2 Kg | Meat with bones | bone-in meat
+- 5 | Onions fried, birista | onions
+- 2 | Tomatoes, pureed | tomatoes
+- 6 | Green chillies, pounded | green chili peppers
+- 1 Tbsp | Ginger | ginger
+- 1 Tbsp | Garlic | garlic
+- 1/2 cup | Dessicated coconut | desiccated coconut
+- 1 tsp | Haldi | turmeric
+- 2 tsp | Red chili | chili powder
+- 1/2 Tbsp | Cumin powder | ground cumin
+- 1 Tbsp | Coriander powder | ground coriander
+- 1/2 tsp | Garam masala | garam masala
+- 1/2 tsp | Lumi (dried lemon) powder | dried lime
+- | Vegetables like pumpkin and kusa | pumpkin
+- | Fresh coriander | fresh cilantro
+- | Mint | fresh mint
+- | Lemon | lemons
+- | Ginger juliennes | ginger
+> Cook seperately the dals and the wheat.
+> After the wheat is cooked blend it into a paste (smooth).
+> Add vegetables like pumpkin and kusa with the dals.
+> Fry onions, when slightly golden add green chillies, ginger, garlic and fry.
+> Add meat and cook 5-10 mins.
+> Add spices and tomatoes.
+> Pressure cook 25 mins.
+> Mix the dals, coconut, wheat and meat in a large pot cook on dum for 1/2 hour.
+> Sprinkle fresh coriander, mint and cook for a minute.
+> Serve with lemon, coriander, mint and ginger juliennes.
+note: page 47; "lumi powder" is lumi (Arabic), dried lemon (owner confirmed); vegetables, fresh coriander, mint, lemon and ginger juliennes are in the method only (no amounts); "kusa" is probably zucchini/squash
+
+== Sheet Pan Kabab
+cuisine: Turkish | meal: dinner
+- 800 g | Mince meat (fatty meat) | ground meat
+- 1 Tbsp | Garlic | garlic
+- 1 Tbsp | Vinegar | white vinegar
+- 1 Tbsp | Cornflour | corn starch
+- 1 Tbsp | Tomato paste | tomato paste
+- 1/4 tsp | Red chilli flakes | chili flakes
+- 1 tsp | Cumin powder | ground cumin
+- 1/2 tsp | Black pepper | black pepper
+- 1 tsp | Salt | salt
+- 1/2 tsp | Red chili powder | chili powder
+- 1 | Onion + 1 red capsicum blend, squeeze out water and add to the mixture | onions
+- 1 | Red capsicum (blend with the onion) | red bell pepper
+- | Tomatoes, cooked (baked along) | tomatoes
+- | Onions, sliced (baked along) | onions
+- | Saffron water | saffron
+> Mix all the ingredients, place in sheet pan, make lines to form kababs.
+> Keep in fridge 4 hrs or overnight.
+> Bake for 30 mins at full heat on bottom shelf covered along with cooked tomatoes, sliced onions.
+> Uncover and broil for 10 mins.
+> Give coal smoke and saffron water.
+note: page 48; the onion and red capsicum are written on one line ("1 onion + 1 red capsicum blend..."), so there is a duplicate line for the capsicum; tomatoes, sliced onions and saffron water are in the method only
+
+== Hashw for Mandi/Majboos
+cuisine: Arab | meal: side
+- 2 | Onions diced chunky | onions
+- 1/2 cup | Chana dal | chana dal
+- 2 Tbsp | Golden raisins | golden raisins
+> Pressure cook chana dal till 90% done.
+> Sute onions in pan without oil, keep adding few drops of water to avoid sticking.
+> Fry till slightly golden add little oil, raisins, cooked chana dal and cook for few mins.
+> Serve with Mandi / Majboos.
+note: page 49; the page title has an Arabic word (hashw) between "Hashw" and "for"; "Sute" is as written (saute); oil is in the method only
+
+== Instant Marag for Kabab (Turkish)
+cuisine: Turkish | meal: side
+- 1 Tbsp | Garlic | garlic
+- 1 | Maggie cube | chicken bouillon cube
+- 2-3 Tbsp | Tomato paste | tomato paste
+- 1/2-1 cup | Water | water
+- | Oil | vegetable oil
+> Saute garlic in little oil, add maggie cube then tomato paste.
+> Saute for 1-2 mins then add water and cook on low for 5-7 mins.
+note: page 49; the page title has an Arabic word (marag) in place of "Marag" in the middle; oil is in the method only
