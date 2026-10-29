@@ -4,7 +4,9 @@
 (function () {
   if (window.__bbHooked) return;
   window.__bbHooked = true;
-  const interesting = function (u) { return /api\.pcexpress\.ca|\/_next\/data\//.test(String(u)); };
+  const interesting = function (u) {
+    return /pcexpress|pcx|\/_next\/data\/|graphql|orchestra|\/api\/|search|product|listing|browse|category/i.test(String(u));
+  };
   const tell = function (url, body, req) {
     try { window.postMessage({ __bb: true, url: String(url), body: body, req: req || null }, '*'); } catch (e) {}
   };

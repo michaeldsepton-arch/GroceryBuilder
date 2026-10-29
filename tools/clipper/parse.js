@@ -33,15 +33,26 @@
   }
 
   // ---- Real Canadian Superstore / Wholesale Club (PC Express product JSON) ----
+  function num(v) {
+    if (typeof v === 'number') return v;
+    if (typeof v === 'string') { const m = /\d+(?:\.\d+)?/.exec(v.replace(/,/g, '')); return m ? parseFloat(m[0]) : null; }
+    return null;
+  }
+  // A price may be { value, unit } or a plain number / "$3.99" string.
+  function priceVal(o) { return num(o && typeof o === 'object' ? o.value : o); }
+
   function loblawItem(banner, p) {
-    const prices = p.prices || {};
-    const price = prices.price && prices.price.value;
-    if (price === undefined || price === null || p.inventoryIndicator === 'OUT_OF_STOCK') return null;
+    const prices = p.prices || p.pricing || {};
+    const price = priceVal(prices.price);
+    if (price === null || p.inventoryIndicator === 'OUT_OF_STOCK' || p.stockStatus === 'OUT_OF_STOCK') return null;
+    const code = p.code || p.productId || p.sku;
+    p = Object.assign({}, p, { code: code, name: p.name || p.title, packageSizing: p.packageSizing || p.packageSize,
+      productImage: p.productImage || (p.imageUrl ? [{ imageUrl: p.imageUrl }] : null) });
     if (!p.code || !p.name) return null;
-    const was = prices.wasPrice && prices.wasPrice.value;
+    const was = priceVal(prices.wasPrice);
     const sizing = p.packageSizing || '';
     let sz = parseSize(sizing), size = sz[0], unit = sz[1];
-    const pu = prices.price && prices.price.unit;
+    const pu = prices.price && typeof prices.price === 'object' ? prices.price.unit : null;
     const variable = ['lb', 'kg', '100g'].indexOf(pu) >= 0 || /\b(approx|per)\b/i.test(sizing);
     let isVariable = false;
     if (variable) {
@@ -67,11 +78,58 @@
     });
   }
 
-  // The search API answers { results: [ ...products ] }; accept any such list.
+  // The search API answers { results: [...] }, category pages nest "productTiles"
+  // deeper; walk the whole response and pick up anything shaped like a product.
   function loblawProducts(json) {
-    if (!json || typeof json !== 'object') return [];
-    const arr = Array.isArray(json.results) ? json.results : [];
-    return arr.filter(function (p) { return p && p.code && p.prices; });
+    const found = [];
+    (function walk(o, depth) {
+      if (depth > 12 || !o || typeof o !== 'object') return;
+      if (Array.isArray(o)) { o.forEach(function (x) { walk(x, depth + 1); }); return; }
+      if ((o.code || o.productId || o.sku) && (o.name || o.title) && (o.prices || o.pricing)) { found.push(o); return; }
+      Object.keys(o).forEach(function (k) { walk(o[k], depth + 1); });
+    })(json, 0);
+    return found;
+  }
+
+  // ---- Fallback: read what a product card shows on screen ----
+  // Text of one card, e.g. "Natrel Milk 2 L $5.83 was $6.49 $0.29/100mL".
+  function parseCardText(text) {
+    let t = String(text || '').replace(/\s+/g, ' ');
+    let was = null;
+    const wm = /\b(?:was|reg(?:ular)?\.?|formerly|after limit)\s*(?:price)?:?\s*\$\s*(\d+(?:\.\d{1,2})?)/i.exec(t);
+    if (wm) { was = parseFloat(wm[1]); t = t.replace(wm[0], ' '); }
+    t = t.replace(/\bsave\s*\$\s*\d+(?:\.\d{1,2})?/ig, ' ')
+      .replace(/\$\s*\d+(?:\.\d+)?\s*\/\s*(?:100\s*(?:g|ml)|ea|each|unit)\b/ig, ' ')
+      .replace(/\d+\s*for\s*\$\s*\d+(?:\.\d{1,2})?/ig, ' ');
+    const pm = /\$\s*(\d{1,4}(?:,\d{3})*(?:\.\d{1,2})?)(\s*(?:\/|per)\s*(lb|kg|100\s*g))?/i.exec(t);
+    if (!pm) return null;
+    const price = parseFloat(pm[1].replace(/,/g, ''));
+    let variable = false, size = null, unit = null;
+    if (pm[3]) {
+      variable = true;
+      const u = pm[3].toLowerCase().replace(/\s+/g, '');
+      if (u === 'lb') { size = 1; unit = 'lb'; } else if (u === 'kg') { size = 1; unit = 'kg'; } else { size = 100; unit = 'g'; }
+    } else {
+      const sz = parseSize(t.replace(/\$\s*[\d.,]+/g, ' '));
+      size = sz[0]; unit = sz[1];
+    }
+    return { price: price, was: (was && was > price) ? was : null, variable: variable, size: size, unit: unit };
+  }
+
+  // o: { id, name, brand, img, url, sizeText, text, cat } read from the page.
+  function domItem(store, o) {
+    // a real product card is a few short lines; menus and filter bars are not
+    const lines = String(o.text || '').split(/\n+/).filter(Boolean).length;
+    if (lines > 9 || String(o.text || '').length > 300) return null;
+    const c = parseCardText(o.text);
+    if (!c || !o.id || !o.name || o.name.charAt(0) === '$') return null;
+    let size = c.size, unit = c.unit;
+    if (!c.variable && o.sizeText) { const sz = parseSize(o.sizeText); if (sz[0]) { size = sz[0]; unit = sz[1]; } }
+    if (!c.variable && !size) { const sz = parseSize(o.name); size = sz[0]; unit = sz[1]; }
+    return mk(store, o.id, o.name, c.price, {
+      brand: o.brand, img: o.img, was: c.was, size: size || 1, unit: unit || 'each', variable: c.variable,
+      taxable: guessTaxable(o.name, o.cat), cat: o.cat, url: o.url, src: 'dom',
+    });
   }
 
   // ---- Walmart.ca (Next.js page data) ----
@@ -87,17 +145,37 @@
     return found;
   }
 
+  // "Root/Grocery/Pantry Food/Ketchup" or [{name}] -> ["Pantry Food", "Ketchup"]
+  function walmartPath(p) {
+    const c = p.category || {};
+    let names = Array.isArray(c.path) ? c.path.map(function (x) { return x && x.name; }) : String(c.categoryPath || '').split('/');
+    names = names.filter(function (n) { return n && n !== 'Root'; });
+    if (names[0] === 'Grocery') names.shift();
+    return names;
+  }
+
   function walmartItem(p) {
     const pi = p.priceInfo || {};
-    const price = (pi.currentPrice && pi.currentPrice.price) !== undefined ? (pi.currentPrice || {}).price : p.price;
+    const cur = pi.currentPrice && pi.currentPrice.price;
+    const price = typeof cur === 'number' ? cur : (typeof p.price === 'number' ? p.price : num(pi.linePrice));
     if (typeof price !== 'number') return null;
-    const wasRaw = pi.wasPrice && pi.wasPrice.price;
+    if (p.isOutOfStock === true || /OUT_OF_STOCK/.test(p.availabilityStatus || '')) return null;
+    const wasRaw = pi.wasPrice && typeof pi.wasPrice === 'object' ? pi.wasPrice.price : num(pi.wasPrice);
     const sz = parseSize(p.name || '');
+    let size = sz[0], unit = sz[1], variable = false;
+    const up = pi.unitPrice && typeof pi.unitPrice === 'object' ? pi.unitPrice.priceString : pi.unitPrice;
+    const um = /\/\s*(lb|kg|100\s*g)\b/i.exec(up || '');
+    if (!size && um && p.salesUnitType && p.salesUnitType !== 'EACH') {
+      variable = true;
+      const u = um[1].toLowerCase().replace(/\s+/g, '');
+      if (u === 'lb') { size = 1; unit = 'lb'; } else if (u === 'kg') { size = 1; unit = 'kg'; } else { size = 100; unit = 'g'; }
+    }
     const img = (p.imageInfo && p.imageInfo.thumbnailUrl) || p.image;
+    const path = walmartPath(p);
     return mk('walmart', p.usItemId, p.name, price, {
       brand: p.brand, img: img, was: (typeof wasRaw === 'number' && wasRaw > price) ? wasRaw : null,
-      size: sz[0] || 1, unit: sz[1] || 'each', taxable: guessTaxable(p.name),
-      url: p.canonicalUrl ? 'https://www.walmart.ca' + p.canonicalUrl : null,
+      size: size || 1, unit: unit || 'each', variable: variable, taxable: guessTaxable(p.name, path.join(' ')),
+      cat: path[0] || '', url: p.canonicalUrl ? 'https://www.walmart.ca' + String(p.canonicalUrl).split('?')[0] : null,
     });
   }
 
@@ -111,6 +189,6 @@
   }
 
   root.BBParse = { parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
-    walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
+    parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
   if (typeof module !== 'undefined') module.exports = root.BBParse;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

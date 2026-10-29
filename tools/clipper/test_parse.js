@@ -53,4 +53,47 @@ const h = P.walmartStoreHints('{"defaultNearestStoreId":"3098","address":"6375 5
 assert.deepStrictEqual(h.ids, ['3098']); assert.ok(h.redDeer);
 assert.ok(!P.walmartStoreHints('{"deliveryStore":"1061"}').redDeer);
 
+// category-page tile shape (nested, "pricing", string prices)
+const tile = { productId: '999_EA', title: 'Basmati Rice', brand: 'Tilda', packageSize: '4.54 kg',
+  pricing: { price: '18.99', wasPrice: '21.99' }, link: '/en/rice/p/999_EA' };
+const tiles = P.loblawProducts({ layout: { sections: { list: { components: [{ data: { productTiles: [tile, { x: 1 }] } }] } } } });
+assert.strictEqual(tiles.length, 1);
+const ti = P.loblawItem('superstore', tiles[0]);
+assert.strictEqual(ti.id, 'superstore:999_EA'); assert.strictEqual(ti.price, 18.99); assert.strictEqual(ti.was, 21.99);
+assert.strictEqual(ti.size, 4.54); assert.strictEqual(ti.unit, 'kg');
+
+// on-screen card text
+let ct = P.parseCardText('Natrel 2% Milk 2 L $5.83 was $6.49 $0.29/100mL');
+assert.strictEqual(ct.price, 5.83); assert.strictEqual(ct.was, 6.49); assert.strictEqual(ct.unit, 'l');
+ct = P.parseCardText('Chicken Thighs $5.99/lb $13.21/kg');
+assert.ok(ct.variable); assert.strictEqual(ct.unit, 'lb'); assert.strictEqual(ct.price, 5.99);
+ct = P.parseCardText('Eggs 12 ct Save $1.00 $3.99');
+assert.strictEqual(ct.price, 3.99); assert.strictEqual(ct.size, 12);
+assert.strictEqual(P.parseCardText('Out of stock'), null);
+const di = P.domItem('walmart', { id: '123456', name: 'Great Value Rice 2 kg', text: 'Great Value Rice 2 kg $4.97', url: 'https://www.walmart.ca/en/ip/rice/123456' });
+assert.strictEqual(di.id, 'walmart:123456'); assert.strictEqual(di.size, 2); assert.strictEqual(di.unit, 'kg'); assert.strictEqual(di.src, 'dom');
+
+// real Walmart shapes: search result (priceInfo objects) and carousel (price + strings)
+const wm1 = P.walmartItem({ usItemId: '6000191275106', name: 'Marcangelo Pork Kabobs, 8 kabobs, 640 g', brand: 'Marcangelo',
+  priceInfo: { currentPrice: { price: 9.97 }, wasPrice: { price: 13.97 }, unitPrice: { priceString: '$1.56/100g' } },
+  category: { path: [{ name: 'Root' }, { name: 'Grocery' }, { name: 'Meat, Seafood & Alternatives' }, { name: 'Kebabs' }] },
+  canonicalUrl: '/en/ip/x/6000191275106?athAsset=abc', availabilityStatus: 'IN_STOCK' });
+assert.strictEqual(wm1.price, 9.97); assert.strictEqual(wm1.was, 13.97); assert.strictEqual(wm1.size, 640); assert.strictEqual(wm1.unit, 'g');
+assert.strictEqual(wm1.cat, 'Meat, Seafood & Alternatives'); assert.strictEqual(wm1.url, 'https://www.walmart.ca/en/ip/x/6000191275106');
+const wm2 = P.walmartItem({ usItemId: '6HPRZK7OEXKZ', name: 'Tim Hortons Beef Soup, 540 ml Can', price: 2.24,
+  priceInfo: { linePrice: '$2.24', wasPrice: '$3.34', unitPrice: '41.0 ¢/100ml' }, category: { categoryPath: 'Root/Grocery/Pantry Food/Soups' } });
+assert.strictEqual(wm2.price, 2.24); assert.strictEqual(wm2.was, 3.34); assert.strictEqual(wm2.size, 540); assert.strictEqual(wm2.unit, 'ml');
+assert.strictEqual(wm2.cat, 'Pantry Food');
+assert.strictEqual(P.walmartItem({ usItemId: '1', name: 'Gone', price: 3, isOutOfStock: true }), null);
+const wm3 = P.walmartItem({ usItemId: '2', name: 'Bananas', price: 1.5, salesUnitType: 'WEIGHT', priceInfo: { unitPrice: '$1.50/lb' } });
+assert.ok(wm3.variable); assert.strictEqual(wm3.unit, 'lb');
+
+// real Superstore card texts
+ct = P.parseCardText('Pure Basmati Rice\nsale:\n$15.99\n, formerly:\nLimit 4, after limit $18.99');
+assert.strictEqual(ct.price, 15.99); assert.strictEqual(ct.was, 18.99);
+const pb = P.domItem('superstore', { id: '1_EA', name: 'Smooth Peanut Butter', text: 'Prepared in Canada\n\n$14.99\n\nKraft\n\nSmooth Peanut Butter\n\n2 kg, $0.75/100g' });
+assert.strictEqual(pb.price, 14.99); assert.strictEqual(pb.size, 2); assert.strictEqual(pb.unit, 'kg');
+const menu = 'Super Value Picks\n\nCollect & Save!\n\nAd Match\n\nNew Arrivals\n\nValue meals\n\nSuper Coupons\n\nFresh Promise\n\nHome & More\n\n$5 and under\n\nClub Size';
+assert.strictEqual(P.domItem('superstore', { id: '2_EA', name: 'Super Value Picks', text: menu }), null);
+
 console.log('all parse tests passed');

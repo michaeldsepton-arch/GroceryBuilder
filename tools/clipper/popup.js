@@ -56,7 +56,7 @@ async function gzip(text) {
 $('export').onclick = async () => {
   const st = await chrome.storage.local.get(['items', 'storeInfo']);
   const cutoff = Date.now() - STALE_DAYS * 864e5;
-  const items = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff).map((i) => { const c = Object.assign({}, i); delete c.seen; return c; });
+  const items = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff).map((i) => { const c = Object.assign({}, i); delete c.seen; delete c.src; return c; });
   if (!items.length) { $('msg').textContent = 'Nothing saved yet. Browse some searches first.'; return; }
   const stores = Object.keys(STORES).filter((k) => items.some((i) => i.store === k)).map((k) => STORES[k]);
   const catalog = { generated: new Date().toISOString(), stores, items };
@@ -68,10 +68,10 @@ $('export').onclick = async () => {
 };
 
 $('diag').onclick = async () => {
-  const st = await chrome.storage.local.get(['items', 'storeInfo', 'samples']);
+  const st = await chrome.storage.local.get(['items', 'storeInfo', 'samples', 'diag']);
   const counts = {};
   Object.values(st.items || {}).forEach((i) => { counts[i.store] = (counts[i.store] || 0) + 1; });
-  const text = JSON.stringify({ version: chrome.runtime.getManifest().version, counts, storeInfo: st.storeInfo, samples: st.samples }, null, 1);
+  const text = JSON.stringify({ version: chrome.runtime.getManifest().version, counts, diag: st.diag, storeInfo: st.storeInfo, samples: st.samples }, null, 1);
   await navigator.clipboard.writeText(text);
   $('msg').textContent = 'Copied. Paste it into the chat.';
 };
