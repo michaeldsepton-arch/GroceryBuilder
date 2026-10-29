@@ -2,6 +2,9 @@ const STORES = {
   superstore: { id: 'superstore', name: 'Real Canadian Superstore', color: 0xFFD9232D, location: '5016 51 Ave, Red Deer', online: true },
   wholesaleclub: { id: 'wholesaleclub', name: 'Wholesale Club', color: 0xFFE8731A, location: '6350 67th St, Red Deer', online: true },
   walmart: { id: 'walmart', name: 'Walmart', color: 0xFF0071CE, location: '6375 50 Ave, Red Deer', online: true },
+  freshco: { id: 'freshco', name: 'FreshCo', color: 0xFF2E8B3D, location: 'Red Deer', online: true },
+  shoppers: { id: 'shoppers', name: 'Shoppers Drug Mart', color: 0xFFC8102E, location: 'Clearview', online: true },
+  dollarama: { id: 'dollarama', name: 'Dollarama', color: 0xFF0B8A3E, location: 'Red Deer', online: true },
 };
 const STALE_DAYS = 45;
 const $ = (id) => document.getElementById(id);
@@ -17,7 +20,8 @@ function storeStatus(key, info) {
   if (key === 'walmart') {
     return info.redDeer ? ['ok', 'Page mentions Red Deer / 6375 50 Ave'] : ['warn', 'Could not confirm Red Deer: set your Walmart store to 6375 50 Ave'];
   }
-  return ['ok', 'Store id(s): ' + ((info.ids || []).join(', ') || 'unknown') + ': check it is 67th Street'];
+  if (key === 'wholesaleclub') return ['ok', 'Store id(s): ' + ((info.ids || []).join(', ') || 'unknown') + ': check it is 67th Street'];
+  return ['ok', 'Cards read from the page: check the site is set to your Red Deer store'];
 }
 
 async function render() {
@@ -56,11 +60,12 @@ async function gzip(text) {
 $('export').onclick = async () => {
   const st = await chrome.storage.local.get(['items', 'storeInfo']);
   const cutoff = Date.now() - STALE_DAYS * 864e5;
-  const items = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff).map((i) => { const c = Object.assign({}, i); delete c.seen; delete c.src; return c; });
+  const fresh = Object.values(st.items || {}).filter((i) => Date.parse(i.seen) >= cutoff);
+  const items = globalThis.BBParse.dedupe(fresh).map((i) => { const c = Object.assign({}, i); delete c.seen; delete c.src; return c; });
   if (!items.length) { $('msg').textContent = 'Nothing saved yet. Browse some searches first.'; return; }
   const stores = Object.keys(STORES).filter((k) => items.some((i) => i.store === k)).map((k) => STORES[k]);
   const catalog = { generated: new Date().toISOString(), stores, items };
-  const blob = await gzip(JSON.stringify(catalog));
+  const blob = new Blob([await gzip(JSON.stringify(catalog))], { type: 'application/gzip' });
   const url = URL.createObjectURL(blob);
   chrome.downloads.download({ url, filename: 'budget-basket-catalog.json.gz', conflictAction: 'overwrite', saveAs: false }, () => {
     $('msg').textContent = items.length + ' items saved to your Downloads folder as budget-basket-catalog.json.gz. Now double-click publish.bat.';

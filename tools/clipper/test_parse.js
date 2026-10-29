@@ -96,4 +96,15 @@ assert.strictEqual(pb.price, 14.99); assert.strictEqual(pb.size, 2); assert.stri
 const menu = 'Super Value Picks\n\nCollect & Save!\n\nAd Match\n\nNew Arrivals\n\nValue meals\n\nSuper Coupons\n\nFresh Promise\n\nHome & More\n\n$5 and under\n\nClub Size';
 assert.strictEqual(P.domItem('superstore', { id: '2_EA', name: 'Super Value Picks', text: menu }), null);
 
+// same product listed under two ids collapses to one; different price or size stays
+const dd = P.dedupe([
+  { id: 'superstore:1_EA', store: 'superstore', name: 'Corned Beef', brand: 'Grace', size: 340, unit: 'g', price: 6.5, src: 'dom' },
+  { id: 'superstore:2_EA', store: 'superstore', name: 'Corned beef ', brand: 'Grace', size: 340, unit: 'g', price: 6.5, img: 'x.jpg' },
+  { id: 'superstore:3_C06', store: 'superstore', name: 'Cola', brand: 'Pepsi', size: 2130, unit: 'ml', price: 3.49 },
+  { id: 'superstore:4_C12', store: 'superstore', name: 'Cola', brand: 'Pepsi', size: 2130, unit: 'ml', price: 7.99 },
+  { id: 'walmart:5', store: 'walmart', name: 'Corned Beef', brand: 'Grace', size: 340, unit: 'g', price: 6.5 },
+]);
+assert.strictEqual(dd.length, 4);
+assert.strictEqual(dd.filter(function (i) { return i.store === 'superstore' && i.name.trim().toLowerCase() === 'corned beef'; })[0].id, 'superstore:2_EA');
+
 console.log('all parse tests passed');

@@ -3,6 +3,11 @@
 $repo = 'michaeldsepton-arch/GroceryBuilder'
 $src  = Join-Path $env:USERPROFILE 'Downloads\budget-basket-catalog.json.gz'
 if (-not (Test-Path $src)) {
+  # older exports were saved by the browser as .txt; it is still the same gzip file
+  $alt = Join-Path $env:USERPROFILE 'Downloads\budget-basket-catalog.txt'
+  if (Test-Path $alt) { $src = $alt }
+}
+if (-not (Test-Path $src)) {
   Write-Host 'No export found. Open the extension, click "Export prices for the app", then run this again.'
   exit 1
 }

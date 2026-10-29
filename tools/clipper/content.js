@@ -3,7 +3,11 @@
 // scroll, it keeps a copy of the product cards that appear.
 (function () {
   const host = location.hostname;
-  const store = host.indexOf('walmart') >= 0 ? 'walmart' : host.indexOf('realcanadiansuperstore') >= 0 ? 'superstore' : 'wholesaleclub';
+  const HOSTS = { walmart: 'walmart', realcanadiansuperstore: 'superstore', wholesaleclub: 'wholesaleclub',
+    freshco: 'freshco', shoppersdrugmart: 'shoppers', dollarama: 'dollarama' };
+  const store = HOSTS[Object.keys(HOSTS).filter(function (k) { return host.indexOf(k) >= 0; })[0]];
+  // stores whose data feed we do not parse: only the cards drawn on screen are read
+  const generic = ['freshco', 'shoppers', 'dollarama'].indexOf(store) >= 0;
   const P = globalThis.BBParse;
   let pending = { items: [], hints: null, samples: [], urls: [], api: 0, dom: 0 };
   let timer = null, shown = 0;
@@ -82,7 +86,7 @@
       pending.urls.push(String(d.url).replace(/[?#].*$/, '').slice(0, 120));
       if (store === 'walmart') {
         fromWalmart(d.body);
-      } else {
+      } else if (!generic) {
         P.loblawProducts(d.body).forEach(function (p) { addItem(P.loblawItem(store, p), p, 'api'); });
         try {
           const sid = d.req && JSON.parse(d.req).storeId;
@@ -114,6 +118,13 @@
   const seenSig = {};
 
   function idOf(a) {
+    if (generic) {
+      let u;
+      try { u = new URL(a.href, location.href); } catch (e) { return null; }
+      const p = u.pathname.replace(/\/+$/, '');
+      if (u.origin !== location.origin || p.split('/').length < 3) return null;
+      return /\d{4,}|\/(?:product|products|p|pd|prod|item)\//i.test(p) ? p : null;
+    }
     const m = LINK_RE.exec(a.getAttribute('href') || '');
     return m ? m[1] : null;
   }

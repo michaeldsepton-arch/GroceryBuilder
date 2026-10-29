@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Budget Basket Clipper",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Saves the product names, prices and sales on store pages YOU scroll through, so Budget Basket can compare them. It never loads, scrolls or clicks anything by itself.",
   "permissions": ["storage", "unlimitedStorage", "downloads"],
   "action": { "default_popup": "popup.html", "default_title": "Budget Basket Clipper",
@@ -15,7 +15,8 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["https://www.walmart.ca/*", "https://www.realcanadiansuperstore.ca/*", "https://www.wholesaleclub.ca/*"],
+      "matches": ["https://www.walmart.ca/*", "https://www.realcanadiansuperstore.ca/*", "https://www.wholesaleclub.ca/*",
+        "https://www.freshco.com/*", "https://www.shoppersdrugmart.ca/*", "https://www.dollarama.com/*"],
       "js": ["parse.js", "content.js"],
       "run_at": "document_idle"
     }

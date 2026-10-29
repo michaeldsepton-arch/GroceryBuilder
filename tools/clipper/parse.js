@@ -188,7 +188,19 @@
     return { ids: Object.keys(ids), redDeer: /6375\s*50\s*(Ave|Avenue)|Red Deer/i.test(text) };
   }
 
-  root.BBParse = { parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
+  // One entry per product per store: same name, brand, size and price under
+  // different ids (listed in several places) collapses to the richest record.
+  function dedupe(items) {
+    const best = {};
+    const score = function (x) { return (x.img ? 2 : 0) + (x.src !== 'dom' ? 1 : 0) + (x.was ? 1 : 0); };
+    items.forEach(function (i) {
+      const k = [i.store, String(i.name || '').toLowerCase().trim(), String(i.brand || '').toLowerCase().trim(), i.size, i.unit, i.price].join('|');
+      if (!best[k] || score(i) > score(best[k])) best[k] = i;
+    });
+    return Object.keys(best).map(function (k) { return best[k]; });
+  }
+
+  root.BBParse = { dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
     parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
   if (typeof module !== 'undefined') module.exports = root.BBParse;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
