@@ -1,0 +1,151 @@
+# Book recipe image credits (Wikimedia Commons)
+
+- Recipe Achar Masala (Kairy): File:Mango pickle2.jpg by BHAVAPRIYA J U (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Mango_pickle2.jpg
+- Recipe Achari Gosht: File:Mutton Curry (44786).jpg by Gaurav Dhwaj Khadka (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Mutton_Curry_(44786).jpg
+- Recipe Aloo Gobi w/capsicum: File:Aloo gobi.jpg by unknown (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Aloo_gobi.jpg
+- Recipe Arayes: File:Arayes (3).jpg by Laliv g (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Arayes_(3).jpg
+- Recipe BBQ Chicken (On Coal): File:Barbecue chicken at California Strawberry Festival 2012.jpg by Clotee Allochuku-Albritton (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Barbecue_chicken_at_California_Strawberry_Festival_2012.jpg
+- Recipe Baigan Bechamel Tray: File:Мусака од компири.jpg by Original:  Cuklev (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:%D0%9C%D1%83%D1%81%D0%B0%D0%BA%D0%B0_%D0%BE%D0%B4_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D1%80%D0%B8.jpg
+- Recipe Batata Harra (spicy potatoes): File:Batata harra.jpg by secretlondon123 from London, England (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Batata_harra.jpg
+- Recipe Beans Salan: File:Potato and Green Beans Curry.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Potato_and_Green_Beans_Curry.jpg
+- Recipe Bechamel Sauce: File:2021 Sos beszamelowy.jpg by Jacek Halicki (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:2021_Sos_beszamelowy.jpg
+- Recipe Bedekar Masala (Lemon Achar): File:Preserved lemon in a clip top jar, 4 years old.jpg by Michal Klajban (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Preserved_lemon_in_a_clip_top_jar,_4_years_old.jpg
+- Recipe Beef Nachos (Laura in the kitchen): File:Beef Nachos 01.jpg by ShmilyDigital (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Beef_Nachos_01.jpg
+- Recipe Beef and Broccoli: File:Broccoli beef (5457397534).jpg by jeffreyw (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Broccoli_beef_(5457397534).jpg
+- Recipe Berry Rice: File:Zereshk polo.jpg by خودم (Public domain) https://commons.wikimedia.org/wiki/File:Zereshk_polo.jpg
+- Recipe Black Forest Gateau: File:Black Forest gateau.jpg by Mikelo (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Black_Forest_gateau.jpg
+- Recipe Bolognese: File:Spaghetti Bolognese - Figaros, Brighton 2023-10-06.jpg by Andy Li (CC0) https://commons.wikimedia.org/wiki/File:Spaghetti_Bolognese_-_Figaros,_Brighton_2023-10-06.jpg
+- Recipe Bounty Bars (Hebbars Kitchen): File:Coconut Log Gluten-Free Chocolate Bars on the North Counter Display at D'lish Fish of Port Melbourne.jpg by Brassluff (CC0) https://commons.wikimedia.org/wiki/File:Coconut_Log_Gluten-Free_Chocolate_Bars_on_the_North_Counter_Display_at_D%27lish_Fish_of_Port_Melbourne.jpg
+- Recipe Brookies: File:Brownie cookie with cream.jpg by Muzaffar Murodovich (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Brownie_cookie_with_cream.jpg
+- Recipe Brownies: File:Chocolate brownies without table.jpg by unknown (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Chocolate_brownies_without_table.jpg
+- Recipe Burger: File:Homemade Hamburger, May 2024.jpg by Ralff Nestor Nacor (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Homemade_Hamburger,_May_2024.jpg
+- Recipe Butter Chicken: File:Chicken makhani.jpg by stu_spivack (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Chicken_makhani.jpg
+- Recipe Caponata (Sicilian Eggplant): File:Sicilian caponata.jpg by Massimoweb (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Sicilian_caponata.jpg
+- Recipe Caramel Popcorn: File:Popcorn Confection.jpg by Capvideo (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Popcorn_Confection.jpg
+- Recipe Caramelized Tomato Onion Pasta: File:Pasta al pomodoro 2.jpg by 10Rosso (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Pasta_al_pomodoro_2.jpg
+- Recipe Carrot Cake: File:WD Q656071 carrot cake encased at WCNA 2018 jeh.jpg by Jim.henderson (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:WD_Q656071_carrot_cake_encased_at_WCNA_2018_jeh.jpg
+- Recipe Carrot Cake Cup Cake: File:Carrot Cake Cupcake (Unsplash).jpg by Joseph Gonzalez miracletwentyone (CC0) https://commons.wikimedia.org/wiki/File:Carrot_Cake_Cupcake_(Unsplash).jpg
+- Recipe Carrot Pickle (sticks): File:Carrot Pickle Recipe By Sonia Goyal.jpg by Sonia Goyal Jaipur (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Carrot_Pickle_Recipe_By_Sonia_Goyal.jpg
+- Recipe Chatpatti: File:Aloo Chaat.jpg by Obaid Raza (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Aloo_Chaat.jpg
+- Recipe Cheese Chutney Sandwich: File:Cheese and Pickle Sandwich Step 4 (8576760021).jpg by LearningLark from United States (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Cheese_and_Pickle_Sandwich_Step_4_(8576760021).jpg
+- Recipe Chicken Bhajiya (Fritters): File:Chicken pakora-MB21.jpg by Rajeeb Dutta (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chicken_pakora-MB21.jpg
+- Recipe Chicken Do Pyaza: File:Do pyaza chicken.jpg by Harshi3986 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Do_pyaza_chicken.jpg
+- Recipe Chicken Fajitas (Laura in the kitchen): File:Chicken fajitas - La Hacienda - Sarah Stierch.jpg by Missvain (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Chicken_fajitas_-_La_Hacienda_-_Sarah_Stierch.jpg
+- Recipe Chicken Ginglic: File:Chicken tikka in Araku Valley, Andhra Pradesh 01.jpg by Satdeep Gill (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chicken_tikka_in_Araku_Valley,_Andhra_Pradesh_01.jpg
+- Recipe Chicken Handi (with Methi): File:Punjabi Chicken Handi 1.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Punjabi_Chicken_Handi_1.JPG
+- Recipe Chicken Kabab (Tikki / Cutlet): File:Chicken Cutlet 001.jpg by Ocdp (CC0) https://commons.wikimedia.org/wiki/File:Chicken_Cutlet_001.jpg
+- Recipe Chicken Mushroom Sandwich: File:Chicken sandwich.jpg by Tmannya (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Chicken_sandwich.jpg
+- Recipe Chicken Nachos / Tacos (Rockin Robin): File:Chicken and black bean nachos food.jpg by Jon Sullivan (Public domain) https://commons.wikimedia.org/wiki/File:Chicken_and_black_bean_nachos_food.jpg
+- Recipe Chicken Noodles (In big pot): File:Chicken with Noodles Soup - Noodles Soup 2023-10-24.jpg by Andy Li (CC0) https://commons.wikimedia.org/wiki/File:Chicken_with_Noodles_Soup_-_Noodles_Soup_2023-10-24.jpg
+- Recipe Chicken Nuggets: File:Impossible chicken nuggets 2.jpg by Mx. Granger (CC0) https://commons.wikimedia.org/wiki/File:Impossible_chicken_nuggets_2.jpg
+- Recipe Chicken Pot Pie: File:Chicken Pot Pie, cut open.jpg by MonicaVereanaWilliams (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chicken_Pot_Pie,_cut_open.jpg
+- Recipe Chicken Salan: File:Chicken Curry 9.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chicken_Curry_9.jpg
+- Recipe Chicken Schezwan: File:Chicken Chilli 1.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chicken_Chilli_1.jpg
+- Recipe Chicken Shawarma: File:Chicken Shawarma (94298).jpg by Dr. Chinchu C. (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Chicken_Shawarma_(94298).jpg
+- Recipe Chicken/Mutton Biryani: File:A home made plate of mutton biryani served with chicken kassa cooked in the bengali style.jpg by Subhrajyoti07 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:A_home_made_plate_of_mutton_biryani_served_with_chicken_kassa_cooked_in_the_bengali_style.jpg
+- Recipe Chilli Potatoes: File:Honey chilli potato 2.jpg by Gannu03 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Honey_chilli_potato_2.jpg
+- Recipe Chocolate Cake (Ganache): File:Chocolate cake and Victoria sponge.jpg by Acabashi (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chocolate_cake_and_Victoria_sponge.jpg
+- Recipe Chocolate Lovers Food Cake: File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg by Daria YakovlevaMinor edits made by Subsidiary account (CC0) https://commons.wikimedia.org/wiki/File:Piece_of_chocolate_cake_on_a_white_plate_decorated_with_chocolate_sauce.jpg
+- Recipe Chocolate Mousse Cake: File:Chocolate mousse cake 2.jpg by Lionel Allorge (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Chocolate_mousse_cake_2.jpg
+- Recipe Chocolate Mousse Swiss Roll (Homecooking Adventure): File:White chocolate roll cake.jpg by Douglas Perkins (CC BY 4.0) https://commons.wikimedia.org/wiki/File:White_chocolate_roll_cake.jpg
+- Recipe Chocolate Oats Cereal: File:Granola Dark Chocolate and Banana.jpg by Bajinra (CC0) https://commons.wikimedia.org/wiki/File:Granola_Dark_Chocolate_and_Banana.jpg
+- Recipe Chocolate Pudding: File:Chocolate pudding.jpg by No machine-readable author provided. GeeJo assumed (based on copyright claims). (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Chocolate_pudding.jpg
+- Recipe Chocolate Swiss Roll (Roulade): File:Sri Lankan Swiss roll.jpg by AntanO (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Sri_Lankan_Swiss_roll.jpg
+- Recipe Chocolate and Peanut Butter Cereal: File:2021-03-05 15 45 23 A Kodiak Cakes Crunchy Peanut Butter Granola Bar in the Dulles section of Sterling, Loudoun County, Virginia.jpg by Famartin (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:2021-03-05_15_45_23_A_Kodiak_Cakes_Crunchy_Peanut_Butter_Granola_Bar_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg
+- Recipe Cinnamon Rolls: File:Homemade Cinnamon rolls 03.jpg by Pannet (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Homemade_Cinnamon_rolls_03.jpg
+- Recipe Cinnamon Swirl Cake: File:Walnut cinnamon coffee cake.jpg by Melissa Doroquez (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Walnut_cinnamon_coffee_cake.jpg
+- Recipe Coconut Cake (John Kirkwood): File:Coconut cake garnished with Peeps candy.jpg by heymrleej (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Coconut_cake_garnished_with_Peeps_candy.jpg
+- Recipe Coconut Cake 2: File:A slice of coconut cake.jpg by Toby Oxborrow from Kowloon, Hong Kong (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:A_slice_of_coconut_cake.jpg
+- Recipe Coconut Green Chutney: File:Butter Dosa served with coconut chutney and sambhar.jpg by Ravi Dwivedi (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Butter_Dosa_served_with_coconut_chutney_and_sambhar.jpg
+- Recipe Coconut Sheet Cake (Cakes by MK): File:Sheet cake.jpg by christa connelly (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Sheet_cake.jpg
+- Recipe Corn Soup: File:Corn soup.jpg by Laurier (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Corn_soup.jpg
+- Recipe Crepes: File:Crepes dsc07085.jpg by David Monniaux (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Crepes_dsc07085.jpg
+- Recipe Dahi Vada: File:Odia Style Dahi bara Puri Odisha-IMG 953.jpg by Subhransuphotography (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Odia_Style_Dahi_bara_Puri_Odisha-IMG_953.jpg
+- Recipe Dal Gosht: File:Dal Gosht.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Dal_Gosht.JPG
+- Recipe Dal Makhani: File:Dal Makhani.jpg by Charles Haynes (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Dal_Makhani.jpg
+- Recipe Daqqus: File:Tomato based Salsa.JPG by Vyom25 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Tomato_based_Salsa.JPG
+- Recipe Donuts (Emma's Goodies): File:Glazed doughnut (1387333).jpg by Unknown authorUnknown author (CC0) https://commons.wikimedia.org/wiki/File:Glazed_doughnut_(1387333).jpg
+- Recipe Double Chocolate Pound Cake: File:Chocolate buttermilk pound cake, January 2011.jpg by Divya Kudua (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Chocolate_buttermilk_pound_cake,_January_2011.jpg
+- Recipe Drumstick (Phally): File:Drumsticks or Moringa.jpg by Mangosapiens (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Drumsticks_or_Moringa.jpg
+- Recipe Falafel: File:Falafel 1.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Falafel_1.JPG
+- Recipe Fatayer: File:Fatayer.jpg by Joe Foodie (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Fatayer.jpg
+- Recipe Fatayer Dough: File:Home made sour dough bread.jpg by Tomascastelazo (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Home_made_sour_dough_bread.jpg
+- Recipe Flourless Chocolate Cake: File:Flourless Chocolate Cake with Bourbon Vanilla Ice Cream.jpg by Tammy Green (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Flourless_Chocolate_Cake_with_Bourbon_Vanilla_Ice_Cream.jpg
+- Recipe Focaccia: File:Rosemary Focaccia.jpg by Parkerman &amp; Christie from San Diego, USA (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Rosemary_Focaccia.jpg
+- Recipe Fried Noodles: File:IndianFriedNoodles.jpg by HungryKya (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:IndianFriedNoodles.jpg
+- Recipe Fried Rice (Instant): File:Fried rice with chicken and egg.jpg by daSupremo (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Fried_rice_with_chicken_and_egg.jpg
+- Recipe Gajar ka Halwa (Carrot Halwa): File:Delicious Gajar Ka Halwa.jpg by Sharvarism (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Delicious_Gajar_Ka_Halwa.jpg
+- Recipe Garam Masala Powder: File:Garam Masala 1.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Garam_Masala_1.jpg
+- Recipe Garlic Bread (By Ninik Becker): File:Garlic bread baguettes 2.jpg by Infrogmation (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Garlic_bread_baguettes_2.jpg
+- Recipe Gosht Salan (Light): File:Mutton Curry (44786).jpg by Gaurav Dhwaj Khadka (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Mutton_Curry_(44786).jpg
+- Recipe Gulab Jamun: File:Two Gulab Jamun in a plate 01.jpg by Suyash.dwivedi (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Two_Gulab_Jamun_in_a_plate_01.jpg
+- Recipe Hashw for Mandi/Majboos: File:Mandi Lamb Shank, Lepak @ Sultan, 62 Bussorah St, Singapore (01).jpg by Moheen Reeyad (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Mandi_Lamb_Shank,_Lepak_@_Sultan,_62_Bussorah_St,_Singapore_(01).jpg
+- Recipe Homemade Condensed Milk: File:Tin of condensed milk.jpg by Robin from Rotterdam, Netherlands (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Tin_of_condensed_milk.jpg
+- Recipe Honey Garlic Glazed Chicken: File:Chicken wings with honey-garlic sauce.jpg by Alpha from Melbourne, Australia (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Chicken_wings_with_honey-garlic_sauce.jpg
+- Recipe Instant Marag for Kabab (Turkish): File:020260403 Bone broth with Italian pasta served in a marrow bone vase.jpg by Auctor quaerendae (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:020260403_Bone_broth_with_Italian_pasta_served_in_a_marrow_bone_vase.jpg
+- Recipe Jemma's Chocolate CupCake: File:Cupcakes, chocolate and strawberry flavour.jpg by Marc-Lautenbacher (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Cupcakes,_chocolate_and_strawberry_flavour.jpg
+- Recipe Keema Aloo w/Peas: File:Aaloo Keema.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Aaloo_Keema.JPG
+- Recipe Khichrda: File:Mashad Haleem at Hyderabad.jpg by Ranjithraj (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Mashad_Haleem_at_Hyderabad.jpg
+- Recipe Lahm Bi Ajeen (Chef Haider Deek): File:Lahmacun.jpg by No machine-readable author provided. Rainer Zenz assumed (based on copyright claims). (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Lahmacun.jpg
+- Recipe Lebanese Sambousa: File:Sambousek (4009290205).jpg by Charles Haynes from Hobart, Australia (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Sambousek_(4009290205).jpg
+- Recipe Lemon Bars (Chahinez1): File:Lemon bars with raspberries.jpg by Montanabw (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Lemon_bars_with_raspberries.jpg
+- Recipe Lemon Strawberry Crumb Bars (Sally's Baking Addiction): File:Date squares bowl.jpg by Smitop (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Date_squares_bowl.jpg
+- Recipe Light Fruit Cake: File:Slice of Schubert's Bakery Fruitcake (31772532692).jpg by Willis Lam (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Slice_of_Schubert%27s_Bakery_Fruitcake_(31772532692).jpg
+- Recipe Luscious Lemon Cake (Alida Ryder - Simply delicious-food.com): File:Coffee lemon drizzle cake Gibberd Garden Harlow Essex England 03 darker.jpg by Acabashi (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Coffee_lemon_drizzle_cake_Gibberd_Garden_Harlow_Essex_England_03_darker.jpg
+- Recipe Mahshi: File:Vorspeise mit Dolma und Tzatziki.jpg by Kritzolina (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Vorspeise_mit_Dolma_und_Tzatziki.jpg
+- Recipe Malai Chicken: File:Creamy Chicken Curry.jpg by Shrabee (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Creamy_Chicken_Curry.jpg
+- Recipe Malai Tandoori Chicken (Naush Chicken): File:Tandoori chicken Indian.jpg by pelican (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Tandoori_chicken_Indian.jpg
+- Recipe Mandi / Majboos Masala (Hawaij spice mix): File:Lunas Mix - Hawaij.jpg by Myigamel (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Lunas_Mix_-_Hawaij.jpg
+- Recipe Maple Cinnamon Nut Granola (Gemma Bigger Bolder Baking): File:2023-04-29 10 06 23 A sample of Erin Baker's Homestyle Fruit and Nut Granola in Ewing Township, Mercer County, New Jersey.jpg by Famartin (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:2023-04-29_10_06_23_A_sample_of_Erin_Baker%27s_Homestyle_Fruit_and_Nut_Granola_in_Ewing_Township,_Mercer_County,_New_Jersey.jpg
+- Recipe Masala Dosa: File:Masala dosa 01.jpg by Marajozkee (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Masala_dosa_01.jpg
+- Recipe Meat/Chicken Majboos / Mandi: File:Chicken Mandi At Arabian Mandi Hyderabad.jpg by Kavali Chandrakanth KCK (CC0) https://commons.wikimedia.org/wiki/File:Chicken_Mandi_At_Arabian_Mandi_Hyderabad.jpg
+- Recipe Methi Jhingi: File:King prawn curry - Sunoso.jpg by Andy Li (CC0) https://commons.wikimedia.org/wiki/File:King_prawn_curry_-_Sunoso.jpg
+- Recipe Mince Meat with Eggs: File:Minoringo's Keema Curry (6082188204).jpg by Sig. (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Minoringo%27s_Keema_Curry_(6082188204).jpg
+- Recipe Moong Dal Samosa: File:Samosa 4.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Samosa_4.jpg
+- Recipe Muhammarah: File:Tanoreen muhammara.jpg by Krista (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Tanoreen_muhammara.jpg
+- Recipe Muller Yogurt: File:Yogurt fruit bowl.jpg by Jumbocombo0811 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Yogurt_fruit_bowl.jpg
+- Recipe Mutton Karahi: File:Mutton Karahi 2.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Mutton_Karahi_2.JPG
+- Recipe No Bake Cheese Cake: File:Soufflé-style cheesecake 001.jpg by Ocdp (CC0) https://commons.wikimedia.org/wiki/File:Souffl%C3%A9-style_cheesecake_001.jpg
+- Recipe Oatmeal Cookies: File:Oatmeal-Cookie.jpg by Evan-Amos (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Oatmeal-Cookie.jpg
+- Recipe Okra and Meat Gravy: File:Bamia-Ocras tomate (cropped).JPG by Tamorlan (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Bamia-Ocras_tomate_(cropped).JPG
+- Recipe Orange Cake: File:Lemon cake and orange cake - Olea 2026-04-10.jpg by Andy Li (CC0) https://commons.wikimedia.org/wiki/File:Lemon_cake_and_orange_cake_-_Olea_2026-04-10.jpg
+- Recipe Orange Chocolate Cereal: File:Granola b.JPG by W.Stegmann (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Granola_b.JPG
+- Recipe Orange Chocolate Marble Cake: File:Marmorkuchen.jpg by Fotographen: Thomas Högner
+- Recipe Orange and Poppy Cake: File:020211119 160347 silesian poppy seed cake.jpg by Silar (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:020211119_160347_silesian_poppy_seed_cake.jpg
+- Recipe Pancakes: File:Foodiesfeed.com pouring-honey-on-pancakes-with-walnuts.jpg by Mae Mu (CC0) https://commons.wikimedia.org/wiki/File:Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg
+- Recipe Patora: File:Arbi-colocasia-pakoda-fritters.jpg by Vivekpat30 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Arbi-colocasia-pakoda-fritters.jpg
+- Recipe Pecan Pie: File:Pecan pie, November 2010.jpg by Joe Hakim (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Pecan_pie,_November_2010.jpg
+- Recipe Pineapple Upside Down Cake: File:Pineapple upsidedown cake 9.jpg by Mark Pellegrini (CC BY-SA 2.5) https://commons.wikimedia.org/wiki/File:Pineapple_upsidedown_cake_9.jpg
+- Recipe Pizza: File:Margherita Originale.JPG by Mario56 (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Margherita_Originale.JPG
+- Recipe Pizza Samosa: File:Samosa 4.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Samosa_4.jpg
+- Recipe Pizza Sauce: File:Ravioli Marinara.jpg by Kim Scarborough (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Ravioli_Marinara.jpg
+- Recipe Pound Cake: File:Almond pound cake, angled profile.jpg by Kimberly Vardeman (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Almond_pound_cake,_angled_profile.jpg
+- Recipe Punjabi Samosa: File:Punjabi Samosa.JPG by Miansari66 (CC0) https://commons.wikimedia.org/wiki/File:Punjabi_Samosa.JPG
+- Recipe Ras Al-Usfoor: File:Making beef stew.jpg by MaiDenzel (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Making_beef_stew.jpg
+- Recipe Raspberry Oatmeal Muffin (Domestic Geek): File:Raspberry muffins (3244692392).jpg by Andy / Andrew Fogg from near Cambridge, UK (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Raspberry_muffins_(3244692392).jpg
+- Recipe Salted Caramel Sauce: File:Caramel-3.jpg by unknown (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Caramel-3.jpg
+- Recipe Samosa Keema: File:Samosa fried.JPG by Miansari66 (Public domain) https://commons.wikimedia.org/wiki/File:Samosa_fried.JPG
+- Recipe Schezwan Sauce (Kabita's Kitchen): File:Chili Garlic Sauce (Packaged).jpg by Ralff Nestor Nacor (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chili_Garlic_Sauce_(Packaged).jpg
+- Recipe Seviyan: File:Shevayachi kheer - 01.JPG by Dharmadhyaksha (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Shevayachi_kheer_-_01.JPG
+- Recipe Shami Kabab: File:4th October 2012 Shami Kebab.jpg by Murcotipton (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:4th_October_2012_Shami_Kebab.jpg
+- Recipe Shami Kabab 2: File:Shami Kabab.JPG by Miansari66 (Public domain) https://commons.wikimedia.org/wiki/File:Shami_Kabab.JPG
+- Recipe Shawarma (Boneless): File:Shawarma-sandwich-01.jpg by Vera Yu and David Li (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Shawarma-sandwich-01.jpg
+- Recipe Sheesh Tawooq (Chef Ahmad All cooking): File:Tavuk Şiş.jpg by Garrett Ziegler (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Tavuk_%C5%9Ei%C5%9F.jpg
+- Recipe Sheet Pan Kabab: File:Köfte kebabs.jpg by Foodista (CC BY 2.0) https://commons.wikimedia.org/wiki/File:K%C3%B6fte_kebabs.jpg
+- Recipe Shepherd's Pie: File:Shepherd's pie (22470901009).jpg by Abhinaba Basu from Redmond, United States (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Shepherd%27s_pie_(22470901009).jpg
+- Recipe Short Bread Tart Crust: File:Shortbread fingers.jpg by User:Dave souza (CC BY-SA 2.5) https://commons.wikimedia.org/wiki/File:Shortbread_fingers.jpg
+- Recipe Shrimp Biryani: File:Shrimp Biriyani.JPG by Jyothis (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Shrimp_Biriyani.JPG
+- Recipe Shrimp and Sweet Potato (Jhingi Rataloo): File:Shrimp curry on plate.jpg by Jon Sullivan (Public domain) https://commons.wikimedia.org/wiki/File:Shrimp_curry_on_plate.jpg
+- Recipe Sliced Aloo Onion: File:Fried potatoes and onions, corn, and chicken breast - Massachusetts.jpg by Daderot (CC0) https://commons.wikimedia.org/wiki/File:Fried_potatoes_and_onions,_corn,_and_chicken_breast_-_Massachusetts.jpg
+- Recipe Soy Sauce Chicken: File:Soy Sauce Chicken.jpg by Dennis Wong from Hong Kong, Hong Kong (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Soy_Sauce_Chicken.jpg
+- Recipe Spicy Squash Sabzi: File:Pumpkin curry (1861461547).jpg by Upendra Kanda (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Pumpkin_curry_(1861461547).jpg
+- Recipe Spinach Fatayer: File:Spinach Pastry.jpg by روتانا (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Spinach_Pastry.jpg
+- Recipe Spring Rolls: File:Golden Vegetable Spring Rolls Served with Dipping Sauce.jpg by Srujanabotcha (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Golden_Vegetable_Spring_Rolls_Served_with_Dipping_Sauce.jpg
+- Recipe Strawberry Cheesecake Choc-Chip Cookies (Mooniebakie): File:Choc-Chip-Cookie.jpg by Evan-Amos (Public domain) https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.jpg
+- Recipe Swedish Meatballs: File:Swedish meatballs with egg noodles.jpg by RandomKatze (CC0) https://commons.wikimedia.org/wiki/File:Swedish_meatballs_with_egg_noodles.jpg
+- Recipe Tiramisu: File:Dolce Tiramisù monoporzione.jpg by Anna.Massini (CC BY 4.0) https://commons.wikimedia.org/wiki/File:Dolce_Tiramis%C3%B9_monoporzione.jpg
+- Recipe Tomato Chutney (with Dosa): File:Tomato Chutney 3.jpg by Gaurav Dhwaj Khadka (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Tomato_Chutney_3.jpg
+- Recipe Tuna Kabab: File:Fish cutlet kolkata west bengal IMG20210124195917.jpg by Indrani dey (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Fish_cutlet_kolkata_west_bengal_IMG20210124195917.jpg
+- Recipe Turkish Kabab with Fried Eggplant and Potatoes: File:Eggplant kebab in waiting.jpg by E4024 (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Eggplant_kebab_in_waiting.jpg
+- Recipe Victoria Sponge Cake: File:Chocolate cake and Victoria sponge.jpg by Acabashi (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Chocolate_cake_and_Victoria_sponge.jpg
+- Recipe Zeera Matar Rice: File:Jeera-rice.JPG by Sonia Goyal (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Jeera-rice.JPG

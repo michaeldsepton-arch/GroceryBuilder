@@ -126,7 +126,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 1; malai, eggs and butter are listed from the method, not the ingredient list; the second list of ingredients (salt, onions, tomatoes...) is the gravy",
-  "id": "book:malai-chicken"
+  "id": "book:malai-chicken",
+  "image": "asset:assets/recipes/images/malai-chicken.jpg"
  },
  {
   "title": "Fatayer",
@@ -267,7 +268,8 @@
   "cuisine": "Arab",
   "meal": "bread",
   "notes": "page 2; the book's \"Variations\" section lists a second dough (4 cups flour...) with no method; the last \"1/2 cup warm water\" sits to the right of the yeast line and is probably the water for the yeast",
-  "id": "book:fatayer"
+  "id": "book:fatayer",
+  "image": "asset:assets/recipes/images/fatayer.jpg"
  },
  {
   "title": "Corn Soup",
@@ -325,7 +327,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 3",
-  "id": "book:corn-soup"
+  "id": "book:corn-soup",
+  "image": "asset:assets/recipes/images/corn-soup.jpg"
  },
  {
   "title": "Fried Noodles",
@@ -393,7 +396,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 3; no noodles are listed in the ingredients and no further method is written in the book",
-  "id": "book:fried-noodles"
+  "id": "book:fried-noodles",
+  "image": "asset:assets/recipes/images/fried-noodles.jpg"
  },
  {
   "title": "Punjabi Samosa",
@@ -489,7 +493,8 @@
   "cuisine": "Indian",
   "meal": "snack",
   "notes": "page 4; a word between \"corriander\" and \"(fresh)\" on the coriander line is smudged/unreadable; peas, green chillies and amchoor are listed from the method; no shaping/frying method written",
-  "id": "book:punjabi-samosa"
+  "id": "book:punjabi-samosa",
+  "image": "asset:assets/recipes/images/punjabi-samosa.jpg"
  },
  {
   "title": "Chatpatti",
@@ -543,7 +548,8 @@
   "cuisine": "Indian",
   "meal": "snack",
   "notes": "page 5; \"black powder\" in the masala list is as written (possibly black pepper or black salt, not sure); potato is listed from the method, no amount given",
-  "id": "book:chatpatti"
+  "id": "book:chatpatti",
+  "image": "asset:assets/recipes/images/chatpatti.jpg"
  },
  {
   "title": "Carrot Pickle (sticks)",
@@ -599,7 +605,8 @@
   "cuisine": "Indian",
   "meal": "side",
   "notes": "page 5; no method written in the book",
-  "id": "book:carrot-pickle-sticks"
+  "id": "book:carrot-pickle-sticks",
+  "image": "asset:assets/recipes/images/carrot-pickle-sticks.jpg"
  },
  {
   "title": "Shrimp Biryani",
@@ -680,7 +687,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 6; a small word before \"(methi)\" on the fenugreek line is faint/smudged, read as \"powder\" (word before \"(methi)\" is not certain)",
-  "id": "book:shrimp-biryani"
+  "id": "book:shrimp-biryani",
+  "image": "asset:assets/recipes/images/shrimp-biryani.jpg"
  },
  {
   "title": "Samosa Keema",
@@ -744,7 +752,8 @@
   "cuisine": "Indian",
   "meal": "snack",
   "notes": "page 7; title on the page is \"Samosa Keema\"; no pastry or wrapping method written",
-  "id": "book:samosa-keema"
+  "id": "book:samosa-keema",
+  "image": "asset:assets/recipes/images/samosa-keema.jpg"
  },
  {
   "title": "Methi Jhingi",
@@ -798,7 +807,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 7; page title is \"Methi Jhingi (Fenugreek Shrimp)\"",
-  "id": "book:methi-jhingi"
+  "id": "book:methi-jhingi",
+  "image": "asset:assets/recipes/images/methi-jhingi.jpg"
  },
  {
   "title": "Pizza",
@@ -848,7 +858,8 @@
   "cuisine": "Italian",
   "meal": "dinner",
   "notes": "page 8; dough only, no toppings or baking instructions written; the book says \"dive oil\" in one place, read as olive oil",
-  "id": "book:pizza"
+  "id": "book:pizza",
+  "image": "asset:assets/recipes/images/pizza.jpg"
  },
  {
   "title": "Mandi / Majboos Masala (Hawaij spice mix)",
@@ -886,7 +897,8 @@
   "cuisine": "Arab",
   "meal": "side",
   "notes": "page 8",
-  "id": "book:mandi-majboos-masala-hawaij-spice-mix"
+  "id": "book:mandi-majboos-masala-hawaij-spice-mix",
+  "image": "asset:assets/recipes/images/mandi-majboos-masala-hawaij-spice-mix.jpg"
  },
  {
   "title": "Masala Dosa",
@@ -999,7 +1011,8 @@
   "cuisine": "Indian",
   "meal": "breakfast",
   "notes": "page 9; the page also gives two potato tarkari (filling) ingredient lists with no method: \"Cubed (Orange) Potato Tarkari\" and \"Boiled (Yellow) Potato Tarkari\"; the right edge of the page is partly cut off in the photo but the lists look complete",
-  "id": "book:masala-dosa"
+  "id": "book:masala-dosa",
+  "image": "asset:assets/recipes/images/masala-dosa.jpg"
  },
  {
   "title": "Coconut Green Chutney",
@@ -1040,7 +1053,8 @@
   "cuisine": "Indian",
   "meal": "side",
   "notes": "page 9; no amounts for coconut, salt, coriander, lemon juice; no method written in the book",
-  "id": "book:coconut-green-chutney"
+  "id": "book:coconut-green-chutney",
+  "image": "asset:assets/recipes/images/coconut-green-chutney.jpg"
  },
  {
   "title": "Dahi Vada",
@@ -1089,7 +1103,8 @@
   "cuisine": "Indian",
   "meal": "snack",
   "notes": "page 10; one ingredient line between \"ginger\" and \"cumin seeds\" and a phrase after \"baking soda\" in the method are whited out in the book (left out); no yogurt listed and no assembly method written",
-  "id": "book:dahi-vada"
+  "id": "book:dahi-vada",
+  "image": "asset:assets/recipes/images/dahi-vada.jpg"
  },
  {
   "title": "Shami Kabab",
@@ -1143,7 +1158,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 10",
-  "id": "book:shami-kabab"
+  "id": "book:shami-kabab",
+  "image": "asset:assets/recipes/images/shami-kabab.jpg"
  },
  {
   "title": "Chicken/Mutton Biryani",
@@ -1269,7 +1285,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 11; a faint word \"fried\" appears before \"Cook on low for 12-15 mins\" (looks like bleed-through, ignored); bay leaves, mint and raisins are listed from the method, no amounts",
-  "id": "book:chicken-mutton-biryani"
+  "id": "book:chicken-mutton-biryani",
+  "image": "asset:assets/recipes/images/chicken-mutton-biryani.jpg"
  },
  {
   "title": "Shepherd's Pie",
@@ -1323,7 +1340,8 @@
   "cuisine": "Western",
   "meal": "dinner",
   "notes": "page 12; ketchup is listed from the method; minced meat refers to the Samosa Keema recipe (page 7)",
-  "id": "book:shepherd-s-pie"
+  "id": "book:shepherd-s-pie",
+  "image": "asset:assets/recipes/images/shepherd-s-pie.jpg"
  },
  {
   "title": "Tuna Kabab",
@@ -1381,7 +1399,8 @@
   "cuisine": "Western",
   "meal": "dinner",
   "notes": "page 12",
-  "id": "book:tuna-kabab"
+  "id": "book:tuna-kabab",
+  "image": "asset:assets/recipes/images/tuna-kabab.jpg"
  },
  {
   "title": "Mahshi",
@@ -1417,7 +1436,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 13; page title is \"Mahshi (Stuffed Capsicum / Kusa)\"; the capsicum/kusa is not in the ingredient list, added from the title",
-  "id": "book:mahshi"
+  "id": "book:mahshi",
+  "image": "asset:assets/recipes/images/mahshi.jpg"
  },
  {
   "title": "Falafel",
@@ -1476,7 +1496,8 @@
   "cuisine": "Arab",
   "meal": "snack",
   "notes": "page 13; the Arabic word after \"1 bunch\" is read as dill (شبت) but I am not fully sure; baking soda is listed from the method",
-  "id": "book:falafel"
+  "id": "book:falafel",
+  "image": "asset:assets/recipes/images/falafel.jpg"
  },
  {
   "title": "Spinach Fatayer",
@@ -1543,7 +1564,8 @@
   "cuisine": "Arab",
   "meal": "bread",
   "notes": "page 14; flour is listed twice in the book (3 cups and 1 cup), unclear why; no baking temperature or time written",
-  "id": "book:spinach-fatayer"
+  "id": "book:spinach-fatayer",
+  "image": "asset:assets/recipes/images/spinach-fatayer.jpg"
  },
  {
   "title": "Drumstick (Phally)",
@@ -1629,7 +1651,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 15; the page number is partly cut off at the photo edge",
-  "id": "book:drumstick-phally"
+  "id": "book:drumstick-phally",
+  "image": "asset:assets/recipes/images/drumstick-phally.jpg"
  },
  {
   "title": "Shrimp and Sweet Potato (Jhingi Rataloo)",
@@ -1709,7 +1732,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 16; page title is \"Shrimp and Sweet Potato (Jhingi Rataloo)\"",
-  "id": "book:shrimp-and-sweet-potato-jhingi-rataloo"
+  "id": "book:shrimp-and-sweet-potato-jhingi-rataloo",
+  "image": "asset:assets/recipes/images/shrimp-and-sweet-potato-jhingi-rataloo.jpg"
  },
  {
   "title": "Achar Masala (Kairy)",
@@ -1776,7 +1800,8 @@
   "cuisine": "Indian",
   "meal": "side",
   "notes": "page 17; the Arabic word for black seeds in brackets is hard to read, the \"black seeds\" reading is from the English; page title is \"Achar Masala (Kairy)\"",
-  "id": "book:achar-masala-kairy"
+  "id": "book:achar-masala-kairy",
+  "image": "asset:assets/recipes/images/achar-masala-kairy.jpg"
  },
  {
   "title": "Bedekar Masala (Lemon Achar)",
@@ -1815,7 +1840,8 @@
   "cuisine": "Indian",
   "meal": "side",
   "notes": "page 17; \"asafateda\" is the book's spelling (asafoetida, hing); no amounts for asafoetida, oil or chilli powder; the right edge of the page is partly cut off but the recipe looks complete",
-  "id": "book:bedekar-masala-lemon-achar"
+  "id": "book:bedekar-masala-lemon-achar",
+  "image": "asset:assets/recipes/images/bedekar-masala-lemon-achar.jpg"
  },
  {
   "title": "Chicken Ginglic",
@@ -1890,7 +1916,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 18; title is spelled \"Ginglic\" in the book",
-  "id": "book:chicken-ginglic"
+  "id": "book:chicken-ginglic",
+  "image": "asset:assets/recipes/images/chicken-ginglic.jpg"
  },
  {
   "title": "Butter Chicken",
@@ -1991,7 +2018,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 19; butter, milk/water, ketchup and cream are listed from the method, no amounts",
-  "id": "book:butter-chicken"
+  "id": "book:butter-chicken",
+  "image": "asset:assets/recipes/images/butter-chicken.jpg"
  },
  {
   "title": "Ras Al-Usfoor",
@@ -2072,7 +2100,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 20; page title is \"Ra's Al-Usfoor\"",
-  "id": "book:ras-al-usfoor"
+  "id": "book:ras-al-usfoor",
+  "image": "asset:assets/recipes/images/ras-al-usfoor.jpg"
  },
  {
   "title": "Lebanese Sambousa",
@@ -2121,7 +2150,8 @@
   "cuisine": "Arab",
   "meal": "snack",
   "notes": "page 20; the book's title is \"Lebanese Sambousa\" with Arabic after it (سمبوسك لحم, meat sambousa); the Arabic word after \"fill with\" is hard to read and I could not read it with confidence, it may refer to the Ras Al-Usfoor filling on the same page; the dough ingredient list stops at the page bottom edge, possibly more below (the page appears to end there)",
-  "id": "book:lebanese-sambousa"
+  "id": "book:lebanese-sambousa",
+  "image": "asset:assets/recipes/images/lebanese-sambousa.jpg"
  },
  {
   "title": "Meat/Chicken Majboos / Mandi",
@@ -2207,7 +2237,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 21; the Arabic word after \"cook chicken in\" is unclear (maybe a word for ghee, not sure); the inserted line \"cardamom powder, can add onion / garlic powder\" is written above the line with a caret and I placed it after the cooking steps; no amounts for chicken/meat, rice, water; title on page is \"Majboos / Mandi Chicken / Meat\" with Arabic",
-  "id": "book:meat-chicken-majboos-mandi"
+  "id": "book:meat-chicken-majboos-mandi",
+  "image": "asset:assets/recipes/images/meat-chicken-majboos-mandi.jpg"
  },
  {
   "title": "Daqqus",
@@ -2255,7 +2286,8 @@
   "cuisine": "Arab",
   "meal": "side",
   "notes": "page 21; page spelling is \"Daqqus\" with Arabic script after it",
-  "id": "book:daqqus"
+  "id": "book:daqqus",
+  "image": "asset:assets/recipes/images/daqqus.jpg"
  },
  {
   "title": "Spicy Squash Sabzi",
@@ -2353,7 +2385,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 22",
-  "id": "book:spicy-squash-sabzi"
+  "id": "book:spicy-squash-sabzi",
+  "image": "asset:assets/recipes/images/spicy-squash-sabzi.jpg"
  },
  {
   "title": "Tomato Chutney (with Dosa)",
@@ -2419,7 +2452,8 @@
   "cuisine": "Indian",
   "meal": "side",
   "notes": "page 23",
-  "id": "book:tomato-chutney-with-dosa"
+  "id": "book:tomato-chutney-with-dosa",
+  "image": "asset:assets/recipes/images/tomato-chutney-with-dosa.jpg"
  },
  {
   "title": "Chicken Handi (with Methi)",
@@ -2504,7 +2538,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 24",
-  "id": "book:chicken-handi-with-methi"
+  "id": "book:chicken-handi-with-methi",
+  "image": "asset:assets/recipes/images/chicken-handi-with-methi.jpg"
  },
  {
   "title": "Schezwan Sauce (Kabita's Kitchen)",
@@ -2555,7 +2590,8 @@
   "cuisine": "Chinese",
   "meal": "side",
   "notes": "page 24; no method written in the book; the list runs to the bottom edge of the page so more lines may have been cut off by the photo",
-  "id": "book:schezwan-sauce-kabita-s-kitchen"
+  "id": "book:schezwan-sauce-kabita-s-kitchen",
+  "image": "asset:assets/recipes/images/schezwan-sauce-kabita-s-kitchen.jpg"
  },
  {
   "title": "Beef and Broccoli",
@@ -2629,7 +2665,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 25; the page heading shows both \"Beef and Broccoli\" and \"Chicken Schezwan\" above the first recipe, the second looks like a heading that was not used there; the cornflour slurry line is on the right side of the garlic line",
-  "id": "book:beef-and-broccoli"
+  "id": "book:beef-and-broccoli",
+  "image": "asset:assets/recipes/images/beef-and-broccoli.jpg"
  },
  {
   "title": "Chicken Schezwan",
@@ -2698,7 +2735,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 25; the method stops at the bottom edge of the page and appears to be incomplete or cut off in the photo; chicken amount not written; use the Schezwan Sauce recipe (page 24)",
-  "id": "book:chicken-schezwan"
+  "id": "book:chicken-schezwan",
+  "image": "asset:assets/recipes/images/chicken-schezwan.jpg"
  },
  {
   "title": "Okra and Meat Gravy",
@@ -2774,7 +2812,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 26; page title is \"Okra Meat Gravy\" with Arabic after it; the \"approx 45 mins\" is written above the line with an arrow to the meat-cooking step, so it is not necessarily the total time; the type of meat is not written (\"meat\"), search term is a guess",
-  "id": "book:okra-and-meat-gravy"
+  "id": "book:okra-and-meat-gravy",
+  "image": "asset:assets/recipes/images/okra-and-meat-gravy.jpg"
  },
  {
   "title": "Chicken Do Pyaza",
@@ -2878,7 +2917,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 27; oil has no amount written",
-  "id": "book:chicken-do-pyaza"
+  "id": "book:chicken-do-pyaza",
+  "image": "asset:assets/recipes/images/chicken-do-pyaza.jpg"
  },
  {
   "title": "Chilli Potatoes",
@@ -2970,7 +3010,8 @@
   "cuisine": "Asian",
   "meal": "side",
   "notes": "page 28; the last line \"Add slurry before the potatoes\" is as written in the book (order of slurry/potatoes looks odd). Oil for frying is not in the ingredient list.",
-  "id": "book:chilli-potatoes"
+  "id": "book:chilli-potatoes",
+  "image": "asset:assets/recipes/images/chilli-potatoes.jpg"
  },
  {
   "title": "Swedish Meatballs",
@@ -3090,7 +3131,8 @@
   "cuisine": "Western",
   "meal": "dinner",
   "notes": "page 29; \"mince\" is written small above the line before \"meat\" in the method",
-  "id": "book:swedish-meatballs"
+  "id": "book:swedish-meatballs",
+  "image": "asset:assets/recipes/images/swedish-meatballs.jpg"
  },
  {
   "title": "Garlic Bread (By Ninik Becker)",
@@ -3171,7 +3213,8 @@
   "cuisine": "Western",
   "meal": "bread",
   "notes": "page 30; the dough ingredients have no heading in the book (first list); oven temperature is 190C (owner confirmed Celsius)",
-  "id": "book:garlic-bread-by-ninik-becker"
+  "id": "book:garlic-bread-by-ninik-becker",
+  "image": "asset:assets/recipes/images/garlic-bread-by-ninik-becker.jpg"
  },
  {
   "title": "Gosht Salan (Light)",
@@ -3239,7 +3282,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 31; a bracket \"Grind together coarsely\" sits next to sauf and cumin seeds (covers sauf and cumin seeds only, owner confirmed); lemon and fresh coriander are in the method only",
-  "id": "book:gosht-salan-light"
+  "id": "book:gosht-salan-light",
+  "image": "asset:assets/recipes/images/gosht-salan-light.jpg"
  },
  {
   "title": "Chicken Salan",
@@ -3329,7 +3373,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 32; page title is \"Chicken Salan (Gravy)\", index says Chicken Salan, used index title; the cinnamon amount is 1/4 stick (owner confirmed); \"long\" is written for cloves; \"(birista)\" is written small above the line",
-  "id": "book:chicken-salan"
+  "id": "book:chicken-salan",
+  "image": "asset:assets/recipes/images/chicken-salan.jpg"
  },
  {
   "title": "Zeera Matar Rice",
@@ -3365,7 +3410,8 @@
   "cuisine": "Pakistani",
   "meal": "side",
   "notes": "page 32; the right edge of the method lines is cut off by the page gutter (words after \"rice and wate\" and after \"Cook on\" are missing, so the middle of the method is incomplete); no matar (peas) amount is in the ingredient list even though the title says matar; \"7+\" is written as \"7 with a plus-minus sign\" (about 7 mins)",
-  "id": "book:zeera-matar-rice"
+  "id": "book:zeera-matar-rice",
+  "image": "asset:assets/recipes/images/zeera-matar-rice.jpg"
  },
  {
   "title": "Bolognese",
@@ -3444,7 +3490,8 @@
   "cuisine": "Italian",
   "meal": "dinner",
   "notes": "page 33; the start of the method lines is cut off at the gutter (\"ute onion\", \"...ients\"), reconstructed words shown in brackets; olive oil is in the method only; \"5,6\" tomatoes written with a comma",
-  "id": "book:bolognese"
+  "id": "book:bolognese",
+  "image": "asset:assets/recipes/images/bolognese.jpg"
  },
  {
   "title": "Bechamel Sauce",
@@ -3489,7 +3536,8 @@
   "cuisine": "Italian",
   "meal": "side",
   "notes": "page 33; the first words of the method lines touch the gutter and are slightly cut off but readable",
-  "id": "book:bechamel-sauce"
+  "id": "book:bechamel-sauce",
+  "image": "asset:assets/recipes/images/bechamel-sauce.jpg"
  },
  {
   "title": "Beans Salan",
@@ -3566,7 +3614,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 34; the book says \"bean\" without saying which kind; the 1 Tbsp ghee appears in the list and again in the method",
-  "id": "book:beans-salan"
+  "id": "book:beans-salan",
+  "image": "asset:assets/recipes/images/beans-salan.jpg"
  },
  {
   "title": "Muhammarah",
@@ -3688,7 +3737,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 35; the page title is Arabic only (looks like muhammara in Arabic), used index title Muhammarah; in the ingredients and method the book writes pepper paste, black seed and pomegranate molasses in Arabic script, I replaced them with the English meaning (pepper paste and pomegranate molasses are given in English next to the Arabic; black seed confirmed by owner); olive oil is in the method only; the dough is in two stages, first mix then a second mix of oil/salt/flour/butter (the book does not say how much of which goes where)",
-  "id": "book:muhammarah"
+  "id": "book:muhammarah",
+  "image": "asset:assets/recipes/images/muhammarah.jpg"
  },
  {
   "title": "Soy Sauce Chicken",
@@ -3750,7 +3800,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 36; oyster sauce is not mentioned in the method",
-  "id": "book:soy-sauce-chicken"
+  "id": "book:soy-sauce-chicken",
+  "image": "asset:assets/recipes/images/soy-sauce-chicken.jpg"
  },
  {
   "title": "Chicken Shawarma",
@@ -3861,7 +3912,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 37; no chicken quantity written; sliced onions and lemon juice are in the method only",
-  "id": "book:chicken-shawarma"
+  "id": "book:chicken-shawarma",
+  "image": "asset:assets/recipes/images/chicken-shawarma.jpg"
  },
  {
   "title": "Malai Tandoori Chicken (Naush Chicken)",
@@ -3965,7 +4017,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 38; no chicken quantity written; the Gravy section has no ingredient list, its ingredient lines were taken from the method text (butter, salt and cream have no amount)",
-  "id": "book:malai-tandoori-chicken-naush-chicken"
+  "id": "book:malai-tandoori-chicken-naush-chicken",
+  "image": "asset:assets/recipes/images/malai-tandoori-chicken-naush-chicken.jpg"
  },
  {
   "title": "Dal Makhani",
@@ -4070,7 +4123,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 39; page title is \"Dal Makhani (vah chef)\"; oil, ginger and garlic are in the method only (no amounts); the \"1 green chilli\" is part of the tomato line",
-  "id": "book:dal-makhani"
+  "id": "book:dal-makhani",
+  "image": "asset:assets/recipes/images/dal-makhani.jpg"
  },
  {
   "title": "Chicken Nachos / Tacos (Rockin Robin)",
@@ -4166,7 +4220,8 @@
   "cuisine": "Mexican",
   "meal": "dinner",
   "notes": "page 40; \"Chicken\" is written as a sub-heading above the list (no amount), I made it an ingredient line; the right edge of the method is slightly cut off at \"softened\" and \"chipotle\" but readable; the cornflour and paprika are in a second column to the right of the list",
-  "id": "book:chicken-nachos-tacos-rockin-robin"
+  "id": "book:chicken-nachos-tacos-rockin-robin",
+  "image": "asset:assets/recipes/images/chicken-nachos-tacos-rockin-robin.jpg"
  },
  {
   "title": "Beef Nachos (Laura in the kitchen)",
@@ -4266,7 +4321,8 @@
   "cuisine": "Mexican",
   "meal": "dinner",
   "notes": "page 40; no amounts written in the book (ingredients are a comma list); chipotle sauce is in the method only; \"olive oil\" is written \"dive oil\" (olive oil)",
-  "id": "book:beef-nachos-laura-in-the-kitchen"
+  "id": "book:beef-nachos-laura-in-the-kitchen",
+  "image": "asset:assets/recipes/images/beef-nachos-laura-in-the-kitchen.jpg"
  },
  {
   "title": "Sheesh Tawooq (Chef Ahmad All cooking)",
@@ -4345,7 +4401,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 41; the page title is Arabic only (shish tawook), the English attribution is as written; the lemon line reads \"1/2 lemon juice\"",
-  "id": "book:sheesh-tawooq-chef-ahmad-all-cooking"
+  "id": "book:sheesh-tawooq-chef-ahmad-all-cooking",
+  "image": "asset:assets/recipes/images/sheesh-tawooq-chef-ahmad-all-cooking.jpg"
  },
  {
   "title": "Achari Gosht",
@@ -4436,7 +4493,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 42; the book does not say the marinade steps (the yogurt, turmeric and chili are presumably the marinade); the bracket \"Make a coarse powder\" covers fennel, cumin, methi and coriander seeds (black seeds are not included, owner confirmed); the black seeds line also has an Arabic word written after it",
-  "id": "book:achari-gosht"
+  "id": "book:achari-gosht",
+  "image": "asset:assets/recipes/images/achari-gosht.jpg"
  },
  {
   "title": "Mutton Karahi",
@@ -4529,7 +4587,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 43; salt, fresh coriander, ginger juliennes and lemon juice are in the method only (no amounts); the word \"seperates\" is as written",
-  "id": "book:mutton-karahi"
+  "id": "book:mutton-karahi",
+  "image": "asset:assets/recipes/images/mutton-karahi.jpg"
  },
  {
   "title": "Arayes",
@@ -4603,7 +4662,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 44; the page title also has the Arabic word for arayes; parsley and pomegranate molasses are written in Arabic script next to the line, I used the English meaning; khubz and olive oil are in the method only",
-  "id": "book:arayes"
+  "id": "book:arayes",
+  "image": "asset:assets/recipes/images/arayes.jpg"
  },
  {
   "title": "Sliced Aloo Onion",
@@ -4646,7 +4706,8 @@
   "cuisine": "Pakistani",
   "meal": "side",
   "notes": "page 44",
-  "id": "book:sliced-aloo-onion"
+  "id": "book:sliced-aloo-onion",
+  "image": "asset:assets/recipes/images/sliced-aloo-onion.jpg"
  },
  {
   "title": "Moong Dal Samosa",
@@ -4704,7 +4765,8 @@
   "cuisine": "Pakistani",
   "meal": "snack",
   "notes": "page 45; this is the filling only (no samosa pastry or oil listed); \"(20 min+)\" is written as 20 min with a plus-minus sign; \"dices\" is as written",
-  "id": "book:moong-dal-samosa"
+  "id": "book:moong-dal-samosa",
+  "image": "asset:assets/recipes/images/moong-dal-samosa.jpg"
  },
  {
   "title": "Garam Masala Powder",
@@ -4732,7 +4794,8 @@
   "cuisine": "Pakistani",
   "meal": "side",
   "notes": "page 45; the page title is spelled \"Garam Mesala Powder\" in the book",
-  "id": "book:garam-masala-powder"
+  "id": "book:garam-masala-powder",
+  "image": "asset:assets/recipes/images/garam-masala-powder.jpg"
  },
  {
   "title": "Patora",
@@ -4824,7 +4887,8 @@
   "cuisine": "Pakistani",
   "meal": "snack",
   "notes": "page 46; \"imly\" (imli) is tamarind",
-  "id": "book:patora"
+  "id": "book:patora",
+  "image": "asset:assets/recipes/images/patora.jpg"
  },
  {
   "title": "Khichrda",
@@ -4946,7 +5010,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 47; \"lumi powder\" is lumi (Arabic), dried lemon (owner confirmed); vegetables, fresh coriander, mint, lemon and ginger juliennes are in the method only (no amounts); \"kusa\" is probably zucchini/squash",
-  "id": "book:khichrda"
+  "id": "book:khichrda",
+  "image": "asset:assets/recipes/images/khichrda.jpg"
  },
  {
   "title": "Sheet Pan Kabab",
@@ -5038,7 +5103,8 @@
   "cuisine": "Turkish",
   "meal": "dinner",
   "notes": "page 48; the onion and red capsicum are written on one line (\"1 onion + 1 red capsicum blend...\"), so there is a duplicate line for the capsicum; tomatoes, sliced onions and saffron water are in the method only",
-  "id": "book:sheet-pan-kabab"
+  "id": "book:sheet-pan-kabab",
+  "image": "asset:assets/recipes/images/sheet-pan-kabab.jpg"
  },
  {
   "title": "Hashw for Mandi/Majboos",
@@ -5069,7 +5135,8 @@
   "cuisine": "Arab",
   "meal": "side",
   "notes": "page 49; the page title has an Arabic word (hashw) between \"Hashw\" and \"for\"; \"Sute\" is as written (saute); oil is in the method only",
-  "id": "book:hashw-for-mandi-majboos"
+  "id": "book:hashw-for-mandi-majboos",
+  "image": "asset:assets/recipes/images/hashw-for-mandi-majboos.jpg"
  },
  {
   "title": "Instant Marag for Kabab (Turkish)",
@@ -5108,7 +5175,8 @@
   "cuisine": "Turkish",
   "meal": "side",
   "notes": "page 49; the page title has an Arabic word (marag) in place of \"Marag\" in the middle; oil is in the method only",
-  "id": "book:instant-marag-for-kabab-turkish"
+  "id": "book:instant-marag-for-kabab-turkish",
+  "image": "asset:assets/recipes/images/instant-marag-for-kabab-turkish.jpg"
  },
  {
   "title": "Berry Rice",
@@ -5150,7 +5218,8 @@
   "cuisine": "Arab",
   "meal": "side",
   "notes": "page 50; the book's title is \"Berry Rice\" with an Arabic word (zereshk = barberries) beside it; the barberries are written in Arabic in the ingredient list and method, zereshk (owner confirmed); saffron water is used in the method but saffron is not in the ingredient list",
-  "id": "book:berry-rice"
+  "id": "book:berry-rice",
+  "image": "asset:assets/recipes/images/berry-rice.jpg"
  },
  {
   "title": "Lahm Bi Ajeen (Chef Haider Deek)",
@@ -5234,7 +5303,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 51; the book's title is in Arabic (Lahm Bi Ajeen, meat on dough) followed by (Chef Haider Deek); an Arabic word after \"parsley\" (a gloss, read as the Arabic for parsley) was omitted; \"2 Tbsp\" ingredient is in Arabic, pomegranate molasses (owner confirmed); the Arabic word before \"dough recipe\" at the end is muhammara (see the Muhammarah dough, page 35)",
-  "id": "book:lahm-bi-ajeen-chef-haider-deek"
+  "id": "book:lahm-bi-ajeen-chef-haider-deek",
+  "image": "asset:assets/recipes/images/lahm-bi-ajeen-chef-haider-deek.jpg"
  },
  {
   "title": "Burger",
@@ -5273,7 +5343,8 @@
   "cuisine": "Western",
   "meal": "dinner",
   "notes": "page 52",
-  "id": "book:burger"
+  "id": "book:burger",
+  "image": "asset:assets/recipes/images/burger.jpg"
  },
  {
   "title": "Pizza Sauce",
@@ -5339,7 +5410,8 @@
   "cuisine": "Italian",
   "meal": "side",
   "notes": "page 52; the first three ingredients are bracketed in the book as \"pureed together\"; olive oil is used in the method but not listed as an ingredient",
-  "id": "book:pizza-sauce"
+  "id": "book:pizza-sauce",
+  "image": "asset:assets/recipes/images/pizza-sauce.jpg"
  },
  {
   "title": "Pizza Samosa",
@@ -5428,7 +5500,8 @@
   "cuisine": "Italian",
   "meal": "snack",
   "notes": "page 53; oil and samosa leaves are used in the method but not listed as ingredients",
-  "id": "book:pizza-samosa"
+  "id": "book:pizza-samosa",
+  "image": "asset:assets/recipes/images/pizza-samosa.jpg"
  },
  {
   "title": "Turkish Kabab with Fried Eggplant and Potatoes",
@@ -5496,7 +5569,8 @@
   "cuisine": "Turkish",
   "meal": "dinner",
   "notes": "page 54; there is a whited-out patch after \"circles\" on the first ingredient line (ignored); an Arabic word after \"parsley\" (a gloss) was omitted; the Arabic word after \"instant\" is \"maraq\" (broth, owner confirmed); olive oil and salt for the eggplant are in the method only",
-  "id": "book:turkish-kabab-with-fried-eggplant-and-potatoes"
+  "id": "book:turkish-kabab-with-fried-eggplant-and-potatoes",
+  "image": "asset:assets/recipes/images/turkish-kabab-with-fried-eggplant-and-potatoes.jpg"
  },
  {
   "title": "Chicken Kabab (Tikki / Cutlet)",
@@ -5565,7 +5639,8 @@
   "cuisine": "Pakistani",
   "meal": "snack",
   "notes": "page 55; the spice quantities in the chicken line are read as 1/2 tsp ginger, 1/2 tsp garlic, 1/4 tsp garam masala [?]",
-  "id": "book:chicken-kabab-tikki-cutlet"
+  "id": "book:chicken-kabab-tikki-cutlet",
+  "image": "asset:assets/recipes/images/chicken-kabab-tikki-cutlet.jpg"
  },
  {
   "title": "Chicken Nuggets",
@@ -5604,7 +5679,8 @@
   "cuisine": "Western",
   "meal": "snack",
   "notes": "page 55",
-  "id": "book:chicken-nuggets"
+  "id": "book:chicken-nuggets",
+  "image": "asset:assets/recipes/images/chicken-nuggets.jpg"
  },
  {
   "title": "BBQ Chicken (On Coal)",
@@ -5688,7 +5764,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 56; \"1/2 lemon juice\" has no unit in the book (quantity as written)",
-  "id": "book:bbq-chicken-on-coal"
+  "id": "book:bbq-chicken-on-coal",
+  "image": "asset:assets/recipes/images/bbq-chicken-on-coal.jpg"
  },
  {
   "title": "Chicken Noodles (In big pot)",
@@ -5759,7 +5836,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 57; soy sauce, cornflour and black pepper for the marinade and the noodles are named in the book but have no separate ingredient lines or amounts",
-  "id": "book:chicken-noodles-in-big-pot"
+  "id": "book:chicken-noodles-in-big-pot",
+  "image": "asset:assets/recipes/images/chicken-noodles-in-big-pot.jpg"
  },
  {
   "title": "Cheese Chutney Sandwich",
@@ -5828,7 +5906,8 @@
   "cuisine": "Indian",
   "meal": "lunch",
   "notes": "page 58; no amounts given in the book; bread and ketchup are in the method only",
-  "id": "book:cheese-chutney-sandwich"
+  "id": "book:cheese-chutney-sandwich",
+  "image": "asset:assets/recipes/images/cheese-chutney-sandwich.jpg"
  },
  {
   "title": "Caponata (Sicilian Eggplant)",
@@ -5897,7 +5976,8 @@
   "cuisine": "Italian",
   "meal": "side",
   "notes": "page 59; the book's title is spelled \"Caponata\"; \"1/4 glass vinegar + 2 tsp sugar\" is one line in the book, split here; the Arabic word in the Optional line is read as shakshuka (owner confirmed)",
-  "id": "book:caponata-sicilian-eggplant"
+  "id": "book:caponata-sicilian-eggplant",
+  "image": "asset:assets/recipes/images/caponata-sicilian-eggplant.jpg"
  },
  {
   "title": "Spring Rolls",
@@ -5963,7 +6043,8 @@
   "cuisine": "Chinese",
   "meal": "snack",
   "notes": "page 60; oil and spring roll wrappers are not listed as ingredients",
-  "id": "book:spring-rolls"
+  "id": "book:spring-rolls",
+  "image": "asset:assets/recipes/images/spring-rolls.jpg"
  },
  {
   "title": "Chicken Bhajiya (Fritters)",
@@ -6036,10 +6117,11 @@
   "cuisine": "Indian",
   "meal": "snack",
   "notes": "page 61 (page number cut off at the photo edge, read as 61 from the index); oil not listed",
-  "id": "book:chicken-bhajiya-fritters"
+  "id": "book:chicken-bhajiya-fritters",
+  "image": "asset:assets/recipes/images/chicken-bhajiya-fritters.jpg"
  },
  {
-  "title": "Shami Kabab",
+  "title": "Shami Kabab 2",
   "ingredients": [
    {
     "qty": "1/2 Kg",
@@ -6099,7 +6181,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 62; egg, ghee and oil are in the method only",
-  "id": "book:shami-kabab"
+  "id": "book:shami-kabab-2",
+  "image": "asset:assets/recipes/images/shami-kabab-2.jpg"
  },
  {
   "title": "Focaccia",
@@ -6155,7 +6238,8 @@
   "cuisine": "Italian",
   "meal": "bread",
   "notes": "page 63; the book spells \"Knead\" as \"Kneak\"; olives are in the method only",
-  "id": "book:focaccia"
+  "id": "book:focaccia",
+  "image": "asset:assets/recipes/images/focaccia.jpg"
  },
  {
   "title": "Chicken Fajitas (Laura in the kitchen)",
@@ -6248,7 +6332,8 @@
   "cuisine": "Mexican",
   "meal": "dinner",
   "notes": "page 64; the first nine lines are the spice mix (a separate block in the book); tortilla, sour cream, pico de gallo, jalapeno pickle, corn and cheese are serving items named only in the method",
-  "id": "book:chicken-fajitas-laura-in-the-kitchen"
+  "id": "book:chicken-fajitas-laura-in-the-kitchen",
+  "image": "asset:assets/recipes/images/chicken-fajitas-laura-in-the-kitchen.jpg"
  },
  {
   "title": "Dal Gosht",
@@ -6352,7 +6437,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 65; gosht = meat (type not stated); kaddu = bottle gourd/squash (type not stated)",
-  "id": "book:dal-gosht"
+  "id": "book:dal-gosht",
+  "image": "asset:assets/recipes/images/dal-gosht.jpg"
  },
  {
   "title": "Baigan Bechamel Tray",
@@ -6444,7 +6530,8 @@
   "cuisine": "Italian",
   "meal": "dinner",
   "notes": "page 66; the quantity before \"tsp red chili flakes\" is partly overwritten and is 1/4 (owner confirmed); oven temperature is 220C (owner confirmed Celsius); Italian cheese and basil are in the method only",
-  "id": "book:baigan-bechamel-tray"
+  "id": "book:baigan-bechamel-tray",
+  "image": "asset:assets/recipes/images/baigan-bechamel-tray.jpg"
  },
  {
   "title": "Batata Harra (spicy potatoes)",
@@ -6510,7 +6597,8 @@
   "cuisine": "Arab",
   "meal": "side",
   "notes": "page 67 (page number partly cut off at the photo edge); the book's title is in Arabic (Batata Harra); \"1/2 Tbsp oregano\" is written to the right of the red chili line; \"ghee\" was written in above the line in the method and is not in the ingredient list",
-  "id": "book:batata-harra-spicy-potatoes"
+  "id": "book:batata-harra-spicy-potatoes",
+  "image": "asset:assets/recipes/images/batata-harra-spicy-potatoes.jpg"
  },
  {
   "title": "Honey Garlic Glazed Chicken",
@@ -6566,7 +6654,8 @@
   "cuisine": "Asian",
   "meal": "dinner",
   "notes": "page 68; salt/pepper/corn flour are bracketed \"Marinade the chicken\" in the book; oil and scallions are in the method only",
-  "id": "book:honey-garlic-glazed-chicken"
+  "id": "book:honey-garlic-glazed-chicken",
+  "image": "asset:assets/recipes/images/honey-garlic-glazed-chicken.jpg"
  },
  {
   "title": "Fried Rice (Instant)",
@@ -6642,7 +6731,8 @@
   "cuisine": "Chinese",
   "meal": "dinner",
   "notes": "page 69; the word before \"wok\" is scribbled out in two places in the method (strike-out, \"wok\" written above it); \"(add soy sauce)\" is a small insertion above the line after \"veggies\"; \"1/4 cup soy sauce + 3 tsp brown sugar or sweet soy sauce\" is one line in the book, split here",
-  "id": "book:fried-rice-instant"
+  "id": "book:fried-rice-instant",
+  "image": "asset:assets/recipes/images/fried-rice-instant.jpg"
  },
  {
   "title": "Caramelized Tomato Onion Pasta",
@@ -6710,7 +6800,8 @@
   "cuisine": "Italian",
   "meal": "dinner",
   "notes": "page 70; pasta and sugar are not listed as ingredients",
-  "id": "book:caramelized-tomato-onion-pasta"
+  "id": "book:caramelized-tomato-onion-pasta",
+  "image": "asset:assets/recipes/images/caramelized-tomato-onion-pasta.jpg"
  },
  {
   "title": "Fatayer Dough",
@@ -6756,7 +6847,8 @@
   "cuisine": "Arab",
   "meal": "bread",
   "notes": "page 71; no method written in the book; most amounts not given",
-  "id": "book:fatayer-dough"
+  "id": "book:fatayer-dough",
+  "image": "asset:assets/recipes/images/fatayer-dough.jpg"
  },
  {
   "title": "Shawarma (Boneless)",
@@ -6904,7 +6996,8 @@
   "cuisine": "Arab",
   "meal": "dinner",
   "notes": "page 72; attribution \"Our Yemeni Kitchen\"; garlic dip has no amounts; onions, cilantro, hot sauce, chips, pickles, rice and khubz are in the method only",
-  "id": "book:shawarma-boneless"
+  "id": "book:shawarma-boneless",
+  "image": "asset:assets/recipes/images/shawarma-boneless.jpg"
  },
  {
   "title": "Mince Meat with Eggs",
@@ -6969,7 +7062,8 @@
   "cuisine": "Arab",
   "meal": "breakfast",
   "notes": "page 73; the line \"1 tsp red chili salt\" had \"red chili\" struck out, corrected to \"salt\"; an Arabic word before the title is not transcribed; eggs are in the method only (no amount given)",
-  "id": "book:mince-meat-with-eggs"
+  "id": "book:mince-meat-with-eggs",
+  "image": "asset:assets/recipes/images/mince-meat-with-eggs.jpg"
  },
  {
   "title": "Chicken Pot Pie",
@@ -7062,7 +7156,8 @@
   "cuisine": "Western",
   "meal": "dinner",
   "notes": "page 74; egg wash is in the method only",
-  "id": "book:chicken-pot-pie"
+  "id": "book:chicken-pot-pie",
+  "image": "asset:assets/recipes/images/chicken-pot-pie.jpg"
  },
  {
   "title": "Chicken Mushroom Sandwich",
@@ -7152,7 +7247,8 @@
   "cuisine": "Western",
   "meal": "lunch",
   "notes": "page 75; mayonnaise, cheddar cheese, bread and fries are in the method only; the book has no instructions for combining the sauce and filling beyond the assembly step",
-  "id": "book:chicken-mushroom-sandwich"
+  "id": "book:chicken-mushroom-sandwich",
+  "image": "asset:assets/recipes/images/chicken-mushroom-sandwich.jpg"
  },
  {
   "title": "Aloo Gobi w/capsicum",
@@ -7274,7 +7370,8 @@
   "cuisine": "Indian",
   "meal": "dinner",
   "notes": "page 76; the book's title spells it \"Aloo Gobi\"; the first seven lines are bracketed \"Dry roast and grind\"; potatoes and cauliflower are bracketed \"Boiled and shallow fried w/haldi\"",
-  "id": "book:aloo-gobi-w-capsicum"
+  "id": "book:aloo-gobi-w-capsicum",
+  "image": "asset:assets/recipes/images/aloo-gobi-w-capsicum.jpg"
  },
  {
   "title": "Keema Aloo w/Peas",
@@ -7382,7 +7479,8 @@
   "cuisine": "Pakistani",
   "meal": "dinner",
   "notes": "page 77; the \"(spices)\" label is written to the right of the potato line and groups the chili, coriander, cumin, turmeric and garam masala lines (owner confirmed); \"whole garam masala\" in the method is read as the cardamom, cinnamon and cloves; the book spells it \"Keema\" in the title (index: Keema Aloo w/Peas)",
-  "id": "book:keema-aloo-w-peas"
+  "id": "book:keema-aloo-w-peas",
+  "image": "asset:assets/recipes/images/keema-aloo-w-peas.jpg"
  },
  {
   "title": "Orange Chocolate Marble Cake",
@@ -7438,7 +7536,8 @@
   "meal": "dessert",
   "minutes": 50,
   "notes": "page 1; Layer batter then chocolate, swirl lightly.",
-  "id": "book:orange-chocolate-marble-cake"
+  "id": "book:orange-chocolate-marble-cake",
+  "image": "asset:assets/recipes/images/orange-chocolate-marble-cake.jpg"
  },
  {
   "title": "Gulab Jamun",
@@ -7503,7 +7602,8 @@
   "cuisine": "Indian",
   "meal": "dessert",
   "notes": "page 2; the bracket \"heat till sugar dissolves\" covers sugar, water, rose water and saffron; the cardamom amount (1/2 tsp) is slightly smudged",
-  "id": "book:gulab-jamun"
+  "id": "book:gulab-jamun",
+  "image": "asset:assets/recipes/images/gulab-jamun.jpg"
  },
  {
   "title": "Seviyan",
@@ -7549,7 +7649,8 @@
   "meal": "dessert",
   "minutes": 7,
   "notes": "page 3; \"raisins\" was written in small above the line after \"Add milk,\" so its exact position in the sentence is a best reading",
-  "id": "book:seviyan"
+  "id": "book:seviyan",
+  "image": "asset:assets/recipes/images/seviyan.jpg"
  },
  {
   "title": "Gajar ka Halwa (Carrot Halwa)",
@@ -7601,7 +7702,8 @@
   "cuisine": "Indian",
   "meal": "dessert",
   "notes": "page 4; book title also says \"by Swaad Anusar\" (attribution, owner confirmed)",
-  "id": "book:gajar-ka-halwa-carrot-halwa"
+  "id": "book:gajar-ka-halwa-carrot-halwa",
+  "image": "asset:assets/recipes/images/gajar-ka-halwa-carrot-halwa.jpg"
  },
  {
   "title": "Black Forest Gateau",
@@ -7662,7 +7764,8 @@
   "meal": "dessert",
   "minutes": 45,
   "notes": "page 5; only the cake is written (no cherries, cream or assembly in the book)",
-  "id": "book:black-forest-gateau"
+  "id": "book:black-forest-gateau",
+  "image": "asset:assets/recipes/images/black-forest-gateau.jpg"
  },
  {
   "title": "Orange Cake",
@@ -7717,7 +7820,8 @@
   "meal": "dessert",
   "minutes": 55,
   "notes": "page 6; no method for making the batter or the icing is written in the book",
-  "id": "book:orange-cake"
+  "id": "book:orange-cake",
+  "image": "asset:assets/recipes/images/orange-cake.jpg"
  },
  {
   "title": "Chocolate Cake (Ganache)",
@@ -7771,7 +7875,8 @@
   "meal": "dessert",
   "minutes": 40,
   "notes": "page 7; the 2 Tbsp cocoa in the flour line is not a separate ingredient line in the book; no method written for mixing the batter or making the ganache icing",
-  "id": "book:chocolate-cake-ganache"
+  "id": "book:chocolate-cake-ganache",
+  "image": "asset:assets/recipes/images/chocolate-cake-ganache.jpg"
  },
  {
   "title": "Orange and Poppy Cake",
@@ -7833,7 +7938,8 @@
   "meal": "dessert",
   "minutes": 50,
   "notes": "page 8",
-  "id": "book:orange-and-poppy-cake"
+  "id": "book:orange-and-poppy-cake",
+  "image": "asset:assets/recipes/images/orange-and-poppy-cake.jpg"
  },
  {
   "title": "Short Bread Tart Crust",
@@ -7868,7 +7974,8 @@
   "meal": "dessert",
   "minutes": 15,
   "notes": "page 9",
-  "id": "book:short-bread-tart-crust"
+  "id": "book:short-bread-tart-crust",
+  "image": "asset:assets/recipes/images/short-bread-tart-crust.jpg"
  },
  {
   "title": "Victoria Sponge Cake",
@@ -7943,7 +8050,8 @@
   "meal": "dessert",
   "minutes": 20,
   "notes": "page 10; \"20+ mins\" is written as \"20 with a plus-minus sign\"; \"chantele\" is the book's spelling (chantilly cream); the four fruits were written on one line separated by commas and are split into separate lines here",
-  "id": "book:victoria-sponge-cake"
+  "id": "book:victoria-sponge-cake",
+  "image": "asset:assets/recipes/images/victoria-sponge-cake.jpg"
  },
  {
   "title": "Carrot Cake",
@@ -8036,7 +8144,8 @@
   "meal": "dessert",
   "minutes": 40,
   "notes": "page 11",
-  "id": "book:carrot-cake"
+  "id": "book:carrot-cake",
+  "image": "asset:assets/recipes/images/carrot-cake.jpg"
  },
  {
   "title": "Pineapple Upside Down Cake",
@@ -8112,7 +8221,8 @@
   "meal": "dessert",
   "minutes": 55,
   "notes": "page 12; book title spelled \"Pineapple UpSide Down Cake\"",
-  "id": "book:pineapple-upside-down-cake"
+  "id": "book:pineapple-upside-down-cake",
+  "image": "asset:assets/recipes/images/pineapple-upside-down-cake.jpg"
  },
  {
   "title": "Double Chocolate Pound Cake",
@@ -8177,7 +8287,8 @@
   "meal": "dessert",
   "minutes": 30,
   "notes": "page 13; You can halve the recipe; \"30+\" is written as 30 with a plus-minus sign; no mixing method written",
-  "id": "book:double-chocolate-pound-cake"
+  "id": "book:double-chocolate-pound-cake",
+  "image": "asset:assets/recipes/images/double-chocolate-pound-cake.jpg"
  },
  {
   "title": "Caramel Popcorn",
@@ -8223,7 +8334,8 @@
   "meal": "snack",
   "minutes": 60,
   "notes": "page 14; You can halve the recipe; oven temperature is 120C (owner confirmed Celsius)",
-  "id": "book:caramel-popcorn"
+  "id": "book:caramel-popcorn",
+  "image": "asset:assets/recipes/images/caramel-popcorn.jpg"
  },
  {
   "title": "Luscious Lemon Cake (Alida Ryder - Simply delicious-food.com)",
@@ -8299,7 +8411,8 @@
   "meal": "dessert",
   "minutes": 45,
   "notes": "page 15; attribution in book is \"(Alida Ryder - Simply delicious-food.com)\"; no batter mixing method written",
-  "id": "book:luscious-lemon-cake-alida-ryder-simply-delicious-food-com"
+  "id": "book:luscious-lemon-cake-alida-ryder-simply-delicious-food-com",
+  "image": "asset:assets/recipes/images/luscious-lemon-cake-alida-ryder-simply-delicious-food-com.jpg"
  },
  {
   "title": "Cinnamon Rolls",
@@ -8395,7 +8508,8 @@
   "meal": "bread",
   "minutes": 20,
   "notes": "page 16; You can halve the recipe; no method written for the glaze",
-  "id": "book:cinnamon-rolls"
+  "id": "book:cinnamon-rolls",
+  "image": "asset:assets/recipes/images/cinnamon-rolls.jpg"
  },
  {
   "title": "No Bake Cheese Cake",
@@ -8454,7 +8568,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 17; book says \"gelatine\" (written here as halal gelatine); berries for the topping are not listed; the method as written is thin (crust and filling steps not written)",
-  "id": "book:no-bake-cheese-cake"
+  "id": "book:no-bake-cheese-cake",
+  "image": "asset:assets/recipes/images/no-bake-cheese-cake.jpg"
  },
  {
   "title": "Chocolate Swiss Roll (Roulade)",
@@ -8500,7 +8615,8 @@
   "meal": "dessert",
   "minutes": 8,
   "notes": "page 18; no filling listed in the book",
-  "id": "book:chocolate-swiss-roll-roulade"
+  "id": "book:chocolate-swiss-roll-roulade",
+  "image": "asset:assets/recipes/images/chocolate-swiss-roll-roulade.jpg"
  },
  {
   "title": "Carrot Cake Cup Cake",
@@ -8572,7 +8688,8 @@
   "meal": "dessert",
   "minutes": 25,
   "notes": "page 19",
-  "id": "book:carrot-cake-cup-cake"
+  "id": "book:carrot-cake-cup-cake",
+  "image": "asset:assets/recipes/images/carrot-cake-cup-cake.jpg"
  },
  {
   "title": "Jemma's Chocolate CupCake",
@@ -8653,7 +8770,8 @@
   "minutes": 24,
   "servings": 24,
   "notes": "page 20; subtitle under the title reads \"Use half quantity for lazy cat cake\" (the Arabic words for lazy cat cake come right before it; owner confirmed); \"24+\" is written as 24 with a plus-minus sign; no mixing method or frosting method written",
-  "id": "book:jemma-s-chocolate-cupcake"
+  "id": "book:jemma-s-chocolate-cupcake",
+  "image": "asset:assets/recipes/images/jemma-s-chocolate-cupcake.jpg"
  },
  {
   "title": "Crepes",
@@ -8707,7 +8825,8 @@
   "cuisine": "Western",
   "meal": "breakfast",
   "notes": "page 21",
-  "id": "book:crepes"
+  "id": "book:crepes",
+  "image": "asset:assets/recipes/images/crepes.jpg"
  },
  {
   "title": "Pancakes",
@@ -8760,7 +8879,8 @@
   "cuisine": "Western",
   "meal": "breakfast",
   "notes": "page 21",
-  "id": "book:pancakes"
+  "id": "book:pancakes",
+  "image": "asset:assets/recipes/images/pancakes.jpg"
  },
  {
   "title": "Chocolate Lovers Food Cake",
@@ -8830,7 +8950,8 @@
   "meal": "dessert",
   "minutes": 35,
   "notes": "page 22; oil amount \"6 tsp\" is as written (may have been meant as Tbsp)",
-  "id": "book:chocolate-lovers-food-cake"
+  "id": "book:chocolate-lovers-food-cake",
+  "image": "asset:assets/recipes/images/chocolate-lovers-food-cake.jpg"
  },
  {
   "title": "Donuts (Emma's Goodies)",
@@ -8903,7 +9024,8 @@
   "cuisine": "Western",
   "meal": "snack",
   "notes": "page 23; no method written for the glaze",
-  "id": "book:donuts-emma-s-goodies"
+  "id": "book:donuts-emma-s-goodies",
+  "image": "asset:assets/recipes/images/donuts-emma-s-goodies.jpg"
  },
  {
   "title": "Light Fruit Cake",
@@ -8992,7 +9114,8 @@
   "meal": "dessert",
   "minutes": 55,
   "notes": "page 24; third ingredient line ends with an Arabic-script word, zereshk (barberries; owner confirmed)",
-  "id": "book:light-fruit-cake"
+  "id": "book:light-fruit-cake",
+  "image": "asset:assets/recipes/images/light-fruit-cake.jpg"
  },
  {
   "title": "Chocolate Mousse Cake",
@@ -9088,7 +9211,8 @@
   "meal": "dessert",
   "minutes": 60,
   "notes": "page 25; the book writes 'gelatine' (halal gelatine used by the family); flour line reads '(- 2 Tbsp + 2 Tbsp corn flour)'",
-  "id": "book:chocolate-mousse-cake"
+  "id": "book:chocolate-mousse-cake",
+  "image": "asset:assets/recipes/images/chocolate-mousse-cake.jpg"
  },
  {
   "title": "Cinnamon Swirl Cake",
@@ -9183,7 +9307,8 @@
   "meal": "dessert",
   "minutes": 55,
   "notes": "page 26; the book only says 'Mix' for the swirl ingredients and gives no further method (when to swirl, when to glaze)",
-  "id": "book:cinnamon-swirl-cake"
+  "id": "book:cinnamon-swirl-cake",
+  "image": "asset:assets/recipes/images/cinnamon-swirl-cake.jpg"
  },
  {
   "title": "Tiramisu",
@@ -9239,7 +9364,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 27",
-  "id": "book:tiramisu"
+  "id": "book:tiramisu",
+  "image": "asset:assets/recipes/images/tiramisu.jpg"
  },
  {
   "title": "Lemon Strawberry Crumb Bars (Sally's Baking Addiction)",
@@ -9322,7 +9448,8 @@
   "meal": "dessert",
   "minutes": 50,
   "notes": "page 28; title says Strawberry but the ingredients list raspberry jam (written 'rasberry jam' in the book); 'top' on the baking powder line looks like 'tsp'",
-  "id": "book:lemon-strawberry-crumb-bars-sally-s-baking-addiction"
+  "id": "book:lemon-strawberry-crumb-bars-sally-s-baking-addiction",
+  "image": "asset:assets/recipes/images/lemon-strawberry-crumb-bars-sally-s-baking-addiction.jpg"
  },
  {
   "title": "Bounty Bars (Hebbars Kitchen)",
@@ -9365,7 +9492,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 29",
-  "id": "book:bounty-bars-hebbars-kitchen"
+  "id": "book:bounty-bars-hebbars-kitchen",
+  "image": "asset:assets/recipes/images/bounty-bars-hebbars-kitchen.jpg"
  },
  {
   "title": "Homemade Condensed Milk",
@@ -9399,7 +9527,8 @@
   "meal": "dessert",
   "minutes": 40,
   "notes": "page 30; ratio 1 cup milk = 1/3 cup sugar, or 1 L milk = 1 1/3 cup sugar, then cook 40 mins; Note in book: keep it runny, it hardens once cooled in the fridge.",
-  "id": "book:homemade-condensed-milk"
+  "id": "book:homemade-condensed-milk",
+  "image": "asset:assets/recipes/images/homemade-condensed-milk.jpg"
  },
  {
   "title": "Brownies",
@@ -9450,7 +9579,8 @@
   "meal": "dessert",
   "minutes": 35,
   "notes": "page 31",
-  "id": "book:brownies"
+  "id": "book:brownies",
+  "image": "asset:assets/recipes/images/brownies.jpg"
  },
  {
   "title": "Chocolate Mousse Swiss Roll (Homecooking Adventure)",
@@ -9505,7 +9635,8 @@
   "meal": "dessert",
   "minutes": 12,
   "notes": "page 32; the book bundles the chocolate and 1/2 cup whipping cream with 'melt then fold in whipped cream'; bake time written as '12 +/- mins'",
-  "id": "book:chocolate-mousse-swiss-roll-homecooking-adventure"
+  "id": "book:chocolate-mousse-swiss-roll-homecooking-adventure",
+  "image": "asset:assets/recipes/images/chocolate-mousse-swiss-roll-homecooking-adventure.jpg"
  },
  {
   "title": "Salted Caramel Sauce",
@@ -9545,7 +9676,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 33",
-  "id": "book:salted-caramel-sauce"
+  "id": "book:salted-caramel-sauce",
+  "image": "asset:assets/recipes/images/salted-caramel-sauce.jpg"
  },
  {
   "title": "Chocolate Pudding",
@@ -9606,7 +9738,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 34; vanilla spelled 'vanille' in the book; 'Kiri' written without 'cheese' (read as Kiri cheese cubes)",
-  "id": "book:chocolate-pudding"
+  "id": "book:chocolate-pudding",
+  "image": "asset:assets/recipes/images/chocolate-pudding.jpg"
  },
  {
   "title": "Flourless Chocolate Cake",
@@ -9653,7 +9786,8 @@
   "meal": "dessert",
   "minutes": 20,
   "notes": "page 35",
-  "id": "book:flourless-chocolate-cake"
+  "id": "book:flourless-chocolate-cake",
+  "image": "asset:assets/recipes/images/flourless-chocolate-cake.jpg"
  },
  {
   "title": "Muller Yogurt",
@@ -9691,7 +9825,8 @@
   "cuisine": "Western",
   "meal": "dessert",
   "notes": "page 36",
-  "id": "book:muller-yogurt"
+  "id": "book:muller-yogurt",
+  "image": "asset:assets/recipes/images/muller-yogurt.jpg"
  },
  {
   "title": "Raspberry Oatmeal Muffin (Domestic Geek)",
@@ -9751,7 +9886,8 @@
   "meal": "breakfast",
   "minutes": 12,
   "notes": "page 37",
-  "id": "book:raspberry-oatmeal-muffin-domestic-geek"
+  "id": "book:raspberry-oatmeal-muffin-domestic-geek",
+  "image": "asset:assets/recipes/images/raspberry-oatmeal-muffin-domestic-geek.jpg"
  },
  {
   "title": "Coconut Cake (John Kirkwood)",
@@ -9805,7 +9941,8 @@
   "meal": "dessert",
   "minutes": 50,
   "notes": "page 38",
-  "id": "book:coconut-cake-john-kirkwood"
+  "id": "book:coconut-cake-john-kirkwood",
+  "image": "asset:assets/recipes/images/coconut-cake-john-kirkwood.jpg"
  },
  {
   "title": "Pecan Pie",
@@ -9906,7 +10043,8 @@
   "meal": "dessert",
   "minutes": 50,
   "notes": "page 39, continued on page 40; page 39 ends with an arrow marked 'Continuation' (page number 41 written under 39 in the book)",
-  "id": "book:pecan-pie"
+  "id": "book:pecan-pie",
+  "image": "asset:assets/recipes/images/pecan-pie.jpg"
  },
  {
   "title": "Pound Cake",
@@ -9975,7 +10113,8 @@
   "meal": "dessert",
   "minutes": 35,
   "notes": "page 41",
-  "id": "book:pound-cake"
+  "id": "book:pound-cake",
+  "image": "asset:assets/recipes/images/pound-cake.jpg"
  },
  {
   "title": "Coconut Cake 2",
@@ -10054,7 +10193,8 @@
   "meal": "dessert",
   "minutes": 30,
   "notes": "page 42; oil amount written '66gm'; dark chocolate has no amount or method (presumably topping); bake time written '30 +/- mins'",
-  "id": "book:coconut-cake-2"
+  "id": "book:coconut-cake-2",
+  "image": "asset:assets/recipes/images/coconut-cake-2.jpg"
  },
  {
   "title": "Coconut Sheet Cake (Cakes by MK)",
@@ -10144,7 +10284,8 @@
   "meal": "dessert",
   "minutes": 28,
   "notes": "page 43; bake time written '28 +/- mins'; no method for the frosting beyond applying it",
-  "id": "book:coconut-sheet-cake-cakes-by-mk"
+  "id": "book:coconut-sheet-cake-cakes-by-mk",
+  "image": "asset:assets/recipes/images/coconut-sheet-cake-cakes-by-mk.jpg"
  },
  {
   "title": "Oatmeal Cookies",
@@ -10228,7 +10369,8 @@
   "minutes": 11,
   "servings": 36,
   "notes": "page 44; makes about 3 dozen cookies",
-  "id": "book:oatmeal-cookies"
+  "id": "book:oatmeal-cookies",
+  "image": "asset:assets/recipes/images/oatmeal-cookies.jpg"
  },
  {
   "title": "Brookies",
@@ -10349,7 +10491,8 @@
   "meal": "dessert",
   "minutes": 40,
   "notes": "page 45; the '30-40' bake time is slightly cramped in the book; no separate method for making each mix",
-  "id": "book:brookies"
+  "id": "book:brookies",
+  "image": "asset:assets/recipes/images/brookies.jpg"
  },
  {
   "title": "Strawberry Cheesecake Choc-Chip Cookies (Mooniebakie)",
@@ -10471,7 +10614,8 @@
   "minutes": 15,
   "servings": 11,
   "notes": "page 46; attribution is 'Mooniebakie' (owner confirmed); the ingredient list says 1/3 cup dark chocolate chips and chunks but the method says 1/4 cup dark chocolate chips; servings taken from 'Make 9-11 cookies'",
-  "id": "book:strawberry-cheesecake-choc-chip-cookies-mooniebakie"
+  "id": "book:strawberry-cheesecake-choc-chip-cookies-mooniebakie",
+  "image": "asset:assets/recipes/images/strawberry-cheesecake-choc-chip-cookies-mooniebakie.jpg"
  },
  {
   "title": "Chocolate Oats Cereal",
@@ -10517,7 +10661,8 @@
   "meal": "breakfast",
   "minutes": 15,
   "notes": "page 47; cranberries and chocolate chips are mentioned in the method but not in the ingredient list (no amounts given)",
-  "id": "book:chocolate-oats-cereal"
+  "id": "book:chocolate-oats-cereal",
+  "image": "asset:assets/recipes/images/chocolate-oats-cereal.jpg"
  },
  {
   "title": "Maple Cinnamon Nut Granola (Gemma Bigger Bolder Baking)",
@@ -10578,7 +10723,8 @@
   "meal": "breakfast",
   "minutes": 25,
   "notes": "page 47; attribution read as 'Gemma Bigger Bolder Baking'; the bracket 'Melt and pour over oats' covers butter through cinnamon (salt is not in the bracket, owner confirmed)",
-  "id": "book:maple-cinnamon-nut-granola-gemma-bigger-bolder-baking"
+  "id": "book:maple-cinnamon-nut-granola-gemma-bigger-bolder-baking",
+  "image": "asset:assets/recipes/images/maple-cinnamon-nut-granola-gemma-bigger-bolder-baking.jpg"
  },
  {
   "title": "Lemon Bars (Chahinez1)",
@@ -10646,7 +10792,8 @@
   "meal": "dessert",
   "minutes": 22,
   "notes": "page 48; attribution 'Chahinez1' (owner confirmed); the book gives no method for mixing the crust beyond baking it; minutes is the filling bake time (crust bake is 13-14 mins)",
-  "id": "book:lemon-bars-chahinez1"
+  "id": "book:lemon-bars-chahinez1",
+  "image": "asset:assets/recipes/images/lemon-bars-chahinez1.jpg"
  },
  {
   "title": "Chocolate and Peanut Butter Cereal",
@@ -10712,7 +10859,8 @@
   "meal": "breakfast",
   "minutes": 25,
   "notes": "page 49; the bracket 'Melt in bowl and pour over oats' appears to cover peanut butter through salt (salt is included, owner confirmed)",
-  "id": "book:chocolate-and-peanut-butter-cereal"
+  "id": "book:chocolate-and-peanut-butter-cereal",
+  "image": "asset:assets/recipes/images/chocolate-and-peanut-butter-cereal.jpg"
  },
  {
   "title": "Orange Chocolate Cereal",
@@ -10777,6 +10925,7 @@
   "meal": "breakfast",
   "minutes": 20,
   "notes": "page 50; the title is written 'Orange Chololate Cereal' in the book (typo); no mixing instructions",
-  "id": "book:orange-chocolate-cereal"
+  "id": "book:orange-chocolate-cereal",
+  "image": "asset:assets/recipes/images/orange-chocolate-cereal.jpg"
  }
 ]

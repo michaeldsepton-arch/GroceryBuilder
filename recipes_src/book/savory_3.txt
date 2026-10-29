@@ -246,7 +246,7 @@ cuisine: Indian | meal: snack
 > Mix all ingredients and fry in hot oil.
 note: page 61 (page number cut off at the photo edge, read as 61 from the index); oil not listed
 
-== Shami Kabab
+== Shami Kabab 2
 cuisine: Pakistani | meal: dinner
 - 1/2 Kg | Beef chunks | beef stew meat
 - 3 | Med potatoes | potatoes
