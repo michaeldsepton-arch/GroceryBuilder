@@ -101,6 +101,15 @@ void main() {
     expect(plain.effectivePrice, 5);
   });
 
+  test('something bought elsewhere can be added and counts against the budget', () async {
+    final state = await _boot();
+    final before = state.cartTotal;
+    await state.addManualSpend('Bakery bread', 4.00, taxable: true, qty: 2);
+    expect(state.cart.where((l) => l.item.storeId == 'other').length, 1);
+    expect(state.cartTotal - before, closeTo(8.40, 0.001)); // 2 x \$4.00 + 5% GST
+    expect(state.remaining, closeTo(state.weekBudget - state.cartTotal, 0.001));
+  });
+
   test('price drops on favourites are recorded and surfaced as alerts', () async {
     final state = await _boot(); // own database: applyCatalog replaces every store item
     Future<void> catalog(String stamp, double yogurt, double? was) => state.repo.applyCatalog({

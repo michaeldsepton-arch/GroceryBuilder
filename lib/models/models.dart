@@ -24,6 +24,8 @@ class Store {
       'walmart': 'Walmart',
       'freshco': 'FreshCo',
       'wholesaleclub': 'Wholesale Club',
+      'nofrills': 'No Frills',
+      'other': 'Other',
       'shoppers': 'Shoppers',
       'dollarama': 'Dollarama',
       'halal': 'Halal Market',

@@ -1,6 +1,7 @@
 const STORES = {
   superstore: { id: 'superstore', name: 'Real Canadian Superstore', color: 0xFFD9232D, location: '5016 51 Ave, Red Deer', online: true },
   wholesaleclub: { id: 'wholesaleclub', name: 'Wholesale Club', color: 0xFFE8731A, location: '6350 67th St, Red Deer', online: true },
+  nofrills: { id: 'nofrills', name: 'No Frills', color: 0xFFFFC20E, location: 'Red Deer', online: true },
   walmart: { id: 'walmart', name: 'Walmart', color: 0xFF0071CE, location: '6375 50 Ave, Red Deer', online: true },
   freshco: { id: 'freshco', name: 'FreshCo', color: 0xFF2E8B3D, location: 'Red Deer', online: true },
   shoppers: { id: 'shoppers', name: 'Shoppers Drug Mart', color: 0xFFC8102E, location: 'Clearview', online: true },
@@ -20,6 +21,7 @@ function storeStatus(key, info) {
     return info.redDeer ? ['ok', 'Page mentions Red Deer / 6375 50 Ave'] : ['warn', 'Could not confirm Red Deer: set your Walmart store to 6375 50 Ave'];
   }
   if (key === 'wholesaleclub') return ['ok', 'Store id(s): ' + ((info.ids || []).join(', ') || 'unknown') + ': check it is 67th Street'];
+  if (key === 'nofrills') return ['ok', 'Store id(s): ' + ((info.ids || []).join(', ') || 'unknown') + ': check it is your Red Deer No Frills'];
   return ['ok', 'Cards read from the page: check the site is set to your Red Deer store'];
 }
 

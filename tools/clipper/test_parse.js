@@ -142,4 +142,7 @@ assert.strictEqual(cf.price, 3.76); assert.strictEqual(cf.unit, 'each'); assert.
 const gb = P.domItem('superstore', { id: '1_KG', name: 'Lean Ground Beef', text: '$33.66/1kg $15.27/1lb\n\nLean Ground Beef' });
 assert.ok(gb.variable); assert.strictEqual(gb.unit, 'kg');
 
+assert.strictEqual(P.repairOld({ id: 'walmart:10035490', store: 'walmart', name: 'Taco Sauce', price: 397, pv: 2 }).price, 3.97);
+assert.strictEqual(P.repairOld({ id: 'walmart:9', store: 'walmart', name: 'Big case', price: 12000, pv: 2 }).price, 12000);
+
 console.log('all parse tests passed');

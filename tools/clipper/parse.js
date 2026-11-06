@@ -84,7 +84,7 @@
     const crumbs = (p.breadcrumbs || []).map(function (c) { return (c && c.name) || String(c); }).join(' ');
     const cat = p.breadcrumbs && p.breadcrumbs[0] ? (p.breadcrumbs[0].name || '') : '';
     const img = p.productImage && p.productImage[0] ? p.productImage[0].imageUrl : null;
-    const host = banner === 'superstore' ? 'realcanadiansuperstore' : 'wholesaleclub';
+    const host = { superstore: 'realcanadiansuperstore', nofrills: 'nofrills' }[banner] || 'wholesaleclub';
     return mk(banner, p.code, p.name, price, {
       brand: p.brand, img: img, was: (was && was > price) ? was : null, size: Math.round(size * 1000) / 1000, unit: unit,
       variable: isVariable, taxable: guessTaxable(p.name, crumbs), cat: cat, pv: 2,
@@ -231,10 +231,13 @@
   // Walmart items saved before parser v2 may hold the price in cents (397 for $3.97) or treat a
   // single tomato "0.10 - 0.14 KG" as sold by the kilo. Fixed here; v2 items carry pv: 2.
   function repairOld(item) {
-    if (item.store !== 'walmart' || item.pv || item.src === 'dom') return item;
+    if (item.store !== 'walmart' || item.src === 'dom') return item;
     const out = Object.assign({}, item);
     const numericId = /^\d+$/.test(String(item.id).split(':')[1] || '');
-    if (Number.isInteger(out.price) && (out.price >= 100 || numericId)) {
+    const cents = function (v) { return typeof v === 'number' && Number.isInteger(v) && v >= 100 && v % 100 !== 0; };
+    // old items: integer prices are cents; newer ones can still slip through (397 for $3.97)
+    const isCents = item.pv ? cents(out.price) : (Number.isInteger(out.price) && (out.price >= 100 || numericId));
+    if (isCents) {
       out.price = out.price / 100;
       if (out.was && Number.isInteger(out.was) && out.was >= 100) out.was = out.was / 100;
     }

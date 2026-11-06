@@ -168,6 +168,23 @@ class AppState extends ChangeNotifier {
     await setQty(item, cur > 0 ? cur + (item.variable ? gramsPerLb / 2 : 1) : (item.variable ? gramsPerLb : 1));
   }
 
+  /// Something bought outside these stores (or a one-off): saved as the user's own item
+  /// under "Other" and put in the cart so it counts against the budget.
+  Future<void> addManualSpend(String name, double price, {bool taxable = false, double qty = 1}) async {
+    final item = Item(
+      id: 'custom:${DateTime.now().millisecondsSinceEpoch}',
+      storeId: 'other',
+      name: name,
+      price: price,
+      taxable: taxable,
+      category: 'Other',
+      custom: true,
+      updated: DateTime.now().toIso8601String(),
+    );
+    await repo.saveCustomItem(item);
+    await setQty(item, qty);
+  }
+
   Future<void> toggleGot(CartLine l) async {
     await repo.setGot(l.item.id, !l.got);
     cart = await repo.cart();

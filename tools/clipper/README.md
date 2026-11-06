@@ -1,6 +1,6 @@
-# Budget Basket Clipper (Edge / Chrome extension)
+﻿# Budget Basket Clipper (Edge / Chrome extension)
 
-You browse Walmart, Superstore and Wholesale Club normally. The extension saves the products, prices and sale
+You browse Walmart, Superstore, Wholesale Club, No Frills, FreshCo and Shoppers normally. The extension saves the products, prices and sale
 prices on the pages **you open**, then exports them for the Budget Basket app.
 
 It does **not** open pages, search, click, scroll or send requests to the stores. It only keeps a copy of data
@@ -26,3 +26,4 @@ Items you captured earlier stay in the file for 45 days, so each week adds to th
 
 ## If the numbers look wrong
 Click **Copy diagnostics** and paste it into the chat.
+

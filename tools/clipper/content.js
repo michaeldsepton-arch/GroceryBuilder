@@ -3,7 +3,7 @@
 // scroll, it keeps a copy of the product cards that appear.
 (function () {
   const host = location.hostname;
-  const HOSTS = { walmart: 'walmart', realcanadiansuperstore: 'superstore', wholesaleclub: 'wholesaleclub',
+  const HOSTS = { walmart: 'walmart', realcanadiansuperstore: 'superstore', wholesaleclub: 'wholesaleclub', nofrills: 'nofrills',
     freshco: 'freshco', shoppersdrugmart: 'shoppers' };
   const store = HOSTS[Object.keys(HOSTS).filter(function (k) { return host.indexOf(k) >= 0; })[0]];
   // stores whose data feed we do not parse: only the cards drawn on screen are read
@@ -89,7 +89,7 @@
     if (kind === 'dom') pending.dom++; else pending.api++;
     if (raw) {
       // items sold by weight or "in singles" are where per-kg / per-each mistakes show up: keep more of those
-      const weighty = /_(KG|LB)$/i.test(String(it.id)) || /sold in/i.test(it.name || '');
+      const weighty = /_(KG|LB)$/i.test(String(it.id)) || /\bsold in\b/i.test(it.name || '');
       pending.samples.push({ k: kind === 'dom' ? 'dom' : (weighty ? 'weight' : 'api'), parsed: it, raw: JSON.stringify(pickRaw(raw)).slice(0, 1500) });
     }
     queue();

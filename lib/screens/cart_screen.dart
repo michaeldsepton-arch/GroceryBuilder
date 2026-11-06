@@ -25,6 +25,11 @@ class CartScreen extends StatelessWidget {
           child: Row(children: [
             Text('My cart', style: serif(28)),
             const Spacer(),
+            TextButton.icon(
+              onPressed: () => addManualDialog(context),
+              icon: const Icon(Icons.add_circle_outline, size: 20),
+              label: const Text('Add other'),
+            ),
             if (s.cart.isNotEmpty)
               IconButton(
                 tooltip: 'Clear cart',
@@ -46,6 +51,12 @@ class CartScreen extends StatelessWidget {
                   Text('Your cart is empty', style: serif(20)),
                   const Text('Search for items and tap Add',
                       style: TextStyle(color: BB.muted)),
+                  const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: () => addManualDialog(context),
+                    icon: const Icon(Icons.edit_note),
+                    label: const Text('Add something from another store'),
+                  ),
                 ]))
               : ListView(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -91,6 +102,74 @@ class CartScreen extends StatelessWidget {
       ]),
     );
   }
+}
+
+/// Track something from outside these stores against the budget (name + amount).
+Future<void> addManualDialog(BuildContext context) async {
+  final s = context.read<AppState>();
+  final name = TextEditingController();
+  final amount = TextEditingController();
+  final qty = TextEditingController(text: '1');
+  var gst = false;
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => StatefulBuilder(
+      builder: (ctx, setState) => AlertDialog(
+        title: const Text('Add something else'),
+        content: SingleChildScrollView(
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            const Text('For anything not in the stores here: it counts against your budget.',
+                style: TextStyle(color: BB.muted, fontSize: 13)),
+            const SizedBox(height: 10),
+            TextField(
+                controller: name,
+                autofocus: true,
+                textCapitalization: TextCapitalization.sentences,
+                decoration: const InputDecoration(labelText: 'What is it? (e.g. Bakery bread)')),
+            const SizedBox(height: 8),
+            Row(children: [
+              Expanded(
+                child: TextField(
+                    controller: amount,
+                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    decoration: const InputDecoration(labelText: 'Price each', prefixText: '\$ ')),
+              ),
+              const SizedBox(width: 10),
+              SizedBox(
+                width: 80,
+                child: TextField(
+                    controller: qty,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(labelText: 'How many')),
+              ),
+            ]),
+            CheckboxListTile(
+              contentPadding: EdgeInsets.zero,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: const Text('Add 5% GST'),
+              value: gst,
+              onChanged: (v) => setState(() => gst = v ?? false),
+            ),
+          ]),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+          FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Add')),
+        ],
+      ),
+    ),
+  );
+  final price = double.tryParse(amount.text.replaceAll(',', '.').trim());
+  final count = double.tryParse(qty.text.trim()) ?? 1;
+  if (ok != true) return;
+  if (name.text.trim().isEmpty || price == null || price < 0) {
+    if (context.mounted) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Add a name and a price')));
+    }
+    return;
+  }
+  await s.addManualSpend(name.text.trim(), price, taxable: gst, qty: count < 1 ? 1 : count);
 }
 
 Future<bool> _confirm(BuildContext context, String msg) async =>
