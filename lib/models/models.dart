@@ -104,10 +104,17 @@ class Item {
   final String note;
   final int timesBought;
 
+  /// Sales rarely last until the shop trip and prices only update when refreshed, so by
+  /// default everything is counted at the regular price. Turn on in More, Settings.
+  static bool countSales = false;
+
+  /// The price used for totals, unit prices and sorting: regular unless sale prices are counted.
+  double get effectivePrice => (onSale && !countSales) ? wasPrice! : price;
+
   double get _baseAmount => sizeValue * sizeUnit.baseFactor;
 
   UnitPrice get unitPrice =>
-      UnitPrice(sizeUnit.kind, _baseAmount <= 0 ? price : price / _baseAmount);
+      UnitPrice(sizeUnit.kind, _baseAmount <= 0 ? effectivePrice : effectivePrice / _baseAmount);
 
   bool get onSale => wasPrice != null && wasPrice! > price;
 
@@ -116,7 +123,7 @@ class Item {
 
   /// Cost of [qty] in the cart. For variable items qty is in grams.
   double lineCost(double qty) =>
-      variable ? unitPrice.perBase * qty : price * qty;
+      variable ? unitPrice.perBase * qty : effectivePrice * qty;
 
   String get sizeText => variable
       ? 'per ${sizeBoth(sizeValue, sizeUnit)}'

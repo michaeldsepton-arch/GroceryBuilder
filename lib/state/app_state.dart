@@ -76,6 +76,7 @@ class AppState extends ChangeNotifier {
     Scope.configure(await rootBundle.loadString('assets/seed/scope_terms.json'));
     halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
     repo.halalMeatOnly = halalMeatOnly;
+    Item.countSales = (await repo.setting('count_sale_prices') ?? '0') == '1';
     await _seedHalal();
     await recipes.load();
     await reload();
@@ -136,6 +137,16 @@ class AppState extends ChangeNotifier {
     halalMeatOnly = v;
     repo.halalMeatOnly = v;
     await repo.putSetting('halal_meat_only', v ? '1' : '0');
+    notifyListeners();
+  }
+
+  bool get countSales => Item.countSales;
+
+  /// Count sale prices in totals (off by default: sales usually end before the trip).
+  Future<void> setCountSales(bool v) async {
+    Item.countSales = v;
+    await repo.putSetting('count_sale_prices', v ? '1' : '0');
+    cart = await repo.cart();
     notifyListeners();
   }
 

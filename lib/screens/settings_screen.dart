@@ -102,6 +102,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onChanged: s.setHalalMeatOnly,
           ),
         ),
+        Card(
+          margin: const EdgeInsets.only(bottom: 8),
+          child: SwitchListTile(
+            secondary: const Icon(Icons.local_offer_outlined, color: BB.tomato),
+            title: const Text('Count sale prices', style: TextStyle(fontWeight: FontWeight.w700)),
+            subtitle: const Text(
+                'Off: totals, unit prices and sorting use the regular price, because sales often end before you shop. On: use the sale price shown.'),
+            value: s.countSales,
+            onChanged: s.setCountSales,
+          ),
+        ),
         _Tile(
           icon: Icons.savings_outlined,
           title: 'Weekly budget',

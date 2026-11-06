@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:budget_basket/data/db.dart';
 import 'package:budget_basket/data/repo.dart';
+import 'package:budget_basket/models/models.dart';
 import 'package:budget_basket/main.dart';
 import 'package:budget_basket/widgets/common.dart';
 import 'package:budget_basket/state/app_state.dart';
@@ -87,6 +88,19 @@ void main() {
     expect(seeded.single.variable, isTrue);
   });
 
+  test('totals use the regular price unless sale prices are counted', () {
+    final sale = Item(id: 'x', storeId: 'walmart', name: 'Rice', price: 7.49, wasPrice: 8.99);
+    Item.countSales = false;
+    expect(sale.effectivePrice, 8.99);
+    expect(sale.lineCost(2), closeTo(17.98, 0.001));
+    Item.countSales = true;
+    expect(sale.effectivePrice, 7.49);
+    expect(sale.lineCost(2), closeTo(14.98, 0.001));
+    Item.countSales = false;
+    final plain = Item(id: 'y', storeId: 'walmart', name: 'Flour', price: 5);
+    expect(plain.effectivePrice, 5);
+  });
+
   test('price drops on favourites are recorded and surfaced as alerts', () async {
     final state = await _boot(); // own database: applyCatalog replaces every store item
     Future<void> catalog(String stamp, double yogurt, double? was) => state.repo.applyCatalog({
@@ -118,7 +132,9 @@ void main() {
     expect(state.recipes.all.length, greaterThan(80));
     final r = state.recipes.all.firstWhere((r) => r.title == 'Chicken Biryani');
     expect(r.ingredients, isNotEmpty);
+    Item.countSales = true; // the 2 kg bag is on sale here; count the sale so the comparison is as before
     final rice = await state.recipes.suggest('basmati rice');
+    Item.countSales = false;
     expect(rice, isNotNull);
     expect(rice!.item.id, 'walmart:2'); // amount unknown: the 2 kg bag (only ~25% dearer per 100 g) beats a 4 kg bulk bag
     final subs = state.recipes.substitutesFor(r.ingredients.firstWhere((i) => i.name.contains('yogurt')));

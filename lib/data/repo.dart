@@ -394,7 +394,7 @@ class Repo {
 int compareItems(Item a, Item b, SortMode mode) {
   switch (mode) {
     case SortMode.price:
-      return a.price.compareTo(b.price);
+      return a.effectivePrice.compareTo(b.effectivePrice);
     case SortMode.name:
       return a.name.toLowerCase().compareTo(b.name.toLowerCase());
     case SortMode.discount:

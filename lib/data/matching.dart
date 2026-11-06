@@ -119,7 +119,7 @@ Cover cover(Item i, Need? need) {
       exact = true;
     }
   }
-  return Cover(packs, packs * i.price, exact);
+  return Cover(packs, packs * i.effectivePrice, exact);
 }
 
 // ---------- relevance ----------
@@ -259,7 +259,7 @@ double relevance(Item i, String term) {
     // pack costs about the same per unit (a spice jar, not a 1 kg bag).
     final minUnit = tier.map((i) => i.unitPrice.compareValue).reduce(math.min);
     final near = tier.where((i) => i.unitPrice.compareValue <= minUnit * 1.6 && i.unitPrice.kind == tier.first.unitPrice.kind).toList()
-      ..sort((a, b) => a.price.compareTo(b.price));
+      ..sort((a, b) => a.effectivePrice.compareTo(b.effectivePrice));
     if (near.isNotEmpty) return (item: near.first, cover: cover(near.first, need));
   }
   return (item: tier.first, cover: covers[tier.first.id]!);

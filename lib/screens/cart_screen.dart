@@ -158,7 +158,7 @@ class _CartRow extends StatelessWidget {
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(i.name, maxLines: 2, overflow: TextOverflow.ellipsis,
                       style: const TextStyle(fontWeight: FontWeight.w700)),
-                  Text('${money(i.price)} ${i.variable ? '/ ${sizeBoth(i.sizeValue, i.sizeUnit)}' : 'each'}'
+                  Text('${money(i.effectivePrice)} ${i.variable ? '/ ${sizeBoth(i.sizeValue, i.sizeUnit)}' : 'each'}'
                       '${i.taxable ? ' · +GST' : ''}',
                       style: const TextStyle(color: BB.muted, fontSize: 12)),
                   const SizedBox(height: 4),

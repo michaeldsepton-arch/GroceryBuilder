@@ -162,7 +162,7 @@ class _FreqRow extends StatelessWidget {
                       item.aisle.isEmpty),
                   if (item.spot.isNotEmpty) _Loc(item.spot, false),
                 ]),
-                Text('${money(item.price)} · ${item.unitPrice.primary}',
+                Text('${money(item.effectivePrice)} · ${item.unitPrice.primary}',
                     style: const TextStyle(color: BB.muted, fontSize: 12)),
               ]),
             ),

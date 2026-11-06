@@ -63,7 +63,7 @@ class ItemCard extends StatelessWidget {
                       style: const TextStyle(color: BB.muted, fontSize: 12.5)),
                 const SizedBox(height: 6),
                 Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                  Text(money(item.price), style: serif(22)),
+                  Text(money(item.effectivePrice), style: serif(22)),
                   const SizedBox(width: 6),
                   if (item.sizeText.isNotEmpty)
                     Flexible(
@@ -74,11 +74,11 @@ class ItemCard extends StatelessWidget {
                     ),
                 ]),
                 if (item.onSale)
-                  Text('Was ${money(item.wasPrice!)} · save ${money(item.wasPrice! - item.price)}',
-                      style: const TextStyle(
-                          color: BB.tomato,
-                          fontSize: 12,
-                          decoration: TextDecoration.lineThrough)),
+                  Text(
+                      Item.countSales
+                          ? 'Was ${money(item.wasPrice!)} · save ${money(item.wasPrice! - item.price)}'
+                          : 'Sale: ${money(item.price)} when last checked (may have ended)',
+                      style: const TextStyle(color: BB.tomato, fontSize: 12)),
                 const SizedBox(height: 4),
                 Wrap(spacing: 6, runSpacing: 4, children: [
                   _Pill(up.primary, best ? BB.gold : BB.green100,
@@ -194,18 +194,24 @@ class _ItemSheetState extends State<ItemSheet> {
           Row(children: [StoreTag(store), const SizedBox(width: 8), if (it.brand.isNotEmpty) Text(it.brand, style: const TextStyle(color: BB.muted))]),
           const SizedBox(height: 10),
           Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-            Text(money(it.price), style: serif(32)),
+            Text(money(it.effectivePrice), style: serif(32)),
             const SizedBox(width: 8),
             Text(it.sizeText, style: const TextStyle(color: BB.muted)),
           ]),
           const SizedBox(height: 4),
           Text('${it.unitPrice.primary}   ${it.unitPrice.secondary}',
               style: const TextStyle(fontWeight: FontWeight.w700, color: BB.green700)),
+          if (it.onSale)
+            Text(
+                Item.countSales
+                    ? 'On sale: was ${money(it.wasPrice!)}'
+                    : 'Regular price ${money(it.wasPrice!)}. On sale for ${money(it.price)} when last checked; sales often end before you shop, so totals use the regular price.',
+                style: const TextStyle(color: BB.tomato, fontSize: 12.5)),
           if (it.taxable)
             const Text('5% GST applies', style: TextStyle(color: BB.goldDark)),
           const SizedBox(height: 14),
           Align(alignment: Alignment.centerLeft, child: CartControl(it)),
-          _History(it.id, it.price),
+          _History(it.id, it.effectivePrice),
           const Divider(height: 32),
           Text('Where to find it in the store', style: serif(18)),
           const SizedBox(height: 10),
