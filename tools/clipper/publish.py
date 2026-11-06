@@ -43,8 +43,10 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     flags = sys.argv[1:]
     dl = os.path.join(os.path.expanduser("~"), "Downloads")
-    src = args[0] if args else next((os.path.join(dl, n) for n in ("budget-basket-catalog.json.gz", "budget-basket-catalog.txt")
-                                     if os.path.exists(os.path.join(dl, n))), None)
+    import glob
+    found = sorted(glob.glob(os.path.join(dl, "budget-basket-catalog*.json.gz")) + glob.glob(os.path.join(dl, "budget-basket-catalog*.txt")),
+                   key=os.path.getmtime)
+    src = args[0] if args else (found[-1] if found else None)
     if not src:
         sys.exit("No export found in Downloads. In the extension click Export prices for the app first.")
     new = load(src)
@@ -89,8 +91,14 @@ def main():
     for i in out["items"]:
         counts[i["store"]] = counts.get(i["store"], 0) + 1
     print(f"export {len(new.get('items', []))} items + {kept_old} already published -> {len(out['items'])}: {counts}")
+    # Safety copies: every export and every published catalog is kept on this PC with the date.
+    bdir = os.path.join(os.path.expanduser("~"), "Documents", "BudgetBasket-catalog-backups")
+    os.makedirs(bdir, exist_ok=True)
+    stampname = now.strftime("%Y%m%d-%H%M%S")
+    open(os.path.join(bdir, f"export-{stampname}.json.gz"), "wb").write(open(src, "rb").read())
     tmp = os.path.join(tempfile.gettempdir(), "catalog.json.gz")
     open(tmp, "wb").write(gzip.compress(json.dumps(out, separators=(",", ":")).encode()))
+    open(os.path.join(bdir, f"published-{stampname}.json.gz"), "wb").write(open(tmp, "rb").read())
     if "--no-upload" in flags:
         print("wrote", tmp)
         return

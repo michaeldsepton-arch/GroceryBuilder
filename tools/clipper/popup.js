@@ -68,7 +68,7 @@ $('export').onclick = async () => {
   const catalog = { generated: new Date().toISOString(), stores, items };
   const blob = new Blob([await gzip(JSON.stringify(catalog))], { type: 'application/gzip' });
   const url = URL.createObjectURL(blob);
-  chrome.downloads.download({ url, filename: 'budget-basket-catalog.json.gz', conflictAction: 'overwrite', saveAs: false }, () => {
+  chrome.downloads.download({ url, filename: 'budget-basket-catalog.json.gz', conflictAction: 'uniquify', saveAs: false }, () => {
     $('msg').textContent = items.length + ' items saved to your Downloads folder as budget-basket-catalog.json.gz. Now double-click publish.bat.';
   });
 };
