@@ -124,4 +124,16 @@ assert.strictEqual(P.repairOld({ id: 'walmart:10052944', store: 'walmart', name:
 assert.strictEqual(P.repairOld({ id: 'walmart:1', store: 'walmart', name: 'X', price: 5, src: 'dom' }).price, 5);
 assert.strictEqual(P.repairOld({ id: 'superstore:1_EA', store: 'superstore', name: 'X', price: 500 }).price, 500);
 
+// real Superstore category-tile shapes
+const tomato = P.loblawItem('superstore', { productId: '20143381001_KG', title: 'Roma Tomatoes', packageSizing: '$7.69/1kg $3.49/1lb',
+  pricing: { price: '0.92', wasPrice: null, displayPrice: 'about $0.92' }, pricingUnits: { type: 'SOLD_BY_EACH_PRICED_BY_WEIGHT', unit: 'ea', weighted: false }, textBadge: '' });
+assert.strictEqual(tomato.price, 0.92); assert.strictEqual(tomato.unit, 'each'); assert.strictEqual(tomato.size, 1); assert.ok(!tomato.variable);
+const mini = P.loblawItem('superstore', { productId: '21247300001_EA', title: 'Yellow Mini Potatoes', packageSizing: '0.68 kg, $0.51/100g',
+  pricing: { price: '3.50', wasPrice: null }, pricingUnits: { type: 'SOLD_BY_EACH', unit: 'ea', weighted: false }, textBadge: '' });
+assert.strictEqual(mini.price, 3.5); assert.strictEqual(mini.size, 0.68); assert.strictEqual(mini.unit, 'kg'); assert.ok(!mini.variable);
+const beef = P.loblawItem('superstore', { productId: '1_KG', title: 'Lean Ground Beef', packageSizing: '$33.66/1kg $15.27/1lb',
+  pricing: { price: '33.66' }, pricingUnits: { type: 'SOLD_BY_WEIGHT', unit: 'kg', weighted: true }, textBadge: '' });
+assert.ok(beef.variable); assert.strictEqual(beef.unit, 'kg'); assert.strictEqual(beef.price, 33.66);
+assert.strictEqual(P.loblawItem('superstore', { productId: '2_KG', title: 'Red Peppers', pricing: { price: '2.01' }, textBadge: 'out-of-stock' }), null);
+
 console.log('all parse tests passed');

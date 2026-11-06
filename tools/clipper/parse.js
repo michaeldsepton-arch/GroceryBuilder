@@ -49,13 +49,27 @@
     p = Object.assign({}, p, { code: code, name: p.name || p.title, packageSizing: p.packageSizing || p.packageSize,
       productImage: p.productImage || (p.imageUrl ? [{ imageUrl: p.imageUrl }] : null) });
     if (!p.code || !p.name) return null;
+    if (/out[- _]?of[- _]?stock/i.test(String(p.textBadge || ''))) return null;
     const was = priceVal(prices.wasPrice);
     const sizing = p.packageSizing || '';
     let sz = parseSize(sizing), size = sz[0], unit = sz[1];
     const pu = prices.price && typeof prices.price === 'object' ? prices.price.unit : null;
     const variable = ['lb', 'kg', '100g'].indexOf(pu) >= 0 || /\b(approx|per)\b/i.test(sizing);
     let isVariable = false;
-    if (variable) {
+    // Category-page tiles say how an item is sold. "SOLD_BY_EACH_PRICED_BY_WEIGHT" (Roma tomatoes,
+    // onions, peppers) shows the price of ONE piece ("about $0.92"); the $/kg in packageSizing is only
+    // the shelf rate, so it must not become the size. A real by-weight item is priced per kg/lb.
+    const unitsType = String((p.pricingUnits || {}).type || '');
+    const eachByWeight = /SOLD_BY_EACH/.test(unitsType) && /PRICED_BY_WEIGHT/.test(unitsType);
+    const byWeight = !eachByWeight && (/^SOLD_BY_WEIGHT/.test(unitsType) || (p.pricingUnits || {}).weighted === true);
+    if (eachByWeight) {
+      size = 1; unit = 'each';
+    } else if (byWeight) {
+      isVariable = true;
+      const w = /\/\s*1?\s*(kg|lb|100\s*g)\b/i.exec(sizing);
+      const u = w ? w[1].toLowerCase().replace(/\s+/g, '') : 'kg';
+      if (u === 'lb') { size = 1; unit = 'lb'; } else if (u === 'kg') { size = 1; unit = 'kg'; } else { size = 100; unit = 'g'; }
+    } else if (variable) {
       isVariable = true;
       if (pu === 'lb') { size = 1; unit = 'lb'; }
       else if (pu === 'kg') { size = 1; unit = 'kg'; }
@@ -73,7 +87,7 @@
     const host = banner === 'superstore' ? 'realcanadiansuperstore' : 'wholesaleclub';
     return mk(banner, p.code, p.name, price, {
       brand: p.brand, img: img, was: (was && was > price) ? was : null, size: Math.round(size * 1000) / 1000, unit: unit,
-      variable: isVariable, taxable: guessTaxable(p.name, crumbs), cat: cat,
+      variable: isVariable, taxable: guessTaxable(p.name, crumbs), cat: cat, pv: 2,
       url: p.link ? 'https://www.' + host + '.ca' + p.link : null,
     });
   }
