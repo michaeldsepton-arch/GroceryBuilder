@@ -16,7 +16,7 @@
     },
     {
       "matches": ["https://www.walmart.ca/*", "https://www.realcanadiansuperstore.ca/*", "https://www.wholesaleclub.ca/*",
-        "https://www.freshco.com/*", "https://www.shoppersdrugmart.ca/*", "https://www.dollarama.com/*"],
+        "https://www.freshco.com/*", "https://www.shoppersdrugmart.ca/*"],
       "js": ["parse.js", "content.js"],
       "run_at": "document_idle"
     }

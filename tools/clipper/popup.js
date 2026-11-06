@@ -4,7 +4,6 @@ const STORES = {
   walmart: { id: 'walmart', name: 'Walmart', color: 0xFF0071CE, location: '6375 50 Ave, Red Deer', online: true },
   freshco: { id: 'freshco', name: 'FreshCo', color: 0xFF2E8B3D, location: 'Red Deer', online: true },
   shoppers: { id: 'shoppers', name: 'Shoppers Drug Mart', color: 0xFFC8102E, location: 'Clearview', online: true },
-  dollarama: { id: 'dollarama', name: 'Dollarama', color: 0xFF0B8A3E, location: 'Red Deer', online: true },
 };
 const STALE_DAYS = 45;
 const $ = (id) => document.getElementById(id);

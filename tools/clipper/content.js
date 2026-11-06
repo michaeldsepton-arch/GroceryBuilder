@@ -4,10 +4,10 @@
 (function () {
   const host = location.hostname;
   const HOSTS = { walmart: 'walmart', realcanadiansuperstore: 'superstore', wholesaleclub: 'wholesaleclub',
-    freshco: 'freshco', shoppersdrugmart: 'shoppers', dollarama: 'dollarama' };
+    freshco: 'freshco', shoppersdrugmart: 'shoppers' };
   const store = HOSTS[Object.keys(HOSTS).filter(function (k) { return host.indexOf(k) >= 0; })[0]];
   // stores whose data feed we do not parse: only the cards drawn on screen are read
-  const generic = ['freshco', 'shoppers', 'dollarama'].indexOf(store) >= 0;
+  const generic = ['freshco', 'shoppers'].indexOf(store) >= 0;
   const P = globalThis.BBParse;
   let pending = { items: [], hints: null, samples: [], urls: [], api: 0, dom: 0 };
   let timer = null, shown = 0;
