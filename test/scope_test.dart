@@ -49,6 +49,10 @@ void main() {
       'Bouncy Castle for Kids',
       'Random Gadget XYZ 3000',
       'Lawn Mower Blade Replacement',
+      'Cotton Lace Thong',
+      'Toddler Fleece Jogger',
+      'Oral-B iO Series 3 Electric Toothbrush',
+      'Poppy Playtime Huggy Wuggy',
     ]) {
       expect(Scope.inScope(n, '', ''), isFalse, reason: n);
     }

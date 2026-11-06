@@ -83,7 +83,8 @@
 
   function addItem(it, raw, kind) {
     if (!it) return;
-    if (!it.cat) it.cat = pathCat();
+    // the page's department fits what its own data feed lists; cards drawn on screen can be carousels of anything
+    if (!it.cat && kind !== 'dom') it.cat = pathCat();
     pending.items.push(it);
     if (kind === 'dom') pending.dom++; else pending.api++;
     if (raw) {
@@ -167,7 +168,7 @@
 
   function scan() {
     let added = 0;
-    const cat = textOf(document.querySelector('h1')).slice(0, 60);
+    const cat = '';
     const links = document.querySelectorAll('a[href]');
     const done = {};
     for (let i = 0; i < links.length; i++) {

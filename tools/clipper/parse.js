@@ -115,7 +115,7 @@
     t = t.replace(/\bsave\s*\$\s*\d+(?:\.\d{1,2})?/ig, ' ')
       .replace(/\$\s*\d+(?:\.\d+)?\s*\/\s*(?:100\s*(?:g|ml)|ea|each|unit)\b/ig, ' ')
       .replace(/\d+\s*for\s*\$\s*\d+(?:\.\d{1,2})?/ig, ' ');
-    const pm = /\$\s*(\d{1,4}(?:,\d{3})*(?:\.\d{1,2})?)(\s*(?:\/|per)\s*(lb|kg|100\s*g))?/i.exec(t);
+    const pm = /\$\s*(\d{1,4}(?:,\d{3})*(?:\.\d{1,2})?)(\s*(?:\/|per)\s*1?\s*(lb|kg|100\s*g))?/i.exec(t);
     if (!pm) return null;
     const price = parseFloat(pm[1].replace(/,/g, ''));
     let variable = false, size = null, unit = null;
@@ -124,7 +124,8 @@
       const u = pm[3].toLowerCase().replace(/\s+/g, '');
       if (u === 'lb') { size = 1; unit = 'lb'; } else if (u === 'kg') { size = 1; unit = 'kg'; } else { size = 100; unit = 'g'; }
     } else {
-      const sz = parseSize(t.replace(/\$\s*[\d.,]+/g, ' '));
+      // "$9.90/1kg" next to "about $3.76" is only the shelf rate, never the size
+      const sz = parseSize(t.replace(/\$\s*[\d.,]+(?:\s*\/\s*\d*\s*[a-z]+)?/gi, ' '));
       size = sz[0]; unit = sz[1];
     }
     return { price: price, was: (was && was > price) ? was : null, variable: variable, size: size, unit: unit };

@@ -136,4 +136,10 @@ const beef = P.loblawItem('superstore', { productId: '1_KG', title: 'Lean Ground
 assert.ok(beef.variable); assert.strictEqual(beef.unit, 'kg'); assert.strictEqual(beef.price, 33.66);
 assert.strictEqual(P.loblawItem('superstore', { productId: '2_KG', title: 'Red Peppers', pricing: { price: '2.01' }, textBadge: 'out-of-stock' }), null);
 
+// on-screen weight-priced card: "about $3.76" with a $/kg shelf rate is ONE piece, not a kilo
+const cf = P.domItem('superstore', { id: '20143564_KG', name: 'Cauliflower Florets', text: 'about $3.76\n\nCauliflower Florets\n\n$9.90/1kg $4.49/1lb' });
+assert.strictEqual(cf.price, 3.76); assert.strictEqual(cf.unit, 'each'); assert.strictEqual(cf.size, 1); assert.ok(!cf.variable);
+const gb = P.domItem('superstore', { id: '1_KG', name: 'Lean Ground Beef', text: '$33.66/1kg $15.27/1lb\n\nLean Ground Beef' });
+assert.ok(gb.variable); assert.strictEqual(gb.unit, 'kg');
+
 console.log('all parse tests passed');
