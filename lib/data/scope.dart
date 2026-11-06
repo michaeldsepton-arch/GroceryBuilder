@@ -6,7 +6,7 @@ import 'dart:convert';
 /// A term with a space (or dash) matches as a phrase, a single word matches a whole word.
 class Scope {
   /// Bump when the rules change so the app re-imports prices with the new rules.
-  static const version = 5;
+  static const version = 6;
 
   static List<String> _block = [];
   static List<String> _keep = [];
@@ -65,7 +65,8 @@ class Scope {
     if (_any(text, _keep)) return true;
     if (_any(text, _block)) return false;
     if (category.isNotEmpty && _any(category, _blockCategory)) return false;
-    return true;
+    // Allow-list: it must fit a shopping category, otherwise it is not a grocery-trip item.
+    return categoryOf(name, category) != 'Other';
   }
 
   /// Shopping category used to browse and sort. The store's own category text is

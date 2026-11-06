@@ -17,6 +17,11 @@ void main() {
       'All Beef Frozen Corn Dogs',
       'Kettle Style Blue Corn Tortilla Chips',
       'Light Laundry Scent Booster Beads, No Heavy Perfumes',
+      'Atemoya',
+      'Hand Towel, White',
+      'Energizer MAX AA Batteries (24 Pack)',
+      'Kikkoman Soy Sauce Bottle',
+      'Corn Starch',
     ]) {
       expect(Scope.inScope(n, '', ''), isTrue, reason: n);
     }
@@ -40,6 +45,10 @@ void main() {
       'Cat Dry Food',
       'Halloween Greeter',
       'TopLLC Mini Projector Portable',
+      'Inflatable Bounce House with Slide',
+      'Bouncy Castle for Kids',
+      'Random Gadget XYZ 3000',
+      'Lawn Mower Blade Replacement',
     ]) {
       expect(Scope.inScope(n, '', ''), isFalse, reason: n);
     }

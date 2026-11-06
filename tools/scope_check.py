@@ -37,7 +37,8 @@ def in_scope(name, brand="", cat=""):
         cs, ct = tokens(cat)
         if any(has(cs, ct, x) for x in RULES["block_category"]):
             return False
-    return True
+    # allow-list: it must belong to a shopping category (anything else is not a grocery-trip item)
+    return category(name, cat) != "Other"
 
 
 def category(name, cat=""):
