@@ -3,6 +3,7 @@
   "note": "Prices read from the in-store board photo (all per lb). Edit in the app when they change.",
   "items": [
     {"id": "chicken-leg-skinless", "name": "Chicken Leg (skinless)", "price": 3.99, "search": "raw chicken leg quarter skinless", "verify": true},
+    {"id": "chicken-leg-skin",       "name": "Chicken Leg (with skin)", "price": 3.75, "search": "raw chicken leg quarter"},
     {"id": "chicken-drumstick",    "name": "Chicken Drumsticks",     "price": 3.89, "search": "raw chicken drumsticks"},
     {"id": "chicken-wings",        "name": "Chicken Wings",          "price": 5.99, "search": "raw chicken wings"},
     {"id": "chicken-thigh",        "name": "Chicken Thighs",         "price": 5.99, "search": "raw chicken thighs"},

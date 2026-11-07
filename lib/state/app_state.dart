@@ -89,11 +89,17 @@ class AppState extends ChangeNotifier {
 
   /// One-time: add the halal market meats read from the in-store price board.
   Future<void> _seedHalal() async {
-    if (await repo.setting('seed_halal_v1') != null) return;
     final seed = jsonDecode(await rootBundle.loadString('assets/seed/halal.json'))
         as Map<String, dynamic>;
     for (final m in (seed['items'] as List).cast<Map<String, dynamic>>()) {
       final id = 'seed:halal:${m['id']}';
+      // Each meat is added once, so new ones reach phones that already had the first batch.
+      final flag = 'seed_halal:${m['id']}';
+      if (await repo.setting(flag) != null) continue;
+      if (await repo.setting('seed_halal_v1') != null && m['id'] != 'chicken-leg-skin') {
+        await repo.putSetting(flag, '1');
+        continue;
+      }
       await repo.saveCustomItem(Item(
         id: id,
         storeId: seed['store'] as String,
@@ -108,6 +114,7 @@ class AppState extends ChangeNotifier {
         updated: DateTime.now().toIso8601String(),
       ));
       await repo.updateMeta(id, spot: 'Meat counter');
+      await repo.putSetting(flag, '1');
     }
     await repo.putSetting('seed_halal_v1', '1');
   }
