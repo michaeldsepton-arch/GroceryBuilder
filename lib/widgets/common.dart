@@ -42,32 +42,37 @@ class ItemImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fallback = Container(
-      width: size,
-      height: size,
-      color: BB.green100,
-      child: Icon(_categoryIcon(Scope.categoryOf(item.name, item.category)),
-          color: BB.green500, size: size * 0.42),
-    );
-    Widget child = fallback;
+    // Built only when there is no picture (looking up the category for every card made scrolling slow).
+    Widget fallbackBox({bool plain = false}) => Container(
+          width: size,
+          height: size,
+          color: BB.green100,
+          child: Icon(plain ? Icons.shopping_basket_outlined : _categoryIcon(Scope.categoryOf(item.name, item.category)),
+              color: BB.green500, size: size * 0.42),
+        );
+    Widget child = const SizedBox.shrink();
+    var needFallback = true;
     if (item.photoPath != null && item.photoPath!.startsWith('asset:')) {
+      needFallback = false;
       child = Image.asset(item.photoPath!.substring(6), width: size, height: size,
-          fit: BoxFit.cover, errorBuilder: (_, _, _) => fallback);
+          fit: BoxFit.cover, errorBuilder: (_, _, _) => fallbackBox(plain: true));
     } else if (item.photoPath != null && item.photoPath!.isNotEmpty) {
       final f = File('${context.read<AppState>().photoDir}/${item.photoPath}');
+      needFallback = false;
       child = Image.file(f, width: size, height: size, fit: BoxFit.cover,
-          errorBuilder: (_, _, _) => fallback);
+          errorBuilder: (_, _, _) => fallbackBox(plain: true));
     } else if (ImagePolicy.network && item.imageUrl != null && item.imageUrl!.isNotEmpty) {
+      needFallback = false;
       child = CachedNetworkImage(
         imageUrl: item.imageUrl!,
         width: size,
         height: size,
         fit: BoxFit.cover,
-        placeholder: (_, _) => fallback,
-        errorWidget: (_, _, _) => fallback,
+        placeholder: (_, _) => fallbackBox(plain: true),
+        errorWidget: (_, _, _) => fallbackBox(plain: true),
       );
     }
-    return ClipRRect(borderRadius: BorderRadius.circular(radius), child: child);
+    return ClipRRect(borderRadius: BorderRadius.circular(radius), child: needFallback ? fallbackBox() : child);
   }
 }
 

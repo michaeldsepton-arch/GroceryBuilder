@@ -270,7 +270,7 @@ class Repo {
     final kept = <Map<String, dynamic>>[];
     var seen = 0;
     for (final m in items.cast<Map<String, dynamic>>()) {
-      if (++seen % 300 == 0) await Future<void>.delayed(Duration.zero);
+      if (++seen % 60 == 0) await Future<void>.delayed(Duration.zero);
       final price = (m['price'] as num?)?.toDouble();
       if (price == null || m['id'] == null || m['name'] == null) continue;
       if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
