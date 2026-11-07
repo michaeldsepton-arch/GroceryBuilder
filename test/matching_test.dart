@@ -45,6 +45,16 @@ void main() {
       expect(best.item.id, '3');
     });
 
+    test('butter beans and butter lettuce are not butter', () {
+      final cheap = it('1', 'Butter Beans 540 mL', 1.0, 540, Unit.ml);
+      final lettuce = it('2', 'Butter Lettuce each', 2.0, 1, Unit.each);
+      final butter = it('3', 'Salted Butter 454 g', 5.99, 454, Unit.g);
+      expect(relevance(cheap, 'butter'), 0);
+      expect(relevance(lettuce, 'butter'), 0);
+      expect(relevance(butter, 'butter'), greaterThan(0));
+      expect(relevance(cheap, 'butter beans'), greaterThan(0));
+    });
+
     test('chips do not match the plain ingredient', () {
       final items = [
         it('1', 'Salt & Vinegar Chips 220 g', 3.0, 220, Unit.g),

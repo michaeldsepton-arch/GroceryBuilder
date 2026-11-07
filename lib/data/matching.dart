@@ -187,6 +187,12 @@ const _diverting = {
 };
 final Set<String> _headsSing = _heads.map(_sing).toSet();
 
+/// A word right after the ingredient that makes a different food ("butter beans", "butter chicken", "butter tarts").
+const _divertingAfter = {
+  'bean', 'chicken', 'tart', 'lettuce', 'squash', 'toffee', 'crunch', 'pecan', 'brickle', 'ripple', 'finger',
+  'cup', 'nut', 'scotch', 'naan', 'masala', 'tofu', 'cookie',
+};
+
 final _cut = RegExp(r'\s(?:with|in|for|from|made|contains)\s|,|\s-\s|\||;', caseSensitive: false);
 
 /// The product's own name: before "with ...", commas and sizes.
@@ -218,6 +224,12 @@ double relevance(Item i, String term) {
   for (final n in nt) {
     if (termSet.contains(n)) continue;
     if (_strictSing.contains(n) || _diverting.contains(n)) return 0;
+  }
+  for (var k = 0; k + tt.length < nt.length; k++) {
+    if (nt.sublist(k, k + tt.length).join(' ') == tt.join(' ') && _divertingAfter.contains(nt[k + tt.length]) &&
+        !termSet.contains(nt[k + tt.length])) {
+      return 0;
+    }
   }
   final brand = _tokens(i.brand).toSet();
   var extra = 0;

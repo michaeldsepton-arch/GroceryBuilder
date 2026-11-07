@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../data/matching.dart';
 import '../data/repo.dart';
 import '../models/models.dart';
 import '../state/app_state.dart';
@@ -22,6 +23,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
   final Set<String> stores = {};
   SortMode sort = SortMode.unitPrice;
   List<Item> results = [];
+  int matches = 0;
   bool loading = true;
 
   @override
@@ -35,9 +37,16 @@ class _OptionsScreenState extends State<OptionsScreen> {
     setState(() => loading = true);
     final r = await repo.search(ctrl.text, storeIds: stores);
     r.sort((a, b) => compareItems(a, b, sort));
+    // Real matches first ("butter" before "butter beans"), each group in the chosen order.
+    final term = ctrl.text.trim();
+    final good = <Item>[], rest = <Item>[];
+    for (final i in r) {
+      (term.isNotEmpty && relevance(i, term) > 0 ? good : rest).add(i);
+    }
     if (!mounted) return;
     setState(() {
-      results = r;
+      matches = good.length;
+      results = [...good, ...rest];
       loading = false;
     });
   }
@@ -84,7 +93,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
           child: Row(children: [
             Expanded(
-              child: Text(loading ? 'Searching…' : '${results.length} options',
+              child: Text(loading ? 'Searching…' : matches > 0 && matches < results.length ? '$matches best matches, then ${results.length - matches} others' : '${results.length} options',
                   overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
             ),
             SizedBox(
