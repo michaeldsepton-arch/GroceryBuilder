@@ -145,4 +145,7 @@ assert.ok(gb.variable); assert.strictEqual(gb.unit, 'kg');
 assert.strictEqual(P.repairOld({ id: 'walmart:10035490', store: 'walmart', name: 'Taco Sauce', price: 397, pv: 2 }).price, 3.97);
 assert.strictEqual(P.repairOld({ id: 'walmart:9', store: 'walmart', name: 'Big case', price: 12000, pv: 2 }).price, 12000);
 
+assert.strictEqual(P.cleanName('Click here to go to Dare Real Fruit Gummies 300 g product detail page'), 'Dare Real Fruit Gummies 300 g');
+assert.strictEqual(P.repairOld({ id: 'freshco:1', store: 'freshco', name: 'Click here to go to Mangoes Red 3 Count product detail page', price: 3 }).name, 'Mangoes Red 3 Count');
+
 console.log('all parse tests passed');

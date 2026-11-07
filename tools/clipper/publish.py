@@ -13,6 +13,7 @@ import datetime
 import gzip
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -28,15 +29,41 @@ def load(path_or_bytes):
     return json.loads(gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw)
 
 
+def clean_name(i):
+    """FreshCo wraps names in hidden link text; garbled accents (lost letters) become e-acute, the usual French one."""
+    n = re.sub(r"^\s*click here to go to\s+", "", i.get("name") or "", flags=re.I)
+    n = re.sub(r"\s+product detail page\s*$", "", n, flags=re.I)
+    i["name"] = re.sub(r"\s+", " ", n.replace("�", "é")).strip()
+    if i.get("brand"):
+        i["brand"] = i["brand"].replace("�", "é")
+
+
 def fix_walmart(i):
+    """Walmart sometimes gives cents (397 for $3.97, 200 for $2.00). A whole-dollar grocery price of $100-$2000 is cents too."""
     if i.get("store") != "walmart":
         return
     p = i["price"]
-    if float(p).is_integer() and p >= 100 and int(p) % 100 != 0:
+    if float(p).is_integer() and 100 <= p <= 2000:
         i["price"] = round(p / 100, 2)
         w = i.get("was")
-        if w and float(w).is_integer() and w >= 100 and int(w) % 100 != 0:
+        if w and float(w).is_integer() and 100 <= w <= 2000:
             i["was"] = round(w / 100, 2)
+    elif float(p).is_integer() and p > 2000 and int(p) % 100 != 0:
+        i["price"] = round(p / 100, 2)
+
+
+def fix_prices(i):
+    """Regular price must make sense: a 'was' price is kept only if it is above the price, and a price under a tenth
+    of the regular price is a per-unit rate that slipped in ($0.09 wipes), so the regular price is used."""
+    w = i.get("was")
+    if w and w <= i["price"]:
+        i.pop("was", None)
+    elif w and i["price"] * 10 < w:
+        i["price"] = w
+        i.pop("was", None)
+
+
+MAX_PRICE = 400  # a family grocery trip: bulk and restaurant-size listings are dropped
 
 
 def main():
@@ -82,7 +109,11 @@ def main():
     best = {}
     score = lambda x: (2 if x.get("img") else 0) + (1 if x.get("was") else 0) + (1 if x.get("pv") else 0)
     for i in items.values():
+        clean_name(i)
         fix_walmart(i)
+        fix_prices(i)
+        if i["price"] > MAX_PRICE or i["price"] <= 0:
+            continue
         k = (i["store"], i["name"].lower().strip(), (i.get("brand") or "").lower().strip(), i.get("size"), i.get("unit"), i["price"])
         if k not in best or score(i) > score(best[k]):
             best[k] = i

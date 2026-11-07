@@ -23,8 +23,13 @@
     return TAXABLE.test(Array.prototype.filter.call(arguments, Boolean).join(' '));
   }
 
+  // Some sites wrap the name in hidden link text: "Click here to go to X product detail page".
+  function cleanName(n) {
+    return String(n || '').replace(/^\s*click here to go to\s+/i, '').replace(/\s+product detail page\s*$/i, '').replace(/\s+/g, ' ').trim();
+  }
+
   function mk(store, pid, name, price, extra) {
-    const d = { id: store + ':' + pid, store: store, name: String(name || '').trim(), price: Math.round(price * 100) / 100 };
+    const d = { id: store + ':' + pid, store: store, name: cleanName(name), price: Math.round(price * 100) / 100 };
     Object.keys(extra || {}).forEach(function (k) {
       const v = extra[k];
       if (v !== null && v !== undefined && v !== '' && v !== false) d[k] = v;
@@ -231,12 +236,14 @@
   // Walmart items saved before parser v2 may hold the price in cents (397 for $3.97) or treat a
   // single tomato "0.10 - 0.14 KG" as sold by the kilo. Fixed here; v2 items carry pv: 2.
   function repairOld(item) {
+    if (item.name) { const cn = cleanName(item.name); if (cn !== item.name) item = Object.assign({}, item, { name: cn }); }
     if (item.store !== 'walmart' || item.src === 'dom') return item;
     const out = Object.assign({}, item);
     const numericId = /^\d+$/.test(String(item.id).split(':')[1] || '');
     const cents = function (v) { return typeof v === 'number' && Number.isInteger(v) && v >= 100 && v % 100 !== 0; };
     // old items: integer prices are cents; newer ones can still slip through (397 for $3.97)
-    const isCents = item.pv ? cents(out.price) : (Number.isInteger(out.price) && (out.price >= 100 || numericId));
+    // a whole-dollar price of $100 to $2000 on a grocery item is cents as well (200 for a $2 parsnip)
+    const isCents = item.pv ? (cents(out.price) || (Number.isInteger(out.price) && out.price >= 100 && out.price <= 2000)) : (Number.isInteger(out.price) && (out.price >= 100 || numericId));
     if (isCents) {
       out.price = out.price / 100;
       if (out.was && Number.isInteger(out.was) && out.was >= 100) out.was = out.was / 100;
@@ -247,6 +254,6 @@
   }
 
   root.BBParse = { repairOld: repairOld, dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
-    parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
+    cleanName: cleanName, parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
   if (typeof module !== 'undefined') module.exports = root.BBParse;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

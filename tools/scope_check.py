@@ -23,8 +23,16 @@ def tokens(text):
     return s, t
 
 
+_RE = {}
+
+
 def has(s, t, term):
-    return term in s if (" " in term or "-" in term) else term in t
+    if " " in term or "-" in term:  # a phrase must start and end on a word edge ("air conditioner" is not "hair conditioner")
+        rx = _RE.get(term)
+        if rx is None:
+            rx = _RE[term] = re.compile(r"(?<![a-z0-9])" + re.escape(term) + r"s?(?![a-z0-9])")
+        return rx.search(s) is not None
+    return term in t
 
 
 def in_scope(name, brand="", cat=""):
@@ -37,6 +45,9 @@ def in_scope(name, brand="", cat=""):
         cs, ct = tokens(cat)
         if any(has(cs, ct, x) for x in RULES["block_category"]):
             return False
+    soft = any(has(s, t, x) for x in RULES.get("block_soft", []))
+    if soft and category(name, cat) == "Other":
+        return False
     # allow-list: it must belong to a shopping category (anything else is not a grocery-trip item)
     return category(name, cat) != "Other"
 
@@ -49,6 +60,11 @@ def category(name, cat=""):
         for c in RULES["categories"]:
             if any(has(s, t, x) for x in c["terms"]):
                 return c["name"]
+    # the store's own tag ("food", "Personal Care") when no word matched
+    cs, ct = tokens(cat or "")
+    for f in RULES.get("category_fallback", []):
+        if cat and has(cs, ct, f["match"]):
+            return f["category"]
     return "Other"
 
 

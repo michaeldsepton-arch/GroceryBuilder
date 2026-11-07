@@ -6,11 +6,14 @@ import 'dart:convert';
 /// A term with a space (or dash) matches as a phrase, a single word matches a whole word.
 class Scope {
   /// Bump when the rules change so the app re-imports prices with the new rules.
-  static const version = 6;
+  static const version = 7;
 
   static List<String> _block = [];
   static List<String> _keep = [];
   static List<String> _blockCategory = [];
+  static List<String> _blockSoft = [];
+  static final List<MapEntry<String, String>> _fallback = [];
+  static final Map<String, RegExp> _phrases = {};
   static final List<MapEntry<String, List<String>>> _categories = [];
   static final Map<String, String> _memo = {};
   static bool _ready = false;
@@ -23,10 +26,16 @@ class Scope {
     _block = list('block');
     _keep = list('keep');
     _blockCategory = list('block_category');
+    _blockSoft = list('block_soft');
+    _phrases.clear();
     _categories.clear();
     for (final c in (m['categories'] as List? ?? const []).cast<Map<String, dynamic>>()) {
       _categories.add(MapEntry(c['name'] as String,
           (c['terms'] as List).cast<String>().map((s) => s.toLowerCase()).toList()));
+    }
+    _fallback.clear();
+    for (final f in (m['category_fallback'] as List? ?? const []).cast<Map<String, dynamic>>()) {
+      _fallback.add(MapEntry((f['match'] as String).toLowerCase(), f['category'] as String));
     }
     _memo.clear();
     _ready = true;
@@ -46,8 +55,13 @@ class Scope {
     return t;
   }
 
-  static bool _has(String lower, Set<String> tokens, String term) =>
-      term.contains(' ') || term.contains('-') ? lower.contains(term) : tokens.contains(term);
+  /// A phrase must start and end on a word edge ("air conditioner" is not "hair conditioner").
+  static bool _has(String lower, Set<String> tokens, String term) {
+    if (!term.contains(' ') && !term.contains('-')) return tokens.contains(term);
+    final rx = _phrases.putIfAbsent(
+        term, () => RegExp('(?<![a-z0-9])${RegExp.escape(term)}s?(?![a-z0-9])'));
+    return rx.hasMatch(lower);
+  }
 
   static bool _any(String text, List<String> terms) {
     final lower = text.toLowerCase();
@@ -65,6 +79,9 @@ class Scope {
     if (_any(text, _keep)) return true;
     if (_any(text, _block)) return false;
     if (category.isNotEmpty && _any(category, _blockCategory)) return false;
+    // Characters and clothing words only count when the item fits no shopping category
+    // (Barbie crispy squares and men's body wash stay).
+    if (_any(text, _blockSoft) && categoryOf(name, category) == 'Other') return false;
     // Allow-list: it must fit a shopping category, otherwise it is not a grocery-trip item.
     return categoryOf(name, category) != 'Other';
   }
@@ -88,6 +105,17 @@ class Scope {
             out = c.key;
             break outer;
           }
+        }
+      }
+    }
+    if (out == 'Other' && category.isNotEmpty) {
+      // the store's own tag ("food", "Personal Care") when no word matched
+      final lower = category.toLowerCase();
+      final tokens = _tokens(lower);
+      for (final f in _fallback) {
+        if (_has(lower, tokens, f.key)) {
+          out = f.value;
+          break;
         }
       }
     }

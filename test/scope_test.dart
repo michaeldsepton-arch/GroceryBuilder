@@ -22,6 +22,19 @@ void main() {
       'Energizer MAX AA Batteries (24 Pack)',
       'Kikkoman Soy Sauce Bottle',
       'Corn Starch',
+      // food that earlier rules wrongly blocked
+      'Planters Dry Roasted Peanuts',
+      'Goldfish Cheddar Crackers',
+      'Stove Top Stuffing Mix Chicken',
+      'Italian Wedding Soup',
+      'Intensive Repair Hair Conditioner',
+      'Arm & Hammer Baking Soda 454 g',
+      'Barbie Chocolate Dream Crispy Squares',
+      "Men's Body Wash Fiji",
+      'Five Roses All Purpose Flour, White, 10kg',
+      'Yellow Cornmeal',
+      'Curry Powder',
+      'Kitchen Catchers White Garbage Bags Febreze Scent',
     ]) {
       expect(Scope.inScope(n, '', ''), isTrue, reason: n);
     }
@@ -53,10 +66,21 @@ void main() {
       'Toddler Fleece Jogger',
       'Oral-B iO Series 3 Electric Toothbrush',
       'Poppy Playtime Huggy Wuggy',
+      'Arm & Hammer Clumping Cat Litter Baking Soda',
+      'Organic Cotton Bath Towel',
+      'Lean Beef Flavour Dog Snacks',
+      'Fiery Farms Pepper Mash 18.9 L Food Service',
     ]) {
       expect(Scope.inScope(n, '', ''), isFalse, reason: n);
     }
     expect(Scope.inScope('Anything', '', 'Toys & games'), isFalse);
+  });
+
+  test("the store's own food tag keeps products whose name has no known word", () {
+    expect(Scope.inScope('Whole Waterchestnuts', '', 'food'), isTrue);
+    expect(Scope.categoryOf('Zzz', 'Food bakery'), 'Bakery');
+    expect(Scope.categoryOf('Zzz', 'food'), 'Pantry');
+    expect(Scope.inScope('Zzz unknown thing', '', ''), isFalse);
   });
 
   test('puts items in shopping categories', () {
