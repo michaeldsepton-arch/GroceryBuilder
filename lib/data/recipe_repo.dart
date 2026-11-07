@@ -6,7 +6,9 @@ import 'package:sqflite/sqflite.dart';
 import '../models/models.dart';
 import '../models/recipe.dart';
 import 'halal.dart';
+import 'facets.dart';
 import 'matching.dart';
+import 'search_filters.dart';
 import 'repo.dart';
 
 class SubOption {
@@ -146,6 +148,12 @@ class RecipeRepo {
     if (_meatTerm.hasMatch(term)) {
       final h = pool.where((i) => i.storeId == 'halal').toList();
       if (h.isNotEmpty) pool = h;
+    }
+    // Filters remembered for this search (milk: 4 L) decide which product a recipe picks.
+    final saved = await SearchFilters.saved(repo, term);
+    if (saved != null) {
+      final f = pool.where((i) => Facets.passes(i, saved)).toList();
+      if (f.isNotEmpty) pool = f;
     }
     final best = pickBest(pool, terms, need);
     if (best == null) return null;

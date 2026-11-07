@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../data/repo.dart';
+import '../data/search_filters.dart';
 import '../models/models.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
+import '../widgets/filter_panel.dart';
 import '../widgets/item_widgets.dart';
 
 /// "Browse options": every store's products for a term. Tap a card to pick it
@@ -24,6 +26,10 @@ class _OptionsScreenState extends State<OptionsScreen> {
   List<Item> results = [];
   int matches = 0;
   bool loading = true;
+  final filters = SearchFilters();
+  final _scaffold = GlobalKey<ScaffoldState>();
+  List<Item> _ranked = [];
+  int _rankedMatches = 0;
 
   @override
   void initState() {
@@ -35,20 +41,57 @@ class _OptionsScreenState extends State<OptionsScreen> {
     final repo = context.read<AppState>().repo;
     setState(() => loading = true);
     final r = await repo.search(ctrl.text, storeIds: stores);
+    await filters.loadFor(repo, ctrl.text);
     final ranked = rankItems(r, ctrl.text, sort);
     if (!mounted) return;
     setState(() {
-      matches = ranked.matches;
-      results = ranked.items;
+      _ranked = ranked.items;
+      _rankedMatches = ranked.matches;
+      _applyFilters();
       loading = false;
     });
+  }
+
+  void _applyFilters() {
+    final f = filters.apply(_ranked, _rankedMatches, ctrl.text);
+    results = f.items;
+    matches = f.matches;
+  }
+
+  void _toggle(String facet, String key, bool on) {
+    setState(() {
+      filters.toggle(facet, key, on);
+      _applyFilters();
+    });
+    filters.persist(context.read<AppState>().repo);
+  }
+
+  void _clearFilters() {
+    setState(() {
+      filters.clear();
+      _applyFilters();
+    });
+    filters.persist(context.read<AppState>().repo);
   }
 
   @override
   Widget build(BuildContext context) {
     final s = context.watch<AppState>();
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title ?? 'Browse options')),
+      key: _scaffold,
+      appBar: AppBar(title: Text(widget.title ?? 'Browse options'), actions: const [SizedBox()]),
+      endDrawer: FilterPanel(
+        filters: filters,
+        term: ctrl.text,
+        resultCount: results.length,
+        hasOthers: _rankedMatches > 0 && _rankedMatches < _ranked.length,
+        onToggle: _toggle,
+        onClear: _clearFilters,
+        onRemember: (on) {
+          setState(() => filters.remember = on);
+          filters.persist(context.read<AppState>().repo);
+        },
+      ),
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
@@ -89,8 +132,10 @@ class _OptionsScreenState extends State<OptionsScreen> {
               child: Text(loading ? 'Searching…' : matches > 0 && matches < results.length ? '$matches best matches, then ${results.length - matches} others' : '${results.length} options',
                   overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
             ),
+            FilterButton(filters: filters, onPressed: () => _scaffold.currentState?.openEndDrawer()),
+            const SizedBox(width: 8),
             SizedBox(
-              width: 170,
+              width: 150,
               child: DropdownButton<SortMode>(
               isExpanded: true,
               value: sort,
@@ -109,6 +154,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
             ),
           ]),
         ),
+        ActiveFilterChips(filters: filters, onRemove: (f, k) => _toggle(f, k, false), onClear: _clearFilters),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Align(
@@ -121,7 +167,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
               ? const Center(
                   child: Padding(
                   padding: EdgeInsets.all(32),
-                  child: Text('Nothing found in the stores yet for this. Try a simpler word, or add it yourself in My stuff.',
+                  child: Text('Nothing found. Clear the filters, try a simpler word, or add it yourself in My stuff.',
                       textAlign: TextAlign.center, style: TextStyle(color: BB.muted)),
                 ))
               : ListView.separated(

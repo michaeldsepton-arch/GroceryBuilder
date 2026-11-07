@@ -5,11 +5,13 @@ import 'package:provider/provider.dart';
 
 import '../data/repo.dart';
 import '../data/scope.dart';
+import '../data/search_filters.dart';
 import '../models/models.dart';
 import '../models/units.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/filter_panel.dart';
 import '../widgets/item_widgets.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -30,6 +32,10 @@ class _SearchScreenState extends State<SearchScreen> {
   List<Item> results = [];
   bool loading = false;
   int _seq = 0;
+  final filters = SearchFilters();
+  final _scaffold = GlobalKey<ScaffoldState>();
+  List<Item> _ranked = [];
+  int _rankedMatches = 0;
 
   @override
   void initState() {
@@ -56,14 +62,43 @@ class _SearchScreenState extends State<SearchScreen> {
     final r = await repo.search(ctrl.text,
         storeIds: storeFilter, onSaleOnly: onSaleOnly, category: categoryFilter);
     final sc = await repo.onSaleCount();
+    await filters.loadFor(repo, ctrl.text);
     if (!mounted || seq != _seq) return;
     final ranked = rankItems(r, ctrl.text, sort);
     setState(() {
-      matches = ranked.matches;
-      results = ranked.items;
+      _ranked = ranked.items;
+      _rankedMatches = ranked.matches;
+      _applyFilters();
       saleCount = sc;
       loading = false;
     });
+  }
+
+  void _applyFilters() {
+    final f = filters.apply(_ranked, _rankedMatches, ctrl.text);
+    results = f.items;
+    matches = f.matches;
+  }
+
+  void _toggle(String facet, String key, bool on) {
+    setState(() {
+      filters.toggle(facet, key, on);
+      _applyFilters();
+    });
+    filters.persist(context.read<AppState>().repo);
+  }
+
+  void _clearFilters() {
+    setState(() {
+      filters.clear();
+      _applyFilters();
+    });
+    filters.persist(context.read<AppState>().repo);
+  }
+
+  void _remember(bool on) {
+    setState(() => filters.remember = on);
+    filters.persist(context.read<AppState>().repo);
   }
 
   /// Ids of the cheapest item per unit kind (needs 2+ comparable results).
@@ -85,7 +120,18 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     final s = context.watch<AppState>();
     final best = ctrl.text.trim().isEmpty ? <String>{} : _best();
-    return SafeArea(
+    return Scaffold(
+      key: _scaffold,
+      endDrawer: FilterPanel(
+        filters: filters,
+        term: ctrl.text,
+        resultCount: results.length,
+        hasOthers: _rankedMatches > 0 && _rankedMatches < _ranked.length,
+        onToggle: _toggle,
+        onClear: _clearFilters,
+        onRemember: _remember,
+      ),
+      body: SafeArea(
       child: Column(children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
@@ -165,8 +211,22 @@ class _SearchScreenState extends State<SearchScreen> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(loading ? 'Searching…' : (matches > 0 && matches < results.length ? '$matches best matches, then ${results.length - matches} others' : '${results.length} results'),
-                overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
+            Row(children: [
+              Expanded(
+                child: Text(
+                    loading
+                        ? 'Searching…'
+                        : (matches > 0 && matches < results.length
+                            ? '$matches best matches, then ${results.length - matches} others'
+                            : '${results.length} results'),
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(color: BB.muted)),
+              ),
+              FilterButton(
+                filters: filters,
+                onPressed: ctrl.text.trim().isEmpty ? null : () => _scaffold.currentState?.openEndDrawer(),
+              ),
+            ]),
             Row(children: [
               Expanded(
                 child: DropdownButton<String?>(
@@ -208,9 +268,14 @@ class _SearchScreenState extends State<SearchScreen> {
             ]),
           ]),
         ),
+        ActiveFilterChips(
+          filters: filters,
+          onRemove: (f, k) => _toggle(f, k, false),
+          onClear: _clearFilters,
+        ),
         Expanded(
           child: results.isEmpty && !loading
-              ? _Empty(s)
+              ? (filters.count > 0 ? _NoMatch(onClear: _clearFilters) : _Empty(s))
               : ListView.separated(
                   padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
                   itemCount: results.length,
@@ -220,8 +285,27 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
         ),
       ]),
+      ),
     );
   }
+}
+
+class _NoMatch extends StatelessWidget {
+  const _NoMatch({required this.onClear});
+  final VoidCallback onClear;
+  @override
+  Widget build(BuildContext context) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            const Icon(Icons.filter_alt_off_outlined, size: 48, color: BB.green500),
+            const SizedBox(height: 12),
+            Text('Nothing matches these filters', style: serif(20)),
+            const SizedBox(height: 12),
+            OutlinedButton(onPressed: onClear, child: const Text('Clear filters')),
+          ]),
+        ),
+      );
 }
 
 class _Empty extends StatelessWidget {

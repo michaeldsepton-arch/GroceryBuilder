@@ -248,6 +248,8 @@ class Repo {
       'settings', {'key': key, 'value': value},
       conflictAlgorithm: ConflictAlgorithm.replace);
 
+  Future<void> deleteSetting(String key) => db.delete('settings', where: 'key = ?', whereArgs: [key]);
+
   Future<double> budgetFor(String weekStart) async {
     final r = await db.query('budgets', where: 'week_start = ?', whereArgs: [weekStart]);
     if (r.isNotEmpty) return (r.first['amount'] as num).toDouble();
