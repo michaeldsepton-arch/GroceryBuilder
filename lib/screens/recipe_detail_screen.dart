@@ -370,6 +370,8 @@ class _IngredientCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               FilledButton.tonalIcon(
+                style: FilledButton.styleFrom(
+                    backgroundColor: BB.green100, foregroundColor: BB.green900),
                 onPressed: onBrowse,
                 icon: const Icon(Icons.storefront, size: 18),
                 label: const Text('Browse options'),
