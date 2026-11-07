@@ -9,6 +9,7 @@ import '../data/backup.dart';
 import '../data/services.dart';
 import '../models/units.dart';
 import '../state/app_state.dart';
+import 'flagged_screen.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 
@@ -118,6 +119,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title: 'Weekly budget',
           subtitle: '${money(s.weekBudget)} · tap to change (default \$100)',
           onTap: () => editBudget(context),
+        ),
+        _Tile(
+          icon: Icons.flag_outlined,
+          title: 'Flagged items',
+          subtitle: 'Items you hid as not needed. Send the list so similar ones can be removed',
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FlaggedScreen())),
         ),
         _Tile(
           icon: Icons.sync,

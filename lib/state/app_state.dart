@@ -10,6 +10,7 @@ import '../data/halal.dart';
 import '../data/recipe_repo.dart';
 import '../data/repo.dart';
 import '../data/scope.dart';
+import '../data/tax.dart';
 import '../data/services.dart';
 import '../models/models.dart';
 import '../models/units.dart';
@@ -74,10 +75,12 @@ class AppState extends ChangeNotifier {
     await Directory(photoDir).create(recursive: true);
     Halal.configure(await rootBundle.loadString('assets/recipes/haram_terms.json'));
     Scope.configure(await rootBundle.loadString('assets/seed/scope_terms.json'));
+    Tax.configure(await rootBundle.loadString('assets/seed/tax_terms.json'));
     halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
     repo.halalMeatOnly = halalMeatOnly;
     Item.countSales = (await repo.setting('count_sale_prices') ?? '0') == '1';
     await _seedHalal();
+    await repo.loadFlags();
     await recipes.load();
     await reload();
     // Background refresh; failures are silent, the UI shows the last data.
@@ -117,6 +120,16 @@ class AppState extends ChangeNotifier {
       await repo.putSetting(flag, '1');
     }
     await repo.putSetting('seed_halal_v1', '1');
+  }
+
+  Future<void> flagItem(Item i, String reason) async {
+    await repo.flagItem(i, reason);
+    await reload();
+  }
+
+  Future<void> unflagItem(String id) async {
+    await repo.unflagItem(id);
+    await reload();
   }
 
   Future<void> reload() async {

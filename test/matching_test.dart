@@ -1,4 +1,5 @@
 import 'package:budget_basket/data/matching.dart';
+import 'package:budget_basket/data/repo.dart';
 import 'package:budget_basket/models/models.dart';
 import 'package:budget_basket/models/units.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,6 +9,7 @@ Item it(String id, String name, double price, double size, Unit unit,
     Item(id: id, storeId: store, name: name, price: price, sizeValue: size, sizeUnit: unit, variable: variable, brand: brand);
 
 void main() {
+  rankTests();
   group('parseNeed', () {
     test('weights and volumes', () {
       expect(parseNeed('500 g')!.amount, 500);
@@ -163,6 +165,29 @@ void main() {
     });
     test('3 cloves of garlic is one purchase, not three', () {
       expect(parseNeed('3 cloves')!.amount, 1);
+    });
+  });
+}
+
+void rankTests() {
+  group('search ranking', () {
+    final items = [
+      it('1', 'Milk Chocolate Bar 100 g', 1.0, 100, Unit.g),
+      it('2', 'Buttermilk Ranch Dressing 475 mL', 2.0, 475, Unit.ml),
+      it('3', '2% Milk 4 L', 6.0, 4, Unit.l),
+      it('4', 'Homo Milk 2 L', 4.0, 2, Unit.l),
+      it('5', 'Dark Chocolate Chips 300 g', 5.0, 300, Unit.g),
+      it('6', 'Semi-Sweet Chocolate Chips 300 g', 3.0, 300, Unit.g),
+    ];
+    test('milk shows real milk before milk chocolate and buttermilk, cheapest real milk first', () {
+      final r = rankItems(items.sublist(0, 4), 'milk', SortMode.price);
+      expect(r.matches, 2);
+      expect(r.items.first.id, '4');
+      expect(r.items[1].id, '3');
+    });
+    test('a specific search finds the specific product first', () {
+      final r = rankItems(items.sublist(4), 'dark chocolate chips', SortMode.relevance);
+      expect(r.items.first.id, '5');
     });
   });
 }

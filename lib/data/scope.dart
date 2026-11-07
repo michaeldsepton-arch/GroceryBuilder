@@ -6,7 +6,7 @@ import 'dart:convert';
 /// A term with a space (or dash) matches as a phrase, a single word matches a whole word.
 class Scope {
   /// Bump when the rules change so the app re-imports prices with the new rules.
-  static const version = 7;
+  static const version = 8;
 
   static List<String> _block = [];
   static List<String> _keep = [];
@@ -71,6 +71,9 @@ class Scope {
     }
     return false;
   }
+
+  /// True when any of the terms is in the text (phrases match on word edges).
+  static bool anyTerm(String text, List<String> terms) => _any(text, terms);
 
   /// False for rarely bought things (appliances, mops, toys, furniture, tools...).
   static bool inScope(String name, String brand, String category) {

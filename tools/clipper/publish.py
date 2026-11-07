@@ -63,6 +63,22 @@ def fix_prices(i):
         i.pop("was", None)
 
 
+EXCLUDE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "exclude.json")
+
+
+def load_exclude():
+    """Rules for items the family flagged as not needed (made with apply_flags.py):
+    {"ids": [...], "phrases": ["word or phrase", ...]}. Removed items are archived, never just lost."""
+    try:
+        return json.load(open(EXCLUDE_FILE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"ids": [], "phrases": []}
+
+
+def excluded(i, rules, rx):
+    return i["id"] in rules["ids"] or (rx is not None and rx.search(i["name"].lower()) is not None)
+
+
 MAX_PRICE = 400  # a family grocery trip: bulk and restaurant-size listings are dropped
 
 
@@ -106,6 +122,12 @@ def main():
         items[i["id"]] = i
     stores = {s["id"]: s for s in old.get("stores", [])}
     stores.update({s["id"]: s for s in new.get("stores", [])})
+    rules = load_exclude()
+    ids_ex = set(rules.get("ids", []))
+    rules["ids"] = ids_ex
+    ph = [re.escape(p.lower()) for p in rules.get("phrases", [])]
+    rx = re.compile(r"(?<![a-z0-9])(?:" + "|".join(ph) + r")s?(?![a-z0-9])") if ph else None
+    removed = []
     best = {}
     score = lambda x: (2 if x.get("img") else 0) + (1 if x.get("was") else 0) + (1 if x.get("pv") else 0)
     for i in items.values():
@@ -113,6 +135,9 @@ def main():
         fix_walmart(i)
         fix_prices(i)
         if i["price"] > MAX_PRICE or i["price"] <= 0:
+            continue
+        if excluded(i, rules, rx):
+            removed.append(i)
             continue
         k = (i["store"], i["name"].lower().strip(), (i.get("brand") or "").lower().strip(), i.get("size"), i.get("unit"), i["price"])
         if k not in best or score(i) > score(best[k]):
@@ -130,6 +155,9 @@ def main():
     tmp = os.path.join(tempfile.gettempdir(), "catalog.json.gz")
     open(tmp, "wb").write(gzip.compress(json.dumps(out, separators=(",", ":")).encode()))
     open(os.path.join(bdir, f"published-{stampname}.json.gz"), "wb").write(open(tmp, "rb").read())
+    if removed:
+        open(os.path.join(bdir, f"removed-{stampname}.json.gz"), "wb").write(gzip.compress(json.dumps(removed, separators=(",", ":")).encode()))
+        print(f"{len(removed)} items left out by exclude.json (saved in {bdir}/removed-{stampname}.json.gz)")
     if "--no-upload" in flags:
         print("wrote", tmp)
         return

@@ -6,7 +6,9 @@ import '../models/models.dart';
 import '../models/units.dart';
 import 'db.dart';
 import 'halal.dart';
+import 'matching.dart';
 import 'scope.dart';
+import 'tax.dart';
 
 /// Light singularising for search ("tomatoes" -> "tomato", "berries" -> "berry").
 String singular(String w) {
@@ -18,7 +20,7 @@ String singular(String w) {
   return w;
 }
 
-enum SortMode { unitPrice, price, name, discount, category }
+enum SortMode { relevance, unitPrice, price, name, discount, category }
 
 class Repo {
   Repo(this.app);
@@ -36,7 +38,41 @@ class Repo {
   // The filters are many regexes; a search can cover thousands of items, so remember answers.
   final Map<String, bool> _allowedMemo = {};
 
-  bool allowed(Item i) =>
+  // ---- items flagged as not needed (hidden here, kept in the database) ----
+  Set<String> _flagged = {};
+
+  Future<void> loadFlags() async {
+    _flagged = (await db.query('item_flags', columns: ['item_id'])).map((r) => r['item_id'] as String).toSet();
+  }
+
+  Future<void> flagItem(Item i, String reason) async {
+    await db.insert(
+        'item_flags',
+        {
+          'item_id': i.id,
+          'store_id': i.storeId,
+          'name': i.name,
+          'brand': i.brand,
+          'category': i.category,
+          'price': i.price,
+          'reason': reason,
+          'flagged': DateTime.now().toIso8601String(),
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace);
+    await db.delete('cart', where: 'item_id = ?', whereArgs: [i.id]);
+    _flagged.add(i.id);
+  }
+
+  Future<void> unflagItem(String id) async {
+    await db.delete('item_flags', where: 'item_id = ?', whereArgs: [id]);
+    _flagged.remove(id);
+  }
+
+  Future<List<Map<String, Object?>>> flags() => db.query('item_flags', orderBy: 'flagged DESC');
+
+  bool allowed(Item i) => !_flagged.contains(i.id) && _allowed(i);
+
+  bool _allowed(Item i) =>
       _allowedMemo['${i.id}|${i.name}|${i.category}'] ??= _computeAllowed(i);
 
   bool _computeAllowed(Item i) =>
@@ -276,7 +312,10 @@ class Repo {
               'size_value': (m['size'] as num?)?.toDouble() ?? 1,
               'size_unit': m['unit'] ?? 'each',
               'variable': (m['variable'] ?? false) == true ? 1 : 0,
-              'taxable': (m['taxable'] ?? false) == true ? 1 : 0,
+              'taxable': Tax.isTaxable(m['name'] as String, (m['brand'] ?? '') as String, (m['cat'] ?? '') as String,
+                      fallback: (m['taxable'] ?? false) == true)
+                  ? 1
+                  : 0,
               'category': m['cat'] ?? '',
               'url': m['url'],
               'custom': 0,
@@ -366,6 +405,7 @@ class Repo {
         'settings': await db.query('settings'),
         'budgets': await db.query('budgets'),
         'price_history': await db.query('price_history'),
+        'item_flags': await db.query('item_flags'),
       };
 
   Future<void> importData(Map<String, dynamic> d) async {
@@ -384,10 +424,38 @@ class Repo {
       await load('settings', 'settings');
       await load('budgets', 'budgets');
       await load('price_history', 'price_history');
+      await load('item_flags', 'item_flags');
     });
+    await loadFlags();
   }
 
   String encode(Object o) => const JsonEncoder().convert(o);
+}
+
+/// Orders search results. With a search term, items that really are what was asked for
+/// ("milk", not "milk chocolate" or "buttermilk ranch") come first; the chosen sort then
+/// applies inside that group (cheapest real milk first), and the rest follow in the same order.
+/// [matches] is how many real matches there are.
+({List<Item> items, int matches}) rankItems(List<Item> found, String term, SortMode sort) {
+  final t = term.trim();
+  if (t.isEmpty) {
+    return (items: [...found]..sort((a, b) => compareItems(a, b, sort == SortMode.relevance ? SortMode.unitPrice : sort)), matches: 0);
+  }
+  final score = <String, double>{for (final i in found) i.id: relevance(i, t)};
+  final good = found.where((i) => score[i.id]! > 0).toList();
+  final rest = found.where((i) => score[i.id]! <= 0).toList();
+  final top = good.isEmpty ? 0.0 : good.map((i) => score[i.id]!).reduce((a, b) => a > b ? a : b);
+  int tier(Item i) => score[i.id]! >= top - 0.12 ? 0 : 1; // the plainest matches first
+  final by = sort == SortMode.relevance ? SortMode.unitPrice : sort;
+  good.sort((a, b) {
+    if (sort == SortMode.relevance) {
+      final c = tier(a).compareTo(tier(b));
+      if (c != 0) return c;
+    }
+    return compareItems(a, b, by);
+  });
+  rest.sort((a, b) => compareItems(a, b, by));
+  return (items: [...good, ...rest], matches: good.length);
 }
 
 /// Sort helper: cheapest comparable unit price first, grouped by unit kind.
@@ -402,6 +470,7 @@ int compareItems(Item a, Item b, SortMode mode) {
     case SortMode.category:
       final c = Scope.categoryOf(a.name, a.category).compareTo(Scope.categoryOf(b.name, b.category));
       return c != 0 ? c : a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    case SortMode.relevance:
     case SortMode.unitPrice:
       final ka = a.unitPrice.kind.index, kb = b.unitPrice.kind.index;
       if (ka != kb) return ka.compareTo(kb);

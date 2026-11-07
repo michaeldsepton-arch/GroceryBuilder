@@ -208,11 +208,31 @@ class _ItemSheetState extends State<ItemSheet> {
                     : 'Regular price ${money(it.wasPrice!)}. On sale for ${money(it.price)} when last checked; sales often end before you shop, so totals use the regular price.',
                 style: const TextStyle(color: BB.tomato, fontSize: 12.5)),
           if (it.taxable)
-            const Text('5% GST applies', style: TextStyle(color: BB.goldDark)),
+            const Text('5% GST applies', style: TextStyle(color: BB.goldDark))
+          else
+            const Text('No GST (basic grocery)', style: TextStyle(color: BB.muted, fontSize: 12.5)),
           const SizedBox(height: 14),
           Align(alignment: Alignment.centerLeft, child: CartControl(it)),
           _History(it.id, it.effectivePrice),
           const Divider(height: 32),
+          if (!it.custom)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                icon: const Icon(Icons.flag_outlined, size: 18),
+                label: const Text('Not needed here? Flag it'),
+                onPressed: () async {
+                  final nav = Navigator.of(context);
+                  final msg = ScaffoldMessenger.of(context);
+                  await s.flagItem(it, 'not needed');
+                  nav.pop();
+                  msg.showSnackBar(SnackBar(
+                    content: const Text('Hidden and added to your flagged list'),
+                    action: SnackBarAction(label: 'Undo', onPressed: () => s.unflagItem(it.id)),
+                  ));
+                },
+              ),
+            ),
           Text('Where to find it in the store', style: serif(18)),
           const SizedBox(height: 10),
           Row(children: [

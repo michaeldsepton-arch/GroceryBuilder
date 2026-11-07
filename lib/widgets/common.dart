@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../data/scope.dart';
 import '../models/models.dart';
 import '../models/units.dart';
 import '../state/app_state.dart';
@@ -13,6 +14,25 @@ import '../theme.dart';
 class ImagePolicy {
   static bool network = true;
 }
+
+/// Stand-in picture for items the store gave no photo for.
+IconData _categoryIcon(String c) => switch (c) {
+      'Produce' => Icons.eco_outlined,
+      'Meat' => Icons.kebab_dining_outlined,
+      'Seafood' => Icons.set_meal_outlined,
+      'Dairy & eggs' => Icons.egg_alt_outlined,
+      'Bakery' => Icons.bakery_dining_outlined,
+      'Beverages' => Icons.local_drink_outlined,
+      'Snacks & candy' => Icons.cookie_outlined,
+      'Frozen' => Icons.ac_unit,
+      'Pantry' => Icons.rice_bowl_outlined,
+      'Household & cleaning' => Icons.cleaning_services_outlined,
+      'Personal care & health' => Icons.spa_outlined,
+      'Baby' => Icons.child_care,
+      'Kitchenware' => Icons.restaurant_outlined,
+      'Food storage & wrap' || 'Home & storage' => Icons.inventory_2_outlined,
+      _ => Icons.shopping_basket_outlined,
+    };
 
 class ItemImage extends StatelessWidget {
   const ItemImage(this.item, {super.key, this.size = 76, this.radius = 16});
@@ -26,7 +46,7 @@ class ItemImage extends StatelessWidget {
       width: size,
       height: size,
       color: BB.green100,
-      child: Icon(Icons.shopping_basket_outlined,
+      child: Icon(_categoryIcon(Scope.categoryOf(item.name, item.category)),
           color: BB.green500, size: size * 0.42),
     );
     Widget child = fallback;

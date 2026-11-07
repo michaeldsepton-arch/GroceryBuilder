@@ -21,7 +21,7 @@ class OptionsScreen extends StatefulWidget {
 class _OptionsScreenState extends State<OptionsScreen> {
   late final TextEditingController ctrl = TextEditingController(text: widget.term);
   final Set<String> stores = {};
-  SortMode sort = SortMode.unitPrice;
+  SortMode sort = SortMode.relevance;
   List<Item> results = [];
   int matches = 0;
   bool loading = true;
@@ -36,17 +36,11 @@ class _OptionsScreenState extends State<OptionsScreen> {
     final repo = context.read<AppState>().repo;
     setState(() => loading = true);
     final r = await repo.search(ctrl.text, storeIds: stores);
-    r.sort((a, b) => compareItems(a, b, sort));
-    // Real matches first ("butter" before "butter beans"), each group in the chosen order.
-    final term = ctrl.text.trim();
-    final good = <Item>[], rest = <Item>[];
-    for (final i in r) {
-      (term.isNotEmpty && relevance(i, term) > 0 ? good : rest).add(i);
-    }
+    final ranked = rankItems(r, ctrl.text, sort);
     if (!mounted) return;
     setState(() {
-      matches = good.length;
-      results = [...good, ...rest];
+      matches = ranked.matches;
+      results = ranked.items;
       loading = false;
     });
   }
@@ -103,6 +97,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
               value: sort,
               underline: const SizedBox(),
               items: const [
+                DropdownMenuItem(value: SortMode.relevance, child: Text('Most relevant')),
                 DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
                 DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
                 DropdownMenuItem(value: SortMode.discount, child: Text('Biggest discount')),

@@ -25,7 +25,8 @@ class _SearchScreenState extends State<SearchScreen> {
   bool onSaleOnly = false;
   String? categoryFilter;
   int saleCount = 0;
-  SortMode sort = SortMode.unitPrice;
+  SortMode sort = SortMode.relevance;
+  int matches = 0;
   List<Item> results = [];
   bool loading = false;
   int _seq = 0;
@@ -56,9 +57,10 @@ class _SearchScreenState extends State<SearchScreen> {
         storeIds: storeFilter, onSaleOnly: onSaleOnly, category: categoryFilter);
     final sc = await repo.onSaleCount();
     if (!mounted || seq != _seq) return;
-    r.sort((a, b) => compareItems(a, b, sort));
+    final ranked = rankItems(r, ctrl.text, sort);
     setState(() {
-      results = r;
+      matches = ranked.matches;
+      results = ranked.items;
       saleCount = sc;
       loading = false;
     });
@@ -67,7 +69,7 @@ class _SearchScreenState extends State<SearchScreen> {
   /// Ids of the cheapest item per unit kind (needs 2+ comparable results).
   Set<String> _best() {
     final byKind = <UnitKind, List<Item>>{};
-    for (final i in results) {
+    for (final i in matches > 0 ? results.take(matches) : results) {
       byKind.putIfAbsent(i.unitPrice.kind, () => []).add(i);
     }
     final ids = <String>{};
@@ -163,7 +165,7 @@ class _SearchScreenState extends State<SearchScreen> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(loading ? 'Searching…' : '${results.length} results',
+            Text(loading ? 'Searching…' : (matches > 0 && matches < results.length ? '$matches best matches, then ${results.length - matches} others' : '${results.length} results'),
                 overflow: TextOverflow.ellipsis, style: const TextStyle(color: BB.muted)),
             Row(children: [
               Expanded(
@@ -190,6 +192,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   value: sort,
                   underline: const SizedBox(),
                   items: const [
+                    DropdownMenuItem(value: SortMode.relevance, child: Text('Most relevant')),
                     DropdownMenuItem(value: SortMode.unitPrice, child: Text('Best unit price')),
                     DropdownMenuItem(value: SortMode.price, child: Text('Lowest price')),
                     DropdownMenuItem(value: SortMode.discount, child: Text('Biggest discount')),

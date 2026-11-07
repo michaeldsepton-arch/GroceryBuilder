@@ -24,7 +24,7 @@ class AppDb {
 
   static Future<AppDb> open({String? path}) async {
     path ??= p.join(await getDatabasesPath(), 'budget_basket.db');
-    final db = await openDatabase(path, version: 3, onCreate: _create, onUpgrade: _upgrade);
+    final db = await openDatabase(path, version: 4, onCreate: _create, onUpgrade: _upgrade);
     final app = AppDb._(db);
     await app._seedStores();
     return app;
@@ -43,12 +43,21 @@ class AppDb {
       PRIMARY KEY(item_id, seen))''');
   }
 
+  static Future<void> _flagTable(Database db) async {
+    // Items the family flagged as not needed. Hidden on this phone; nothing is deleted.
+    await db.execute('''CREATE TABLE IF NOT EXISTS item_flags(
+      item_id TEXT PRIMARY KEY, store_id TEXT, name TEXT, brand TEXT, category TEXT, price REAL,
+      reason TEXT, flagged TEXT)''');
+  }
+
   static Future<void> _upgrade(Database db, int from, int to) async {
     if (from < 2) await _recipeTables(db);
     if (from < 3) await _historyTable(db);
+    if (from < 4) await _flagTable(db);
   }
 
   static Future<void> _create(Database db, int v) async {
+    await _flagTable(db);
     await _recipeTables(db);
     await _historyTable(db);
     await db.execute('''CREATE TABLE stores(
