@@ -75,11 +75,12 @@ class Repo {
   bool _allowed(Item i) =>
       _allowedMemo['${i.id}|${i.name}|${i.category}'] ??= _computeAllowed(i);
 
+  // Store items were filtered when the prices were imported, so checking them again on every
+  // start (tens of thousands of items) only froze the app. Only the family's own items are checked.
   bool _computeAllowed(Item i) =>
-      (i.custom || Scope.inScope(i.name, i.brand, i.category)) &&
-      (i.custom || i.storeId == 'halal' || !Halal.isMeatProduct(i.name, i.category)) &&
-      !Halal.isHaram('${i.name} ${i.brand} ${i.category}') &&
-      !(_halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId));
+      !i.custom ||
+      (!Halal.isHaram('${i.name} ${i.brand} ${i.category}') &&
+          !(_halalMeatOnly && Halal.isNonHalalMeatProduct(i.name, i.category, i.storeId)));
 
   static const _itemSelect = '''SELECT i.*, m.favourite, m.aisle, m.spot, m.note,
       m.times_bought FROM items i LEFT JOIN item_meta m ON m.item_id = i.id''';
@@ -265,6 +266,19 @@ class Repo {
     final stamp = data['generated'] as String?;
     final prevStamp = await setting('catalog_generated');
     final newPrices = <String, List<double?>>{}; // id -> [price, was]
+    // Filter first, outside the database transaction and in small slices, so the app stays usable.
+    final kept = <Map<String, dynamic>>[];
+    var seen = 0;
+    for (final m in items.cast<Map<String, dynamic>>()) {
+      if (++seen % 300 == 0) await Future<void>.delayed(Duration.zero);
+      final price = (m['price'] as num?)?.toDouble();
+      if (price == null || m['id'] == null || m['name'] == null) continue;
+      if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
+      if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
+      // Meat comes from the halal market, or is labelled halal; other supermarket meat is skipped.
+      if (m['store'] != 'halal' && Halal.isMeatProduct('${m['name']}', '${m['cat'] ?? ''}')) continue;
+      kept.add(m);
+    }
     await db.transaction((t) async {
       // Remember what we were watching so price changes can be recorded.
       final watched = {
@@ -289,13 +303,8 @@ class Repo {
       await b.commit(noResult: true);
       var batch = t.batch();
       var n = 0;
-      for (final m in items.cast<Map<String, dynamic>>()) {
-        final price = (m['price'] as num?)?.toDouble();
-        if (price == null || m['id'] == null || m['name'] == null) continue;
-        if (Halal.isHaram('${m['name']} ${m['brand'] ?? ''} ${m['cat'] ?? ''}')) continue;
-        if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
-        // Meat comes from the halal market, or is labelled halal; other supermarket meat is skipped.
-        if (m['store'] != 'halal' && Halal.isMeatProduct('${m['name']}', '${m['cat'] ?? ''}')) continue;
+      for (final m in kept) {
+        final price = (m['price'] as num).toDouble();
         if (watched.containsKey(m['id'])) {
           newPrices[m['id'] as String] = [price, (m['was'] as num?)?.toDouble()];
         }
@@ -325,6 +334,7 @@ class Repo {
         if (++n % 500 == 0) {
           await batch.commit(noResult: true);
           batch = t.batch();
+          await Future<void>.delayed(Duration.zero);
         }
       }
       await batch.commit(noResult: true);
