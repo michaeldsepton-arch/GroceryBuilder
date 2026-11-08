@@ -8,10 +8,13 @@ import '../theme.dart';
 import 'common.dart';
 
 class ItemCard extends StatelessWidget {
-  const ItemCard(this.item, {super.key, this.best = false, this.onTap});
+  const ItemCard(this.item, {super.key, this.best = false, this.onTap, this.onFlagChanged});
   final Item item;
   final bool best;
   final VoidCallback? onTap;
+
+  /// Called after the item was flagged (or the flag undone) so the list can refresh.
+  final VoidCallback? onFlagChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +95,31 @@ class ItemCard extends StatelessWidget {
                         style: TextStyle(color: BB.goldDark, fontSize: 11.5, fontWeight: FontWeight.w700)),
                 ]),
                 const SizedBox(height: 8),
-                Align(alignment: Alignment.centerRight, child: CartControl(item)),
+                Row(children: [
+                  if (!item.custom)
+                    IconButton(
+                      tooltip: 'Not needed? Flag it',
+                      visualDensity: VisualDensity.compact,
+                      icon: const Icon(Icons.flag_outlined, size: 22, color: BB.muted),
+                      onPressed: () async {
+                        final msg = ScaffoldMessenger.of(context);
+                        await s.flagItem(item, 'not needed');
+                        onFlagChanged?.call();
+                        msg.clearSnackBars();
+                        msg.showSnackBar(SnackBar(
+                          content: Text('Flagged "${item.name}"', maxLines: 1, overflow: TextOverflow.ellipsis),
+                          action: SnackBarAction(
+                              label: 'Undo',
+                              onPressed: () async {
+                                await s.unflagItem(item.id);
+                                onFlagChanged?.call();
+                              }),
+                        ));
+                      },
+                    ),
+                  const Spacer(),
+                  CartControl(item),
+                ]),
               ]),
             ),
           ]),

@@ -174,7 +174,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                   itemCount: results.length,
                   separatorBuilder: (_, _) => const SizedBox(height: 10),
-                  itemBuilder: (_, i) => ItemCard(results[i], onTap: () => Navigator.pop(context, results[i])),
+                  itemBuilder: (_, i) => ItemCard(results[i], onTap: () => Navigator.pop(context, results[i]), onFlagChanged: _run),
                 ),
         ),
       ]),

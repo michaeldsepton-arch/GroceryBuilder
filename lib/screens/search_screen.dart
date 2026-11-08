@@ -281,7 +281,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   itemCount: results.length,
                   separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (_, i) =>
-                      ItemCard(results[i], best: best.contains(results[i].id)),
+                      ItemCard(results[i], best: best.contains(results[i].id), onFlagChanged: _run),
                 ),
         ),
       ]),
