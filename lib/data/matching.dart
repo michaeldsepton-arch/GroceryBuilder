@@ -158,6 +158,10 @@ List<String> _tokens(String s) => s
     .map(_sing)
     .toList();
 
+/// Shared with staples.dart.
+Set<String> get noiseWords => _noise;
+List<String> tokenize(String s) => _tokens(s);
+
 /// Nouns that name a different product when they end a product name:
 /// "Garlic Butter", "Flour Tortillas", "Lemon Yogurt" are not garlic, flour or lemon.
 const _heads = {

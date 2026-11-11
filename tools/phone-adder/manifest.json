@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Budget Basket: Add to app",
+  "version": "1.0.0",
+  "description": "Found a product that is not in Budget Basket? Open its page (or a search page showing prices), press Add, then save the file and open it in the app. Reads only the page you are looking at.",
+  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Add to Budget Basket",
+    "default_icon": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" }
+  },
+  "icons": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" }
+}

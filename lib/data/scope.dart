@@ -6,7 +6,7 @@ import 'dart:convert';
 /// A term with a space (or dash) matches as a phrase, a single word matches a whole word.
 class Scope {
   /// Bump when the rules change so the app re-imports prices with the new rules.
-  static const version = 8;
+  static const version = 9;
 
   static List<String> _block = [];
   static List<String> _keep = [];
@@ -39,6 +39,12 @@ class Scope {
     }
     _memo.clear();
     _ready = true;
+  }
+
+  /// Extra words that always keep an item (from staples.json: dusting brush, storage box...).
+  static void addKeep(List<String> terms) {
+    _keep = [..._keep, ...terms.map((t) => t.toLowerCase())];
+    _memo.clear();
   }
 
   static bool get ready => _ready;

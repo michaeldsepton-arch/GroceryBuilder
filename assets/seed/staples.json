@@ -1,0 +1,1082 @@
+{
+ "_note": "The everyday items the app shows. The full price list stays on the phone; this only decides what is SHOWN (More > 'Show only everyday items'). Each item: [name, 'phrase|phrase', source, options]. source: list = from the owner's shopping list, note = from the owner's notes/screenshots, cat = a category made from the list so similar items are kept too, sug = suggested everyday item. options: x = words that rule an item out, b = brand words that also match, l = allowed sizes in litres [[min,max],...]. A phrase matches when all its words are in the product's own name (same rules as recipe matching, so 'milk' is not 'milk chocolate').",
+ "version": 1,
+ "rules": {
+  "max_price": 30,
+  "min_per_100_weight": 0.04,
+  "min_per_100_volume": 0.02,
+  "volume_exempt_words": [
+   "bag",
+   "liner",
+   "container",
+   "bin",
+   "tote",
+   "box"
+  ],
+  "tail_ok": [
+   "absorbency",
+   "added",
+   "aged",
+   "all",
+   "baby",
+   "bag",
+   "black",
+   "blend",
+   "block",
+   "bottle",
+   "box",
+   "boxe",
+   "brown",
+   "bulb",
+   "bulk",
+   "bunch",
+   "bunched",
+   "can",
+   "case",
+   "cheddar",
+   "cherry",
+   "chinese",
+   "chopped",
+   "chunk",
+   "chunky",
+   "clamshell",
+   "coarse",
+   "container",
+   "count",
+   "creamy",
+   "crown",
+   "crunchy",
+   "ct",
+   "cube",
+   "cut",
+   "dark",
+   "diced",
+   "double",
+   "duty",
+   "ea",
+   "english",
+   "extra",
+   "fat",
+   "field",
+   "fine",
+   "floret",
+   "free",
+   "fuji",
+   "gala",
+   "gluten",
+   "gold",
+   "golden",
+   "grain",
+   "granny",
+   "grape",
+   "grated",
+   "green",
+   "half",
+   "halve",
+   "hass",
+   "head",
+   "heart",
+   "heavy",
+   "high",
+   "homogenized",
+   "honeycrisp",
+   "imported",
+   "inch",
+   "italian",
+   "japanese",
+   "jar",
+   "jumbo",
+   "kg",
+   "lb",
+   "leaf",
+   "leave",
+   "light",
+   "liquid",
+   "local",
+   "long",
+   "loose",
+   "low",
+   "marble",
+   "mature",
+   "maxi",
+   "mcintosh",
+   "medium",
+   "medjool",
+   "medley",
+   "mild",
+   "mini",
+   "mix",
+   "mozzarella",
+   "navel",
+   "no",
+   "non",
+   "old",
+   "orange",
+   "organic",
+   "overnight",
+   "pac",
+   "pack",
+   "package",
+   "partly",
+   "pasteurized",
+   "peeled",
+   "petite",
+   "piece",
+   "pint",
+   "plain",
+   "ply",
+   "pod",
+   "pouch",
+   "pure",
+   "purple",
+   "raw",
+   "ready",
+   "red",
+   "reduced",
+   "refill",
+   "regular",
+   "ripe",
+   "roma",
+   "root",
+   "round",
+   "russet",
+   "salad",
+   "salted",
+   "scented",
+   "sea",
+   "seedless",
+   "sharp",
+   "sheet",
+   "shred",
+   "shredded",
+   "skim",
+   "skimmed",
+   "slice",
+   "sliced",
+   "smith",
+   "smooth",
+   "snack",
+   "sodium",
+   "soft",
+   "spear",
+   "split",
+   "stalk",
+   "stick",
+   "strong",
+   "style",
+   "super",
+   "sweet",
+   "sweetened",
+   "table",
+   "thai",
+   "thick",
+   "thin",
+   "tray",
+   "trimmed",
+   "ultra",
+   "unsalted",
+   "unscented",
+   "unsweetened",
+   "valencia",
+   "vine",
+   "virgin",
+   "washed",
+   "wedge",
+   "wheat",
+   "white",
+   "whole",
+   "yellow",
+   "yukon",
+   "zero"
+  ],
+  "bad_prefix": [
+   "baby food",
+   "bar",
+   "bbq",
+   "cake",
+   "candied",
+   "canned",
+   "chip",
+   "cookie",
+   "cooking",
+   "creamy",
+   "crispy",
+   "crunchy",
+   "crushed",
+   "dehydrated",
+   "dip",
+   "dried",
+   "drink",
+   "dry",
+   "flavored",
+   "flavoured",
+   "freeze",
+   "fried",
+   "glazed",
+   "granulated",
+   "ground",
+   "instant",
+   "jarred",
+   "juice",
+   "kettle",
+   "kit",
+   "marinated",
+   "mashed",
+   "minced",
+   "organic baby food",
+   "pickled",
+   "pie",
+   "powdered",
+   "roasted",
+   "sauce",
+   "seasoned",
+   "smoked",
+   "soup",
+   "spiced",
+   "stew",
+   "stewed",
+   "stuffed",
+   "sugared",
+   "toasted"
+  ]
+ },
+ "scope_keep": [
+  "dusting brush",
+  "duster",
+  "storage box",
+  "storage container",
+  "drawer organizer",
+  "drawer organiser",
+  "drawer storage",
+  "bathroom organizer"
+ ],
+ "groups": [
+  {
+   "id": "veg",
+   "name": "Fresh vegetables",
+   "items": [
+    [
+     "Potatoes",
+     "potato",
+     "list",
+     {
+      "x": [
+       "bombay",
+       "scalloped",
+       "roast",
+       "baked",
+       "tasty bite"
+      ]
+     }
+    ],
+    [
+     "Tomatoes",
+     "tomato|cherry tomato|roma tomato|grape tomato",
+     "list",
+     {
+      "x": [
+       "sundried",
+       "sun dried",
+       "crushed",
+       "chopped",
+       "peeled",
+       "finely",
+       "mutti"
+      ]
+     }
+    ],
+    [
+     "Ginger",
+     "ginger",
+     "list",
+     {
+      "x": [
+       "paste",
+       "sushi",
+       "kombucha",
+       "tea",
+       "honey",
+       "drops",
+       "salad",
+       "herbal",
+       "manuka",
+       "rise"
+      ]
+     }
+    ],
+    [
+     "Garlic",
+     "garlic",
+     "list",
+     {
+      "x": [
+       "paste",
+       "minced",
+       "herbs",
+       "pepperoni",
+       "honey"
+      ]
+     }
+    ],
+    [
+     "Onions",
+     "onion|red onion|yellow onion|white onion|green onion|scallion|shallot",
+     "list",
+     {
+      "x": [
+       "perogies",
+       "vinaigrette",
+       "pepperoni"
+      ]
+     }
+    ],
+    [
+     "Mushrooms (brown, white)",
+     "mushroom|cremini|button mushroom|portobello",
+     "list"
+    ],
+    [
+     "Peppers (capsicum, green, colourful)",
+     "bell pepper|capsicum|sweet pepper|green pepper|red pepper|yellow pepper|orange pepper|mini pepper|colourful pepper|peppers",
+     "list"
+    ],
+    [
+     "Hot peppers & green chili",
+     "jalapeno|green chili|green chilli|hot pepper|serrano|thai chili|finger hot|chili pepper|banana pepper",
+     "cat",
+     {
+      "x": [
+       "tuna",
+       "flaked",
+       "clover",
+       "chipotle",
+       "compliments"
+      ]
+     }
+    ],
+    [
+     "Carrots",
+     "carrot|baby carrot",
+     "list",
+     {
+      "x": [
+       "puree",
+       "pea",
+       "peas"
+      ]
+     }
+    ],
+    [
+     "Cucumbers",
+     "cucumber|english cucumber|mini cucumber",
+     "list",
+     {
+      "x": [
+       "salad",
+       "refreshed",
+       "apple",
+       "pickling"
+      ]
+     }
+    ],
+    [
+     "Lettuce & salad greens",
+     "lettuce|romaine|iceberg|spring mix|salad mix|salad kit|mixed greens|arugula|baby spinach|spinach|kale|coleslaw|cabbage",
+     "list",
+     {
+      "x": [
+       "kit",
+       "dressing",
+       "salad kit"
+      ]
+     }
+    ],
+    [
+     "Broccoli, cauliflower & other veg",
+     "broccoli|cauliflower|celery|zucchini|eggplant|okra|asparagus|green bean|bok choy|brussels sprout|beet|beets|radish|turnip|parsnip|leek|squash|butternut|sweet potato|yam|corn on the cob|fennel|snap pea|snow pea|bean sprout|artichoke",
+     "cat"
+    ],
+    [
+     "Fresh herbs",
+     "cilantro|coriander leaves|parsley|mint|basil|dill|rosemary|thyme|curry leaves|chives|sage|fresh herb",
+     "cat",
+     {
+      "x": [
+       "cleaner",
+       "mints",
+       "gum",
+       "candy",
+       "cracker",
+       "croccantini",
+       "scotch",
+       "pinwheel",
+       "toothpick"
+      ]
+     }
+    ]
+   ],
+   "opts": {
+    "e": "fresh"
+   }
+  },
+  {
+   "id": "fruit",
+   "name": "Fresh fruit",
+   "items": [
+    [
+     "Oranges & citrus",
+     "orange|clementine|mandarin|tangerine|grapefruit|navel orange|lemon|lime",
+     "list",
+     {
+      "x": [
+       "gum",
+       "cough",
+       "soap",
+       "drop",
+       "tea",
+       "zero",
+       "dish"
+      ]
+     }
+    ],
+    [
+     "Apples, pears & stone fruit",
+     "apple|pear|peach|nectarine|plum|apricot|cherry|cherries",
+     "cat",
+     {
+      "x": [
+       "jam",
+       "glace",
+       "tropicana",
+       "kombucha",
+       "snack",
+       "sweetened",
+       "refreshers",
+       "synergy"
+      ]
+     }
+    ],
+    [
+     "Bananas, grapes & tropical",
+     "banana|grape|mango|pineapple|papaya|pomegranate|kiwi|melon|watermelon|cantaloupe|honeydew|coconut|guava|dragon fruit|plantain|lychee",
+     "cat",
+     {
+      "x": [
+       "yogourt",
+       "yogurt",
+       "smooth",
+       "revolt",
+       "killer",
+       "drink",
+       "smoothie"
+      ]
+     }
+    ],
+    [
+     "Berries",
+     "strawberry|strawberries|blueberry|blueberries|raspberry|raspberries|blackberry|blackberries|cranberry|cranberries|berry|berries",
+     "cat",
+     {
+      "x": [
+       "sorbet",
+       "boba",
+       "syrup",
+       "tart",
+       "tarts",
+       "swedish",
+       "very berry",
+       "pop"
+      ]
+     }
+    ],
+    [
+     "Dates & other dried fruit",
+     "date|dates|medjool|raisin|dried fig|dried apricot|prune|dried cranberry|sultana|dried mango",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": "fresh"
+   }
+  },
+  {
+   "id": "frozen",
+   "name": "Frozen",
+   "items": [
+    [
+     "Frozen peas & corn",
+     "frozen pea|frozen peas|frozen corn|green peas|sweet corn",
+     "list"
+    ],
+    [
+     "Frozen vegetables",
+     "frozen vegetable|frozen broccoli|frozen spinach|frozen mixed vegetable|frozen green bean|frozen cauliflower|frozen carrot|stir fry vegetable|mixed vegetable|california blend|frozen okra|frozen edamame",
+     "cat"
+    ],
+    [
+     "Hash browns & potato",
+     "hash brown|hashbrown|french fries|fries|potato wedge|tater tot|frozen potato",
+     "list"
+    ],
+    [
+     "Frozen fruit",
+     "frozen fruit|frozen berry|frozen berries|frozen mango|frozen blueberry|frozen strawberry|frozen strawberries|frozen blueberries|frozen raspberry|frozen raspberries|frozen banana|frozen pineapple|frozen peach",
+     "cat"
+    ],
+    [
+     "Ice cream & frozen dessert",
+     "ice cream|gelato|sorbet|frozen yogurt|kulfi",
+     "list"
+    ],
+    [
+     "Frozen paratha, naan & roti",
+     "paratha|parantha|frozen naan|roti|chapati|chapatti|puri|frozen roti|tortilla|frozen bread",
+     "list"
+    ],
+    [
+     "Frozen pizza & meals",
+     "frozen pizza|pizza|frozen meal|frozen dinner|pizza crust|pizza dough|samosa|spring roll|frozen samosa|frozen pakora|frozen kebab|veggie burger|nugget|frozen fish|fish fillet|fish stick|frozen shrimp|shrimp|haddock|tilapia|basa|pollock|salmon fillet",
+     "sug"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "dairy",
+   "name": "Dairy, eggs & cheese",
+   "items": [
+    [
+     "Milk (2 L and 4 L only)",
+     "milk|homogenized milk|skim milk|partly skimmed milk|2% milk|1% milk|whole milk",
+     "list",
+     {
+      "l": [
+       [
+        1.85,
+        2.05
+       ],
+       [
+        3.7,
+        4.05
+       ]
+      ],
+      "x": [
+       "goat",
+       "gold"
+      ]
+     }
+    ],
+    [
+     "Eggs",
+     "egg|large egg|medium egg|eggs",
+     "list",
+     {
+      "x": [
+       "plant",
+       "just egg",
+       "nog"
+      ]
+     }
+    ],
+    [
+     "Butter & ghee",
+     "butter|salted butter|unsalted butter|ghee|desi ghee|clarified butter",
+     "list"
+    ],
+    [
+     "Cheese (cheddar, jack, mozzarella…)",
+     "cheddar|monterey jack|mozzarella|marble cheese|marble cheddar|cheese|parmesan|swiss|gouda|havarti|colby|provolone|feta|cottage cheese|ricotta|cream cheese|cheese slice|shredded cheese|string cheese|cheese block|paneer|malai paneer|cheese spread|cheese curd",
+     "list",
+     {
+      "b": [
+       "puck"
+      ]
+     }
+    ],
+    [
+     "Yogurt",
+     "yogurt|yoghurt|greek yogurt|plain yogurt|skyr|dahi|curd|labneh",
+     "list"
+    ],
+    [
+     "Cream, sour cream & cream thing",
+     "heavy cream|whipping cream|table cream|sour cream|cream|whipped cream|half and half|coffee cream|creamer|kheer|khoya|evaporated milk|condensed milk",
+     "list",
+     {
+      "b": [
+       "puck"
+      ]
+     }
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "bread",
+   "name": "Bread & bakery",
+   "items": [
+    [
+     "Bread, buns & naan",
+     "bread|naan|pita|bun|bagel|baguette|bakery|tortilla|wrap|flatbread|roll|bakery items|loaf|sourdough|croissant|muffin|english muffin|hot dog bun|burger bun|dinner roll|kaiser",
+     "list",
+     {
+      "x": [
+       "cabbage"
+      ]
+     }
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "grains",
+   "name": "Flour, rice, oats & baking",
+   "items": [
+    [
+     "Flour (white, brown, atta)",
+     "flour|all purpose flour|whole wheat flour|atta|brown flour|white flour|bread flour|besan|gram flour|semolina|rice flour|cake flour|self rising flour|maida|sooji|rava|cornmeal",
+     "list"
+    ],
+    [
+     "Oats (whole, quick)",
+     "oat|rolled oat|quick oat|whole oat|steel cut oat|oatmeal|large flake oat|porridge",
+     "list"
+    ],
+    [
+     "Rice (basmati, long grain, brown…)",
+     "rice|basmati rice|basmati|jasmine rice|brown rice|long grain rice|sella rice|parboiled rice|sushi rice|wild rice|arborio|poha|rice flakes",
+     "list"
+    ],
+    [
+     "Sugar (granulated, brown, icing)",
+     "sugar|granulated sugar|brown sugar|icing sugar|powdered sugar|cane sugar|jaggery|gur|rock sugar|mishri",
+     "list",
+     {
+      "x": [
+       "lozenge",
+       "sugar free",
+       "no sugar",
+       "ketchup",
+       "vinegar",
+       "free"
+      ]
+     }
+    ],
+    [
+     "Corn starch, yeast & baking",
+     "corn starch|cornstarch|yeast|baking powder|baking soda|vanilla bean paste|cream of tartar|gelatin free|custard powder|cocoa powder|food colouring|food coloring|sprinkles|cake mix|baking cocoa",
+     "list"
+    ],
+    [
+     "Cereal & granola",
+     "cereal|corn flakes|granola|muesli|cheerios|bran flakes|oat bran|porridge",
+     "cat"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "dals",
+   "name": "Dals, beans & lentils",
+   "items": [
+    [
+     "Dals & lentils (toor, moong, masoor, chana, urad)",
+     "dal|daal|toor dal|toor daal|moong dal|moong daal|masoor dal|chana dal|urad dal|lentil|red lentil|green lentil|split pea|toovar|arhar|channa dal|mung|mung bean|moong|matar",
+     "list"
+    ],
+    [
+     "Chickpeas, black-eyed & kidney beans",
+     "chickpea|garbanzo|kabuli chana|black eyed bean|black eyed pea|black-eyed|lobia|kidney bean|red kidney|rajma|navy bean|pinto bean|black bean|white bean|cannellini|great northern|lima bean|bean|beans|broad bean|fava|chana|kala chana|brown chickpea",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "oils",
+   "name": "Cooking oils",
+   "items": [
+    [
+     "Cooking oils (olive, canola, vegetable…)",
+     "olive oil|canola oil|vegetable oil|cooking oil|sunflower oil|sesame oil|corn oil|coconut oil|avocado oil|mustard oil|peanut oil|cooking spray|extra virgin olive oil|frying oil",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "sweet",
+   "name": "Honey, syrup, jam & spreads",
+   "items": [
+    [
+     "Honey",
+     "honey",
+     "list",
+     {
+      "x": [
+       "cough"
+      ]
+     }
+    ],
+    [
+     "Maple syrup & syrups",
+     "maple syrup|pancake syrup|table syrup|corn syrup|golden syrup",
+     "list"
+    ],
+    [
+     "Jam & jelly",
+     "jam|jelly|preserve|marmalade|fruit spread|nutella|chocolate hazelnut spread|hazelnut spread",
+     "list"
+    ],
+    [
+     "Peanut butter & nut butters",
+     "peanut butter|almond butter|nut butter|cashew butter|tahini|sunflower butter",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "sauces",
+   "name": "Condiments & sauces",
+   "items": [
+    [
+     "Ketchup & mustard",
+     "ketchup|mustard|honey mustard|dijon|yellow mustard|hot dog mustard",
+     "list"
+    ],
+    [
+     "Mayonnaise",
+     "mayonnaise|mayo|salad dressing|miracle whip|ranch dressing|caesar dressing|italian dressing|dressing",
+     "list"
+    ],
+    [
+     "Soy sauce & Asian sauces",
+     "soy sauce|china lily|oyster sauce|hoisin|teriyaki|fish sauce|sriracha|sweet chili sauce|chili sauce|hot sauce|sambal|schezwan|szechuan sauce|rice vinegar|sweet and sour|plum sauce|garlic chili sauce|mirin|worcestershire|tamarind|chutney|mango chutney|pickle|achar|mixed pickle|lime pickle",
+     "list"
+    ],
+    [
+     "Pasta sauce, tomato sauce & paste",
+     "tomato sauce|pasta sauce|tomato paste|marinara|spaghetti sauce|passata|pizza sauce|salsa|crushed tomato|diced tomato|canned tomato|whole tomato|stewed tomato|tomato puree",
+     "cat"
+    ],
+    [
+     "Vinegar",
+     "vinegar|white vinegar|apple cider vinegar|balsamic vinegar|rice vinegar|malt vinegar",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "spices",
+   "name": "Spices & seasonings",
+   "items": [
+    [
+     "Salt & pepper",
+     "salt|sea salt|table salt|kosher salt|black pepper|pepper|peppercorn|himalayan salt|rock salt|iodized salt|pink salt|ground black pepper|white pepper",
+     "list",
+     {
+      "x": [
+       "softener",
+       "cleaner",
+       "thai",
+       "peperoncini",
+       "herb"
+      ]
+     }
+    ],
+    [
+     "Spices (cinnamon, chili, cumin, turmeric…)",
+     "cinnamon|cinnamon stick|kashmiri chili|kashmiri red chili|red chili|chili powder|chilli powder|cumin|turmeric|coriander|garam masala|paprika|cardamom|clove|bay leaf|oregano|thyme|nutmeg|saffron|fenugreek|mustard seed|cumin seed|fennel seed|star anise|cayenne|curry powder|masala|chaat masala|biryani masala|tandoori masala|dried red chili|dried chili|whole spice|ground spice|spice|spices|seasoning|italian seasoning|all spice|allspice|ginger powder|garlic powder|onion powder|asafoetida|hing|ajwain|nigella|kalonji|sumac|zaatar|dried herb|mixed herb|parsley flakes|basil leaves|rosemary leaves|sage leaves|dill weed|cream of tartar",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "noodles",
+   "name": "Pasta & noodles",
+   "items": [
+    [
+     "Pasta (spaghetti, penne, macaroni…)",
+     "pasta|spaghetti|penne|macaroni|fusilli|rotini|lasagna|lasagne|linguine|fettuccine|farfalle|rigatoni|vermicelli|orzo|elbow|shells|spirals|couscous",
+     "list"
+    ],
+    [
+     "Instant noodles (Indomie, Mama, ramen)",
+     "indomie|mama|noodle|noodles|instant noodle|ramen|rice noodle|egg noodle|udon|soba|vermicelli|chow mein|maggi|ichiban|cup noodle|pad thai",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "canned",
+   "name": "Canned & jarred",
+   "items": [
+    [
+     "Canned mushrooms",
+     "canned mushroom|mushroom pieces|mushroom stems|sliced mushroom|mushrooms in water|button mushroom canned|whole mushroom",
+     "list"
+    ],
+    [
+     "Canned tuna & fish",
+     "tuna|canned tuna|salmon canned|sardine|mackerel|canned fish|flaked tuna|chunk light tuna|solid white tuna",
+     "note"
+    ],
+    [
+     "Canned vegetables & fruit",
+     "canned corn|canned peas|canned vegetable|canned fruit|canned pineapple|canned peach|canned pear|fruit cocktail|canned coconut milk|coconut milk|coconut cream|canned pumpkin|canned beet|canned carrot|canned green bean|canned spinach|canned artichoke|canned olive|olive|olives|pickled",
+     "cat"
+    ],
+    [
+     "Soup & broth",
+     "soup|broth|bouillon|stock|chicken soup|tomato soup|lentil soup|cream of mushroom|cream of chicken",
+     "sug"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "nuts",
+   "name": "Nuts & seeds",
+   "items": [
+    [
+     "Nuts (peanuts, pecans, walnuts, almonds…)",
+     "peanut|pecan|walnut|almond|cashew|pistachio|hazelnut|macadamia|pine nut|brazil nut|mixed nuts|trail mix|sunflower seed|pumpkin seed|chia seed|flax seed|flaxseed|sesame seed|hemp seed|coconut|shredded coconut|sweetened shredded coconut|desiccated coconut|unsweetened coconut",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "snacks",
+   "name": "Snacks & sweets",
+   "items": [
+    [
+     "Chips (salt & vinegar, ketchup, Doritos…)",
+     "chips|potato chips|tortilla chips|doritos|salt and vinegar chips|ketchup chips|kettle chips|lays|ruffles|pringles|cheetos|popcorn|pretzel|crackers|nachos",
+     "list"
+    ],
+    [
+     "Granola bars & snack bars",
+     "granola bar|snack bar|protein bar|oat bar|cereal bar|nature valley|quaker chewy|fruit bar|energy bar|date bar|nut bar|chewy bar",
+     "list"
+    ],
+    [
+     "Chocolate (chips, bars, butterscotch)",
+     "chocolate chip|dark chocolate chip|semi sweet chocolate chip|semisweet chocolate chip|dark chocolate bar|chocolate bar|dark chocolate|milk chocolate bar|butterscotch chip|butterscotch|baking chocolate|chocolate chunk|white chocolate chip|chocolate",
+     "list"
+    ],
+    [
+     "Pop & soft drinks (Dr Pepper…)",
+     "dr pepper|pop|soda|cola|coke|pepsi|sprite|7up|ginger ale|root beer|cream soda|soft drink|mountain dew|fanta|orange soda|crush|sparkling water|club soda|tonic water|seltzer",
+     "list",
+     {
+      "x": [
+       "baking soda",
+       "baking"
+      ]
+     }
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "drinks",
+   "name": "Tea, coffee & juice",
+   "items": [
+    [
+     "Tea (orange pekoe, black, green)",
+     "tea|orange pekoe|black tea|green tea|tea bag|chai|masala chai|red label|tetley|lipton|herbal tea|chamomile|peppermint tea|earl grey|assam|darjeeling|kashmiri tea|noon chai|rooibos",
+     "list",
+     {
+      "x": [
+       "iced"
+      ]
+     }
+    ],
+    [
+     "Coffee (Davidoff, espresso, instant)",
+     "coffee|espresso|instant coffee|ground coffee|coffee bean|davidoff|nescafe|folgers|tim hortons|dark roast|medium roast|k cup|coffee pod",
+     "list",
+     {
+      "b": [
+       "davidoff"
+      ],
+      "x": [
+       "iced"
+      ]
+     }
+    ],
+    [
+     "Juice",
+     "juice|orange juice|apple juice|cranberry juice|grape juice|pomegranate juice|pineapple juice|mango juice|tomato juice|prune juice|lemon juice|lime juice|mixed fruit juice|fruit juice|juice box",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "household",
+   "name": "Household & cleaning",
+   "items": [
+    [
+     "Hand soap & dish soap",
+     "hand soap|dish soap|dishwashing soap|dishwashing liquid|dish detergent|liquid hand soap|foaming hand soap|bar soap|antibacterial soap|dawn|palmolive|sunlight|joy dish",
+     "list"
+    ],
+    [
+     "Cleaners (multi-purpose, bathroom, floor)",
+     "multi purpose cleaner|multi-purpose cleaner|all purpose cleaner|all-purpose cleaner|bathroom cleaner|toilet bowl cleaner|glass cleaner|floor cleaner|disinfectant|disinfecting wipes|bleach|lysol|mr clean|windex|comet|vim|cleaner|cleaning spray|surface cleaner|kitchen cleaner|oven cleaner|drain cleaner|scrub",
+     "list"
+    ],
+    [
+     "Laundry (Tide, softener, dishwasher pods)",
+     "laundry detergent|tide|laundry|fabric softener|dryer sheet|stain remover|finish dishwasher|dishwasher pod|dishwasher tablet|dishwasher detergent|dishwasher|cascade|laundry pod|laundry sheet|oxiclean|downy|bounce|gain|persil|sunlight laundry",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "paper",
+   "name": "Paper, bags & wraps",
+   "items": [
+    [
+     "Ziploc & storage bags",
+     "ziploc|zipper bag|freezer bag|storage bag|sandwich bag|snack bag|large ziploc|medium ziploc|resealable bag|slider bag|gallon bag|quart bag",
+     "list"
+    ],
+    [
+     "Cling wrap, foil & parchment",
+     "plastic wrap|cling wrap|saran wrap|aluminum foil|aluminium foil|foil|parchment paper|wax paper|baking paper|freezer paper|butcher paper|clear plastic wrap|food wrap|reynolds|glad wrap|cling film",
+     "list"
+    ],
+    [
+     "Garbage & trash bags",
+     "garbage bag|trash bag|kitchen catcher|waste bag|bin liner|compost bag|recycling bag|tall kitchen bag|lawn bag|contractor bag|drawstring bag|easy-tie bag|flap-tie bag|glad bag|green bin liner|organic liner|compostable bag",
+     "list"
+    ],
+    [
+     "Toilet paper, tissue & paper towels",
+     "toilet paper|bathroom tissue|facial tissue|tissue|tissues|kitchen towel|paper towel|kitchen paper towel|paper napkin|napkin|kleenex|cashmere|charmin|royale|scott|bounty|viva|sponge towel|wet wipe|wipes|flushable wipe|baby wipe",
+     "list"
+    ],
+    [
+     "Dish sponge & scrubbers",
+     "sponge|dish sponge|scrub sponge|scouring pad|steel wool|dish brush|scrubber|scrub daddy|magic eraser|microfibre cloth|dish cloth|dishcloth|cleaning cloth",
+     "list"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "personal",
+   "name": "Personal care",
+   "items": [
+    [
+     "Shampoo, conditioner & body wash",
+     "shampoo|conditioner|body wash|shower gel|bath gel|bar soap|bath soap|hair conditioner|2 in 1 shampoo|head and shoulders|dove|pantene|irish spring|olay body",
+     "list"
+    ],
+    [
+     "Pads, tampons & feminine care (Always)",
+     "pads|maxi pads|always|tampons|panty liner|feminine pad|overnight pad|ultra thin|period|menstrual|liners|pantyliner|tampon|always pads|stayfree|kotex|playtex|tampax|u by kotex",
+     "list",
+     {
+      "x": [
+       "incontinence",
+       "discreet",
+       "adult"
+      ]
+     }
+    ],
+    [
+     "Toothpaste & toothbrush",
+     "toothpaste|toothbrush|tooth brush|mouthwash|dental floss|floss|colgate|crest|sensodyne|oral-b|listerine|electric toothbrush|toothbrush head|whitening toothpaste|interdental",
+     "list"
+    ],
+    [
+     "Deodorant, razors & basics",
+     "deodorant|antiperspirant|razor|shaving cream|shaving gel|disposable razor|razor blade|lotion|body lotion|hand cream|hand lotion|lip balm|sunscreen|sun screen|vaseline|petroleum jelly|cotton swab|q-tips|cotton ball|cotton round|nail clipper|hair brush|comb|hair elastic|bobby pin",
+     "sug"
+    ],
+    [
+     "Medicine & first aid",
+     "pain relief|acetaminophen|ibuprofen|tylenol|advil|aspirin|bandage|band aid|bandaid|first aid|antiseptic|gauze|cold medicine|cough syrup|allergy|antihistamine|thermometer|rubbing alcohol|hydrogen peroxide|antibiotic ointment|antacid|laxative|electrolyte|oral rehydration|gravol|zyrtec|reactine|benadryl|tums|pepto|imodium|robitussin|buckley|vicks|neosporin|polysporin|cough drop|throat lozenge|decongestant|nasal spray|eye drop|saline",
+     "sug"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "home",
+   "name": "Home & storage",
+   "items": [
+    [
+     "Dusting brush & dusters",
+     "dusting brush|duster|dust brush|feather duster|microfibre duster|microfiber duster|dust mop|dust pan|dustpan|broom|lint roller|lint brush",
+     "note"
+    ],
+    [
+     "Storage boxes & drawer containers",
+     "storage box|storage container|drawer organizer|drawer organiser|drawer storage|bathroom organizer|deep container|storage bin|organizer|organiser|food storage container|food container|lunch box|tupperware|glass container|meal prep container|airtight container|mason jar|storage jar|canister|pantry organizer|fridge organizer|bathroom drawer",
+     "note"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  },
+  {
+   "id": "baby",
+   "name": "Baby",
+   "items": [
+    [
+     "Diapers, wipes & formula",
+     "diaper|diapers|baby wipe|baby wipes|infant formula|baby formula|baby food|baby cereal|pull-ups|training pants|diaper cream|baby lotion|baby shampoo|baby wash|nappy|nappies|pampers|huggies|luvs|enfamil|similac|good start|gerber",
+     "sug"
+    ]
+   ],
+   "opts": {
+    "e": true
+   }
+  }
+ ]
+}

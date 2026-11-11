@@ -253,7 +253,7 @@
     return out;
   }
 
-  root.BBParse = { repairOld: repairOld, dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
+  root.BBParse = { mk: mk, repairOld: repairOld, dedupe: dedupe, parseSize: parseSize, guessTaxable: guessTaxable, loblawItem: loblawItem, loblawProducts: loblawProducts,
     cleanName: cleanName, parseCardText: parseCardText, domItem: domItem, walmartProducts: walmartProducts, walmartItem: walmartItem, walmartStoreHints: walmartStoreHints };
   if (typeof module !== 'undefined') module.exports = root.BBParse;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

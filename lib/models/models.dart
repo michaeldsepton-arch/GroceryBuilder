@@ -80,6 +80,8 @@ class Item {
     this.spot = '',
     this.note = '',
     this.timesBought = 0,
+    this.typical = true,
+    this.sane = true,
   });
 
   final String id;
@@ -105,6 +107,10 @@ class Item {
   final String spot;
   final String note;
   final int timesBought;
+
+  /// Marked at price import: an everyday item (staples.json), and a price that can be right.
+  final bool typical;
+  final bool sane;
 
   /// Sales rarely last until the shop trip and prices only update when refreshed, so by
   /// default everything is counted at the regular price. Turn on in More, Settings.
@@ -155,6 +161,8 @@ class Item {
         spot: (m?['spot'] as String?) ?? '',
         note: (m?['note'] as String?) ?? '',
         timesBought: (m?['times_bought'] as int?) ?? 0,
+        typical: typical,
+        sane: sane,
       );
 
   Map<String, Object?> toMap() => {
@@ -198,6 +206,8 @@ class Item {
         spot: (m['spot'] as String?) ?? '',
         note: (m['note'] as String?) ?? '',
         timesBought: (m['times_bought'] as int?) ?? 0,
+        typical: (m['typical'] as int? ?? 1) == 1,
+        sane: (m['sane'] as int? ?? 1) == 1,
       );
 }
 

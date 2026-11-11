@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Add to Budget Basket</title>
+<style>
+:root{--bg:#f7f2e6;--card:#fffcf5;--ink:#1b2a23;--mute:#6b7a72;--green:#1f5a43;--green2:#dcebdd;--red:#c8553d;--line:rgba(23,63,48,.16)}
+@media (prefers-color-scheme:dark){:root{--bg:#16201b;--card:#1e2b25;--ink:#e8efe9;--mute:#9db0a5;--green:#6fc29a;--green2:#27433a;--red:#ef8a73;--line:rgba(255,255,255,.16)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,Segoe UI,Roboto,sans-serif;min-width:320px;max-width:520px;padding:14px}
+h1{font-size:18px;margin:0 0 4px}.mute{color:var(--mute);font-size:13px}
+button{font:inherit;border:1px solid var(--green);background:transparent;color:var(--green);border-radius:12px;padding:11px 14px;cursor:pointer;width:100%;margin-top:8px}
+button.primary{background:var(--green);color:#fff}button:disabled{opacity:.45}
+.msg{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--green2);display:none}
+.msg.bad{background:rgba(200,85,61,.15);color:var(--red)}
+.list{margin-top:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);max-height:260px;overflow:auto}
+.it{display:flex;gap:8px;align-items:center;padding:8px 10px;border-top:1px solid var(--line)}.it:first-child{border-top:0}
+.it .n{flex:1;min-width:0}.it .n b{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.it .p{font-weight:700}.it button{width:auto;margin:0;padding:4px 10px;border-color:var(--line);color:var(--mute)}
+.row{display:flex;gap:8px}.row button{margin-top:8px}
+</style></head><body>
+<h1>Add to Budget Basket</h1>
+<div class="mute">Open a product page, or a search page that shows prices, then press Add.</div>
+<button class="primary" id="add">Add what's on this page</button>
+<div class="msg" id="msg"></div>
+<div class="list" id="list" hidden></div>
+<div class="mute" id="count" style="margin-top:10px"></div>
+<button class="primary" id="save" disabled>Save file for the app</button>
+<div class="row"><button id="share" hidden>Share file…</button><button id="clear" disabled>Clear list</button></div>
+<div class="mute" style="margin-top:10px">In the app: More → Add items from a file. Items already in the app are never duplicated, and nothing there is replaced or removed.</div>
+<script src="popup.js"></script>
+</body></html>

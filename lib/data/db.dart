@@ -24,7 +24,7 @@ class AppDb {
 
   static Future<AppDb> open({String? path}) async {
     path ??= p.join(await getDatabasesPath(), 'budget_basket.db');
-    final db = await openDatabase(path, version: 4, onCreate: _create, onUpgrade: _upgrade);
+    final db = await openDatabase(path, version: 5, onCreate: _create, onUpgrade: _upgrade);
     final app = AppDb._(db);
     await app._seedStores();
     return app;
@@ -54,6 +54,11 @@ class AppDb {
     if (from < 2) await _recipeTables(db);
     if (from < 3) await _historyTable(db);
     if (from < 4) await _flagTable(db);
+    if (from < 5) {
+      // everyday-item marks (staples.json); everything counts as everyday until prices are next refreshed
+      await db.execute('ALTER TABLE items ADD COLUMN typical INTEGER DEFAULT 1');
+      await db.execute('ALTER TABLE items ADD COLUMN sane INTEGER DEFAULT 1');
+    }
   }
 
   static Future<void> _create(Database db, int v) async {
@@ -68,7 +73,7 @@ class AppDb {
       brand TEXT, image_url TEXT, photo_path TEXT, price REAL NOT NULL,
       was_price REAL, size_value REAL, size_unit TEXT, variable INTEGER DEFAULT 0,
       taxable INTEGER DEFAULT 0, category TEXT, url TEXT,
-      custom INTEGER DEFAULT 0, updated TEXT)''');
+      custom INTEGER DEFAULT 0, updated TEXT, typical INTEGER DEFAULT 1, sane INTEGER DEFAULT 1)''');
     await db.execute('CREATE INDEX idx_items_store ON items(store_id)');
     await db.execute('CREATE INDEX idx_items_custom ON items(custom)');
     await db.execute('''CREATE TABLE item_meta(

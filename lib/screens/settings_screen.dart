@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../data/backup.dart';
+import '../data/clip_import.dart';
 import '../data/services.dart';
 import '../models/units.dart';
 import '../state/app_state.dart';
@@ -106,6 +107,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
         Card(
           margin: const EdgeInsets.only(bottom: 8),
           child: SwitchListTile(
+            secondary: const Icon(Icons.shopping_basket_outlined, color: BB.green700),
+            title: const Text('Show only everyday items', style: TextStyle(fontWeight: FontWeight.w700)),
+            subtitle: const Text(
+                'On: only the groceries and household things on your usual list (and others like them). Off: every store item. Prices over \$30 and impossible prices stay hidden either way. Nothing is deleted.'),
+            value: s.typicalOnly,
+            onChanged: s.setTypicalOnly,
+          ),
+        ),
+        Card(
+          margin: const EdgeInsets.only(bottom: 8),
+          child: SwitchListTile(
             secondary: const Icon(Icons.local_offer_outlined, color: BB.tomato),
             title: const Text('Count sale prices', style: TextStyle(fontWeight: FontWeight.w700)),
             subtitle: const Text(
@@ -119,6 +131,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title: 'Weekly budget',
           subtitle: '${money(s.weekBudget)} · tap to change (default \$100)',
           onTap: () => editBudget(context),
+        ),
+        _Tile(
+          icon: Icons.playlist_add,
+          title: 'Add items from a file',
+          subtitle: 'From the Budget Basket phone extension. Only adds; nothing is replaced or removed',
+          onTap: () async {
+            final r = await FilePicker.pickFiles(type: FileType.any);
+            final path = r.isEmpty ? null : r.first.path;
+            if (path == null) return;
+            try {
+              final res = await ClipImport.importBytes(s.repo, await File(path).readAsBytes());
+              await s.reload();
+              _msg(res.message);
+            } on FormatException catch (e) {
+              _msg(e.message);
+            } catch (e) {
+              _msg('Could not read that file: $e');
+            }
+          },
         ),
         _Tile(
           icon: Icons.flag_outlined,

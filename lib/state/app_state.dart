@@ -10,6 +10,7 @@ import '../data/halal.dart';
 import '../data/recipe_repo.dart';
 import '../data/repo.dart';
 import '../data/scope.dart';
+import '../data/staples.dart';
 import '../data/tax.dart';
 import '../data/services.dart';
 import '../models/models.dart';
@@ -31,6 +32,7 @@ class AppState extends ChangeNotifier {
   final Repo repo;
   final RecipeRepo recipes;
   bool halalMeatOnly = true;
+  bool typicalOnly = true;
 
   List<Store> stores = [];
   List<CartLine> cart = [];
@@ -76,6 +78,10 @@ class AppState extends ChangeNotifier {
     Halal.configure(await rootBundle.loadString('assets/recipes/haram_terms.json'));
     Scope.configure(await rootBundle.loadString('assets/seed/scope_terms.json'));
     Tax.configure(await rootBundle.loadString('assets/seed/tax_terms.json'));
+    Staples.configure(await rootBundle.loadString('assets/seed/staples.json'));
+    Scope.addKeep(Staples.scopeKeep);
+    typicalOnly = (await repo.setting('typical_only') ?? '1') == '1';
+    repo.typicalOnly = typicalOnly;
     halalMeatOnly = (await repo.setting('halal_meat_only') ?? '1') == '1';
     repo.halalMeatOnly = halalMeatOnly;
     Item.countSales = (await repo.setting('count_sale_prices') ?? '0') == '1';
@@ -150,6 +156,13 @@ class AppState extends ChangeNotifier {
   Future<void> markAlertsSeen() async {
     await repo.putSetting('alerts_seen', DateTime.now().toUtc().toIso8601String());
     unseenAlerts = 0;
+    notifyListeners();
+  }
+
+  Future<void> setTypicalOnly(bool v) async {
+    typicalOnly = v;
+    repo.typicalOnly = v;
+    await repo.putSetting('typical_only', v ? '1' : '0');
     notifyListeners();
   }
 
@@ -242,10 +255,10 @@ class AppState extends ChangeNotifier {
         syncError = 'No catalog published yet';
       } else if (data['generated'] != catalogStamp ||
           catalogCount == 0 ||
-          await repo.setting('scope_version') != '${Scope.version}') {
+          await repo.setting('scope_version') != '${Scope.version}.${Staples.version}') {
         // also re-imports when the "what belongs in the app" rules changed
         await repo.applyCatalog(data);
-        await repo.putSetting('scope_version', '${Scope.version}');
+        await repo.putSetting('scope_version', '${Scope.version}.${Staples.version}');
       }
     } catch (e) {
       syncError = 'Could not refresh prices ($e)';

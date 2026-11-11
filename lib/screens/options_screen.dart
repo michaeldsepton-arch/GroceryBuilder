@@ -40,7 +40,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
   Future<void> _run() async {
     final repo = context.read<AppState>().repo;
     setState(() => loading = true);
-    final r = await repo.search(ctrl.text, storeIds: stores);
+    final r = await repo.search(ctrl.text, storeIds: stores, everything: true);
     await filters.loadFor(repo, ctrl.text);
     final ranked = rankItems(r, ctrl.text, sort);
     if (!mounted) return;

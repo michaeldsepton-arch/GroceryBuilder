@@ -8,6 +8,7 @@ import 'db.dart';
 import 'halal.dart';
 import 'matching.dart';
 import 'scope.dart';
+import 'staples.dart';
 import 'tax.dart';
 
 /// Light singularising for search ("tomatoes" -> "tomato", "berries" -> "berry").
@@ -70,7 +71,12 @@ class Repo {
 
   Future<List<Map<String, Object?>>> flags() => db.query('item_flags', orderBy: 'flagged DESC');
 
-  bool allowed(Item i) => !_flagged.contains(i.id) && _allowed(i);
+  /// Show only the everyday items (More > Show only everyday items). Items with a price that cannot be
+  /// right are always hidden; the stored price list itself is never changed.
+  bool typicalOnly = true;
+
+  bool allowed(Item i, {bool everything = false}) =>
+      !_flagged.contains(i.id) && _allowed(i) && (i.custom || (i.sane && (everything || !typicalOnly || i.typical)));
 
   bool _allowed(Item i) =>
       _allowedMemo['${i.id}|${i.name}|${i.category}'] ??= _computeAllowed(i);
@@ -100,6 +106,7 @@ class Repo {
       bool customOnly = false,
       bool onSaleOnly = false,
       String? category,
+      bool everything = false,
       int limit = 100000}) async {
     final where = <String>[];
     final args = <Object?>[];
@@ -119,7 +126,7 @@ class Repo {
     if (onSaleOnly) where.add('i.was_price IS NOT NULL AND i.was_price > i.price');
     final rows = await db.rawQuery(
         '$_itemSelect ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'}', args);
-    var found = rows.map(Item.fromMap).where(allowed);
+    var found = rows.map(Item.fromMap).where((i) => allowed(i, everything: everything));
     if (category != null) {
       found = found.where((i) => Scope.categoryOf(i.name, i.category) == category);
     }
@@ -279,6 +286,21 @@ class Repo {
       if (!Scope.inScope('${m['name']}', '${m['brand'] ?? ''}', '${m['cat'] ?? ''}')) continue;
       // Meat comes from the halal market, or is labelled halal; other supermarket meat is skipped.
       if (m['store'] != 'halal' && Halal.isMeatProduct('${m['name']}', '${m['cat'] ?? ''}')) continue;
+      // Mark (never remove) what is not an everyday item or has an impossible price.
+      final unit = Unit.parse(m['unit'] as String?);
+      final size = (m['size'] as num?)?.toDouble() ?? 1;
+      m['_s'] = Staples.isSane('${m['name']}', price, size, unit) ? 1 : 0;
+      m['_t'] = (m['_s'] == 1 &&
+              Staples.isTypical(Item(
+                  id: '${m['id']}',
+                  storeId: '${m['store']}',
+                  name: '${m['name']}',
+                  brand: '${m['brand'] ?? ''}',
+                  price: price,
+                  sizeValue: size,
+                  sizeUnit: unit)))
+          ? 1
+          : 0;
       kept.add(m);
     }
     await db.transaction((t) async {
@@ -331,6 +353,8 @@ class Repo {
               'url': m['url'],
               'custom': 0,
               'updated': stamp,
+              'typical': m['_t'],
+              'sane': m['_s'],
             },
             conflictAlgorithm: ConflictAlgorithm.replace);
         if (++n % 500 == 0) {

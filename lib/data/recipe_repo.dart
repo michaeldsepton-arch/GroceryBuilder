@@ -137,7 +137,7 @@ class RecipeRepo {
     final byId = <String, Item>{};
     final terms = [term, ...?aliases[term.toLowerCase()]];
     for (final t in terms) {
-      for (final i in await repo.search(t, limit: 80)) {
+      for (final i in await repo.search(t, limit: 80, everything: true)) {
         byId[i.id] = i;
       }
       // Try alternatives only when the main term found little.
